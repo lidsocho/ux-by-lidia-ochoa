@@ -189,6 +189,7 @@
       padding: 0 16px 80px;
       position: relative;
       z-index: 1;
+      line-height: normal;
     }
 
     /* Prevent site nav styles from targeting guide's internal <nav> elements */
@@ -201,6 +202,20 @@
       z-index: auto;
       transition: none;
       box-shadow: none;
+    }
+
+    /* Prevent site footer styles from targeting guide's internal <footer> element */
+    .guide-container footer {
+      background: none;
+      padding: 0;
+      text-align: left;
+      color: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+    .guide-container footer a {
+      color: inherit;
+      text-decoration: inherit;
     }
 
     .guide-container .slide {

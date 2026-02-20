@@ -297,6 +297,33 @@
       color: #fff;
     }
     .btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(184,80,66,0.3); }
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .form-status {
+      margin-top: 16px;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      display: none;
+    }
+    .form-status.success {
+      display: block;
+      background: rgba(74, 140, 92, 0.15);
+      color: #4a8c5c;
+      border: 1px solid rgba(74, 140, 92, 0.3);
+    }
+    .form-status.error {
+      display: block;
+      background: rgba(184, 80, 66, 0.1);
+      color: var(--terracotta);
+      border: 1px solid rgba(184, 80, 66, 0.25);
+    }
 
     .btn-secondary {
       background: transparent;
@@ -1107,7 +1134,10 @@
               </li>
             </ul>
           </div>
-          <form class="contact-form" action="#" method="POST" aria-label="Contact form" novalidate>
+          <form class="contact-form" id="contact-form" aria-label="Contact form" novalidate>
+            <input type="hidden" name="access_key" value="d634add7-e91b-4bb5-b6d7-4af4850af477">
+            <input type="hidden" name="subject" value="New contact from uxbylidiaochoa.com">
+            <input type="checkbox" name="botcheck" style="display: none;">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Name <span aria-hidden="true">*</span></label>
@@ -1142,6 +1172,7 @@
               <textarea id="message" name="message" placeholder="Tell me about your platform, your learners, or any specific concerns..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
+            <div class="form-status" role="alert" aria-live="polite"></div>
           </form>
         </div>
       </div>
@@ -1237,6 +1268,69 @@
         if (e.key === 'ArrowRight' && current < pages.length - 1) { showPage(current + 1); e.preventDefault(); }
       });
     })();
+  </script>
+
+  <!-- Contact Form (Web3Forms) -->
+  <script>
+    // ── Contact Form ──
+    // Replace YOUR_ACCESS_KEY above with your key from https://web3forms.com
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const statusDiv = contactForm.querySelector('.form-status');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Clear previous status
+      statusDiv.className = 'form-status';
+      statusDiv.textContent = '';
+
+      // Validate required fields
+      const nameField = contactForm.querySelector('#name');
+      const emailField = contactForm.querySelector('#email');
+
+      if (!nameField.value.trim()) {
+        nameField.focus();
+        showStatus('error', 'Please enter your name.');
+        return;
+      }
+      if (!emailField.value.trim() || !emailField.value.includes('@')) {
+        emailField.focus();
+        showStatus('error', 'Please enter a valid email address.');
+        return;
+      }
+
+      // Disable button while sending
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending\u2026';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+      })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data.success) {
+            showStatus('success', 'Message sent! I\u2019ll get back to you within two business days.');
+            contactForm.reset();
+          } else {
+            showStatus('error', 'Something went wrong. Please email me directly at lidia.ochoa@uxbylidiaochoa.com');
+          }
+        })
+        .catch(function() {
+          showStatus('error', 'Something went wrong. Please email me directly at lidia.ochoa@uxbylidiaochoa.com');
+        })
+        .finally(function() {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        });
+    });
+
+    function showStatus(type, message) {
+      statusDiv.className = 'form-status ' + type;
+      statusDiv.textContent = message;
+    }
   </script>
 </body>
 </html>

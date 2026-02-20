@@ -100,14 +100,22 @@
     }
 
     .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--deep-brown);
       text-decoration: none;
+      letter-spacing: -0.02em;
       display: flex;
       align-items: center;
+      gap: 10px;
       white-space: nowrap;
     }
     .nav-logo img {
-      height: 36px;
+      height: 28px;
       width: auto;
+      flex-shrink: 0;
+    }
+    .nav-logo span { color: var(--terracotta);
     }
 
     .nav-links { display: flex; gap: 8px; align-items: center; list-style: none; }
@@ -754,7 +762,7 @@
   <!-- NAV -->
   <nav aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#home" class="nav-logo" aria-label="UX by Lidia Ochoa - Home"><img src="spiral-logo-with-text.svg" alt="UX by Lidia Ochoa"></a>
+      <a href="#home" class="nav-logo" aria-label="UX by Lidia Ochoa - Home"><img src="spiral-mark.svg" alt="" aria-hidden="true"> UX by <span>Lidia Ochoa</span></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <line x1="3" y1="6" x2="21" y2="6"/>

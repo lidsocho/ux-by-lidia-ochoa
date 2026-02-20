@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UX by Lidia Ochoa — Accessibility evaluations for EdTech platforms. UX-driven audits informed by real experience with students with disabilities.">
+  <title>UX by Lidia Ochoa — Accessibility for EdTech</title>
+  <link rel="icon" type="image/svg+xml" href="spiral-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF6F0;
+      --sand: #E8DCC8;
+      --sand-light: #F2ECE0;
+      --terracotta: #B85042;
+      --terracotta-dark: #9A3C30;
+      --terracotta-light: #D4796E;
+      --deep-brown: #3D2B1F;
+      --warm-brown: #5C4033;
+      --warm-gray: #8C7B6B;
+      --soft-white: #FFFCF7;
+      --text-primary: #2E1F14;
+      --text-secondary: #5C4A3A;
+      --text-muted: #8C7B6B;
+      --focus-ring: #B85042;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+    }
+
+    html, body { overflow-x: hidden; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text-primary);
+      background: var(--cream);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      overflow-wrap: break-word;
+    }
+
+    /* ===== FOCUS STYLES (A11y) ===== */
+    *:focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* ===== SKIP LINK ===== */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      z-index: 9999;
+      padding: 12px 24px;
+      background: var(--terracotta);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 0 0 8px 8px;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 0;
+      outline: 3px solid var(--deep-brown);
+      outline-offset: 2px;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(250, 246, 240, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(184, 80, 66, 0.1);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(61, 43, 31, 0.08); }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--deep-brown);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    .nav-logo img {
+      height: 28px;
+      width: auto;
+      flex-shrink: 0;
+    }
+    .nav-logo span { color: var(--terracotta);
+    }
+
+    .nav-links { display: flex; gap: 8px; align-items: center; list-style: none; }
+    .nav-links li { display: flex; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible {
+      color: var(--terracotta);
+      background: rgba(184, 80, 66, 0.06);
+    }
+
+    .nav-cta {
+      background: var(--terracotta) !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+      padding: 10px 22px !important;
+      text-align: center;
+    }
+    .nav-cta:hover { background: var(--terracotta-dark) !important; }
+
+    /* Mobile nav */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--deep-brown);
+    }
+    .nav-toggle svg { width: 24px; height: 24px; }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 100px 32px; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+      padding-top: 140px;
+      padding-bottom: 80px;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -30%; right: -20%;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,80,66,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 1120px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--terracotta);
+      margin: 0 auto 20px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+      line-height: 1.2;
+      color: var(--deep-brown);
+      margin: 0 auto 24px;
+      letter-spacing: -0.02em;
+      max-width: 800px;
+    }
+    .hero h1 em {
+      color: var(--terracotta);
+      font-style: italic;
+    }
+
+    .hero-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin: 0 auto 40px;
+      max-width: 620px;
+      line-height: 1.8;
+    }
+
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+    /* ===== STATS BANNER ===== */
+    .stats-banner {
+      background: var(--soft-white);
+      border-top: 1px solid var(--sand);
+      border-bottom: 1px solid var(--sand);
+      padding: 0;
+      width: 100%;
+    }
+    .stats-banner-inner {
+      display: flex;
+      width: 100%;
+    }
+    .stats-banner-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 28px 32px;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.4;
+      transition: background 0.25s;
+    }
+    .stats-banner-item:not(:last-child) {
+      border-right: 1px solid var(--sand);
+    }
+    .stats-banner-item:hover {
+      background: rgba(184,80,66,0.03);
+    }
+    .stats-banner-stat {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--terracotta);
+      font-weight: 700;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .stats-banner-text {
+      text-align: left;
+    }
+    .stats-banner-source {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-decoration: underline;
+      text-decoration-color: rgba(0,0,0,0.15);
+      text-underline-offset: 2px;
+      margin-top: 2px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 48px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-primary {
+      background: var(--terracotta);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(184,80,66,0.3); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--terracotta);
+      border: 2px solid var(--terracotta);
+    }
+    .btn-secondary:hover { background: rgba(184,80,66,0.06); }
+
+    /* ===== ABOUT ===== */
+    .about { background: var(--soft-white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .section-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--terracotta);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--deep-brown);
+      margin-bottom: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .about-photo {
+      width: 100%;
+      height: 320px;
+      border-radius: 14px;
+      margin-bottom: 28px;
+      object-fit: cover;
+      display: block;
+    }
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .about-cta-card {
+      margin-top: 28px;
+      padding: 32px;
+      background: var(--terracotta);
+      border-radius: 12px;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-cta-card::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -20%;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      pointer-events: none;
+    }
+    .about-cta-card h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .about-cta-card p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    .about-cta-card .btn {
+      background: #fff;
+      color: var(--terracotta);
+    }
+    .about-cta-card .btn:hover {
+      background: var(--cream);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .about-values {
+      display: grid;
+      gap: 24px;
+    }
+    .about-value {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 28px 32px;
+      border-left: 4px solid var(--terracotta);
+    }
+    .about-value h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--deep-brown);
+      margin-bottom: 8px;
+    }
+    .about-value p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== SERVICES ===== */
+    .services { background: var(--cream); }
+
+    .services-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 64px;
+    }
+    .services-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-top: 16px;
+    }
+
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .tier-card {
+      background: var(--soft-white);
+      border: 1px solid var(--sand);
+      border-radius: 16px;
+      padding: 36px 32px;
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .tier-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(61,43,31,0.08); }
+
+    .tier-card.featured {
+      border-color: var(--terracotta);
+      border-width: 2px;
+      position: relative;
+    }
+    .tier-badge {
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--terracotta);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 18px;
+      border-radius: 20px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .tier-name {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--deep-brown);
+      margin-bottom: 8px;
+    }
+    .tier-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .tier-price {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+    }
+    .tier-price-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .tier-features {
+      list-style: none;
+      margin-bottom: 32px;
+      flex-grow: 1;
+    }
+    .tier-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .tier-features li::before {
+      content: '✓';
+      flex-shrink: 0;
+      color: var(--terracotta);
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    .tier-cta { width: 100%; text-align: center; justify-content: center; }
+
+    .upgrade-note {
+      text-align: center;
+      margin-top: 40px;
+      padding: 24px 32px;
+      background: var(--sand-light);
+      border-radius: 12px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .upgrade-note strong { color: var(--terracotta); }
+
+    /* ===== SCORECARD PREVIEW ===== */
+    .scorecard-preview {
+      margin-top: 80px;
+      text-align: center;
+    }
+    .scorecard-preview .section-label { margin-bottom: 16px; }
+    .scorecard-preview .section-heading { margin-bottom: 16px; }
+    .scorecard-preview-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .scorecard-viewer {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .scorecard-image-wrap {
+      flex: 1;
+      max-width: 600px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(61,43,31,0.12);
+      border: 1px solid var(--sand);
+      background: #fff;
+    }
+    .scorecard-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+    }
+    .scorecard-nav {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--sand);
+      background: var(--soft-white);
+      color: var(--deep-brown);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s;
+      flex-shrink: 0;
+    }
+    .scorecard-nav:hover:not(:disabled) {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+      background: #fff;
+    }
+    .scorecard-nav:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .scorecard-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .scorecard-page-label {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--deep-brown);
+      min-width: 120px;
+      text-align: right;
+    }
+    .scorecard-page-count {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      min-width: 120px;
+      text-align: left;
+    }
+    .scorecard-dots {
+      display: flex;
+      gap: 10px;
+    }
+    .scorecard-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--sand);
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.25s;
+    }
+    .scorecard-dot.active {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+    }
+    .scorecard-dot:hover:not(.active) {
+      border-color: var(--terracotta-light);
+    }
+
+    /* ===== RESOURCE SECTION ===== */
+    .resource-section {
+      background: var(--cream);
+      padding: 72px 48px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact { background: var(--deep-brown); color: var(--cream); position: relative; overflow: hidden; }
+    .contact .bg-spiral {
+      position: absolute;
+      bottom: -55%;
+      right: -25%;
+      width: 960px;
+      height: 960px;
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .contact .section-inner { position: relative; z-index: 1; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact .section-label { color: var(--terracotta-light); }
+    .contact .section-heading { color: var(--cream); }
+
+    .contact-text {
+      color: rgba(250,246,240,0.7);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .contact-info { list-style: none; }
+    .contact-info li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+      color: rgba(250,246,240,0.85);
+      font-size: 1rem;
+    }
+    .contact-info li svg {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      color: var(--terracotta-light);
+    }
+    .contact-info a {
+      color: rgba(250,246,240,0.85);
+      text-decoration: underline;
+      text-decoration-color: rgba(250,246,240,0.3);
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .contact-info a:hover { color: #fff; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(250,246,240,0.8);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 14px 16px;
+      background: rgba(250,246,240,0.08);
+      border: 1px solid rgba(250,246,240,0.15);
+      border-radius: 8px;
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(250,246,240,0.35);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--terracotta-light);
+      background: rgba(250,246,240,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select option { background: var(--deep-brown); color: var(--cream); }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--deep-brown);
+      border-top: 1px solid rgba(250,246,240,0.08);
+      padding: 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    footer p {
+      color: rgba(250,246,240,0.4);
+      font-size: 0.85rem;
+    }
+    footer a {
+      color: rgba(250,246,240,0.6);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    footer a:hover { color: var(--cream); }
+    footer .footer-standards {
+      margin-top: 8px;
+      font-size: 0.75rem;
+      color: rgba(250,246,240,0.3);
+    }
+    footer .footer-standards a { color: rgba(250,246,240,0.4); font-size: 0.75rem; }
+
+    /* ===== FREE RESOURCE BANNER ===== */
+    .resource-banner {
+      background: linear-gradient(135deg, var(--sand) 0%, var(--sand-light) 100%);
+      border-radius: 16px;
+      padding: 48px;
+      margin-top: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .resource-banner h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--deep-brown);
+      margin-bottom: 8px;
+    }
+    .resource-banner p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .fade-up.d1 { animation-delay: 0.1s; }
+    .fade-up.d2 { animation-delay: 0.2s; }
+    .fade-up.d3 { animation-delay: 0.3s; }
+    .fade-up.d4 { animation-delay: 0.4s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px; left: 0; right: 0;
+        background: var(--cream);
+        padding: 16px 32px 24px;
+        border-bottom: 1px solid var(--sand);
+        box-shadow: 0 8px 24px rgba(61,43,31,0.1);
+      }
+      .nav-links.open li { width: 100%; }
+      .nav-links.open a { width: 100%; }
+    }
+
+    @media (max-width: 900px) {
+      .hero { padding-top: 120px; }
+      .hero h1 { font-size: 2rem; }
+      .hero-content { gap: 48px; }
+      .stats-banner-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .stats-banner-item:not(:last-child) { border-right: none; }
+      .stats-banner-item { border-bottom: 1px solid var(--sand); border-right: none; }
+      .stats-banner-item:nth-child(odd) { border-right: 1px solid var(--sand); }
+      .stats-banner-item:nth-child(n+3) { border-bottom: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .tier-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .resource-banner { flex-direction: column; text-align: center; padding: 36px 28px; }
+      .resource-section { padding: 72px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      section { padding: 72px 24px; }
+      .stats-banner { padding: 0; }
+      .scorecard-preview { margin-top: 56px; }
+      .scorecard-page-label, .scorecard-page-count { min-width: auto; }
+    }
+
+    /* SC 1.4.10 Reflow: Content must reflow at 320px without horizontal scrolling */
+    @media (max-width: 400px) {
+      section { padding: 56px 16px; }
+      .nav-inner { padding: 0 16px; }
+      section { padding: 56px 16px; }
+      .hero { padding-top: 100px; padding-bottom: 56px; }
+      .hero h1 { font-size: 1.75rem; }
+      .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.08em; }
+      .hero-text { font-size: 1rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; text-align: center; justify-content: center; }
+      .stats-banner-inner { grid-template-columns: 1fr; }
+      .stats-banner-item:nth-child(odd) { border-right: none; }
+      .stats-banner-item { border-bottom: 1px solid var(--sand); }
+      .stats-banner-item:last-child { border-bottom: none; }
+      .section-heading { font-size: 1.6rem; }
+      .about-photo { height: 240px; }
+      .about-cta-card .btn { width: 100%; text-align: center; justify-content: center; }
+      .tier-card { padding: 28px 20px; }
+      .tier-price { font-size: 2rem; }
+      .tier-cta { text-align: center; justify-content: center; }
+      .resource-banner { padding: 28px 20px; }
+      .resource-banner .btn { width: 100%; text-align: center; justify-content: center; }
+      .resource-section { padding: 56px 16px; }
+      .scorecard-nav { width: 36px; height: 36px; }
+      .scorecard-viewer { gap: 8px; }
+      .scorecard-controls { gap: 12px; flex-wrap: wrap; }
+      .scorecard-page-label { display: none; }
+      .scorecard-page-count { min-width: auto; text-align: center; }
+      .scorecard-preview .btn { width: 100%; text-align: center; justify-content: center; }
+      .contact-grid { gap: 36px; }
+      .contact-form { gap: 16px; }
+      .form-group input,
+      .form-group textarea,
+      .form-group select { padding: 12px 14px; font-size: 16px; /* Prevents iOS zoom on focus */ }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-up { animation: none; opacity: 1; }
+      .btn, .tier-card, nav { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" aria-label="UX by Lidia Ochoa - Home"><img src="spiral-mark.svg" alt="" aria-hidden="true"> UX by <span>Lidia Ochoa</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Get Your Free Scorecard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <p class="hero-eyebrow fade-up">Accessibility Evaluations for EdTech</p>
+        <h1 id="hero-heading" class="fade-up d1">Your mission is to meet every learner where they are.<br><em>Mine is to help you get there.</em></h1>
+        <p class="hero-text fade-up d2">I help EdTech companies and online learning platforms identify and fix accessibility barriers through evaluations informed by real experience working with students with disabilities.</p>
+        <div class="hero-actions fade-up d3">
+          <a href="#contact" class="btn btn-primary">Get Your Free Scorecard</a>
+          <a href="#services" class="btn btn-secondary">View Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS BANNER -->
+    <section class="stats-banner" aria-label="Key accessibility statistics">
+      <div class="stats-banner-inner">
+        <a href="https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html" target="_blank" rel="noopener noreferrer" class="stats-banner-item">
+          <span class="stats-banner-stat">1 in 5</span>
+          <span class="stats-banner-text">Americans live with a disability<span class="stats-banner-source">U.S. Census Bureau</span></span>
+        </a>
+        <a href="https://www.accessibility.works/blog/ada-lawsuit-trends-statistics-2024-summary/" target="_blank" rel="noopener noreferrer" class="stats-banner-item">
+          <span class="stats-banner-stat">4,000+</span>
+          <span class="stats-banner-text">ADA lawsuits filed in 2024<span class="stats-banner-source">Accessibility.works</span></span>
+        </a>
+        <a href="https://baymard.com/learn/ux-statistics" target="_blank" rel="noopener noreferrer" class="stats-banner-item">
+          <span class="stats-banner-stat">88%</span>
+          <span class="stats-banner-text">of users won&rsquo;t return after a bad experience<span class="stats-banner-source">Baymard Institute</span></span>
+        </a>
+        <a href="https://www.ada.gov/law-and-regs/regulations/title-ii-2024-final-rule/" target="_blank" rel="noopener noreferrer" class="stats-banner-item">
+          <span class="stats-banner-stat">Title II</span>
+          <span class="stats-banner-text">compliance tied to federal education funding<span class="stats-banner-source">ADA.gov</span></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="section-label">My Story</p>
+            <h2 class="section-heading" id="about-heading">Accessibility isn&rsquo;t a checklist. It&rsquo;s a commitment to people.</h2>
+            <p>I&rsquo;m Lidia Ochoa, a UX designer and accessibility specialist for educational platforms. What makes my approach different is that my 7 year career as an educator working directly with students with disabilities allows me to evaluate beyond compliance checklists. I&rsquo;ve watched talented learners struggle with platforms that weren&rsquo;t built with them in mind.</p>
+            <p>That experience has transformed how I see design. Accessibility isn&rsquo;t an afterthought or a compliance checkbox &mdash; it&rsquo;s a fundamental part of whether your platform actually works for the people it&rsquo;s supposed to serve.</p>
+            <p>I hold a Google UX Certificate and specialize in evaluating EdTech platforms through the lens of real usability: not just what the code says, but what the learner actually experiences.</p>
+            <div class="about-cta-card">
+              <h3>5 Accessibility Quick Wins for EdTech Platforms</h3>
+              <p>A free guide with the most impactful fixes you can make today.</p>
+              <a href="#contact" class="btn btn-primary" style="margin-top: 12px; font-size: 0.9rem; padding: 12px 24px;">Download Free Guide</a>
+            </div>
+          </div>
+          <div class="about-right">
+            <img class="about-photo" src="lidia-photo.png" alt="Lidia Ochoa smiling on a waterfront bench in golden hour light" loading="lazy">
+            <div class="about-values">
+            <div class="about-value">
+              <h3>Empathy First</h3>
+              <p>Every evaluation starts from the learner&rsquo;s perspective. Flagged violations are paired with an explanation of what they mean for real people trying to learn.</p>
+            </div>
+            <div class="about-value">
+              <h3>Actionable, Not Overwhelming</h3>
+              <p>You&rsquo;ll get clear and concise priorities. Every recommendation comes with severity, impact, and a path forward.</p>
+            </div>
+            <div class="about-value">
+              <h3>Education Expertise</h3>
+              <p>I understand how learning platforms work, how learners navigate them, and where the most common accessibility barriers hide in course flows, LMS interfaces, and enrollment processes.</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="section-inner">
+        <div class="services-header">
+          <p class="section-label">Services</p>
+          <h2 class="section-heading" id="services-heading">Three ways to make your platform more accessible</h2>
+          <p>Every engagement starts with understanding your platform and your learners. Pick the depth that&rsquo;s right for where you are.</p>
+        </div>
+
+        <div class="tier-grid">
+          <!-- FREE -->
+          <div class="tier-card">
+            <h3 class="tier-name">Accessibility Scorecard</h3>
+            <p class="tier-desc">A quick, high-impact review of your platform against the most critical accessibility standards.</p>
+            <p class="tier-price">Free</p>
+            <p class="tier-price-note">No strings attached</p>
+            <ul class="tier-features">
+              <li>10 key accessibility criteria assessed</li>
+              <li>Automated scan + UX interpretation</li>
+              <li>Severity &amp; priority indicators</li>
+              <li>Delivered as a personalized report page</li>
+              <li>Yours to keep!</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary tier-cta">Request Scorecard</a>
+          </div>
+
+          <!-- ESSENTIAL -->
+          <div class="tier-card featured">
+            <span class="tier-badge">Most Popular</span>
+            <h3 class="tier-name">Essential Evaluation</h3>
+            <p class="tier-desc">A thorough review across 20+ accessibility criteria with prioritized fix recommendations and a professional deliverable.</p>
+            <p class="tier-price">$200</p>
+            <p class="tier-price-note">50% deposit &middot; 50% on delivery &middot; 5 business days</p>
+            <ul class="tier-features">
+              <li>Everything in the Scorecard</li>
+              <li>20+ criteria evaluated in detail</li>
+              <li>Prioritized fix recommendations</li>
+              <li>Severity &amp; impact ratings</li>
+              <li>Summary slide deck</li>
+              <li>WCAG 2.1 AA compliance check</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary tier-cta">Get Started</a>
+          </div>
+
+          <!-- COMPREHENSIVE -->
+          <div class="tier-card">
+            <h3 class="tier-name">Comprehensive Evaluation</h3>
+            <p class="tier-desc">A full usability + accessibility audit across 10 evaluation categories with a walkthrough call.</p>
+            <p class="tier-price">$800</p>
+            <p class="tier-price-note">50% deposit &middot; 50% on delivery &middot; 10 business days</p>
+            <ul class="tier-features">
+              <li>Everything in the Essential</li>
+              <li>Usability review spanning 10 categories — from navigation to error handling</li>
+              <li>Full accessibility evaluation</li>
+              <li>Detailed slide deck &amp; report</li>
+              <li>30-minute walkthrough call</li>
+              <li>Stakeholder questionnaire intake</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary tier-cta">Learn More</a>
+          </div>
+        </div>
+
+        <div class="upgrade-note">
+          <strong>Upgrade anytime:</strong> If you start with the Essential and decide you want the Comprehensive, your Essential fee is credited in full toward the upgrade.
+        </div>
+
+        <!-- Scorecard Preview -->
+        <div class="scorecard-preview fade-up" id="scorecard-preview">
+          <p class="section-label">Sample Scorecard</p>
+          <h3 class="section-heading">See what you&rsquo;ll receive</h3>
+          <p class="scorecard-preview-desc">Every evaluation includes a personalized accessibility scorecard. Click through a sample below.</p>
+          <div class="scorecard-viewer" role="region" aria-label="Scorecard page viewer" aria-roledescription="carousel">
+            <button class="scorecard-nav scorecard-prev" aria-label="Previous page" disabled>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M13 4L7 10L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="scorecard-image-wrap">
+              <img class="scorecard-image" src="scorecard-page-1.png" alt="Scorecard page 1 of 4: Cover page with platform details and branding" draggable="false">
+            </div>
+            <button class="scorecard-nav scorecard-next" aria-label="Next page">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div class="scorecard-controls">
+            <span class="scorecard-page-label">Cover</span>
+            <div class="scorecard-dots" role="tablist" aria-label="Scorecard pages">
+              <button class="scorecard-dot active" role="tab" aria-selected="true" aria-label="Page 1: Cover"></button>
+              <button class="scorecard-dot" role="tab" aria-selected="false" aria-label="Page 2: Executive Summary"></button>
+              <button class="scorecard-dot" role="tab" aria-selected="false" aria-label="Page 3: Top 10 Issues"></button>
+              <button class="scorecard-dot" role="tab" aria-selected="false" aria-label="Page 4: What This Means"></button>
+            </div>
+            <span class="scorecard-page-count">1 / 4</span>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="margin-top: 32px;">Get Your Free Scorecard</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREE RESOURCE -->
+    <section class="resource-section" aria-label="Free accessibility guide">
+      <div class="section-inner">
+        <div class="resource-banner">
+          <div>
+            <h3>5 Accessibility Quick Wins for EdTech Platforms</h3>
+            <p>A free guide with the most impactful fixes you can make today. </p>
+          </div>
+          <a href="#contact" class="btn btn-primary">Download Free Guide</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <svg class="bg-spiral" viewBox="24.5 22.6 54.7 50.9" aria-hidden="true"><path d="M52.4,50.2L52.5,50.6L52.6,51.0L52.5,51.5L52.4,52.0L52.2,52.4L51.8,52.9L51.5,53.2L51.0,53.6L50.4,53.9L49.8,54.0L49.2,54.1L48.5,54.1L47.8,53.9L47.1,53.7L46.5,53.3L45.9,52.8L45.3,52.2L44.9,51.5L44.6,50.7L44.4,49.9L44.3,48.9L44.4,48.0L44.6,47.1L45.0,46.2L45.5,45.3L46.2,44.6L47.1,43.9L48.0,43.4L49.0,43.0L50.1,42.8L51.3,42.7L52.5,42.8L53.6,43.2L54.7,43.7L55.8,44.4L56.7,45.3L57.5,46.3L58.2,47.5L58.6,48.8L58.9,50.1L58.9,51.5L58.7,53.0L58.3,54.4L57.6,55.7L56.7,56.9L55.7,58.0L54.4,59.0L53.0,59.7L51.5,60.2L49.9,60.5L48.2,60.5L46.6,60.2L44.9,59.7L43.4,58.9L41.9,57.9L40.7,56.6L39.6,55.2L38.8,53.5L38.2,51.7L37.9,49.9L37.9,48.0L38.2,46.1L38.9,44.2L39.8,42.4L41.0,40.8L42.4,39.4L44.1,38.2L46.0,37.2L48.0,36.6L50.1,36.3L52.3,36.3L54.4,36.7L56.5,37.4L58.5,38.5L60.3,39.8L61.9,41.5L63.3,43.4L64.3,45.5L65.0,47.7L65.3,50.1L65.3,52.5L64.8,54.9L64.0,57.3L62.8,59.5L61.3,61.5L59.5,63.2L57.4,64.7L55.0,65.8L52.5,66.6L49.9,66.9L47.2,66.8L44.6,66.4L42.0,65.5L39.6,64.1L37.4,62.5L35.5,60.4L33.9,58.1L32.7,55.5L31.8,52.8L31.5,49.9L31.6,47.0L32.1,44.1L33.1,41.3L34.6,38.6L36.4,36.3L38.6,34.2L41.2,32.4L44.0,31.1L47.0,30.3L50.1,29.9L53.3,30.0L56.4,30.6L59.5,31.7L62.3,33.2L64.9,35.3L67.1,37.7L69.0,40.4L70.4,43.5L71.3,46.7L71.8,50.1A2.3,2.3,0,0,0,76.2,49.9L75.7,45.8L74.6,41.9L72.8,38.2L70.6,34.9L67.8,32.0L64.7,29.6L61.2,27.7L57.5,26.4L53.7,25.7L49.9,25.6L46.1,26.1L42.5,27.2L39.1,28.8L36.0,31.0L33.4,33.5L31.1,36.4L29.4,39.6L28.2,43.0L27.6,46.6L27.5,50.1L28.0,53.6L29.0,56.9L30.5,60.0L32.5,62.9L34.9,65.3L37.5,67.3L40.5,68.9L43.6,70.0L46.9,70.5L50.1,70.6L53.3,70.1L56.3,69.2L59.2,67.8L61.7,66.0L64.0,63.8L65.8,61.3L67.2,58.6L68.2,55.8L68.7,52.8L68.7,49.9L68.3,47.0L67.4,44.2L66.1,41.7L64.4,39.4L62.5,37.4L60.2,35.7L57.8,34.5L55.2,33.6L52.5,33.2L49.9,33.2L47.3,33.6L44.8,34.4L42.5,35.6L40.5,37.1L38.7,38.9L37.3,40.9L36.1,43.1L35.4,45.4L35.1,47.8L35.1,50.1L35.5,52.4L36.2,54.6L37.3,56.6L38.6,58.4L40.2,60.0L42.0,61.2L43.9,62.2L46.0,62.8L48.1,63.1L50.1,63.0L52.1,62.7L54.0,62.0L55.8,61.1L57.3,59.9L58.6,58.5L59.7,56.9L60.5,55.2L61.0,53.4L61.2,51.6L61.1,49.9L60.8,48.2L60.2,46.6L59.4,45.1L58.3,43.8L57.1,42.7L55.8,41.8L54.3,41.2L52.8,40.8L51.3,40.7L49.9,40.7L48.4,41.1L47.1,41.6L45.9,42.3L44.9,43.2L44.0,44.2L43.3,45.3L42.9,46.5L42.6,47.7L42.5,49.0L42.6,50.1L42.9,51.3L43.4,52.3L44.0,53.2L44.7,54.0L45.6,54.6L46.5,55.1L47.4,55.5L48.3,55.6L49.3,55.6L50.2,55.5L51.0,55.2L51.7,54.8L52.4,54.3L52.9,53.7L53.3,53.1L53.6,52.4L53.8,51.7L53.8,51.0L53.7,50.4L53.6,49.8A0.6,0.6,0,0,0,52.4,50.2Z" fill="#FAF6F0"/></svg>
+      <div class="section-inner">
+        <div class="contact-grid">
+          <div>
+            <p class="section-label">Get in Touch</p>
+            <h2 class="section-heading" id="contact-heading">Let&rsquo;s make your platform work for every learner</h2>
+            <p class="contact-text">Whether you want the free scorecard, have questions about a specific evaluation tier, or just want to talk about accessibility &mdash; I&rsquo;d love to hear from you.</p>
+            <ul class="contact-info">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:lidia.ochoa@uxbylidiaochoa.com">lidia.ochoa@uxbylidiaochoa.com</a>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Seattle, Washington
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <a href="https://www.linkedin.com/in/lidia-ochoa/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+              </li>
+            </ul>
+          </div>
+          <form class="contact-form" action="#" method="POST" aria-label="Contact form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true">
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" placeholder="you@company.com" required aria-required="true">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="company">Company / Platform Name</label>
+              <input type="text" id="company" name="company" placeholder="Your EdTech company or platform">
+            </div>
+            <div class="form-group">
+              <label for="interest">I&rsquo;m interested in&hellip;</label>
+              <select id="interest" name="interest">
+                <option value="">Select an option</option>
+                <option value="scorecard">Free Accessibility Scorecard</option>
+                <option value="essential">Essential Evaluation ($200)</option>
+                <option value="comprehensive">Comprehensive Evaluation ($800)</option>
+                <option value="guide">Free Quick Wins Guide</option>
+                <option value="other">Just want to connect</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="website">Website URL</label>
+              <input type="url" id="website" name="website" placeholder="https://yourplatform.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Anything else?</label>
+              <textarea id="message" name="message" placeholder="Tell me about your platform, your learners, or any specific concerns..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UX by Lidia Ochoa. All rights reserved. &nbsp;|&nbsp; <a href="#">Accessibility Statement</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/lidia-ochoa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p class="footer-standards">
+      Built to comply with:
+      <a href="https://www.w3.org/TR/wai-aria-1.2/" target="_blank" rel="noopener noreferrer">WAI-ARIA 1.2</a> &middot;
+      <a href="https://aaardvarkaccessibility.com/wcag-principle/robust/" target="_blank" rel="noopener noreferrer">WCAG Robust Principle</a> &middot;
+      <a href="https://www.w3.org/WAI/WCAG22/Understanding/reflow.html" target="_blank" rel="noopener noreferrer">WCAG SC 1.4.10: Reflow</a>
+    </p>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    // Close mobile nav on link click
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Intersection Observer for fade-in on scroll
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    }
+
+    // Scorecard viewer
+    (function() {
+      const pages = [
+        { src: 'scorecard-page-1.png', label: 'Cover', alt: 'Scorecard page 1 of 4: Cover page with platform details and branding' },
+        { src: 'scorecard-page-2.png', label: 'Executive Summary', alt: 'Scorecard page 2 of 4: Executive summary with overall score and key findings' },
+        { src: 'scorecard-page-3.png', label: 'Top 10 Issues', alt: 'Scorecard page 3 of 4: Top 10 accessibility issues identified' },
+        { src: 'scorecard-page-4.png', label: 'What This Means', alt: 'Scorecard page 4 of 4: Severity guide and next steps' }
+      ];
+      let current = 0;
+      const img = document.querySelector('.scorecard-image');
+      const prevBtn = document.querySelector('.scorecard-prev');
+      const nextBtn = document.querySelector('.scorecard-next');
+      const dots = document.querySelectorAll('.scorecard-dot');
+      const label = document.querySelector('.scorecard-page-label');
+      const count = document.querySelector('.scorecard-page-count');
+
+      function showPage(index) {
+        current = index;
+        img.src = pages[current].src;
+        img.alt = pages[current].alt;
+        label.textContent = pages[current].label;
+        count.textContent = (current + 1) + ' / ' + pages.length;
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === pages.length - 1;
+        dots.forEach(function(dot, i) {
+          dot.classList.toggle('active', i === current);
+          dot.setAttribute('aria-selected', i === current);
+        });
+      }
+
+      prevBtn.addEventListener('click', function() { if (current > 0) showPage(current - 1); });
+      nextBtn.addEventListener('click', function() { if (current < pages.length - 1) showPage(current + 1); });
+      dots.forEach(function(dot, i) { dot.addEventListener('click', function() { showPage(i); }); });
+
+      // Keyboard navigation
+      var viewer = document.querySelector('.scorecard-viewer');
+      viewer.setAttribute('tabindex', '0');
+      viewer.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft' && current > 0) { showPage(current - 1); e.preventDefault(); }
+        if (e.key === 'ArrowRight' && current < pages.length - 1) { showPage(current + 1); e.preventDefault(); }
+      });
+    })();
+  </script>
+</body>
+</html>

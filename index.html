@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="UX by Lidia Ochoa — Accessibility evaluations for EdTech platforms. UX-driven audits informed by real experience with students with disabilities.">
   <title>UX by Lidia Ochoa — Accessibility for EdTech</title>
+  <link rel="icon" type="image/svg+xml" href="spiral-mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -99,17 +100,15 @@
     }
 
     .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      color: var(--deep-brown);
       text-decoration: none;
-      letter-spacing: -0.02em;
       display: flex;
       align-items: center;
-      gap: 10px;
       white-space: nowrap;
     }
-    .nav-logo span { color: var(--terracotta); }
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+    }
 
     .nav-links { display: flex; gap: 8px; align-items: center; list-style: none; }
     .nav-links li { display: flex; }
@@ -755,7 +754,7 @@
   <!-- NAV -->
   <nav aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#home" class="nav-logo" aria-label="UX by Lidia Ochoa - Home"><svg viewBox="24.5 22.6 54.7 50.9" width="28" height="28" aria-hidden="true" style="flex-shrink:0"><path d="M52.4,50.2L52.5,50.6L52.6,51.0L52.5,51.5L52.4,52.0L52.2,52.4L51.8,52.9L51.5,53.2L51.0,53.6L50.4,53.9L49.8,54.0L49.2,54.1L48.5,54.1L47.8,53.9L47.1,53.7L46.5,53.3L45.9,52.8L45.3,52.2L44.9,51.5L44.6,50.7L44.4,49.9L44.3,48.9L44.4,48.0L44.6,47.1L45.0,46.2L45.5,45.3L46.2,44.6L47.1,43.9L48.0,43.4L49.0,43.0L50.1,42.8L51.3,42.7L52.5,42.8L53.6,43.2L54.7,43.7L55.8,44.4L56.7,45.3L57.5,46.3L58.2,47.5L58.6,48.8L58.9,50.1L58.9,51.5L58.7,53.0L58.3,54.4L57.6,55.7L56.7,56.9L55.7,58.0L54.4,59.0L53.0,59.7L51.5,60.2L49.9,60.5L48.2,60.5L46.6,60.2L44.9,59.7L43.4,58.9L41.9,57.9L40.7,56.6L39.6,55.2L38.8,53.5L38.2,51.7L37.9,49.9L37.9,48.0L38.2,46.1L38.9,44.2L39.8,42.4L41.0,40.8L42.4,39.4L44.1,38.2L46.0,37.2L48.0,36.6L50.1,36.3L52.3,36.3L54.4,36.7L56.5,37.4L58.5,38.5L60.3,39.8L61.9,41.5L63.3,43.4L64.3,45.5L65.0,47.7L65.3,50.1L65.3,52.5L64.8,54.9L64.0,57.3L62.8,59.5L61.3,61.5L59.5,63.2L57.4,64.7L55.0,65.8L52.5,66.6L49.9,66.9L47.2,66.8L44.6,66.4L42.0,65.5L39.6,64.1L37.4,62.5L35.5,60.4L33.9,58.1L32.7,55.5L31.8,52.8L31.5,49.9L31.6,47.0L32.1,44.1L33.1,41.3L34.6,38.6L36.4,36.3L38.6,34.2L41.2,32.4L44.0,31.1L47.0,30.3L50.1,29.9L53.3,30.0L56.4,30.6L59.5,31.7L62.3,33.2L64.9,35.3L67.1,37.7L69.0,40.4L70.4,43.5L71.3,46.7L71.8,50.1A2.3,2.3,0,0,0,76.2,49.9L75.7,45.8L74.6,41.9L72.8,38.2L70.6,34.9L67.8,32.0L64.7,29.6L61.2,27.7L57.5,26.4L53.7,25.7L49.9,25.6L46.1,26.1L42.5,27.2L39.1,28.8L36.0,31.0L33.4,33.5L31.1,36.4L29.4,39.6L28.2,43.0L27.6,46.6L27.5,50.1L28.0,53.6L29.0,56.9L30.5,60.0L32.5,62.9L34.9,65.3L37.5,67.3L40.5,68.9L43.6,70.0L46.9,70.5L50.1,70.6L53.3,70.1L56.3,69.2L59.2,67.8L61.7,66.0L64.0,63.8L65.8,61.3L67.2,58.6L68.2,55.8L68.7,52.8L68.7,49.9L68.3,47.0L67.4,44.2L66.1,41.7L64.4,39.4L62.5,37.4L60.2,35.7L57.8,34.5L55.2,33.6L52.5,33.2L49.9,33.2L47.3,33.6L44.8,34.4L42.5,35.6L40.5,37.1L38.7,38.9L37.3,40.9L36.1,43.1L35.4,45.4L35.1,47.8L35.1,50.1L35.5,52.4L36.2,54.6L37.3,56.6L38.6,58.4L40.2,60.0L42.0,61.2L43.9,62.2L46.0,62.8L48.1,63.1L50.1,63.0L52.1,62.7L54.0,62.0L55.8,61.1L57.3,59.9L58.6,58.5L59.7,56.9L60.5,55.2L61.0,53.4L61.2,51.6L61.1,49.9L60.8,48.2L60.2,46.6L59.4,45.1L58.3,43.8L57.1,42.7L55.8,41.8L54.3,41.2L52.8,40.8L51.3,40.7L49.9,40.7L48.4,41.1L47.1,41.6L45.9,42.3L44.9,43.2L44.0,44.2L43.3,45.3L42.9,46.5L42.6,47.7L42.5,49.0L42.6,50.1L42.9,51.3L43.4,52.3L44.0,53.2L44.7,54.0L45.6,54.6L46.5,55.1L47.4,55.5L48.3,55.6L49.3,55.6L50.2,55.5L51.0,55.2L51.7,54.8L52.4,54.3L52.9,53.7L53.3,53.1L53.6,52.4L53.8,51.7L53.8,51.0L53.7,50.4L53.6,49.8A0.6,0.6,0,0,0,52.4,50.2Z" fill="#B85042"/></svg> UX by <span>Lidia Ochoa</span></a>
+      <a href="#home" class="nav-logo" aria-label="UX by Lidia Ochoa - Home"><img src="spiral-logo-with-text.svg" alt="UX by Lidia Ochoa"></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <line x1="3" y1="6" x2="21" y2="6"/>

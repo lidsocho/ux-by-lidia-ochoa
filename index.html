@@ -216,49 +216,50 @@
       line-height: 1.8;
     }
 
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 56px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
-    .hero-data-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
+    /* ===== STATS BANNER ===== */
+    .stats-banner {
+      background: var(--soft-white);
+      border-top: 1px solid var(--sand);
+      border-bottom: 1px solid var(--sand);
+      padding: 0;
       width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
     }
-
-    .hero-pill {
+    .stats-banner-inner {
+      display: flex;
+      width: 100%;
+    }
+    .stats-banner-item {
+      flex: 1;
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 14px 22px;
-      background: var(--soft-white);
-      border: 1px solid var(--sand);
-      border-radius: 48px;
+      gap: 14px;
+      padding: 28px 32px;
       text-decoration: none;
-      transition: all 0.25s;
       color: var(--text-secondary);
-      font-size: 0.88rem;
+      font-size: 1.1rem;
       line-height: 1.4;
+      transition: background 0.25s;
     }
-    .hero-pill:hover {
-      border-color: var(--terracotta);
-      box-shadow: 0 4px 16px rgba(184,80,66,0.08);
-      transform: translateY(-2px);
+    .stats-banner-item:not(:last-child) {
+      border-right: 1px solid var(--sand);
     }
-    .hero-pill-stat {
+    .stats-banner-item:hover {
+      background: rgba(184,80,66,0.03);
+    }
+    .stats-banner-stat {
       font-family: var(--serif);
-      font-size: 1.35rem;
+      font-size: 1.5rem;
       color: var(--terracotta);
       font-weight: 700;
       white-space: nowrap;
       line-height: 1;
     }
-    .hero-pill-text {
+    .stats-banner-text {
       text-align: left;
     }
-    .hero-pill-source {
+    .stats-banner-source {
       display: block;
       font-size: 0.72rem;
       color: var(--text-muted);
@@ -328,7 +329,7 @@
     .about-text p {
       color: var(--text-secondary);
       margin-bottom: 20px;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
     }
 
     .about-photo {
@@ -365,12 +366,12 @@
     }
     .about-cta-card h3 {
       font-family: var(--serif);
-      font-size: 1.15rem;
+      font-size: 1.5rem;
       color: #fff;
       margin-bottom: 8px;
     }
     .about-cta-card p {
-      font-size: 0.92rem;
+      font-size: 1.1rem;
       color: rgba(255,255,255,0.8);
       line-height: 1.6;
       margin-bottom: 0;
@@ -397,12 +398,12 @@
     }
     .about-value h3 {
       font-family: var(--serif);
-      font-size: 1.15rem;
+      font-size: 1.5rem;
       color: var(--deep-brown);
       margin-bottom: 8px;
     }
     .about-value p {
-      font-size: 0.92rem;
+      font-size: 1.1rem;
       color: var(--text-secondary);
       line-height: 1.6;
     }
@@ -417,7 +418,7 @@
     }
     .services-header p {
       color: var(--text-secondary);
-      font-size: 1.08rem;
+      font-size: 1.1rem;
       margin-top: 16px;
     }
 
@@ -461,12 +462,12 @@
 
     .tier-name {
       font-family: var(--serif);
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       color: var(--deep-brown);
       margin-bottom: 8px;
     }
     .tier-desc {
-      font-size: 0.88rem;
+      font-size: 1.1rem;
       color: var(--text-muted);
       margin-bottom: 24px;
       line-height: 1.5;
@@ -495,7 +496,7 @@
       align-items: flex-start;
       gap: 10px;
       padding: 8px 0;
-      font-size: 0.92rem;
+      font-size: 1.1rem;
       color: var(--text-secondary);
       line-height: 1.5;
     }
@@ -546,7 +547,7 @@
 
     .contact-text {
       color: rgba(250,246,240,0.7);
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       margin-bottom: 32px;
     }
 
@@ -693,12 +694,21 @@
       .hero { padding-top: 120px; }
       .hero h1 { font-size: 2rem; }
       .hero-content { gap: 48px; }
+      .stats-banner-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .stats-banner-item:not(:last-child) { border-right: none; }
+      .stats-banner-item { border-bottom: 1px solid var(--sand); border-right: none; }
+      .stats-banner-item:nth-child(odd) { border-right: 1px solid var(--sand); }
+      .stats-banner-item:nth-child(n+3) { border-bottom: none; }
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .tier-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       .resource-banner { flex-direction: column; text-align: center; padding: 36px 28px; }
       .form-row { grid-template-columns: 1fr; }
       section { padding: 72px 24px; }
+      .stats-banner { padding: 0; }
     }
 
     /* SC 1.4.10 Reflow: Content must reflow at 320px without horizontal scrolling */
@@ -712,8 +722,10 @@
       .hero-text { font-size: 1rem; }
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; text-align: center; justify-content: center; }
-      .hero-data-row { flex-direction: column; align-items: stretch; }
-      .hero-pill { border-radius: 12px; }
+      .stats-banner-inner { grid-template-columns: 1fr; }
+      .stats-banner-item:nth-child(odd) { border-right: none; }
+      .stats-banner-item { border-bottom: 1px solid var(--sand); }
+      .stats-banner-item:last-child { border-bottom: none; }
       .section-heading { font-size: 1.6rem; }
       .about-photo { height: 240px; }
       .about-cta-card .btn { width: 100%; text-align: center; justify-content: center; }
@@ -765,30 +777,34 @@
     <section class="hero" id="home" aria-labelledby="hero-heading">
       <div class="hero-content">
         <p class="hero-eyebrow fade-up">Accessibility Evaluations for EdTech</p>
-        <h1 id="hero-heading" class="fade-up d1">Your mission is to meet every learner where they are. <em>Mine is to help you get there.</em></h1>
+        <h1 id="hero-heading" class="fade-up d1">Your mission is to meet every learner where they are.<br><em>Mine is to help you get there.</em></h1>
         <p class="hero-text fade-up d2">I help EdTech companies and online learning platforms identify and fix accessibility barriers &mdash; through evaluations informed by real experience working with students with disabilities, not just checklists.</p>
         <div class="hero-actions fade-up d3">
           <a href="#contact" class="btn btn-primary">Get Your Free Scorecard</a>
           <a href="#services" class="btn btn-secondary">View Services</a>
         </div>
-        <div class="hero-data-row fade-up d4">
-          <a href="https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html" target="_blank" rel="noopener noreferrer" class="hero-pill">
-            <span class="hero-pill-stat">1 in 5</span>
-            <span class="hero-pill-text">Americans live with a disability<span class="hero-pill-source">U.S. Census Bureau</span></span>
-          </a>
-          <a href="https://www.accessibility.works/blog/ada-lawsuit-trends-statistics-2024-summary/" target="_blank" rel="noopener noreferrer" class="hero-pill">
-            <span class="hero-pill-stat">4,000+</span>
-            <span class="hero-pill-text">ADA lawsuits filed in 2024<span class="hero-pill-source">Accessibility.works</span></span>
-          </a>
-          <a href="https://baymard.com/learn/ux-statistics" target="_blank" rel="noopener noreferrer" class="hero-pill">
-            <span class="hero-pill-stat">88%</span>
-            <span class="hero-pill-text">of users won&rsquo;t return after a bad experience<span class="hero-pill-source">Baymard Institute</span></span>
-          </a>
-          <a href="https://www.ada.gov/law-and-regs/regulations/title-ii-2024-final-rule/" target="_blank" rel="noopener noreferrer" class="hero-pill">
-            <span class="hero-pill-stat">Title II</span>
-            <span class="hero-pill-text">compliance tied to federal education funding<span class="hero-pill-source">ADA.gov</span></span>
-          </a>
-        </div>
+      </div>
+    </section>
+
+    <!-- STATS BANNER -->
+    <section class="stats-banner" aria-label="Key accessibility statistics">
+      <div class="stats-banner-inner">
+        <a href="https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html" target="_blank" rel="noopener noreferrer" class="stats-banner-item">
+          <span class="stats-banner-stat">1 in 5</span>
+          <span class="stats-banner-text">Americans live with a disability<span class="stats-banner-source">U.S. Census Bureau</span></span>
+        </a>
+        <a href="https://www.accessibility.works/blog/ada-lawsuit-trends-statistics-2024-summary/" target="_blank" rel="noopener noreferrer" class="stats-banner-item">
+          <span class="stats-banner-stat">4,000+</span>
+          <span class="stats-banner-text">ADA lawsuits filed in 2024<span class="stats-banner-source">Accessibility.works</span></span>
+        </a>
+        <a href="https://baymard.com/learn/ux-statistics" target="_blank" rel="noopener noreferrer" class="stats-banner-item">
+          <span class="stats-banner-stat">88%</span>
+          <span class="stats-banner-text">of users won&rsquo;t return after a bad experience<span class="stats-banner-source">Baymard Institute</span></span>
+        </a>
+        <a href="https://www.ada.gov/law-and-regs/regulations/title-ii-2024-final-rule/" target="_blank" rel="noopener noreferrer" class="stats-banner-item">
+          <span class="stats-banner-stat">Title II</span>
+          <span class="stats-banner-text">compliance tied to federal education funding<span class="stats-banner-source">ADA.gov</span></span>
+        </a>
       </div>
     </section>
 
@@ -1010,18 +1026,4 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.about-value, .tier-card, .resource-banner').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-      });
-    }
-  </script>
-</body>
-</html>
+            entry.tar

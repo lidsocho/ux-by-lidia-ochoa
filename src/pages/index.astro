@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+<BaseLayout title="UX by Lidia Ochoa — UX/Product Designer">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner reveal">
+        <div class="hero__content">
+          <h1 class="hero__title">UX/Product Designer | A11y &amp; Learning Tools</h1>
+          <p class="hero__subtitle">I use my 7 years of classroom experience and work with diverse learners to design research-backed products that remove barriers to financial and academic growth for disabled and neurodivergent individuals.</p>
+          <a href="#projects" class="hero__cta">
+            see a11y focused case studies
+            <span class="hero__cta-arrow bouncy" aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+        <div class="hero__photo">
+          <img
+            src="/images/lidia-profile.png"
+            alt="Lidia smiles, wearing a mustard yellow cardigan and reclining on a bright orange park bench."
+            class="hero__photo-img"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section (Audit #3, #12) -->
+  <section class="section" id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <h2 id="projects-heading" class="mb-md reveal">Recent projects showcasing design thinking, accessibility, learning, and financial tools.</h2>
+      <ul class="projects-grid" role="list">
+        <ProjectCard
+          image="/images/home/comboard-thumb.png"
+          alt="A circle with several augmentative alternative communication board screens"
+          date="4/24 - 9/25"
+          role="UXR & Design"
+          title="ComBoard"
+          description="ETRAN inspired keyboard reduced eye strain & increased independent spelling by 980%"
+          href="/comboard-app"
+          accentColor="#4cc4cf"
+        />
+        <ProjectCard
+          image="/images/home/budget-thumb.png"
+          alt="Circle with mint background featuring several devices with a budget app prototype displayed"
+          date="2/25 - 6/25"
+          role="UXR & Design"
+          title="Budget App"
+          description="Research-backed, WCAG-2.2 aligned app that makes it easy to start and stick to a budget"
+          href="/budgetapp"
+          accentColor="#75d349"
+        />
+        <ProjectCard
+          image="/images/home/portfolio-thumb.svg"
+          alt="Circle with yellow background featuring the portfolio site displayed on a laptop screen"
+          date="1/26 - 3/26"
+          role="Design & Dev"
+          title="Portfolio Site"
+          description="Designing and building an accessible, component-driven portfolio from Webflow to Astro"
+          href="/portfolio-site"
+          accentColor="#ffd44f"
+        />
+        <ProjectCard
+          image="/images/home/a11y-consulting-thumb.svg"
+          alt="Circle with orange background featuring an accessibility audit clipboard checklist"
+          date="1/26 - 2/26"
+          role="Design, Content & Dev"
+          title="A11y Consulting Site"
+          description="Accessibility evaluations for EdTech — free scorecard, quick wins guide, and tiered consulting services"
+          href="/a11y-consulting"
+          accentColor="#ffad00"
+        />
+        <ProjectCard
+          image="/images/home/our-light-thumb.svg"
+          alt="Circle with purple background featuring a radiant light burst"
+          date="Coming Soon"
+          role="TBD"
+          title="Our Light Unbound"
+          description="A creative project exploring accessible design in a new context"
+          href="/our-light-unbound"
+          disabled={true}
+          accentColor="#bea7be"
+        />
+        <ProjectCard
+          image="/images/home/offline-budget-thumb.svg"
+          alt="Circle with teal background featuring a wallet icon"
+          date="Coming Soon"
+          role="TBD"
+          title="Offline Budget Tool"
+          description="An offline-first personal budget tool designed for accessibility and simplicity"
+          href="/offline-budget"
+          disabled={true}
+          accentColor="#4cc4cf"
+        />
+        <ProjectCard
+          image="/images/home/lidia-paints-thumb.png"
+          alt="Circle with lavender background featuring devices with a website prototype displayed"
+          date="9/24 - 12/24"
+          role="Web Design"
+          title="Lidia Paints"
+          description="An intuitive sign-up flow that keeps classes affordable and accessible for local learners"
+          disabled={true}
+          accentColor="#f13989"
+        />
+      </ul>
+    </div>
+  </section>
+
+  <!-- About Me Preview -->
+  <section class="section" id="about-preview" aria-labelledby="about-preview-heading">
+    <div class="container" style="text-align: center;">
+      <div class="reveal">
+        <h2 id="about-preview-heading">About Me</h2>
+        <p class="mt-sm" style="max-width: 480px; margin-inline: auto; color: var(--color-text-secondary);">UX/Product designer in Seattle, WA specializing in accessible learning and financial tools.</p>
+        <a href="/about-me-page" class="about-preview__cta mt-md">
+          Learn more about Lidia
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

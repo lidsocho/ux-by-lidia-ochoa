@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SideNav from '../components/SideNav.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+
+const sections = [
+  { id: 'the-problem', label: 'The Problem' },
+  { id: 'defining-the-offering', label: 'Defining the Offering' },
+  { id: 'design-process', label: 'Design Process' },
+  { id: 'the-scorecard', label: 'The Scorecard' },
+  { id: 'the-guide', label: 'The Guide' },
+  { id: 'accessibility', label: 'Accessibility' },
+  { id: 'outcomes', label: 'Outcomes' },
+  { id: 'learnings', label: 'What I Learned' },
+  { id: 'next-steps', label: 'Next Steps' },
+];
+---
+<BaseLayout title="A11y Consulting Site — Design Case Study | Lidia Ochoa" description="Designing and building an accessibility consulting site with free evaluation tools for EdTech platforms." projectColor="#ffad00">
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="reveal">
+        <h1>A11y Consulting Site</h1>
+        <dl class="case-hero__meta">
+          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Jan – Feb 2026</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Design, Content &amp; Dev (solo)</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>HTML, CSS, JavaScript, Claude Code</dd></div>
+        </dl>
+        <div class="case-hero__tagline-row">
+          <p class="case-hero__tagline">Designing a consulting site and free evaluation tools to help EdTech platforms meet accessibility standards and serve every learner.</p>
+          <a href="https://lidsocho.github.io/ux-by-lidia-ochoa/" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="View the live A11y consulting site (opens in new tab)">
+            View Live Site &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- The Problem -->
+      <section class="case-section section" id="the-problem" aria-labelledby="the-problem-heading">
+        <div class="container">
+          <h2 id="the-problem-heading" class="case-section__heading reveal">The Problem</h2>
+          <p class="reveal">EdTech platforms are built to educate, but many of them exclude the learners who need them most. One in five Americans lives with a disability, yet most educational software fails basic accessibility standards — unlabeled forms, missing heading hierarchy, no keyboard navigation, insufficient contrast. Over 4,000 ADA lawsuits were filed in 2024, and Title II compliance is now tied to federal education funding. The need is urgent, but many EdTech teams do not know where to start or what to fix first.</p>
+          <p class="reveal">I wanted to bridge that gap: take my 7 years of classroom experience working directly with disabled students and translate it into actionable, approachable accessibility consulting that meets EdTech teams where they are.</p>
+
+          <div class="goals-frustrations-banner reveal">
+            <div class="goals-frustrations-banner__inner">
+              <div>
+                <h3>Goals</h3>
+                <ul class="styled-list">
+                  <li>Establish credibility as an accessibility consultant rooted in real classroom experience</li>
+                  <li>Create a free evaluation tool that demonstrates expertise and generates leads</li>
+                  <li>Design a clear service tier system from free to comprehensive</li>
+                  <li>Build the site itself as proof of accessibility practice</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Constraints</h3>
+                <ul class="styled-list">
+                  <li>Solo project — design, content, and code all on me</li>
+                  <li>No budget for hosting — used GitHub Pages</li>
+                  <li>Needed to ship a complete offering quickly, not just a landing page</li>
+                  <li>The site had to meet its own claims — WCAG 2.1 AA or it undermines everything</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Defining the Offering -->
+      <section class="case-section section" id="defining-the-offering" aria-labelledby="defining-offering-heading">
+        <div class="container">
+          <h2 id="defining-offering-heading" class="case-section__heading reveal">Defining the Offering</h2>
+          <p class="reveal">I structured the consulting services around a simple principle: meet people at their level of readiness. Not every team is ready for a full audit, but every team can benefit from knowing where they stand.</p>
+
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
+              <p class="decision-card__response"><strong>Free Scorecard</strong> — a single-page, 10-criteria accessibility review that gives teams an honest snapshot and a reason to take the next step.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+              <p class="decision-card__response"><strong>Quick Wins Guide</strong> — a free downloadable resource covering 5 high-impact accessibility fixes any EdTech team can implement immediately.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+              <p class="decision-card__response"><strong>Essential Evaluation ($500)</strong> — 3–5 page review with cross-page flow analysis, annotated slide deck, and prioritized WCAG-mapped recommendations.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+              <p class="decision-card__response"><strong>Comprehensive Evaluation ($2,000)</strong> — full usability audit with assistive technology testing, a 30-minute walkthrough, and a remediation roadmap.</p>
+            </div>
+          </div>
+
+          <img src="/images/a11y-consulting/service-tiers.svg" alt="Three service tier cards showing the Accessibility Scorecard (free), Essential Evaluation ($500, most popular), and Comprehensive Evaluation ($2,000) with feature lists for each" class="reveal" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- Design Process -->
+      <section class="case-section section" id="design-process" aria-labelledby="design-process-heading">
+        <div class="container">
+          <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
+          <p class="reveal">I prioritized the free deliverables first — the scorecard and quick wins guide — because they needed to be strong enough to stand on their own as demonstrations of expertise before any paid service made sense.</p>
+
+          <h3 class="reveal">Visual Identity</h3>
+          <p class="reveal">I chose a warm, earthy palette — cream backgrounds, terracotta accents, deep brown text — to feel approachable and human rather than clinical or corporate. EdTech teams are often overwhelmed by accessibility jargon; the visual tone needed to say "I'll help you understand this" rather than "you're doing it wrong." Typography pairs DM Serif Display for headings (warmth, authority) with Source Sans 3 for body text (clarity, readability).</p>
+
+          <h3 class="reveal">Content Strategy</h3>
+          <p class="reveal">The homepage opens with four data points — disability statistics, lawsuit numbers, user retention rates, and federal funding requirements — to establish urgency without being alarmist. The about section leads with classroom experience, not certifications, because empathy is the differentiator. Services are presented as tiers rather than a single price, so potential clients can self-select based on their readiness and budget.</p>
+
+          <h3 class="reveal">Information Architecture</h3>
+          <p class="reveal">The site is intentionally small: a homepage with everything a potential client needs to evaluate, decide, and reach out, plus dedicated pages for the guide, scorecard, and accessibility statement. No blog, no pricing calculator, no complexity — just a clear path from "I need help" to "here's how to get it."</p>
+
+          <h3 class="reveal">Interactive Features</h3>
+          <p class="reveal">The scorecard preview section uses an image carousel with keyboard navigation (arrow keys), dot pagination, and a lightbox for full-size viewing. The contact form integrates with Web3Forms for serverless submission. Both features were built with accessibility as a hard requirement: focus trapping in the lightbox, Escape to close, ARIA attributes on all controls.</p>
+        </div>
+      </section>
+
+      <!-- The Scorecard -->
+      <section class="case-section section" id="the-scorecard" aria-labelledby="scorecard-heading">
+        <div class="container">
+          <h2 id="scorecard-heading" class="case-section__heading reveal">The Scorecard</h2>
+          <p class="reveal">The accessibility scorecard is the centerpiece of the consulting offering. It evaluates a single page against 10 criteria drawn directly from WCAG 2.1, each scored out of 20 points with a severity rating and actionable recommendation. The goal was to create something useful enough that a team could act on it immediately, and specific enough that they would trust the expertise behind it.</p>
+
+          <img src="/images/a11y-consulting/scorecard-criteria.svg" alt="Grid showing all 10 evaluation criteria: Heading Hierarchy, Contrast Ratios, Color-Only Information, Text Sizing and Spacing, Form Labels and Inputs, Error Identification, Focus States, Keyboard Access, Alt Text and Images, and Link Purpose. Each scored out of 20 with severity ratings from Critical to Minor." class="reveal" loading="lazy" />
+
+          <p class="reveal">I chose these 10 criteria because they cover the issues I encountered most often in my years working with disabled students: unlabeled controls that screen readers skip, contrast too low for students with low vision, keyboard traps that lock out switch users. Every criterion maps to a specific WCAG success criterion so the report doubles as a compliance reference.</p>
+        </div>
+      </section>
+
+      <!-- The Guide -->
+      <section class="case-section section" id="the-guide" aria-labelledby="guide-heading">
+        <div class="container">
+          <h2 id="guide-heading" class="case-section__heading reveal">The Guide</h2>
+          <p class="reveal">The "5 Accessibility Quick Wins for EdTech Platforms" guide serves two purposes: it gives potential clients immediate value at no cost, and it demonstrates the kind of clear, actionable thinking they would get from a paid engagement. Each of the five wins was chosen because it has an outsized impact relative to its implementation effort — the kind of fix a developer can ship in an afternoon that meaningfully improves the experience for disabled users.</p>
+          <p class="reveal">The guide is available both as a dedicated web page (fully accessible, naturally) and as a downloadable PDF. I designed it with the same warm visual identity as the main site so it reads as a cohesive extension of the brand rather than a generic freebie.</p>
+        </div>
+      </section>
+
+      <!-- Accessibility -->
+      <section class="case-section section" id="accessibility" aria-labelledby="a11y-heading">
+        <div class="container">
+          <h2 id="a11y-heading" class="case-section__heading reveal">Accessibility</h2>
+          <p class="reveal">An accessibility consulting site that fails its own standards would be career-ending. Every element was built and tested to WCAG 2.1 Level AA, with a published accessibility statement inviting users to report barriers.</p>
+
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <p class="decision-card__response"><strong>Color &amp; contrast:</strong> Terracotta-on-cream palette tested to meet AA thresholds (4.5:1 text, 3:1 UI). No information conveyed by color alone.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg></div>
+              <p class="decision-card__response"><strong>Keyboard &amp; focus:</strong> Every interactive element — navigation, carousel, lightbox, form — is fully keyboard accessible with visible 3px terracotta focus outlines.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+              <p class="decision-card__response"><strong>Semantic HTML &amp; ARIA:</strong> Proper heading hierarchy, landmark regions, labeled forms, and ARIA attributes per WAI-ARIA 1.2 — supplementing native semantics, never overriding.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+              <p class="decision-card__response"><strong>Reflow &amp; motion:</strong> Content reflows at 320px (400% zoom) with no horizontal scrolling. All animations respect prefers-reduced-motion.</p>
+            </div>
+          </div>
+
+          <p class="reveal">The site includes a full accessibility statement detailing conformance claims, testing methods, known limitations, and a feedback process with a two-business-day response commitment. If a consultant is going to ask clients to take accessibility seriously, they need to see that seriousness modeled.</p>
+        </div>
+      </section>
+
+      <!-- Outcomes -->
+      <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
+        <div class="container">
+          <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
+          <p class="reveal">The site launched with a complete consulting offering — from free tools to paid tiers — built on a foundation that practices what it preaches.</p>
+          <div class="goal-pair reveal">
+            <div class="goals-frustrations-banner">
+              <h3>Deliverables Shipped</h3>
+              <p>A fully accessible consulting site, a 10-criteria scorecard template, a 5-quick-wins guide (web + PDF), three service tiers with clear scope and pricing, and a published accessibility statement with a feedback process.</p>
+            </div>
+            <div class="goals-frustrations-banner">
+              <h3>Accessibility</h3>
+              <p>WCAG 2.1 AA conformance across all pages. Semantic HTML, keyboard navigation, skip links, focus management, ARIA landmarks, contrast compliance, reflow at 320px, and prefers-reduced-motion support.</p>
+            </div>
+          </div>
+          <div class="user-intro__stats reveal" style="justify-content: center;">
+            <div class="case-hero__badge">10 criteria<span class="case-hero__badge-label">WCAG-mapped scorecard</span></div>
+            <div class="case-hero__badge">3 service tiers<span class="case-hero__badge-label">Free to $2,000</span></div>
+            <div class="case-hero__badge">WCAG 2.1 AA<span class="case-hero__badge-label">Full conformance</span></div>
+            <div class="case-hero__badge">5 quick wins<span class="case-hero__badge-label">Free guide (web + PDF)</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What I Learned -->
+      <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
+        <div class="container">
+          <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
+          <p class="reveal">This project forced me to think about accessibility not just as a design skill but as a service I could package and deliver. Writing the scorecard criteria taught me to be precise about what I was actually evaluating and why — vague feedback like "improve your contrast" is useless to a developer, but "this button's 2.8:1 ratio fails WCAG SC 1.4.3; change the background from #B85042 to #8B3A30 for 4.6:1" is something they can ship in five minutes. Building the consulting site itself reinforced that accessibility is a design constraint like any other — it does not limit creativity, it focuses it. The warm, approachable visual identity I landed on is proof that WCAG compliance and distinctive design are not in tension. Finally, I learned that the hardest part of consulting is not the technical work but the communication: framing accessibility as an opportunity to serve more learners rather than a compliance burden to endure.</p>
+        </div>
+      </section>
+
+      <!-- Next Steps -->
+      <section class="case-section section" id="next-steps" aria-labelledby="next-steps-heading">
+        <div class="container">
+          <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
+          <div class="next-steps reveal">
+            <div class="next-step">
+              <h3 class="next-step__title">Client Engagements</h3>
+              <p class="next-step__text">Complete paid evaluations for EdTech platforms to build a portfolio of consulting work and gather testimonials.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Scorecard Automation</h3>
+              <p class="next-step__text">Explore building an interactive version of the scorecard that auto-checks some criteria (contrast, heading structure, alt text) to scale the free tier.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Screen Reader Testing</h3>
+              <p class="next-step__text">Conduct formal testing with NVDA, JAWS, and VoiceOver to validate the site and scorecard beyond manual review and automated tools.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Content Expansion</h3>
+              <p class="next-step__text">Publish additional guides covering topics like accessible data visualizations, cognitive load in learning tools, and switch access compatibility.</p>
+            </div>
+          </div>
+
+          <PrevNextNav
+            prev={{ title: "Portfolio Site", href: "/portfolio-site" }}
+            next={{ title: "Our Light Unbound", href: "/our-light-unbound" }}
+          />
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

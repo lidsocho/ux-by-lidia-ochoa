@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="Commissioner, Inter, sans-serif">
+  <rect width="960" height="420" fill="#fafaf8"/>
+
+  <!-- Before -->
+  <text x="40" y="30" font-size="11" font-weight="600" fill="#888" style="text-transform:uppercase; letter-spacing:0.5px">Before: Webflow (Generated Markup)</text>
+
+  <rect x="40" y="50" width="400" height="340" rx="12" fill="#f5f4f0" stroke="#ddd" stroke-width="1"/>
+
+  <rect x="80" y="80" width="320" height="40" rx="10" fill="#fff" stroke="#ccc" stroke-width="2"/>
+  <rect x="80" y="80" width="320" height="4" rx="2" fill="#e8e4dc"/>
+  <text x="240" y="105" text-anchor="middle" font-size="12" font-weight="500" fill="#2d2d2d">Webflow-generated HTML + inline styles</text>
+
+  <line x1="240" y1="120" x2="240" y2="150" stroke="#ccc" stroke-width="1.5"/>
+
+  <rect x="70" y="150" width="100" height="32" rx="10" fill="#fff" stroke="#ccc" stroke-width="2"/>
+  <text x="120" y="171" text-anchor="middle" font-size="12" font-weight="500" fill="#2d2d2d">Homepage</text>
+
+  <rect x="190" y="150" width="100" height="32" rx="10" fill="#fff" stroke="#ccc" stroke-width="2"/>
+  <text x="240" y="171" text-anchor="middle" font-size="12" font-weight="500" fill="#2d2d2d">ComBoard</text>
+
+  <rect x="310" y="150" width="100" height="32" rx="10" fill="#fff" stroke="#ccc" stroke-width="2"/>
+  <text x="360" y="171" text-anchor="middle" font-size="12" font-weight="500" fill="#2d2d2d">Budget App</text>
+
+  <line x1="240" y1="182" x2="240" y2="210" stroke="#ccc" stroke-width="1.5"/>
+
+  <rect x="80" y="210" width="320" height="32" rx="10" fill="#fff" stroke="#ccc" stroke-width="2"/>
+  <text x="240" y="231" text-anchor="middle" font-size="12" font-weight="500" fill="#2d2d2d">w-mod-* classes, WebFont loader, no components</text>
+
+  <!-- Issues -->
+  <text x="80" y="275" font-size="10" font-weight="500" fill="#c44">No semantic HTML control</text>
+  <text x="80" y="290" font-size="10" font-weight="500" fill="#c44">No reusable component system</text>
+  <text x="80" y="305" font-size="10" font-weight="500" fill="#c44">Platform-generated inline styles</text>
+  <text x="80" y="320" font-size="10" font-weight="500" fill="#c44">No dark mode or reduced-motion</text>
+  <text x="80" y="335" font-size="10" font-weight="500" fill="#c44">No skip links or ARIA landmarks</text>
+  <text x="80" y="350" font-size="10" font-weight="500" fill="#c44">6 font families loaded</text>
+  <text x="80" y="365" font-size="10" font-weight="500" fill="#c44">No design token system</text>
+
+  <!-- After -->
+  <text x="520" y="30" font-size="11" font-weight="600" fill="#888" style="text-transform:uppercase; letter-spacing:0.5px">After: Astro (Component Architecture)</text>
+
+  <rect x="520" y="50" width="400" height="340" rx="12" fill="#fff" stroke="#2d2d2d" stroke-width="1.5"/>
+
+  <!-- Layout -->
+  <rect x="560" y="75" width="160" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <rect x="560" y="75" width="160" height="4" rx="2" fill="#ffd44f"/>
+  <text x="640" y="96" text-anchor="middle" font-size="12" font-weight="500" fill="#2d2d2d">BaseLayout.astro</text>
+
+  <line x1="640" y1="107" x2="640" y2="125" stroke="#2d2d2d" stroke-width="1.5"/>
+
+  <!-- Components row -->
+  <rect x="540" y="125" width="90" height="28" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="585" y="144" text-anchor="middle" font-size="10" fill="#2d2d2d">Header</text>
+
+  <rect x="640" y="125" width="90" height="28" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="685" y="144" text-anchor="middle" font-size="10" fill="#2d2d2d">SideNav</text>
+
+  <rect x="740" y="125" width="90" height="28" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="785" y="144" text-anchor="middle" font-size="10" fill="#2d2d2d">Footer</text>
+
+  <line x1="640" y1="153" x2="640" y2="175" stroke="#2d2d2d" stroke-width="1.5"/>
+
+  <!-- Pages -->
+  <rect x="540" y="175" width="72" height="28" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="576" y="194" text-anchor="middle" font-size="10" fill="#2d2d2d">index</text>
+
+  <rect x="620" y="175" width="80" height="28" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="660" y="194" text-anchor="middle" font-size="10" fill="#2d2d2d">comboard</text>
+
+  <rect x="708" y="175" width="72" height="28" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="744" y="194" text-anchor="middle" font-size="10" fill="#2d2d2d">budget</text>
+
+  <rect x="788" y="175" width="72" height="28" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="824" y="194" text-anchor="middle" font-size="10" fill="#2d2d2d">portfolio</text>
+
+  <!-- Shared components -->
+  <line x1="640" y1="203" x2="640" y2="225" stroke="#2d2d2d" stroke-width="1.5"/>
+
+  <rect x="545" y="225" width="90" height="28" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="590" y="244" text-anchor="middle" font-size="10" fill="#2d2d2d">ProjectCard</text>
+
+  <rect x="645" y="225" width="90" height="28" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="690" y="244" text-anchor="middle" font-size="10" fill="#2d2d2d">PrevNextNav</text>
+
+  <rect x="745" y="225" width="90" height="28" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="790" y="244" text-anchor="middle" font-size="10" fill="#2d2d2d">SkipLink</text>
+
+  <!-- Wins -->
+  <text x="560" y="285" font-size="10" font-weight="500" fill="#2a8c2a">Full semantic HTML + ARIA control</text>
+  <text x="560" y="300" font-size="10" font-weight="500" fill="#2a8c2a">Reusable Astro components with typed props</text>
+  <text x="560" y="315" font-size="10" font-weight="500" fill="#2a8c2a">CSS custom properties as design tokens</text>
+  <text x="560" y="330" font-size="10" font-weight="500" fill="#2a8c2a">Dark mode with OS detection + persistence</text>
+  <text x="560" y="345" font-size="10" font-weight="500" fill="#2a8c2a">Skip links, landmarks, focus management</text>
+  <text x="560" y="360" font-size="10" font-weight="500" fill="#2a8c2a">2 font families, optimized loading</text>
+  <text x="560" y="375" font-size="10" font-weight="500" fill="#2a8c2a">prefers-reduced-motion respected</text>
+</svg>

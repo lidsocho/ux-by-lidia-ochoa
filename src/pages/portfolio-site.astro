@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SideNav from '../components/SideNav.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+
+const sections = [
+  { id: 'the-problem', label: 'The Problem' },
+  { id: 'design-decisions', label: 'Design Decisions' },
+  { id: 'design-process', label: 'Design Process' },
+  { id: 'accessibility', label: 'Accessibility' },
+  { id: 'dev-handoff', label: 'Dev Handoff' },
+  { id: 'outcomes', label: 'Outcomes' },
+  { id: 'learnings', label: 'What I Learned' },
+  { id: 'next-steps', label: 'Next Steps' },
+];
+---
+<BaseLayout title="Portfolio Site — Design & Dev Case Study | Lidia Ochoa" description="Designing and building an accessible, component-driven portfolio from the ground up — from Webflow to Astro." projectColor="#ffd44f">
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="reveal">
+        <h1>Portfolio Site</h1>
+        <dl class="case-hero__meta">
+          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Jan – Mar 2026</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Design &amp; Front-End Dev (solo)</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Figma, Astro, CSS, Claude Code</dd></div>
+        </dl>
+        <p class="case-hero__tagline">Rebuilding my portfolio from the ground up — replacing Webflow with hand-coded Astro to gain full control over accessibility, performance, and component architecture.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- The Problem -->
+      <section class="case-section section" id="the-problem" aria-labelledby="the-problem-heading">
+        <div class="container">
+          <h2 id="the-problem-heading" class="case-section__heading reveal">The Problem</h2>
+          <p class="reveal">My original portfolio was a Webflow site. It had case studies and presented my work, but I had limited control over the underlying code. Webflow's generated markup loaded six font families, offered no dark mode, no skip links, no semantic landmarks, and no support for reduced-motion preferences. For a designer whose core claim is accessibility expertise, the site itself was undermining the message. I needed to own every line of HTML and CSS so the portfolio could be proof of the skills it describes.</p>
+
+          <div class="goals-frustrations-banner reveal">
+            <div class="goals-frustrations-banner__inner">
+              <div>
+                <h3>Goals</h3>
+                <ul class="styled-list">
+                  <li>Keep recruiters on-site with embedded, deep-dive case studies</li>
+                  <li>Demonstrate accessibility expertise through the site itself</li>
+                  <li>Show front-end development skills alongside design work</li>
+                  <li>Build a maintainable system I can extend as projects grow</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Constraints</h3>
+                <ul class="styled-list">
+                  <li>Solo designer and developer — no team to delegate to</li>
+                  <li>Needed to ship quickly while job searching</li>
+                  <li>Existing case study content had to be restructured, not rewritten from scratch</li>
+                  <li>Must work well on mobile — recruiters review portfolios everywhere</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design Decisions -->
+      <section class="case-section section" id="design-decisions" aria-labelledby="design-decisions-heading">
+        <div class="container">
+          <h2 id="design-decisions-heading" class="case-section__heading reveal">Design Decisions</h2>
+          <p class="reveal">Every decision was guided by one question: does this make the recruiter's job easier while demonstrating the skills I claim to have?</p>
+
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+              <p class="decision-card__response">Move from Webflow to Astro — a static site generator that gives me full control over markup, performance, and accessibility while producing zero-JS pages by default.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <p class="decision-card__response">Embed full case studies on-site with side navigation, so recruiters never leave the page to evaluate my work.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+              <p class="decision-card__response">Use CSS custom properties as design tokens so every color, spacing value, and radius is defined once and inherited everywhere — including per-project theme colors.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/><path d="M9 18h6"/></svg></div>
+              <p class="decision-card__response">Neo-brutalist visual language with thick borders, pill buttons, and bold accent colors — playful enough to be memorable, structured enough to be scannable.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+              <p class="decision-card__response">Reduce font families from six to two (Bricolage Grotesque for headings, Commissioner for body), cutting load time and visual noise.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design Process -->
+      <section class="case-section section" id="design-process" aria-labelledby="design-process-heading">
+        <div class="container">
+          <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
+          <p class="reveal">I prioritized the case study reading experience first — that is where recruiters spend the most time — and worked outward to the homepage, navigation, and visual polish.</p>
+
+          <h3 class="reveal">Architecture (Week 1)</h3>
+          <p class="reveal">Webflow generates monolithic HTML with inline styles and platform-specific class names, making it difficult to enforce accessibility standards or build a true component system. I restructured into a component-based Astro project: a shared BaseLayout, reusable components (Header, Footer, SideNav, ProjectCard, PrevNextNav), and dedicated pages for each case study. This gave me full control over semantic markup, ARIA attributes, and a CSS custom property system that Webflow could not provide.</p>
+          <img src="/images/portfolio/before-after-arch.svg" alt="Diagram comparing the Webflow-generated markup architecture with the new component-based Astro architecture, showing shared layouts, reusable components, typed props, and design tokens" class="reveal" loading="lazy" />
+
+          <h3 class="reveal">Visual Design (Week 2–3)</h3>
+          <p class="reveal">I chose a neo-brutalist style to stand out in a sea of minimal portfolios. Thick offset borders, pill-shaped buttons, and bold project accent colors give each case study its own identity while a shared design token system keeps everything consistent. The color palette assigns each project a theme color — teal for ComBoard, green for Budget App, yellow for this portfolio — that cascades through headings, badges, card backgrounds, and interactive elements via a single CSS custom property.</p>
+
+          <h3 class="reveal">Before &amp; After</h3>
+          <p class="reveal">The Webflow site had the content, but the code underneath was working against me. The rebuild keeps the same case study depth while replacing the entire technical foundation.</p>
+
+          <div class="comparison reveal">
+            <div class="comparison__item">
+              <p class="comparison__label">Before (Webflow)</p>
+              <ul class="styled-list" style="font-size: 0.875rem;">
+                <li>6 font families loaded via WebFont loader</li>
+                <li>Webflow-generated markup, no semantic control</li>
+                <li>No skip links, landmarks, or ARIA</li>
+                <li>Inline styles, no design tokens</li>
+                <li>No dark mode or reduced-motion support</li>
+                <li>No reusable component system</li>
+              </ul>
+            </div>
+            <div class="comparison__item">
+              <p class="comparison__label">After (Astro)</p>
+              <ul class="styled-list" style="font-size: 0.875rem;">
+                <li>2 font families, optimized loading</li>
+                <li>Hand-written semantic HTML throughout</li>
+                <li>Skip links, landmark regions, ARIA labels</li>
+                <li>CSS custom properties as design tokens</li>
+                <li>Full dark mode + prefers-reduced-motion</li>
+                <li>Reusable Astro components with typed props</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accessibility -->
+      <section class="case-section section" id="accessibility" aria-labelledby="a11y-heading">
+        <div class="container">
+          <h2 id="a11y-heading" class="case-section__heading reveal">Accessibility</h2>
+          <p class="reveal">Accessibility is the core claim of my portfolio, so the site itself must be the proof. Every decision was tested against WCAG 2.2 AA, with several elements reaching AAA.</p>
+
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l22 22"/><path d="M2 12s3-7 10-7c2.12 0 4.06.66 5.68 1.76"/><path d="M22 12s-1.53 3.57-5.07 5.62"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <p class="decision-card__response"><strong>Color contrast:</strong> All text meets AAA requirements (7:1+). Project accent colors were tested against both light and dark backgrounds to ensure readability in both themes.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+              <p class="decision-card__response"><strong>Semantic structure:</strong> Every page uses proper heading hierarchy, landmark regions, and ARIA labels. Screen readers can navigate the full site without confusion.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg></div>
+              <p class="decision-card__response"><strong>Keyboard navigation:</strong> Skip links on every page. Focus-visible outlines on all interactive elements. Dropdown menus respond to Escape and arrow keys.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+              <p class="decision-card__response"><strong>Motion &amp; theming:</strong> Scroll-triggered animations are suppressed when the user has prefers-reduced-motion enabled. Dark mode respects the OS setting and persists across sessions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dev Handoff -->
+      <section class="case-section section" id="dev-handoff" aria-labelledby="dev-handoff-heading">
+        <div class="container">
+          <h2 id="dev-handoff-heading" class="case-section__heading reveal">Dev Handoff</h2>
+          <p class="reveal">Because I both designed and built this site, I had the opportunity to practice what dev handoff looks like from both sides. The component spec below documents the ProjectCard component — its props, design tokens, spacing, and interaction states — in the format a developer would need to implement it from a design file.</p>
+          <img src="/images/portfolio/component-spec.svg" alt="Component specification for the ProjectCard showing props (image, title, description, href, accentColor, disabled), design tokens (border-radius, padding, font families), and annotated spacing dimensions" class="reveal" loading="lazy" />
+          <p class="reveal">Every reusable element on this site — ProjectCard, SideNav, PrevNextNav, Header, Footer — follows this same pattern: clearly typed props, consistent use of design tokens, and predictable interaction states. This structure means a new case study page can be added by writing content and passing props to existing components, with no new CSS required.</p>
+        </div>
+      </section>
+
+      <!-- Outcomes -->
+      <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
+        <div class="container">
+          <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
+          <p class="reveal">The redesign transformed a static single-page Webflow site into a fully accessible, component-driven portfolio that puts the work front and center.</p>
+          <div class="goal-pair reveal">
+            <div class="goals-frustrations-banner">
+              <h3>Performance</h3>
+              <p>Zero client-side JavaScript by default (Astro's static output). Font load reduced from 6 families to 2. Every page loads in under 2 seconds on a throttled 3G connection.</p>
+            </div>
+            <div class="goals-frustrations-banner">
+              <h3>Accessibility</h3>
+              <p>WCAG 2.2 AA across all pages. Skip links, semantic landmarks, ARIA labels, keyboard navigation, reduced-motion support, and dark mode — none of which existed on the original site.</p>
+            </div>
+          </div>
+          <div class="user-intro__stats reveal" style="justify-content: center;">
+            <div class="case-hero__badge">6 &rarr; 2 fonts<span class="case-hero__badge-label">Reduced load time &amp; visual noise</span></div>
+            <div class="case-hero__badge">0 JS by default<span class="case-hero__badge-label">Astro static output</span></div>
+            <div class="case-hero__badge">Full dark mode<span class="case-hero__badge-label">OS detection + persistence</span></div>
+            <div class="case-hero__badge">WCAG 2.2 AA<span class="case-hero__badge-label">Skip links, landmarks, ARIA, motion</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What I Learned -->
+      <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
+        <div class="container">
+          <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
+          <p class="reveal">Building my own portfolio from design to deployment taught me what it actually feels like to be on both sides of a handoff. Naming a Figma component is one thing; writing the CSS that implements it and realizing your naming was ambiguous is another. I now approach design system work with a much sharper eye for what a developer will need versus what looks organized in a design file. I also learned that accessibility is not a checklist you run at the end — it is an architectural decision you make at the beginning. Retrofitting skip links and ARIA onto a finished page is painful; building with semantic HTML from the start makes it effortless. Finally, using Claude Code as a development partner taught me how to communicate design intent precisely enough for an AI to implement it, which turns out to be the same skill needed to write a good design spec for a human engineer.</p>
+        </div>
+      </section>
+
+      <!-- Next Steps -->
+      <section class="case-section section" id="next-steps" aria-labelledby="next-steps-heading">
+        <div class="container">
+          <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
+          <div class="next-steps reveal">
+            <div class="next-step">
+              <h3 class="next-step__title">Automated A11y Testing</h3>
+              <p class="next-step__text">Integrate axe-core or Lighthouse CI into the build pipeline to catch regressions before deployment.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Performance Monitoring</h3>
+              <p class="next-step__text">Set up Core Web Vitals tracking to measure real-world load times and interaction responsiveness across devices.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Additional Case Studies</h3>
+              <p class="next-step__text">Complete the Lidia Paints case study and add team-based project examples to demonstrate collaboration and stakeholder navigation.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Design System Documentation</h3>
+              <p class="next-step__text">Publish a living style guide documenting every component, token, and interaction pattern used across the site.</p>
+            </div>
+          </div>
+
+          <PrevNextNav
+            prev={{ title: "Budget App", href: "/budgetapp" }}
+            next={{ title: "A11y Consulting", href: "/a11y-consulting" }}
+          />
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

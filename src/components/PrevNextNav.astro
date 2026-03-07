@@ -1,0 +1,22 @@
+---
+interface Props {
+  prev?: { title: string; href: string };
+  next?: { title: string; href: string };
+}
+
+const { prev, next } = Astro.props;
+---
+<nav class="prev-next-nav" aria-label="Project navigation">
+  {prev ? (
+    <a href={prev.href} class="prev-next-nav__link" aria-label={`Previous project: ${prev.title}`}>
+      <span class="prev-next-nav__label">&larr; Previous</span>
+      <span class="prev-next-nav__title">{prev.title}</span>
+    </a>
+  ) : <div />}
+  {next ? (
+    <a href={next.href} class="prev-next-nav__link prev-next-nav__link--next" aria-label={`Next project: ${next.title}`}>
+      <span class="prev-next-nav__label">Next &rarr;</span>
+      <span class="prev-next-nav__title">{next.title}</span>
+    </a>
+  ) : <div />}
+</nav>

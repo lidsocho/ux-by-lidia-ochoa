@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" font-family="Commissioner, Inter, sans-serif">
+  <rect width="960" height="480" fill="#fafaf8"/>
+
+  <text x="480" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="#2d2d2d">Accessibility Scorecard — 10 Evaluation Criteria</text>
+  <text x="480" y="50" text-anchor="middle" font-size="11" font-weight="600" fill="#888" style="text-transform:uppercase; letter-spacing:0.5px">Each criterion scored out of 20 points · Mapped to WCAG 2.1</text>
+
+  <!-- Row 1 -->
+  <rect x="30" y="70" width="172" height="80" rx="10" fill="#fff" stroke="#ffad00" stroke-width="2"/>
+  <text x="116" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#ffad00">01</text>
+  <text x="116" y="116" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Heading</text>
+  <text x="116" y="130" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Hierarchy</text>
+
+  <rect x="214" y="70" width="172" height="80" rx="10" fill="#fff" stroke="#ffad00" stroke-width="2"/>
+  <text x="300" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#ffad00">02</text>
+  <text x="300" y="116" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Contrast</text>
+  <text x="300" y="130" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Ratios</text>
+
+  <rect x="398" y="70" width="172" height="80" rx="10" fill="#fff" stroke="#ffad00" stroke-width="2"/>
+  <text x="484" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#ffad00">03</text>
+  <text x="484" y="116" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Color-Only</text>
+  <text x="484" y="130" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Information</text>
+
+  <rect x="582" y="70" width="172" height="80" rx="10" fill="#fff" stroke="#ffad00" stroke-width="2"/>
+  <text x="668" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#ffad00">04</text>
+  <text x="668" y="116" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Text Sizing</text>
+  <text x="668" y="130" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">&amp; Spacing</text>
+
+  <rect x="766" y="70" width="172" height="80" rx="10" fill="#fff" stroke="#ffad00" stroke-width="2"/>
+  <text x="852" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#ffad00">05</text>
+  <text x="852" y="116" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Form Labels</text>
+  <text x="852" y="130" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">&amp; Inputs</text>
+
+  <!-- Row 2 -->
+  <rect x="30" y="165" width="172" height="80" rx="10" fill="#fff" stroke="#ffad00" stroke-width="2"/>
+  <text x="116" y="195" text-anchor="middle" font-size="11" font-weight="700" fill="#ffad00">06</text>
+  <text x="116" y="211" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Error</text>
+  <text x="116" y="225" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Identification</text>
+
+  <rect x="214" y="165" width="172" height="80" rx="10" fill="#fff" stroke="#ffad00" stroke-width="2"/>
+  <text x="300" y="195" text-anchor="middle" font-size="11" font-weight="700" fill="#ffad00">07</text>
+  <text x="300" y="211" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Focus</text>
+  <text x="300" y="225" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">States</text>
+
+  <rect x="398" y="165" width="172" height="80" rx="10" fill="#fff" stroke="#ffad00" stroke-width="2"/>
+  <text x="484" y="195" text-anchor="middle" font-size="11" font-weight="700" fill="#ffad00">08</text>
+  <text x="484" y="211" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Keyboard</text>
+  <text x="484" y="225" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Access</text>
+
+  <rect x="582" y="165" width="172" height="80" rx="10" fill="#fff" stroke="#ffad00" stroke-width="2"/>
+  <text x="668" y="195" text-anchor="middle" font-size="11" font-weight="700" fill="#ffad00">09</text>
+  <text x="668" y="211" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Alt Text</text>
+  <text x="668" y="225" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">&amp; Images</text>
+
+  <rect x="766" y="165" width="172" height="80" rx="10" fill="#fff" stroke="#ffad00" stroke-width="2"/>
+  <text x="852" y="195" text-anchor="middle" font-size="11" font-weight="700" fill="#ffad00">10</text>
+  <text x="852" y="211" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Link</text>
+  <text x="852" y="225" text-anchor="middle" font-size="11" font-weight="600" fill="#2d2d2d">Purpose</text>
+
+  <!-- Severity scale -->
+  <text x="480" y="290" text-anchor="middle" font-size="11" font-weight="600" fill="#888" style="text-transform:uppercase; letter-spacing:0.5px">Severity Ratings</text>
+
+  <rect x="150" y="310" width="150" height="36" rx="18" fill="#c0392b" opacity="0.15" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="225" y="333" text-anchor="middle" font-size="12" font-weight="600" fill="#c0392b">Critical</text>
+
+  <rect x="320" y="310" width="150" height="36" rx="18" fill="#e67e22" opacity="0.15" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="395" y="333" text-anchor="middle" font-size="12" font-weight="600" fill="#e67e22">Major</text>
+
+  <rect x="490" y="310" width="150" height="36" rx="18" fill="#f1c40f" opacity="0.15" stroke="#f1c40f" stroke-width="1.5"/>
+  <text x="565" y="333" text-anchor="middle" font-size="12" font-weight="600" fill="#b89a00">Moderate</text>
+
+  <rect x="660" y="310" width="150" height="36" rx="18" fill="#27ae60" opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="735" y="333" text-anchor="middle" font-size="12" font-weight="600" fill="#27ae60">Minor</text>
+
+  <!-- Bottom description -->
+  <text x="480" y="385" text-anchor="middle" font-size="12" font-weight="500" fill="#777">Each criterion maps to specific WCAG 2.1 success criteria.</text>
+  <text x="480" y="403" text-anchor="middle" font-size="12" font-weight="500" fill="#777">Scores include severity rating, evidence, and actionable recommendations.</text>
+  <text x="480" y="421" text-anchor="middle" font-size="12" font-weight="500" fill="#777">Total score out of 200 with overall accessibility posture summary.</text>
+</svg>

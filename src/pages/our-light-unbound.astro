@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SideNav from '../components/SideNav.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+
+const sections = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'design-process', label: 'Design Process' },
+  { id: 'next-steps', label: 'Next Steps' },
+];
+---
+<BaseLayout title="Our Light Unbound — Case Study | Lidia Ochoa" description="Our Light Unbound — a creative project exploring accessible design in a new context." projectColor="#bea7be">
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="reveal">
+        <h1>Our Light Unbound</h1>
+        <dl class="case-hero__meta">
+          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Coming Soon</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>TBD</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>TBD</dd></div>
+        </dl>
+        <p class="case-hero__tagline">This case study is currently in progress. Check back soon for the full writeup.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- Overview -->
+      <section class="case-section section" id="overview" aria-labelledby="overview-heading">
+        <div class="container">
+          <h2 id="overview-heading" class="case-section__heading reveal">Overview</h2>
+          <p class="reveal">Full case study coming soon. This page is a placeholder while the project writeup is being developed.</p>
+        </div>
+      </section>
+
+      <!-- Design Process -->
+      <section class="case-section section" id="design-process" aria-labelledby="design-process-heading">
+        <div class="container">
+          <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
+          <p class="reveal">Details about the design process will be added here.</p>
+        </div>
+      </section>
+
+      <!-- Next Steps -->
+      <section class="case-section section" id="next-steps" aria-labelledby="next-steps-heading">
+        <div class="container">
+          <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
+          <p class="reveal">Next steps and future plans will be documented here.</p>
+
+          <PrevNextNav
+            prev={{ title: "A11y Consulting", href: "/a11y-consulting" }}
+            next={{ title: "Offline Budget Tool", href: "/offline-budget" }}
+          />
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

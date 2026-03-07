@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SideNav from '../components/SideNav.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+
+const sections = [
+  { id: 'understanding-users', label: 'Understanding Users' },
+  { id: 'journey-map', label: 'Journey Map' },
+  { id: 'defining-challenge', label: 'Defining the Challenge' },
+  { id: 'accessibility-decisions', label: 'Accessibility Decisions' },
+  { id: 'design-process', label: 'Design Process' },
+  { id: 'outcomes', label: 'Outcomes' },
+  { id: 'sticker-sheet', label: 'Sticker Sheet' },
+  { id: 'learnings', label: 'What I Learned' },
+  { id: 'next-steps', label: 'Next Steps' },
+];
+---
+<BaseLayout title="Budget App — Accessible Budgeting Case Study | Lidia Ochoa" description="Accessibility-first budgeting app for novice and visually impaired users, WCAG 2.2 AAA compliant from day one." projectColor="#75d349">
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="reveal">
+        <h1>Budget App</h1>
+        <dl class="case-hero__meta">
+          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Feb – June 2025</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Lead UXR &amp; Design (solo)</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Figma, WCAG plug-ins</dd></div>
+        </dl>
+        <div class="case-hero__tagline-row">
+          <p class="case-hero__tagline">Accessibility-first budgeting for novice and visually impaired users.</p>
+          <a href="https://www.figma.com/proto/Bv5v9VXYaLO9l9HwBovezc/Budget-App?node-id=531-2879&p=f&t=wZt4TEoT16X95R0w-1&scaling=scale-down&content-scaling=fixed&page-id=531%3A2878&starting-point-node-id=658%3A9555" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="View Budget App Figma prototype (opens in new tab)">
+            View Prototype &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="desktop-frame reveal" aria-label="Desktop monitor displaying the Budget App interface">
+        <div class="desktop-frame__body">
+          <div class="desktop-frame__screen">
+            <img src="/images/budget/mobile-loop.gif"
+                 alt="Animated walkthrough of the Budget App showing navigation and budget creation flow" />
+          </div>
+        </div>
+        <div class="desktop-frame__stand" aria-hidden="true">
+          <svg viewBox="0 0 200 50" fill="none">
+            <path d="M85 0 H115 L130 38 H70 Z" fill="currentColor"/>
+            <rect x="50" y="38" width="100" height="8" rx="4" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- Understanding Users -->
+      <section class="case-section section" id="understanding-users" aria-labelledby="understanding-users-heading">
+        <div class="container">
+          <h2 id="understanding-users-heading" class="case-section__heading reveal">Understanding Users</h2>
+
+          <div class="user-intro reveal">
+            <div class="user-intro__photo">
+              <img src="/images/budget/stock-user-edgar.png"
+                   alt="Photo representing Edgar, the user research participant"
+                   loading="lazy" />
+            </div>
+            <div class="user-intro__text">
+              <p>This is Edgar, a 42-year-old HVAC Manager from Omaha, Nebraska. He attempted to budget in his 20s but became stressed as adult responsibilities increased and gave up. Now settled in his career and thinking about retirement, he needs a budgeting app that is accessible, easy to use, and simple — because the stress of usual tools makes it difficult to get started. As Edgar puts it: "I've always wanted to be better with money, but it always seems too complicated, and apps that are supposed to help don't make it much easier."</p>
+              <h3 class="user-intro__stats-heading">A sneak peek into how the design helped users like Edgar!</h3>
+              <div class="user-intro__stats">
+                <div class="case-hero__badge">75% → 90%<span class="case-hero__badge-label">Satisfaction grew after iterative testing</span></div>
+                <div class="case-hero__badge">WCAG 2.2 AAA<span class="case-hero__badge-label">From day 1 — contrast, text size, labels</span></div>
+                <div class="case-hero__badge">Tiered complexity<span class="case-hero__badge-label">"Learn" hub supports financial literacy</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="goals-frustrations-banner reveal">
+            <div class="goals-frustrations-banner__inner">
+              <div>
+                <h3>Edgar's Goals</h3>
+                <ul class="styled-list">
+                  <li>Plan for retirement effectively</li>
+                  <li>Create simple budgets easily</li>
+                  <li>Learn financial management basics</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Edgar's Frustrations</h3>
+                <ul class="styled-list">
+                  <li>Spreadsheet budgets are confusing</li>
+                  <li>Apps hide core actions in menus</li>
+                  <li>Visual impairment makes many apps unusable</li>
+                  <li>Overwhelmed by financial jargon</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Journey Map -->
+      <section class="case-section section" id="journey-map" aria-labelledby="journey-map-heading">
+        <div class="container">
+          <h2 id="journey-map-heading" class="case-section__heading reveal">Journey Map</h2>
+          <h3 class="reveal">Make a Budget to Prepare for Retirement</h3>
+          <p class="reveal">Edgar is overwhelmed by budgeting and does not know where to start. He has a lot of research and learning to do before he starts to see progress.</p>
+
+          <div class="journey-map reveal">
+            <div class="journey-map__grid">
+              <div class="journey-map__stage">
+                <div class="journey-map__stage-header">
+                  <div class="journey-map__stage-title">1. Calculate Retirement Needs</div>
+                  <div class="journey-map__icon-wrap"><svg class="journey-map__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
+                </div>
+                <dl>
+                  <dt>Tasks</dt><dd>Research online; Find resources and tools; Record target amount</dd>
+                  <dt>Feeling</dt><dd>Confused, Overwhelmed</dd>
+                  <dt>Improvement</dt><dd>Auto-calculate using data; Plain language explanations</dd>
+                </dl>
+              </div>
+              <div class="journey-map__stage">
+                <div class="journey-map__stage-header">
+                  <div class="journey-map__stage-title">2. Audit Current Savings</div>
+                  <div class="journey-map__icon-wrap"><svg class="journey-map__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                </div>
+                <dl>
+                  <dt>Tasks</dt><dd>Log into all accounts; Calculate total assets; Track contribution methods</dd>
+                  <dt>Feeling</dt><dd>Frustrated, Hopeless</dd>
+                  <dt>Improvement</dt><dd>Bank integration via SSN; Auto-sum all accounts; AI contribution summary</dd>
+                </dl>
+              </div>
+              <div class="journey-map__stage">
+                <div class="journey-map__stage-header">
+                  <div class="journey-map__stage-title">3. Set Target &amp; Design Budget</div>
+                  <div class="journey-map__icon-wrap"><svg class="journey-map__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg></div>
+                </div>
+                <dl>
+                  <dt>Tasks</dt><dd>Research strategies; Calculate gap amount; Define spending categories; Allocate funds strategically</dd>
+                  <dt>Feeling</dt><dd>Conflicted, Determined</dd>
+                  <dt>Improvement</dt><dd>AI-powered calculation; Banking app integration; AI budget suggestions</dd>
+                </dl>
+              </div>
+              <div class="journey-map__stage">
+                <div class="journey-map__stage-header">
+                  <div class="journey-map__stage-title">4. Create Accountability System</div>
+                  <div class="journey-map__icon-wrap"><svg class="journey-map__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                </div>
+                <dl>
+                  <dt>Tasks</dt><dd>Set review schedule; Choose tracking method; Plan for setbacks</dd>
+                  <dt>Feeling</dt><dd>Nervous, Determined</dd>
+                  <dt>Improvement</dt><dd>AI coaching suggestions; Automated reminders/alerts</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Defining the Challenge -->
+      <section class="case-section section" id="defining-challenge" aria-labelledby="defining-challenge-heading">
+        <div class="container">
+          <h2 id="defining-challenge-heading" class="case-section__heading reveal">Defining the Challenge</h2>
+          <p class="reveal">How might we design a budgeting app that delivers scaffolded education, AI powered personalization, and fully adjustable accessibility settings so novice budgeters and users with disabilities can set and achieve their financial goals with less stress and fewer obstacles?</p>
+
+          <div class="goal-pair reveal">
+            <div class="goals-frustrations-banner">
+              <h3>Goal #1</h3>
+              <p>At least 80% of first-time users create their first budget within 3 minutes</p>
+            </div>
+            <div class="goals-frustrations-banner">
+              <h3>Goal #2</h3>
+              <p>User Satisfaction Scores at least 85</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accessibility Decisions -->
+      <section class="case-section section" id="accessibility-decisions" aria-labelledby="a11y-decisions-heading">
+        <div class="container">
+          <h2 id="a11y-decisions-heading" class="case-section__heading reveal">Accessibility Decisions</h2>
+          <p class="reveal">Key Research Insights and design decisions arrived at after 4 User Interviews and a Competitive Audit of 5 existing budgeting platforms.</p>
+
+          <h3 class="reveal">Competitor Audit</h3>
+          <p class="reveal">Competitors fail accessibility basics with unlabeled icons &amp; charts, sub-4.5:1 contrast, fixed 12px text, no keyboard path. Tutorials are hidden in help centers. Screens feel cluttered.</p>
+          <p class="reveal">Educational content pay-walled or not included at all. Information overload in apps overwhelms novices, while simpler apps are outgrown as confidence increases.</p>
+
+          <h3 class="reveal">Design Decisions</h3>
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <p class="decision-card__response">Build for WCAG 2.2 AAA from day one — at least 4.5:1 contrast, built-in suite of accessibility features.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/><path d="M9 18h6"/></svg></div>
+              <p class="decision-card__response">Optional tutorial at onboarding, clear CTA button in FAQ page (easy access in main tab bar).</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+              <p class="decision-card__response">Introduce free "Learn" hub and level switching to manage information density and complexity.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+              <p class="decision-card__response">Mobile-first, minimalist layout for visual and cognitive accessibility featuring clear hierarchy, fewer elements, and progressive disclosure.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design Process -->
+      <section class="case-section section" id="design-process" aria-labelledby="design-process-heading">
+        <div class="container">
+          <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
+          <p class="reveal">I scoped the MVP around the single most stressful moment for novice budgeters — creating that first budget — and built outward from there, layering in education and personalization only after the core flow tested well.</p>
+
+          <h3 class="reveal">Ideation (Day 1)</h3>
+          <p class="reveal">Crazy 8s and a quick Close Up/Big Picture storyboard led me to the following design decisions:</p>
+          <ul class="reveal styled-list">
+            <li>Give users the ability to "level-up" their in-app experience as they learn</li>
+            <li>Allow personalization of accessibility features early on</li>
+          </ul>
+          <img src="/images/budget/crazy8s.png" alt="A pencil on paper sketch with 8 loose brainstormed ideas for the budget app layout" class="reveal" loading="lazy" />
+
+          <h3 class="reveal">Wireframing &amp; Usability Study (Week 1–3)</h3>
+          <p class="reveal">My lo-fi wireframes limit scroll fatigue with minimal information per page. All screens are a max of two clicks away via a bottom tab bar, easy to reach for mobile users.</p>
+          <p class="reveal">First round of unmoderated, remote usability studies revealed that labels did not meet users' expectations.</p>
+          <p class="reveal">Changes: Accounts &rarr; Transactions, Planning &rarr; Budgeting, Help &rarr; FAQ. These changes raised navigation ratings from 70% to 90%.</p>
+          <img src="/images/budget/wireframing.png" alt="Lo-fi wireframes showing onboarding flow, tab bar and sign-off flow, 2-click level switch, and transaction and budget creation screens" class="reveal" loading="lazy" />
+
+          <h3 class="reveal">Interaction &amp; UI (Week 4–6)</h3>
+          <p class="reveal">My initial choice of Glassmorphic style made WCAG compliant contrast challenging and also felt disconnected from current Fintech trends.</p>
+          <p class="reveal">The redesign hits the 60:30:10 rule and uses iOS design libraries to create an experience at home within Apple products.</p>
+
+          <div class="comparison reveal">
+            <div class="comparison__item">
+              <p class="comparison__label">Before Redesign</p>
+              <img src="/images/budget/before-redesign.gif" alt="Animated preview of the first hi-fi design with a purple glassmorphic background style" loading="lazy" />
+            </div>
+            <div class="comparison__item">
+              <p class="comparison__label">After Redesign</p>
+              <img src="/images/budget/after-redesign.gif" alt="Animated preview of the redesigned UI with clean iOS-style layout following the 60:30:10 color rule" loading="lazy" />
+            </div>
+          </div>
+
+          <a href="https://www.figma.com/proto/Bv5v9VXYaLO9l9HwBovezc/Budget-App?node-id=549-6289&t=u6bMPt7lp0qxi5Zc-1" class="prototype-link reveal" target="_blank" rel="noopener noreferrer" aria-label="View Budget App Figma prototype (opens in new tab)">
+            View Figma Prototype &rarr;
+          </a>
+
+          <h3 class="reveal">Accessibility</h3>
+          <p class="reveal">Using a combination of Stark, A11y, and Able plug-ins I verified color contrast requirements for all text and important elements on all frames.</p>
+          <p class="reveal">These tools revealed that the brand color, teal, when used on white was far too low contrast. I changed "skip all tutorials" and "home" labels to navy to improve readability.</p>
+          <img src="/images/budget/a11y-contrast.png" alt="A11y Color contrast checker plug-in on Figma confirming all texts meet AAA color contrast requirements" class="reveal" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- Outcomes -->
+      <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
+        <div class="container">
+          <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
+          <p class="reveal">Five volunteer participants completed both a lo-fi and a hi-fi usability study. In post-study debriefs, all five described the app as "easy to use" and "easy to navigate," expressing confidence in their ability to manage a budget with the tool.</p>
+          <div class="goal-pair reveal">
+            <div class="goals-frustrations-banner">
+              <h3>Goal #1 Result</h3>
+              <p>100% of participants (5 of 5) created a budget within 3 minutes.</p>
+            </div>
+            <div class="goals-frustrations-banner">
+              <h3>Goal #2 Result</h3>
+              <p>Second round of usability studies yielded User Satisfaction Score = 90%</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sticker Sheet -->
+      <section class="case-section section" id="sticker-sheet" aria-labelledby="sticker-sheet-heading">
+        <div class="container">
+          <h2 id="sticker-sheet-heading" class="case-section__heading reveal">Sticker Sheet</h2>
+          <p class="reveal">To maintain consistency and speed up cycles of iteration, I quickly started compiling all reusable components and their variable states. This sticker sheet is from the original mobile app design stage, with some modifications that came naturally as I moved into later design stages. Components are grouped by category and state, making it easier for a developer to inventory UI elements and translate them into a component library.</p>
+          <div class="figma-embed reveal">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://embed.figma.com/design/Bv5v9VXYaLO9l9HwBovezc/Budget-App?node-id=269-5226&embed-host=share" title="Budget App Sticker Sheet — Figma embed" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- What I Learned -->
+      <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
+        <div class="container">
+          <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
+          <p class="reveal">This project grew me immensely as a UX designer. Working through all stages of design solo stretched my skills in every direction and taught me the value of deliberate planning and decision making at every step. I learned to swiftly compile reusable components to make iterative design even faster, and I gained a profound appreciation for the value of feedback and user participation in the design process — the product is for them, not for me, after all. Most importantly, I learned what it means to center accessibility from day one: selecting high-contrast palettes, readable fonts, a clear hierarchy, meaningful labels, and wise application of Gestalt principles.</p>
+        </div>
+      </section>
+
+      <!-- Next Steps -->
+      <section class="case-section section" id="next-steps" aria-labelledby="next-steps-heading">
+        <div class="container">
+          <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
+          <div class="next-steps reveal">
+            <div class="next-step">
+              <h3 class="next-step__title">Accessibility Fixes</h3>
+              <p class="next-step__text">Build in alt text ASAP and ensure all touch points are 48px minimum.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Sticker Sheet</h3>
+              <p class="next-step__text">Update design system for dev-handoff. In future projects, maintaining this system as I work will make me a better team member.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Usability Test 3</h3>
+              <p class="next-step__text">My usability research participant pool did not include assistive technology users. Further studies or interviews are needed.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Consult Experts</h3>
+              <p class="next-step__text">Continued learning about assistive technology integration. Consult data security and finance experts to ensure the product is safe and beneficial to users.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Data Collection</h3>
+              <p class="next-step__text">Task completion and retention data as well as measurements of actual goal attainment by users as a result of the product.</p>
+            </div>
+          </div>
+
+          <PrevNextNav
+            prev={{ title: "ComBoard", href: "/comboard-app" }}
+            next={{ title: "Portfolio Site", href: "/portfolio-site" }}
+          />
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

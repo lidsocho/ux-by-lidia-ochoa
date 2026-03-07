@@ -1,0 +1,357 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SideNav from '../components/SideNav.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+
+const sections = [
+  { id: 'understanding-users', label: 'Understanding Users' },
+  { id: 'journey-map', label: 'Journey Map' },
+  { id: 'defining-challenge', label: 'Defining the Challenge' },
+  { id: 'accessibility-decisions', label: 'Accessibility Decisions' },
+  { id: 'design-process', label: 'Design Process' },
+  { id: 'make-a-thon', label: 'Make-a-Thon' },
+  { id: 'outcomes', label: 'Outcomes' },
+  { id: 'sticker-sheet', label: 'Sticker Sheet' },
+  { id: 'learnings', label: 'What I Learned' },
+  { id: 'scaling', label: 'Scaling ComBoard' },
+  { id: 'next-steps', label: 'Next Steps' },
+];
+---
+<BaseLayout title="ComBoard — AAC Case Study | Lidia Ochoa" description="Custom AAC app for a non-speaking high school student with cerebral palsy, increasing independent spelling by 980%." projectColor="#4cc4cf">
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="reveal">
+        <h1>ComBoard</h1>
+        <dl class="case-hero__meta">
+          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>May – Oct 2024</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Lead UXR &amp; Design (solo)</dd></div>
+          <div class="case-hero__meta-item"><dt>Tool:</dt><dd>Figma</dd></div>
+        </dl>
+        <div class="case-hero__tagline-row">
+          <p class="case-hero__tagline">AAC app for a non-speaking high school student with cerebral palsy, used in mainstream classes.</p>
+          <a href="https://comboard.figma.site" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="View ComBoard Figma prototype (opens in new tab)">
+            View Prototype &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="ipad-frame reveal" aria-label="iPad displaying the ComBoard AAC prototype interaction">
+        <div class="ipad-frame__body">
+          <div class="ipad-frame__camera"></div>
+          <div class="ipad-frame__screen">
+            <img src="/images/comboard/screen-recording.gif" alt="Animated screen recording showing the ComBoard prototype in use on an iPad" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- Understanding Users -->
+      <section class="case-section section" id="understanding-users" aria-labelledby="understanding-users-heading">
+        <div class="container">
+          <h2 id="understanding-users-heading" class="case-section__heading reveal">Understanding Users</h2>
+
+          <div class="user-intro reveal">
+            <div class="user-intro__photo">
+              <img src="/images/comboard/stock-user-research.jpg" alt="Photo representing Ellie, the user research participant" loading="lazy" />
+            </div>
+            <div class="user-intro__text">
+              <p>This is 16 year old Ellie. She communicates primarily with left-right eye movements and interpretation support from an adult aide. Existing AAC solutions cause eye strain and exacerbate social friction. A personalized, pocket-sized, predictive, eye-tracking app would boost spontaneous, independent communication, allowing her to connect socially and learn without barriers.</p>
+              <h3 class="user-intro__stats-heading">A sneak peak into how the design helped Ellie!</h3>
+              <div class="user-intro__stats">
+                <div class="case-hero__badge">980% increased spelling<span class="case-hero__badge-label">From 2x/month to 5x/week</span></div>
+                <div class="case-hero__badge">5/5 user preference<span class="case-hero__badge-label">1/5 (Tobii) and 3/5 (plexiglass board)</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="goals-frustrations-banner reveal">
+            <div class="goals-frustrations-banner__inner">
+              <div>
+                <h3>Ellie's Goals</h3>
+                <ul class="styled-list">
+                  <li>Spontaneous communication</li>
+                  <li>Enriched social interaction</li>
+                  <li>Active class participation</li>
+                  <li>Reduce physical strain</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Ellie's Frustrations</h3>
+                <ul class="styled-list">
+                  <li>Bulky, expensive solutions</li>
+                  <li>Calibration lag for eye-tracking</li>
+                  <li>Slow setup disrupts natural flow</li>
+                  <li>Limited predictive vocabulary</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Journey Map -->
+      <section class="case-section section" id="journey-map" aria-labelledby="journey-map-heading">
+        <div class="container">
+          <h2 id="journey-map-heading" class="case-section__heading reveal">Journey Map</h2>
+          <h3 class="reveal">Communicate a Thought</h3>
+          <p class="reveal">Ellie is frustrated and exhausted by current communication methods that further create distance between her and her aspirations. She wants to communicate independently and in real time.</p>
+
+          <div class="journey-map reveal">
+            <div class="journey-map__grid">
+              <div class="journey-map__stage">
+                <div class="journey-map__stage-header">
+                  <div class="journey-map__stage-title">1. Trigger — Need to Communicate</div>
+                  <div class="journey-map__icon-wrap"><svg class="journey-map__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="12" cy="10" r="1"/><circle cx="8" cy="10" r="1"/><circle cx="16" cy="10" r="1"/></svg></div>
+                </div>
+                <dl>
+                  <dt>Tasks</dt><dd>Feels the need to ask a question or share an idea; signals with eye movements or gesture</dd>
+                  <dt>Feeling</dt><dd>Urgent, Anxious</dd>
+                  <dt>Improvement</dt><dd>Always available AAC that allows self initiation</dd>
+                </dl>
+              </div>
+              <div class="journey-map__stage">
+                <div class="journey-map__stage-header">
+                  <div class="journey-map__stage-title">2. Wait to be Noticed</div>
+                  <div class="journey-map__icon-wrap"><svg class="journey-map__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                </div>
+                <dl>
+                  <dt>Tasks</dt><dd>Wait quietly; vocal noises to get attention</dd>
+                  <dt>Feeling</dt><dd>Helpless, Dependent</dd>
+                  <dt>Improvement</dt><dd>Visual or audio cues built into app to alert when she has something to say</dd>
+                </dl>
+              </div>
+              <div class="journey-map__stage">
+                <div class="journey-map__stage-header">
+                  <div class="journey-map__stage-title">3. Interpretation Attempt</div>
+                  <div class="journey-map__icon-wrap"><svg class="journey-map__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                </div>
+                <dl>
+                  <dt>Tasks</dt><dd>Aide interprets intent through body language and eye gaze; possibly set up bulky Tobii or plexiglass E-TRAN</dd>
+                  <dt>Feeling</dt><dd>Embarrassed, Impatient</dd>
+                  <dt>Improvement</dt><dd>Smart, predictive text</dd>
+                </dl>
+              </div>
+              <div class="journey-map__stage">
+                <div class="journey-map__stage-header">
+                  <div class="journey-map__stage-title">4. Classroom Participation</div>
+                  <div class="journey-map__icon-wrap"><svg class="journey-map__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                </div>
+                <dl>
+                  <dt>Tasks</dt><dd>Tobii blocks Ellie's face, E-TRAN is unwieldy; limited to aide-proposed options</dd>
+                  <dt>Feeling</dt><dd>Frustrated, Excluded</dd>
+                  <dt>Improvement</dt><dd>Eye-tracking technology; use of common device screens that don't block face</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Defining the Challenge -->
+      <section class="case-section section" id="defining-challenge" aria-labelledby="defining-challenge-heading">
+        <div class="container">
+          <h2 id="defining-challenge-heading" class="case-section__heading reveal">Defining the Challenge</h2>
+          <p class="reveal">How might we design an AAC app that minimizes eye strain, integrates AI for predictive text and smart gaze tracking, and adapts to the unique needs of the individual so that they can communicate efficiently and independently without obscuring their face?</p>
+
+          <div class="goal-pair reveal">
+            <div class="goals-frustrations-banner">
+              <h3>Goal #1</h3>
+              <p>Double instances of spelling to communicate from 2x/month (spring 2024) to 4x/month (spring 2025)</p>
+            </div>
+            <div class="goals-frustrations-banner">
+              <h3>Goal #2</h3>
+              <p>User preference rating at least 20% higher than other methods</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accessibility Decisions -->
+      <section class="case-section section" id="accessibility-decisions" aria-labelledby="a11y-decisions-heading">
+        <div class="container">
+          <h2 id="a11y-decisions-heading" class="case-section__heading reveal">Accessibility Decisions</h2>
+          <p class="reveal">Key Research Insights and design decisions arrived at through recurring user interviews and a competitive audit of available AAC tools.</p>
+
+          <h3 class="reveal">User Constraints</h3>
+          <ul class="reveal styled-list">
+            <li>Communication boards have limited word categories and lack spelling options for free expression.</li>
+            <li>Many devices are cluttered and require fine motor control, causing eye strain.</li>
+            <li>Many devices limit social interaction by blocking the user's face and view.</li>
+          </ul>
+
+          <h3 class="reveal">Design Decisions</h3>
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg></div>
+              <p class="decision-card__response">Create a keyboard that integrates predictive text.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="2"/><text x="12" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="currentColor" stroke="none">TH</text></svg></div>
+              <p class="decision-card__response">Cluster letters and add phoneme keys (e.g. "TH") to reduce small eye movements and mis-triggered selections, lowering motor demands.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/><path d="M1 1l22 22" stroke-width="1.5"/></svg></div>
+              <p class="decision-card__response">Introduce an animated "clear" state that removes unused keys after each selection to reduce clutter and allow eyes to rest.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+              <p class="decision-card__response">Design for standard tablets and phones so communication partners can hold the device, preserving eye contact and social connection.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/><path d="M9 18h6"/></svg></div>
+              <p class="decision-card__response">Keep visually minimalistic with limited colors, strong contrast, and clear grouping to reduce cognitive load.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design Process -->
+      <section class="case-section section" id="design-process" aria-labelledby="design-process-heading">
+        <div class="container">
+          <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
+          <p class="reveal">I prioritized getting a functional keyboard into Ellie's hands as fast as possible, deferring polish and settings in favor of early, frequent testing with the actual user.</p>
+
+          <h3 class="reveal">Ideation &amp; Drafting (Week 1)</h3>
+          <p class="reveal">Draft 1 was a communication board on Google Slides. Ellie would use eye gaze to select a category and her aide would click it leading to a new page with more options. This is a common format for communication boards.</p>
+          <p class="reveal">This design is limited and not scalable as I would have to manually add each category and word option.</p>
+          <p class="reveal">I switched to a keyboard design that puts more power back in the hands of the user.</p>
+          <div class="two-col reveal">
+            <img src="/images/comboard/design-ideation-1.png" alt="Early communication board design iteration showing category-based layout" loading="lazy" />
+            <img src="/images/comboard/design-ideation-2.png" alt="Second iteration of the communication board moving toward a keyboard layout" loading="lazy" />
+          </div>
+
+          <h3 class="reveal">Custom Designing Icons (Week 2)</h3>
+          <p class="reveal">After learning that Ellie struggles with spelling, we decided that small icons on each key of the board would help.</p>
+          <p class="reveal">I sketched my ideas on paper and used that to create illustrations in Figma.</p>
+          <p class="reveal">I tested layouts with Ellie to decide how to balance letters, icons, and white space.</p>
+          <img src="/images/comboard/design-icons.png" alt="Paper sketches of keyboard icons alongside early digital icon components in Figma" class="reveal" loading="lazy" />
+
+          <h3 class="reveal">UI (Weeks 3–7)</h3>
+          <p class="reveal">A page from the Figma design file shows a picture of the original paper and pen sketches for keyboard icons and an early iteration of the digital components.</p>
+          <img src="/images/comboard/design-ui.png" alt="Figma design file showing paper sketches and early digital component iterations for the ComBoard keyboard" class="reveal" loading="lazy" />
+
+          <h3 class="reveal">Interaction, User Testing, Prototyping (Weeks 8–12)</h3>
+          <img src="/images/comboard/design-prototype.png" alt="ComBoard prototype showing the interaction flow and user testing setup" class="reveal" loading="lazy" />
+
+        </div>
+      </section>
+
+      <!-- Make-a-Thon -->
+      <section class="case-section section" id="make-a-thon" aria-labelledby="make-a-thon-heading">
+        <div class="container">
+          <h2 id="make-a-thon-heading" class="case-section__heading reveal">Make-a-Thon</h2>
+          <p class="reveal">In July of 2025, Figma Make became available! This drove me into a second round of prototyping to build more robust settings to personalize to a greater range of AAC users' needs.</p>
+          <p class="reveal">I integrated predictive text, text-to-speech, and speech to text.</p>
+          <ul class="reveal styled-list">
+            <li>I refined the UI to make better use of screen space.</li>
+            <li>I switched from custom to Lucide icons for consistency.</li>
+            <li>I improved selection feedback with scaling and highlighting.</li>
+          </ul>
+          <div class="makeathon-grid reveal">
+            <div class="makeathon-grid__stack">
+              <img src="/images/comboard/makeathon-1.png" alt="Refined ComBoard UI from the Make-a-Thon showing improved screen space usage" loading="lazy" />
+              <img src="/images/comboard/makeathon-3.png" alt="ComBoard settings and personalization options from the Make-a-Thon prototype" loading="lazy" />
+              <img src="/images/comboard/makeathon-4.png" alt="ComBoard Make-a-Thon prototype showing selection feedback improvements" loading="lazy" />
+            </div>
+            <div class="makeathon-grid__large">
+              <img src="/images/comboard/makeathon-2.png" alt="ComBoard Make-a-Thon iteration with Lucide icons and updated layout" loading="lazy" />
+            </div>
+          </div>
+
+          <a href="https://comboard.figma.site" class="prototype-link reveal" target="_blank" rel="noopener noreferrer" aria-label="View ComBoard Figma prototype (opens in new tab)">
+            View Figma Prototype &rarr;
+          </a>
+        </div>
+      </section>
+
+      <!-- Outcomes -->
+      <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
+        <div class="container">
+          <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
+          <img src="/images/comboard/device-usage-graph.png" alt="A line graph showing device usage per month from May 2024 to June 2025. The student requested to use the Tobii device the least with a nearly horizontal line at zero, plexiglass board occasionally, and the digital ComBoard most often with a peak of 24 uses in January 2025. Plexiglass board usage decreased as digital board usage increased. There is a dip in ComBoard use during December 2024." class="reveal" loading="lazy" />
+          <div class="goal-pair reveal">
+            <div class="goals-frustrations-banner">
+              <h3>Goal #1 Result</h3>
+              <p>80% increase in spelling instances — using ComBoard 5x/week by spring 2025 compared to 2x/month with plexiglass board.</p>
+            </div>
+            <div class="goals-frustrations-banner">
+              <h3>Goal #2 Result</h3>
+              <p>Method preferences: Tobii (1/5), Plexiglass board (3/5), ComBoard (5/5)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sticker Sheet -->
+      <section class="case-section section" id="sticker-sheet" aria-labelledby="sticker-sheet-heading">
+        <div class="container">
+          <h2 id="sticker-sheet-heading" class="case-section__heading reveal">Sticker Sheet</h2>
+          <p class="reveal">Every button, tile, and card layout, along with their interaction states, used in both the mobile and desktop designs. This sticker sheet makes modifying and personalizing the ComBoard hassle-free, allowing me to continuously provide the student with a tool that best suits her needs as she is able to communicate them to me over time. Components are organized by variant and state so that a developer can quickly inventory every UI element and map it to a code implementation.</p>
+          <div class="figma-embed reveal">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://embed.figma.com/design/WfSYwUsx2hl5ZNGATQkpbP/ComBoard-V.2?node-id=406-7989&embed-host=share" title="ComBoard V.2 Sticker Sheet — Figma embed" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Learnings -->
+      <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
+        <div class="container">
+          <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
+          <p class="reveal">One of the biggest takeaways from this project was learning when to leverage existing resources. I spent a lot of time creating custom icons, which delayed the completion of a functioning product and introduced visual inconsistencies — libraries like Lucide already had what I needed. I also gained a deeper appreciation for state management; it's not only extremely important but surprisingly complex, and poor implementation leads to messy code and a frustrating user experience. Finally, I learned that color choices go far beyond aesthetics. ComBoard went through several sets of brand colors before landing on a palette that actively supports the user experience, helping Ellie focus on selections by looking towards colors rather than trying to distinguish individual letters.</p>
+        </div>
+      </section>
+
+      <!-- Scaling ComBoard -->
+      <section class="case-section section" id="scaling" aria-labelledby="scaling-heading">
+        <div class="container">
+          <h2 id="scaling-heading" class="case-section__heading reveal">Scaling ComBoard</h2>
+          <p class="reveal">ComBoard was designed for Ellie, but the underlying problem — bulky, one-size-fits-all AAC tools that cause fatigue and limit social connection — affects millions of non-speaking individuals. The Make-a-Thon prototype took the first step toward scalability by introducing robust settings for layout, color themes, and input methods so the app can adapt to a wider range of motor and cognitive profiles. Looking ahead, scaling ComBoard means building a modular preset system where therapists or caregivers can configure key clusters, icon sets, and predictive vocabularies for each user without developer involvement. It also means supporting multiple input modalities — switch scanning, head tracking, and touchscreen alongside eye gaze — so the app isn't locked to a single access method. The long-term vision is an open platform where clinicians can share and refine presets across institutions, turning ComBoard from a tool built for one student into a flexible framework that any AAC user can make their own.</p>
+        </div>
+      </section>
+
+      <!-- Next Steps -->
+      <section class="case-section section" id="next-steps" aria-labelledby="next-steps-heading">
+        <div class="container">
+          <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
+          <div class="next-steps reveal">
+            <div class="next-step">
+              <h3 class="next-step__title">Mobile Layout &amp; Text Field</h3>
+              <p class="next-step__text">Improve mobile layout; the utility buttons are cramped, creating an accessibility obstacle; the text field needs to be re-imagined to support focused spelling, sentence tracking, and predictive text options.</p>
+              <p class="next-step__update">Update: This improvement was implemented in the Figma Make prototype.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Robust Personalization</h3>
+              <p class="next-step__text">Designing several more "presets" and working with other developers to find the best way to put power in the hands of users to personalize the layout and function to fit their unique needs.</p>
+              <p class="next-step__update">Update: Presets and robust settings were implemented in the Figma Make prototype.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Eye-Gaze Tracking Technology</h3>
+              <p class="next-step__text">I attempted to integrate WebGazer into the Figma Make prototype, but the calibration needs a lot of work before it is actually useful. I will continue to research and find alternate software and hardware solutions.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">More User Interviews &amp; Usability Study</h3>
+              <p class="next-step__text">Interview 5 additional individuals who use AAC devices to understand their needs and let them guide further design decisions. Later, moderated usability studies will guide iteration.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Dev Collaboration</h3>
+              <p class="next-step__text">Publish as a website and as a downloadable app for Ellie to continue using with other communication partners.</p>
+            </div>
+          </div>
+
+          <PrevNextNav
+            next={{ title: "Budget App", href: "/budgetapp" }}
+          />
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

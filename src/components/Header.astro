@@ -1,0 +1,150 @@
+---
+---
+<!-- Site Header (Audit #2) -->
+<header class="site-header" role="banner">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="UX by Lidia Ochoa — Home">
+      <img src="/images/logo.png" alt="Lidia's Logo; a two tone teal L shape with an orange arc over the right side creating a capital D shape." width="48" height="48" />
+    </a>
+
+    <div class="site-header__nav">
+      <nav aria-label="Main navigation">
+        <ul class="site-header__nav-list">
+          <li class="projects-dropdown">
+            <button class="site-header__nav-link projects-dropdown__trigger" style="background: var(--color-teal);" aria-expanded="false" aria-haspopup="true" type="button">
+              Projects
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" class="projects-dropdown__chevron">
+                <polyline points="3,4.5 6,7.5 9,4.5"/>
+              </svg>
+            </button>
+            <ul class="projects-dropdown__menu" role="menu">
+              <li role="none"><a href="/comboard-app" class="projects-dropdown__item" role="menuitem" style="--item-accent: #4cc4cf;">ComBoard</a></li>
+              <li role="none"><a href="/budgetapp" class="projects-dropdown__item" role="menuitem" style="--item-accent: #75d349;">Budget App</a></li>
+              <li role="none"><a href="/portfolio-site" class="projects-dropdown__item" role="menuitem" style="--item-accent: #ffd44f;">Portfolio Site</a></li>
+              <li role="none"><a href="/a11y-consulting" class="projects-dropdown__item" role="menuitem" style="--item-accent: #ffad00;">A11y Consulting</a></li>
+              <li role="none"><a href="/our-light-unbound" class="projects-dropdown__item" role="menuitem" style="--item-accent: #bea7be;">Our Light Unbound</a></li>
+              <li role="none"><a href="/offline-budget" class="projects-dropdown__item" role="menuitem" style="--item-accent: #4cc4cf;">Offline Budget Tool</a></li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://drive.google.com/drive/folders/16NW9celCWEXbExogGxqL3Cdqg43VXIZ3?usp=drive_link"
+              class="site-header__nav-link"
+              style="background: var(--color-accent);"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View all 1-Pagers (opens in new tab)"
+            >View 1-Pagers</a>
+          </li>
+          <li>
+            <a href="/about-me-page" class="site-header__nav-link" style="background: var(--color-mauve);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+              About Me
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:lidia.ochoa@uxbylidiaochoa.com?subject=Contact%20regarding%20portfolio"
+              class="site-header__nav-link"
+              style="background: var(--color-orange);"
+              aria-label="Email Lidia (opens email client)"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Email Lidia
+            </a>
+          </li>
+          <li>
+            <a
+              href="/resume/Lidia_Ochoa_UX_Resume.pdf"
+              class="site-header__nav-link"
+              style="background: var(--color-green);"
+              aria-label="Resume (downloads PDF)"
+              download
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Resume
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button
+        class="mobile-menu-toggle"
+        id="mobile-menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <a href="/comboard-app" style="background: var(--color-teal);">ComBoard</a>
+    <a href="/budgetapp" style="background: var(--color-green);">Budget App</a>
+    <a href="/portfolio-site" style="background: var(--color-accent);">Portfolio Site</a>
+    <a href="/a11y-consulting" style="background: var(--color-orange);">A11y Consulting</a>
+    <a href="/our-light-unbound" style="background: #bea7be;">Our Light Unbound</a>
+    <a href="/offline-budget" style="background: var(--color-teal);">Offline Budget Tool</a>
+    <span class="site-header__nav-link--disabled" style="background: var(--color-pink);" aria-disabled="true">
+      Lidia Paints <span class="coming-soon-badge">Coming Soon</span>
+    </span>
+    <a
+      href="https://drive.google.com/drive/folders/16NW9celCWEXbExogGxqL3Cdqg43VXIZ3?usp=drive_link"
+      style="background: var(--color-accent);"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View all 1-Pagers (opens in new tab)"
+    >View 1-Pagers</a>
+    <a href="/about-me-page" style="background: var(--color-mauve);">About Me</a>
+    <a href="mailto:lidia.ochoa@uxbylidiaochoa.com?subject=Contact%20regarding%20portfolio" style="background: var(--color-orange);" aria-label="Email Lidia (opens email client)">Email Lidia</a>
+    <a href="/resume/Lidia_Ochoa_UX_Resume.pdf" style="background: var(--color-green);" aria-label="Resume (downloads PDF)" download>Resume</a>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const nav = document.getElementById('mobile-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+  }
+
+  // Projects dropdown
+  const dropdownTrigger = document.querySelector('.projects-dropdown__trigger');
+  const dropdown = document.querySelector('.projects-dropdown');
+  if (dropdownTrigger && dropdown) {
+    dropdownTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('is-open');
+      dropdownTrigger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target as Node)) {
+        dropdown.classList.remove('is-open');
+        dropdownTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dropdown.classList.contains('is-open')) {
+        dropdown.classList.remove('is-open');
+        dropdownTrigger.setAttribute('aria-expanded', 'false');
+        dropdownTrigger.focus();
+      }
+    });
+  }
+</script>

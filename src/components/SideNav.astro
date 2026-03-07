@@ -1,0 +1,23 @@
+---
+interface Props {
+  sections: { id: string; label: string }[];
+}
+
+const { sections } = Astro.props;
+---
+<!-- Side Navigation with scroll-spy (Audit #11) -->
+<nav class="side-nav" aria-label="Page sections" id="side-nav">
+  <ul class="side-nav__list">
+    <li class="side-nav__highlight" aria-hidden="true"></li>
+    {sections.map((section, i) => (
+      <li>
+        <a
+          href={`#${section.id}`}
+          class="side-nav__link"
+          aria-current={i === 0 ? "true" : undefined}
+          data-section={section.id}
+        >{section.label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>

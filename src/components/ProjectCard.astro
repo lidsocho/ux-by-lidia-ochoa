@@ -1,0 +1,47 @@
+---
+interface Props {
+  image: string;
+  alt: string;
+  date: string;
+  role: string;
+  title: string;
+  description: string;
+  href?: string;
+  disabled?: boolean;
+  accentColor?: string;
+}
+
+const { image, alt, date, role, title, description, href, disabled = false, accentColor } = Astro.props;
+---
+<!-- Project Card (Audit #7) -->
+<li
+  class:list={["project-card", { "project-card--disabled": disabled }]}
+  style={accentColor ? `--card-accent: ${accentColor};` : undefined}
+>
+  <div class="project-card__image">
+    <img src={image} alt={alt} loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <div class="project-card__meta">
+      <span>{date}</span>
+      <span>&middot;</span>
+      <span>{role}</span>
+    </div>
+    <h3 class="project-card__title">{title}</h3>
+    <p class="project-card__description">{description}</p>
+    {disabled ? (
+      <span class="project-card__coming-soon" aria-disabled="true">
+        Coming Soon
+      </span>
+    ) : (
+      <a
+        href={href}
+        class="project-card__cta"
+        aria-label={`Read ${title} case study`}
+      >
+        Read Case Study
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    )}
+  </div>
+</li>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <circle cx="200" cy="200" r="190" fill="#4cc4cf" opacity="0.12"/>
+  <circle cx="200" cy="200" r="150" fill="#4cc4cf" opacity="0.2"/>
+  <!-- Wallet -->
+  <rect x="130" y="140" width="140" height="100" rx="12" fill="#fff" stroke="#2d2d2d" stroke-width="3"/>
+  <rect x="130" y="140" width="140" height="30" rx="12" fill="#4cc4cf" opacity="0.4"/>
+  <rect x="130" y="155" width="140" height="15" fill="#4cc4cf" opacity="0.4"/>
+  <!-- Clasp -->
+  <rect x="220" y="178" width="60" height="28" rx="8" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <circle cx="250" cy="192" r="6" fill="#4cc4cf" stroke="#2d2d2d" stroke-width="1.5"/>
+  <!-- Offline indicator -->
+  <circle cx="200" cy="290" r="16" fill="none" stroke="#4cc4cf" stroke-width="2" opacity="0.4"/>
+  <line x1="189" y1="279" x2="211" y2="301" stroke="#4cc4cf" stroke-width="2" opacity="0.4"/>
+  <text x="200" y="330" text-anchor="middle" font-family="Commissioner, sans-serif" font-size="14" font-weight="600" fill="#4cc4cf" opacity="0.4">Coming Soon</text>
+</svg>

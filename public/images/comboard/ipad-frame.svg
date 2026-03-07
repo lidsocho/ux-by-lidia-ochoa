@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1194 834" fill="none">
+  <!-- iPad Pro 11" landscape frame -->
+  <!-- Outer body -->
+  <rect x="0" y="0" width="1194" height="834" rx="36" ry="36" fill="#1a1a1a"/>
+  <!-- Inner bezel -->
+  <rect x="2" y="2" width="1190" height="830" rx="34" ry="34" fill="#2d2d2d"/>
+  <!-- Bezel highlight (subtle) -->
+  <rect x="3" y="3" width="1188" height="828" rx="33" ry="33" fill="#333333"/>
+  <!-- Screen area (where content goes) -->
+  <rect class="ipad-screen" x="42" y="28" width="1110" height="778" rx="8" ry="8" fill="#000000"/>
+  <!-- Camera dot (landscape right side) -->
+  <circle cx="1172" cy="417" r="5" fill="#1a1a1a" stroke="#111111" stroke-width="1"/>
+  <circle cx="1172" cy="417" r="2" fill="#0d2137" opacity="0.6"/>
+  <!-- Subtle top edge highlight -->
+  <rect x="100" y="1" width="994" height="1" rx="0.5" fill="#555555" opacity="0.3"/>
+</svg>

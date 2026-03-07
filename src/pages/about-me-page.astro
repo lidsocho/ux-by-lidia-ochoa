@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="About Me — Lidia Ochoa | UX/Product Designer" description="Learn about Lidia Ochoa, a UX/Product designer in Seattle specializing in accessible learning and financial tools.">
+  <!-- About Hero (Audit #3 — h1) -->
+  <section class="section" aria-labelledby="about-hero-heading">
+    <div class="container">
+      <div class="about-hero reveal">
+        <div>
+          <h1 id="about-hero-heading">Hi, I'm Lidia</h1>
+          <p class="mt-md">I am a UX/Product designer in Seattle, WA specializing in accessible learning and financial tools. I spent 7 years teaching math and working closely with autistic, disabled, and other diverse learners. I now use that experience to design products that remove barriers for disabled and neurodivergent individuals.</p>
+        </div>
+        <div class="about-hero__image about-hero__image--circle">
+          <img
+            src="/images/lidia-profile.png"
+            alt="Lidia smiles, wearing a mustard yellow cardigan and reclining on a bright orange park bench."
+            loading="eager"
+          />
+        </div>
+        <div class="recent-wins">
+          <div class="recent-win recent-win--orange">
+            <span class="recent-win__label">Recent Win #1</span>
+            140% increase in EOC pass rates<span class="recent-win__sub">Inclusive, data-informed instruction at Bob Hope HS</span>
+          </div>
+          <div class="recent-win recent-win--teal">
+            <span class="recent-win__label">Recent Win #2</span>
+            980% increase in independent spelling<span class="recent-win__sub">ComBoard AAC tool for a disabled student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Skills -->
+  <section class="section" aria-labelledby="core-skills-heading">
+    <div class="container">
+      <h2 id="core-skills-heading" class="reveal">Core Skills</h2>
+      <ul class="skills-list reveal" role="list">
+        <li class="skill-tag">User Research</li>
+        <li class="skill-tag">Design Thinking</li>
+        <li class="skill-tag">Collaboration</li>
+        <li class="skill-tag">User Testing</li>
+        <li class="skill-tag">Figma</li>
+        <li class="skill-tag">Wireframing</li>
+        <li class="skill-tag">Prototyping</li>
+        <li class="skill-tag">Design Systems</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- My Story -->
+  <section class="section" aria-labelledby="my-story-heading">
+    <div class="container">
+      <h2 id="my-story-heading" class="reveal">My Story</h2>
+
+      <!-- Inclusive at School & in UX Design -->
+      <div class="story-section reveal">
+        <div>
+          <h3>Inclusive at School &amp; in UX Design</h3>
+          <p class="mt-sm">Empathy, collaboration, and inclusivity have driven my work in the classroom. Every day of my career, I have used data, technology, and one-on-one support to help students get closer to their goals. I am proud to say that these efforts contributed to a 140% increase in Algebra I EOC pass rates during my time at BHS.</p>
+          <p>One of the most impactful parts of my teaching career was my time working as a support to a non-speaking student with cerebral palsy. Learning to co-create communication strategies with her and her family inspired my work on ComBoard, a personalized AAC for that student.</p>
+          <p>These experiences are what has led me to UX and inspired my passion for accessible, inclusive, and educational product design that supports the neurodivergent and disabled user.</p>
+        </div>
+        <div class="story-section__image">
+          <img
+            src="/images/about/classroom.jpg"
+            alt="Four students sitting at desks using Chromebooks, graphing calculators, and whiteboards in a classroom setting."
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Research Driven -->
+      <div class="story-section story-section--reverse reveal">
+        <div>
+          <h3>Research Driven</h3>
+          <p class="mt-sm">UX work has sharpened my education skills in several ways. I have conducted market research, usability studies, created affinity maps in Miro, and crafted personas based on user interviews. I have created wireframes and iterated on low and high fidelity flows in Figma, using data and feedback to best meet user needs.</p>
+          <p>I have even applied current AI tools to super power my design process and assist with prototyping while staying true to user needs, design goals, and best practices.</p>
+        </div>
+        <div class="story-section__image">
+          <img
+            src="/images/about/affinity-map.png"
+            alt="An affinity map created in Miro showing clustered sticky notes from a usability study."
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Google UX Certificate (Audit #20 — fix alt text) -->
+      <div class="story-section reveal">
+        <div>
+          <h3>Google UX Certificate</h3>
+          <p class="mt-sm">In 2025, I completed Google's comprehensive UX Design professional certification program, mastering the fundamentals of user-centered design through hands on projects and real world applications. This intensive program deepened my understanding of design thinking, user research methodologies, wireframing, prototyping, and usability testing — reinforcing the foundation that drives my inclusive design approach.</p>
+        </div>
+        <div class="story-section__image">
+          <img
+            src="/images/about/google-certificate.png"
+            alt="Google UX Design Professional Certificate badge showing completion of the program."
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

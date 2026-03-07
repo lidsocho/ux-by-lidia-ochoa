@@ -1,0 +1,36 @@
+---
+import SkipLink from '../components/SkipLink.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  projectColor?: string;
+}
+
+const { title, description = 'UX/Product Designer specializing in accessible learning and financial tools.', projectColor } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Commissioner:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <SkipLink />
+  <Header />
+  <main id="main-content" style={projectColor ? `--color-project: ${projectColor}; --color-card-tint: ${projectColor}; --color-card-bg: color-mix(in srgb, ${projectColor} 10%, var(--color-bg));` : undefined}>
+    <slot />
+  </main>
+  <Footer />
+  <script src="/scripts/reveal.js" is:inline></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <circle cx="200" cy="200" r="190" fill="#ffd44f" opacity="0.2"/>
+  <circle cx="200" cy="200" r="150" fill="#ffd44f" opacity="0.3"/>
+  <!-- Laptop shape -->
+  <rect x="110" y="120" width="180" height="120" rx="8" fill="#fff" stroke="#2d2d2d" stroke-width="3"/>
+  <!-- Screen -->
+  <rect x="120" y="130" width="160" height="96" rx="4" fill="#fafaf8"/>
+  <!-- Screen content lines -->
+  <rect x="132" y="142" width="60" height="6" rx="3" fill="#ffd44f"/>
+  <rect x="132" y="154" width="100" height="4" rx="2" fill="#ddd"/>
+  <rect x="132" y="164" width="80" height="4" rx="2" fill="#ddd"/>
+  <!-- Cards -->
+  <rect x="132" y="178" width="40" height="30" rx="4" fill="#4cc4cf" opacity="0.3" stroke="#2d2d2d" stroke-width="1"/>
+  <rect x="180" y="178" width="40" height="30" rx="4" fill="#75d349" opacity="0.3" stroke="#2d2d2d" stroke-width="1"/>
+  <rect x="228" y="178" width="40" height="30" rx="4" fill="#ffd44f" opacity="0.5" stroke="#2d2d2d" stroke-width="1"/>
+  <!-- Laptop base -->
+  <path d="M90 240 L110 240 L110 248 Q110 252 114 252 L286 252 Q290 252 290 248 L290 240 L310 240 Q314 240 312 248 L298 264 Q296 268 290 268 L110 268 Q104 268 102 264 L88 248 Q86 240 90 240Z" fill="#fff" stroke="#2d2d2d" stroke-width="3"/>
+  <!-- Code brackets -->
+  <text x="200" y="310" text-anchor="middle" font-family="monospace" font-size="28" font-weight="700" fill="#2d2d2d" opacity="0.15">&lt;/&gt;</text>
+</svg>

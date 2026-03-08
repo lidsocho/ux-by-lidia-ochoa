@@ -5,11 +5,16 @@ import PrevNextNav from '../components/PrevNextNav.astro';
 
 const sections = [
   { id: 'overview', label: 'Overview' },
+  { id: 'understanding-users', label: 'Understanding Users' },
   { id: 'design-process', label: 'Design Process' },
+  { id: 'features', label: 'Features' },
+  { id: 'accessibility', label: 'Accessibility' },
+  { id: 'outcomes', label: 'Outcomes' },
+  { id: 'learnings', label: 'What I Learned' },
   { id: 'next-steps', label: 'Next Steps' },
 ];
 ---
-<BaseLayout title="Offline Personal Budget Tool — Case Study | Lidia Ochoa" description="An offline-first personal budget tool designed for accessibility and simplicity." projectColor="#4cc4cf">
+<BaseLayout title="Offline Budget Tool — Case Study | Lidia Ochoa" description="An offline-first, WCAG 2.2 AAA personal budget app designed for users overwhelmed by traditional financial tools." projectColor="#4cc4cf">
 
   <!-- Hero -->
   <section class="case-hero">
@@ -17,11 +22,11 @@ const sections = [
       <div class="reveal">
         <h1>Offline Personal Budget Tool</h1>
         <dl class="case-hero__meta">
-          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Coming Soon</dd></div>
-          <div class="case-hero__meta-item"><dt>Role:</dt><dd>TBD</dd></div>
-          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>TBD</dd></div>
+          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Oct 2025 – Mar 2026</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Design &amp; Dev (solo)</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>HTML, CSS, JavaScript, localStorage</dd></div>
         </dl>
-        <p class="case-hero__tagline">This case study is currently in progress. Check back soon for the full writeup.</p>
+        <p class="case-hero__tagline">An offline-first personal budget tool built for people who find traditional financial apps overwhelming — accessible, private, and simple enough to actually use.</p>
       </div>
     </div>
   </section>
@@ -34,7 +39,67 @@ const sections = [
       <section class="case-section section" id="overview" aria-labelledby="overview-heading">
         <div class="container">
           <h2 id="overview-heading" class="case-section__heading reveal">Overview</h2>
-          <p class="reveal">Full case study coming soon. This page is a placeholder while the project writeup is being developed.</p>
+          <p class="reveal">Most budgeting apps assume their users already understand personal finance. They bury core actions in menus, use jargon-heavy interfaces, and require account linking that raises privacy concerns. For someone who has never budgeted before — or who gave up on previous tools because they were too complicated — these apps create more anxiety than they solve.</p>
+          <p class="reveal">Bb Budget is designed from the opposite direction: start simple, stay private, and make the most important actions the most visible. It runs entirely in the browser with no server, no account, and no data leaving the device. All data lives in localStorage — the user's finances stay on their machine.</p>
+
+          <div class="goals-frustrations-banner reveal">
+            <div class="goals-frustrations-banner__inner">
+              <div>
+                <h3>Goals</h3>
+                <ul class="styled-list">
+                  <li>Make budgeting approachable for first-time users</li>
+                  <li>Build an offline-first tool with zero data privacy concerns</li>
+                  <li>Meet WCAG 2.2 AAA from day one — contrast, text size, labels</li>
+                  <li>Support tiered complexity so users can grow into the tool</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Constraints</h3>
+                <ul class="styled-list">
+                  <li>No backend — all data stored in browser localStorage</li>
+                  <li>Must work offline and without account creation</li>
+                  <li>Needs to handle real transaction volumes (1,000+ entries)</li>
+                  <li>Solo project — design, development, and testing all on me</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Understanding Users -->
+      <section class="case-section section" id="understanding-users" aria-labelledby="understanding-users-heading">
+        <div class="container">
+          <h2 id="understanding-users-heading" class="case-section__heading reveal">Understanding Users</h2>
+          <p class="reveal">The primary user is someone like Edgar — a 42-year-old HVAC manager who tried to budget in his 20s but became stressed as adult responsibilities piled up and gave up. Now settled in his career and thinking about retirement, he wants a budgeting app that is accessible, easy to use, and simple. As Edgar puts it: "I've always wanted to be better with money, but it always seems too complicated, and the tools that are supposed to help don't make it much easier."</p>
+
+          <div class="goals-frustrations-banner reveal">
+            <div class="goals-frustrations-banner__inner">
+              <div>
+                <h3>Edgar's Goals</h3>
+                <ul class="styled-list">
+                  <li>Plan for retirement effectively</li>
+                  <li>Create simple budgets easily</li>
+                  <li>Learn basic financial management</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Edgar's Frustrations</h3>
+                <ul class="styled-list">
+                  <li>Spreadsheet budgets are confusing</li>
+                  <li>Apps hide core actions in menus</li>
+                  <li>Visual impairment makes many apps unusable</li>
+                  <li>Overwhelmed by financial jargon</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="user-intro__stats reveal" style="justify-content: center;">
+            <div class="case-hero__badge">75% &rarr; 90%<span class="case-hero__badge-label">Satisfaction grew after iterative testing</span></div>
+            <div class="case-hero__badge">WCAG 2.2 AAA<span class="case-hero__badge-label">From day 1 — contrast, text size, labels</span></div>
+            <div class="case-hero__badge">Tiered complexity<span class="case-hero__badge-label">"Learn" hub supports financial literacy</span></div>
+          </div>
         </div>
       </section>
 
@@ -42,7 +107,100 @@ const sections = [
       <section class="case-section section" id="design-process" aria-labelledby="design-process-heading">
         <div class="container">
           <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
-          <p class="reveal">Details about the design process will be added here.</p>
+
+          <h3 class="reveal">Visual Design</h3>
+          <p class="reveal">The warm, muted palette — olive green for income, muted rose for expenses — was chosen to reduce the anxiety that comes with financial dashboards. Most budget apps use aggressive reds and greens that make every spending moment feel like a warning. Bb Budget uses softer tones that convey information without judgment. The clean, warm-toned background and generous whitespace make the interface feel calm rather than clinical.</p>
+
+          <h3 class="reveal">Information Architecture</h3>
+          <p class="reveal">The app is organized around five primary tabs — Review, Summary, Trends, Balances, and Settings — each representing a core budgeting task. This flat navigation means every feature is one click away. No nested menus, no hidden panels, no "more options" drawers. The most important actions (importing transactions, reviewing spending) come first in the tab order.</p>
+
+          <h3 class="reveal">Progressive Complexity</h3>
+          <p class="reveal">New users start with the Review tab: import a CSV, categorize transactions, done. As they build confidence, they discover the Summary tab (budget targets vs. actual spending), then Trends (month-over-month patterns). The tool grows with the user rather than overwhelming them upfront. Settings lets users customize categories, manage subscriptions, and export/import backups — power features accessible when needed, invisible when not.</p>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="case-section section" id="features" aria-labelledby="features-heading">
+        <div class="container">
+          <h2 id="features-heading" class="case-section__heading reveal">Features</h2>
+
+          <h3 class="reveal">Transaction Review</h3>
+          <p class="reveal">The Review tab is the app's home base. Users import bank CSVs and categorize transactions one by one or in bulk. Each row shows date, description, account, amount, and a category dropdown. An auto-categorize feature handles repeat merchants, and a progress bar shows how many transactions have been reviewed — turning a tedious task into a completable one.</p>
+          <img src="/images/offline-budget/review-transactions.png" alt="Bb Budget Review tab showing a transaction list with date, description, account, amount, and category columns. Filtering by Groceries category, showing 5 transactions totaling -$485.24. Progress indicator shows 64 of 79 reviewed (81%)." class="reveal" loading="lazy" />
+
+          <h3 class="reveal">Monthly Summary</h3>
+          <p class="reveal">The Summary tab breaks spending into variable and fixed expenses with budget targets. Progress bars show spending against each category's limit. Fixed expenses (rent, subscriptions) are separated from variable spending so users can see what they control. The subscription breakdown itemizes recurring charges so nothing hides in a lump sum.</p>
+          <img src="/images/offline-budget/summary.png" alt="Bb Budget Summary tab showing variable expenses ($105.26 across categories like Groceries, Eating Out, Gas/Transport with progress bars against budget targets) and fixed expenses ($1,500 rent plus subscriptions totaling $48.29/month including iCloud, Audible, Figma, and Webflow)." class="reveal" loading="lazy" />
+
+          <h3 class="reveal">Trends</h3>
+          <p class="reveal">The Trends tab offers three views: Income vs Spending (bar chart comparing monthly totals), Category Breakdown (stacked bar showing where money goes), and Account Balances (line chart tracking liquid assets over time). Time range filters let users zoom in on any period. This is where the budgeting story emerges — patterns that are invisible in transaction lists become clear in visual form.</p>
+          <img src="/images/offline-budget/trends-clean.png" alt="Bb Budget Trends tab showing Income vs Spending bar chart from October 2025 to March 2026. Olive green bars represent income, muted rose bars represent expenses. A net income area chart below shows the cumulative difference trending upward." class="reveal" loading="lazy" />
+          <img src="/images/offline-budget/trends-category-breakdown.png" alt="Category Breakdown view showing stacked bar chart of variable expenses by month. Categories include Groceries, Eating Out, Gas/Transport, Travel, Doctors/Health, and others, color-coded with a detailed legend. November 2025 spike visible from Art Exhibit and Travel spending." class="reveal" loading="lazy" />
+          <img src="/images/offline-budget/trends-account-balances.png" alt="Account Balances Over Time line chart tracking seven accounts from October 2025 to March 2026. Total Liquid (dashed black line) trends upward from around $3,500 to $9,800. Individual accounts (WF Checking, SoFi Checking, SoFi Savings, Venmo, WF Credit) shown with distinct colors and markers." class="reveal" loading="lazy" />
+
+          <h3 class="reveal">Settings & Data Management</h3>
+          <p class="reveal">Users own their data completely. The Settings tab lets them customize expense categories (add, rename, delete), manage subscriptions, set budget targets, and — critically — export and import full JSON backups. The "Clear All Data" action is separated and styled as a destructive action. Data never leaves the browser unless the user explicitly exports it.</p>
+          <img src="/images/offline-budget/settings.png" alt="Bb Budget Settings tab showing Subscriptions section (iCloud $2.99, Audible $13.30, Figma $16, Webflow $16, totaling $48.29/month), Expense Categories as deletable tag chips, and Data Management section with Export Backup (JSON), Import Backup, and Clear All Data buttons." class="reveal" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- Accessibility -->
+      <section class="case-section section" id="accessibility" aria-labelledby="a11y-heading">
+        <div class="container">
+          <h2 id="a11y-heading" class="case-section__heading reveal">Accessibility</h2>
+          <p class="reveal">Financial tools that exclude users with disabilities exclude people who may need them most. Bb Budget targets WCAG 2.2 AAA — not just the minimum, but the highest conformance level — because budgeting anxiety is already a barrier, and inaccessible UI should never be another one.</p>
+
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <p class="decision-card__response"><strong>AAA contrast throughout:</strong> Text, charts, and interactive elements all exceed 7:1 contrast. The olive/rose color palette was specifically chosen to be distinguishable by colorblind users.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg></div>
+              <p class="decision-card__response"><strong>Full keyboard navigation:</strong> Every tab, dropdown, button, and chart tooltip is reachable and operable by keyboard alone. Tab order follows the visual layout.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+              <p class="decision-card__response"><strong>Labeled inputs everywhere:</strong> Every form control — category dropdowns, budget targets, search filters, CSV upload — has a programmatic label. No placeholder-only inputs.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <p class="decision-card__response"><strong>Chart accessibility:</strong> Tooltips with exact values on hover/focus. Chart colors are distinguishable without relying on color alone — patterns and labels supplement the palette.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Outcomes -->
+      <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
+        <div class="container">
+          <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
+          <p class="reveal">Bb Budget is a functional, daily-use budgeting tool processing over 1,300 real transactions — not a prototype, but a working product built and used from the ground up.</p>
+          <div class="goal-pair reveal">
+            <div class="goals-frustrations-banner">
+              <h3>Deliverables</h3>
+              <p>A fully functional offline budgeting app with CSV import, transaction categorization (manual + auto), budget targets, three trend visualizations, multi-account balance tracking, subscription management, and JSON backup/restore — all in the browser with zero server dependencies.</p>
+            </div>
+            <div class="goals-frustrations-banner">
+              <h3>Accessibility</h3>
+              <p>WCAG 2.2 AAA conformance. 7:1+ contrast ratios, fully labeled forms, keyboard-operable charts and tables, colorblind-safe palette, and accessible data management controls including destructive action safeguards.</p>
+            </div>
+          </div>
+          <div class="user-intro__stats reveal" style="justify-content: center;">
+            <div class="case-hero__badge">1,300+ transactions<span class="case-hero__badge-label">Real daily usage</span></div>
+            <div class="case-hero__badge">WCAG 2.2 AAA<span class="case-hero__badge-label">Highest conformance level</span></div>
+            <div class="case-hero__badge">Zero dependencies<span class="case-hero__badge-label">Offline-first, localStorage only</span></div>
+            <div class="case-hero__badge">5 core views<span class="case-hero__badge-label">Review, Summary, Trends, Balances, Settings</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What I Learned -->
+      <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
+        <div class="container">
+          <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
+          <p class="reveal">Building a tool I actually use every day changed how I think about design decisions. Every friction point I encountered while categorizing my own transactions became a feature improvement — the auto-categorize function, the "mark all categorized as reviewed" shortcut, the progress bar that turns a chore into a completable task. Dogfooding is not just a testing strategy; it is a design methodology.</p>
+          <p class="reveal">The biggest technical lesson was that localStorage is a more capable persistence layer than most developers assume. With JSON export/import for backup and careful data structure design, it handles 1,300+ transactions without performance issues. The biggest design lesson was that accessibility at AAA level does not require compromise — the constraints pushed me toward a calmer, more readable interface that benefits every user, not just those with disabilities.</p>
         </div>
       </section>
 
@@ -50,7 +208,24 @@ const sections = [
       <section class="case-section section" id="next-steps" aria-labelledby="next-steps-heading">
         <div class="container">
           <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
-          <p class="reveal">Next steps and future plans will be documented here.</p>
+          <div class="next-steps reveal">
+            <div class="next-step">
+              <h3 class="next-step__title">Learn Hub</h3>
+              <p class="next-step__text">Add an educational section with plain-language financial literacy content — budgeting basics, understanding credit, planning for retirement — tailored to users who are just getting started.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Recurring Transaction Detection</h3>
+              <p class="next-step__text">Automatically identify recurring charges (subscriptions, rent, utilities) from transaction history and pre-populate the fixed expenses section.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Screen Reader Testing</h3>
+              <p class="next-step__text">Conduct formal testing with NVDA, JAWS, and VoiceOver — particularly for chart interactions and the transaction table — to validate beyond automated tools.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Goal Setting</h3>
+              <p class="next-step__text">Let users set savings goals with visual progress tracking — connecting daily categorization work to long-term financial outcomes to maintain motivation.</p>
+            </div>
+          </div>
 
           <PrevNextNav
             prev={{ title: "Our Light Unbound", href: "/our-light-unbound" }}

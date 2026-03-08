@@ -5,11 +5,15 @@ import PrevNextNav from '../components/PrevNextNav.astro';
 
 const sections = [
   { id: 'overview', label: 'Overview' },
+  { id: 'the-exhibition', label: 'The Exhibition' },
   { id: 'design-process', label: 'Design Process' },
+  { id: 'accessibility', label: 'Accessibility' },
+  { id: 'outcomes', label: 'Outcomes' },
+  { id: 'learnings', label: 'What I Learned' },
   { id: 'next-steps', label: 'Next Steps' },
 ];
 ---
-<BaseLayout title="Our Light Unbound — Case Study | Lidia Ochoa" description="Our Light Unbound — a creative project exploring accessible design in a new context." projectColor="#bea7be">
+<BaseLayout title="Our Light Unbound — Case Study | Lidia Ochoa" description="Designing an accessible art exhibition website that celebrates resilience through an inclusive, dark-themed gallery experience." projectColor="#bea7be">
 
   <!-- Hero -->
   <section class="case-hero">
@@ -17,11 +21,11 @@ const sections = [
       <div class="reveal">
         <h1>Our Light Unbound</h1>
         <dl class="case-hero__meta">
-          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Coming Soon</dd></div>
-          <div class="case-hero__meta-item"><dt>Role:</dt><dd>TBD</dd></div>
-          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>TBD</dd></div>
+          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Dec 2025 – Jan 2026</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Design &amp; Dev (solo)</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Figma, HTML, CSS, JavaScript</dd></div>
         </dl>
-        <p class="case-hero__tagline">This case study is currently in progress. Check back soon for the full writeup.</p>
+        <p class="case-hero__tagline">An accessible art exhibition website that invites every visitor — regardless of ability — to experience a gallery celebrating hope, resilience, and creative freedom.</p>
       </div>
     </div>
   </section>
@@ -34,7 +38,59 @@ const sections = [
       <section class="case-section section" id="overview" aria-labelledby="overview-heading">
         <div class="container">
           <h2 id="overview-heading" class="case-section__heading reveal">Overview</h2>
-          <p class="reveal">Full case study coming soon. This page is a placeholder while the project writeup is being developed.</p>
+          <p class="reveal">"Our Light Unbound" was a real art exhibition running January 9–31, 2026. The show explored tapping into the part of ourselves that believes peace will return — the part that inspires us to believe, hope, and dream again. I was asked to design and build the exhibition's web presence: a digital catalogue where visitors could browse artists and artworks, find gallery hours and upcoming events, and contact the gallery for purchasing details.</p>
+          <p class="reveal">The challenge was designing an accessible experience within a dark, atmospheric aesthetic that matched the exhibition's emotional tone. Dark themes are notoriously difficult for accessibility — low contrast, light-on-dark text fatigue, and focus visibility all become harder. I wanted to prove that moody, immersive design and accessibility are not in conflict.</p>
+
+          <div class="goals-frustrations-banner reveal">
+            <div class="goals-frustrations-banner__inner">
+              <div>
+                <h3>Goals</h3>
+                <ul class="styled-list">
+                  <li>Create a digital home for the exhibition that captures its emotional tone</li>
+                  <li>Make every artwork and artist discoverable and browsable</li>
+                  <li>Ensure full accessibility in a dark-themed, atmospheric design</li>
+                  <li>Provide clear paths to gallery hours, events, and purchasing</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Constraints</h3>
+                <ul class="styled-list">
+                  <li>Dark color scheme required to match the exhibition's visual identity</li>
+                  <li>Must accommodate a growing catalogue of artists and artworks</li>
+                  <li>Tight timeline — site needed to launch before the exhibition opening</li>
+                  <li>Solo project — design, content, and code all on me</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Exhibition -->
+      <section class="case-section section" id="the-exhibition" aria-labelledby="exhibition-heading">
+        <div class="container">
+          <h2 id="exhibition-heading" class="case-section__heading reveal">The Exhibition</h2>
+          <p class="reveal">The exhibition's theme — finding and freeing the light within — called for a design that felt intimate and contemplative rather than clinical. The deep purple and gold palette evokes twilight and candlelight, creating warmth within darkness. The typography uses italicized serif headers to echo handwritten gallery labels, paired with clean sans-serif body text for readability.</p>
+
+          <img src="/images/our-light-unbound/homepage.png" alt="Our Light Unbound homepage showing the exhibition title in italic serif on a gradient purple background, exhibition dates, artist statement, and a search bar for browsing artists and artworks" class="reveal" loading="lazy" />
+
+          <p class="reveal">The homepage opens with the exhibition statement — a poetic framing that sets the emotional context before visitors encounter any navigation or catalogue content. Below, a search bar lets visitors find specific artists or artworks, and an accordion-style catalogue organizes works by artist with expandable sections for biographies and individual pieces.</p>
+
+          <h3 class="reveal">Key Navigation Elements</h3>
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+              <p class="decision-card__response"><strong>Gallery Hours</strong> — immediately accessible via a prominent button, because the most common question for any exhibition site is "when can I visit?"</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+              <p class="decision-card__response"><strong>Upcoming Events</strong> — surfaces exhibition-related events and programming beyond the static gallery experience.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <p class="decision-card__response"><strong>Contact for Purchasing</strong> — a direct path for buyers, separated from general inquiries to reduce friction for the gallery's most valuable interaction.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -42,7 +98,69 @@ const sections = [
       <section class="case-section section" id="design-process" aria-labelledby="design-process-heading">
         <div class="container">
           <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
-          <p class="reveal">Details about the design process will be added here.</p>
+
+          <h3 class="reveal">Dark Theme Strategy</h3>
+          <p class="reveal">The deep purple (#1a0a2e) background with gold (#d4a537) accent text was chosen to feel luxurious and gallery-like. But dark themes require deliberate contrast work: I tested every text/background combination against WCAG AA thresholds, using lighter purples and off-whites for body text to avoid the eye strain that comes from pure white on near-black. The gradient overlays on the hero section use semi-transparent layers to ensure text remains legible regardless of the background image underneath.</p>
+
+          <h3 class="reveal">Information Architecture</h3>
+          <p class="reveal">The site is structured around the browse-and-discover pattern common in gallery and museum sites. The artist accordion collapses content by default so visitors can scan the full catalogue without scrolling endlessly, then expand individual artists to explore their work. Each artist section contains a biography ("About the Artist") and their exhibited pieces with descriptions — functioning as both a digital catalogue and an exhibition guide.</p>
+
+          <h3 class="reveal">Search</h3>
+          <p class="reveal">The search bar filters artists and artworks in real time as visitors type. For an exhibition with a growing roster, this prevents the catalogue from becoming unwieldy. The search is prominently placed between the exhibition statement and the catalogue, following the natural reading flow: context first, then discovery.</p>
+        </div>
+      </section>
+
+      <!-- Accessibility -->
+      <section class="case-section section" id="accessibility" aria-labelledby="a11y-heading">
+        <div class="container">
+          <h2 id="a11y-heading" class="case-section__heading reveal">Accessibility</h2>
+          <p class="reveal">Dark-themed sites present unique accessibility challenges. The goal was to prove that atmospheric, immersive design can be fully accessible without visual compromise.</p>
+
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <p class="decision-card__response"><strong>Contrast on dark backgrounds:</strong> Gold headings on deep purple tested above 4.5:1. Body text uses lighter tones (#e0d0f0) to reduce strain while maintaining readability.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg></div>
+              <p class="decision-card__response"><strong>Focus visibility:</strong> Custom focus outlines using the gold accent color — highly visible on dark backgrounds, unlike browser defaults which often disappear on dark themes.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+              <p class="decision-card__response"><strong>Accordion semantics:</strong> Artist sections use proper expand/collapse patterns with aria-expanded, so screen reader users know which sections are open and can navigate the catalogue efficiently.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+              <p class="decision-card__response"><strong>Search accessibility:</strong> Live search results announced via aria-live region, labeled input, and keyboard-navigable results — no mouse required to find an artist.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Outcomes -->
+      <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
+        <div class="container">
+          <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
+          <p class="reveal">The site launched before the exhibition opening and served as the digital companion throughout the show's run.</p>
+          <div class="goal-pair reveal">
+            <div class="goals-frustrations-banner">
+              <h3>Deliverables</h3>
+              <p>A fully accessible, dark-themed exhibition website with artist catalogue, real-time search, gallery hours, event listings, and purchasing contact flow — all designed and built solo within a tight timeline.</p>
+            </div>
+            <div class="goals-frustrations-banner">
+              <h3>Accessibility</h3>
+              <p>WCAG 2.1 AA contrast on all text/background combinations in a dark theme. Keyboard-navigable accordion catalogue, labeled search with live results, semantic HTML, and custom gold focus indicators.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What I Learned -->
+      <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
+        <div class="container">
+          <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
+          <p class="reveal">This project challenged the assumption that dark themes and accessibility are inherently at odds. They are not — they just require more intentional contrast work. The biggest lesson was that atmospheric design and WCAG compliance reinforce each other: the gold-on-purple palette that gives the site its gallery feel is also what makes focus indicators pop and headings scannable. The constraints forced better design decisions, not worse ones.</p>
+          <p class="reveal">Working with real artwork and real artists also deepened my understanding of how accessibility serves creative communities. Art is meant to be experienced by everyone. A gallery website that excludes visitors with disabilities contradicts the exhibition's own message about finding and freeing inner light. The accessibility work was not just a technical requirement — it was an extension of the show's values.</p>
         </div>
       </section>
 
@@ -50,7 +168,20 @@ const sections = [
       <section class="case-section section" id="next-steps" aria-labelledby="next-steps-heading">
         <div class="container">
           <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
-          <p class="reveal">Next steps and future plans will be documented here.</p>
+          <div class="next-steps reveal">
+            <div class="next-step">
+              <h3 class="next-step__title">Image Descriptions</h3>
+              <p class="next-step__text">Work with artists to write meaningful alt text for each artwork — descriptions that convey the emotional and visual experience, not just "painting on canvas."</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">High Contrast Mode</h3>
+              <p class="next-step__text">Add an optional high-contrast toggle that increases text brightness and border visibility for users who need more than the AA minimum on dark backgrounds.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Future Exhibitions</h3>
+              <p class="next-step__text">Adapt the site template for future shows — the accordion catalogue, search, and event patterns are reusable across exhibitions with different themes and palettes.</p>
+            </div>
+          </div>
 
           <PrevNextNav
             prev={{ title: "A11y Consulting", href: "/a11y-consulting" }}

@@ -107,8 +107,13 @@ const sections = [
           <p class="reveal">Webflow generates monolithic HTML with inline styles and platform-specific class names, making it difficult to enforce accessibility standards or build a true component system. I restructured into a component-based Astro project: a shared BaseLayout, reusable components (Header, Footer, SideNav, ProjectCard, PrevNextNav), and dedicated pages for each case study. This gave me full control over semantic markup, ARIA attributes, and a CSS custom property system that Webflow could not provide.</p>
           <img src="/images/portfolio/before-after-arch.svg" alt="Diagram comparing the Webflow-generated markup architecture with the new component-based Astro architecture, showing shared layouts, reusable components, typed props, and design tokens" class="reveal" loading="lazy" />
 
+          <img src="/images/portfolio/site-homepage.png" alt="Live portfolio homepage showing the hero section with navigation (Projects, View 1-Pagers, About Me, Email Lidia, Resume), headline 'UX/Product Designer | A11y & Learning Tools', profile photo, and call to action for accessibility-focused case studies" class="reveal" loading="lazy" />
+
           <h3 class="reveal">Visual Design (Week 2–3)</h3>
           <p class="reveal">I chose a neo-brutalist style to stand out in a sea of minimal portfolios. Thick offset borders, pill-shaped buttons, and bold project accent colors give each case study its own identity while a shared design token system keeps everything consistent. The color palette assigns each project a theme color — teal for ComBoard, green for Budget App, yellow for this portfolio — that cascades through headings, badges, card backgrounds, and interactive elements via a single CSS custom property.</p>
+
+          <img src="/images/portfolio/site-about.png" alt="Live portfolio About Me page showing Core Skills tags (User Research, Design Thinking, Collaboration, User Testing, Figma, Wireframing, Prototyping, Design Systems) and My Story section with classroom photo of students working together" class="reveal" loading="lazy" />
+          <img src="/images/portfolio/site-case-study.png" alt="Live portfolio ComBoard case study page showing the Understanding Users section with side navigation, user persona Ellie's goals and frustrations, and outcome badges for 980% increased spelling and 5/5 user preference" class="reveal" loading="lazy" />
 
           <h3 class="reveal">Before &amp; After</h3>
           <p class="reveal">The Webflow site had the content, but the code underneath was working against me. The rebuild keeps the same case study depth while replacing the entire technical foundation.</p>
@@ -174,6 +179,7 @@ const sections = [
           <p class="reveal">Because I both designed and built this site, I had the opportunity to practice what dev handoff looks like from both sides. The component spec below documents the ProjectCard component — its props, design tokens, spacing, and interaction states — in the format a developer would need to implement it from a design file.</p>
           <img src="/images/portfolio/component-spec.svg" alt="Component specification for the ProjectCard showing props (image, title, description, href, accentColor, disabled), design tokens (border-radius, padding, font families), and annotated spacing dimensions" class="reveal" loading="lazy" />
           <p class="reveal">Every reusable element on this site — ProjectCard, SideNav, PrevNextNav, Header, Footer — follows this same pattern: clearly typed props, consistent use of design tokens, and predictable interaction states. This structure means a new case study page can be added by writing content and passing props to existing components, with no new CSS required.</p>
+          <img src="/images/portfolio/site-footer.png" alt="Live portfolio footer section with the headline 'Let's make designs that help people', Let's Connect and LinkedIn buttons, a contact form with Name, Email, and Message fields, and copyright notice" class="reveal" loading="lazy" />
         </div>
       </section>
 

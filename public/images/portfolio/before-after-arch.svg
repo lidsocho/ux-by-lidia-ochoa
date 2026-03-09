@@ -16,8 +16,9 @@
 
   <!-- Lines from shared styles to pages -->
   <line x1="155" y1="174" x2="155" y2="200" stroke="#ccc" stroke-width="1.5"/>
-  <line x1="250" y1="174" x2="250" y2="200" stroke="#ccc" stroke-width="1.5"/>
   <line x1="345" y1="174" x2="345" y2="200" stroke="#ccc" stroke-width="1.5"/>
+  <!-- Extended line to Budget App -->
+  <line x1="250" y1="174" x2="250" y2="285" stroke="#ccc" stroke-width="1.5"/>
 
   <!-- Homepage -->
   <rect x="70" y="200" width="170" height="70" rx="10" fill="#f5f4f0" stroke="#ccc" stroke-width="2"/>
@@ -34,16 +35,16 @@
   <text x="250" y="309" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">Budget App</text>
   <text x="250" y="327" text-anchor="middle" font-size="10" fill="#888">+ unique overrides</text>
 
-  <!-- Issues -->
-  <text x="80" y="390" font-size="13" font-weight="500" fill="#c44">6 font families loaded</text>
-  <text x="80" y="410" font-size="13" font-weight="500" fill="#c44">No skip links implemented</text>
-  <text x="80" y="430" font-size="13" font-weight="500" fill="#c44">Dark mode not set up</text>
-  <text x="80" y="450" font-size="13" font-weight="500" fill="#c44">No reduced-motion handling</text>
-  <text x="80" y="470" font-size="13" font-weight="500" fill="#c44">Semantic tags underused</text>
-  <text x="80" y="490" font-size="13" font-weight="500" fill="#c44">No design token system in place</text>
+  <!-- Issues — left-aligned at x=65, starting y=390 -->
+  <text x="65" y="395" font-size="13" font-weight="500" fill="#c44">6 font families loaded</text>
+  <text x="65" y="415" font-size="13" font-weight="500" fill="#c44">No skip links implemented</text>
+  <text x="65" y="435" font-size="13" font-weight="500" fill="#c44">Dark mode not set up</text>
+  <text x="65" y="455" font-size="13" font-weight="500" fill="#c44">No reduced-motion handling</text>
+  <text x="65" y="475" font-size="13" font-weight="500" fill="#c44">Semantic tags underused</text>
+  <text x="65" y="495" font-size="13" font-weight="500" fill="#c44">No design token system in place</text>
 
-  <text x="80" y="530" font-size="11" font-weight="400" font-style="italic" fill="#999">Webflow supports these features — they were not</text>
-  <text x="80" y="545" font-size="11" font-weight="400" font-style="italic" fill="#999">used in this build.</text>
+  <text x="65" y="535" font-size="11" font-weight="400" font-style="italic" fill="#999">Webflow supports these features — they were not</text>
+  <text x="65" y="550" font-size="11" font-weight="400" font-style="italic" fill="#999">used in this build.</text>
 
   <!-- ==================== AFTER PANEL ==================== -->
   <rect x="500" y="80" width="420" height="500" rx="12" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
@@ -69,49 +70,48 @@
   <rect x="800" y="205" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
   <text x="850" y="226" text-anchor="middle" font-size="13" fill="#2d2d2d">Footer</text>
 
-  <!-- Pages row -->
-  <text x="710" y="260" text-anchor="middle" font-size="9" fill="#888">pages (each wrapped in BaseLayout)</text>
+  <!-- Pages row — taller pills with "imports ↓" inside -->
+  <rect x="520" y="260" width="82" height="48" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="561" y="280" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">home</text>
+  <text x="561" y="298" text-anchor="middle" font-size="10" fill="#888">imports &#x2193;</text>
 
-  <rect x="520" y="270" width="82" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="561" y="291" text-anchor="middle" font-size="13" fill="#2d2d2d">home</text>
+  <rect x="612" y="260" width="100" height="48" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="662" y="280" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">comboard</text>
+  <text x="662" y="298" text-anchor="middle" font-size="10" fill="#888">imports &#x2193;</text>
 
-  <rect x="612" y="270" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="662" y="291" text-anchor="middle" font-size="13" fill="#2d2d2d">comboard</text>
+  <rect x="722" y="260" width="82" height="48" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="763" y="280" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">budget</text>
+  <text x="763" y="298" text-anchor="middle" font-size="10" fill="#888">imports &#x2193;</text>
 
-  <rect x="722" y="270" width="82" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="763" y="291" text-anchor="middle" font-size="13" fill="#2d2d2d">budget</text>
+  <rect x="814" y="260" width="86" height="48" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="857" y="280" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">portfolio</text>
+  <text x="857" y="298" text-anchor="middle" font-size="10" fill="#888">imports &#x2193;</text>
 
-  <rect x="814" y="270" width="86" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="857" y="291" text-anchor="middle" font-size="13" fill="#2d2d2d">portfolio</text>
-
-  <!-- Connector: home uses ProjectCard -->
-  <line x1="561" y1="302" x2="561" y2="340" stroke="#2d2d2d" stroke-width="1.5"/>
-  <text x="580" y="326" font-size="9" fill="#888">imports</text>
+  <!-- Connector: home to ProjectCard -->
+  <line x1="561" y1="308" x2="561" y2="340" stroke="#2d2d2d" stroke-width="1.5"/>
 
   <rect x="516" y="340" width="110" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
   <text x="571" y="361" text-anchor="middle" font-size="13" fill="#2d2d2d">ProjectCard</text>
 
-  <!-- Connectors: case study pages converge on shared component container -->
-  <line x1="662" y1="302" x2="662" y2="380" stroke="#2d2d2d" stroke-width="1.5"/>
-  <line x1="763" y1="302" x2="763" y2="380" stroke="#2d2d2d" stroke-width="1.5"/>
-  <line x1="857" y1="302" x2="857" y2="380" stroke="#2d2d2d" stroke-width="1.5"/>
-
-  <text x="762" y="326" font-size="9" fill="#888">import</text>
+  <!-- Connectors: case study pages to shared component container (one row up) -->
+  <line x1="662" y1="308" x2="662" y2="340" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="763" y1="308" x2="763" y2="340" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="857" y1="308" x2="857" y2="340" stroke="#2d2d2d" stroke-width="1.5"/>
 
   <!-- Shared case study components container -->
-  <rect x="640" y="380" width="240" height="48" rx="10" fill="#f5f4f0" stroke="#2d2d2d" stroke-width="1.5"/>
+  <rect x="640" y="340" width="240" height="48" rx="10" fill="#f5f4f0" stroke="#2d2d2d" stroke-width="1.5"/>
 
-  <rect x="650" y="388" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="700" y="409" text-anchor="middle" font-size="13" fill="#2d2d2d">SideNav</text>
+  <rect x="650" y="348" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="700" y="369" text-anchor="middle" font-size="13" fill="#2d2d2d">SideNav</text>
 
-  <rect x="760" y="388" width="110" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="815" y="409" text-anchor="middle" font-size="13" fill="#2d2d2d">PrevNextNav</text>
+  <rect x="760" y="348" width="110" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="815" y="369" text-anchor="middle" font-size="13" fill="#2d2d2d">PrevNextNav</text>
 
-  <!-- Wins -->
-  <text x="560" y="460" font-size="13" font-weight="500" fill="#2a8c2a">Hand-written semantic HTML + ARIA</text>
-  <text x="560" y="480" font-size="13" font-weight="500" fill="#2a8c2a">Reusable Astro components</text>
-  <text x="560" y="500" font-size="13" font-weight="500" fill="#2a8c2a">CSS custom properties as design tokens</text>
-  <text x="560" y="520" font-size="13" font-weight="500" fill="#2a8c2a">Dark mode + prefers-reduced-motion</text>
-  <text x="560" y="540" font-size="13" font-weight="500" fill="#2a8c2a">Skip links, landmarks, focus management</text>
-  <text x="560" y="560" font-size="13" font-weight="500" fill="#2a8c2a">2 font families, optimized loading</text>
+  <!-- Wins — left-aligned at x=525, matching Before panel distance from edge -->
+  <text x="525" y="425" font-size="13" font-weight="500" fill="#2a8c2a">Hand-written semantic HTML + ARIA</text>
+  <text x="525" y="445" font-size="13" font-weight="500" fill="#2a8c2a">Reusable Astro components</text>
+  <text x="525" y="465" font-size="13" font-weight="500" fill="#2a8c2a">CSS custom properties as design tokens</text>
+  <text x="525" y="485" font-size="13" font-weight="500" fill="#2a8c2a">Dark mode + prefers-reduced-motion</text>
+  <text x="525" y="505" font-size="13" font-weight="500" fill="#2a8c2a">Skip links, landmarks, focus management</text>
+  <text x="525" y="525" font-size="13" font-weight="500" fill="#2a8c2a">2 font families, optimized loading</text>
 </svg>

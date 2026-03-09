@@ -252,6 +252,20 @@
       align-items: start;
     }
 
+    .preview-grid img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+    }
+
+    .preview-grid--wide {
+      grid-template-columns: 1fr;
+    }
+
+    .preview-grid--wide img {
+      max-width: 100%;
+    }
+
     .preview-item {
       text-align: center;
     }
@@ -666,51 +680,19 @@
       <div class="preview-grid">
         <div class="preview-item">
           <span class="preview-label">Default</span>
-          <div class="mini-card">
-            <div class="mini-card__img">4 : 3 thumbnail</div>
-            <div class="mini-card__body">
-              <div class="mini-card__meta">4/24 &ndash; 9/25 &middot; UXR &amp; Design</div>
-              <div class="mini-card__title">ComBoard</div>
-              <div class="mini-card__desc">ETRAN keyboard reduced eye strain &amp; increased spelling 980%</div>
-              <span class="mini-card__cta">Read Case Study &rarr;</span>
-            </div>
-          </div>
+          <img src="/images/docs/projectcard-default.png" alt="ProjectCard in default state showing ComBoard project with teal CTA" />
         </div>
         <div class="preview-item">
           <span class="preview-label">Hover</span>
-          <div class="mini-card mini-card--hover">
-            <div class="mini-card__img">4 : 3 thumbnail</div>
-            <div class="mini-card__body">
-              <div class="mini-card__meta">4/24 &ndash; 9/25 &middot; UXR &amp; Design</div>
-              <div class="mini-card__title">ComBoard</div>
-              <div class="mini-card__desc">ETRAN keyboard reduced eye strain &amp; increased spelling 980%</div>
-              <span class="mini-card__cta">Read Case Study &rarr;</span>
-            </div>
-          </div>
+          <img src="/images/docs/projectcard-hover.png" alt="ProjectCard in hover state with lifted shadow and cursor on CTA" />
         </div>
         <div class="preview-item">
           <span class="preview-label">Focus-visible</span>
-          <div class="mini-card mini-card--focus">
-            <div class="mini-card__img">4 : 3 thumbnail</div>
-            <div class="mini-card__body">
-              <div class="mini-card__meta">4/24 &ndash; 9/25 &middot; UXR &amp; Design</div>
-              <div class="mini-card__title">ComBoard</div>
-              <div class="mini-card__desc">ETRAN keyboard reduced eye strain &amp; increased spelling 980%</div>
-              <span class="mini-card__cta">Read Case Study &rarr;</span>
-            </div>
-          </div>
+          <img src="/images/docs/projectcard-focus.png" alt="ProjectCard with yellow focus outline around the CTA button" />
         </div>
         <div class="preview-item">
           <span class="preview-label">Disabled</span>
-          <div class="mini-card mini-card--disabled">
-            <div class="mini-card__img">4 : 3 thumbnail</div>
-            <div class="mini-card__body">
-              <div class="mini-card__meta">Coming 2026 &middot; Art</div>
-              <div class="mini-card__title">Lidia Paints</div>
-              <div class="mini-card__desc">Upcoming personal art portfolio</div>
-              <span class="mini-card__coming-soon">Coming Soon</span>
-            </div>
-          </div>
+          <img src="/images/docs/projectcard-disabled.png" alt="ProjectCard in disabled state showing Lidia Paints with Coming Soon badge" />
         </div>
       </div>
     </div>
@@ -827,26 +809,10 @@
     <!-- Visual Preview -->
     <h3>Visual Preview</h3>
     <div class="preview">
-      <div class="preview-grid" style="grid-template-columns: repeat(2, auto); justify-content: center;">
+      <div class="preview-grid" style="grid-template-columns: auto; justify-content: center; max-width: 300px; margin: 0 auto;">
         <div class="preview-item">
-          <span class="preview-label">Default</span>
-          <div class="mini-sidenav">
-            <div class="mini-sidenav__link mini-sidenav__link--active">Understanding Users</div>
-            <div class="mini-sidenav__link">Journey Map</div>
-            <div class="mini-sidenav__link">Defining the Challenge</div>
-            <div class="mini-sidenav__link">Design Process</div>
-            <div class="mini-sidenav__link">Outcomes</div>
-          </div>
-        </div>
-        <div class="preview-item">
-          <span class="preview-label">Scrolled to &sect;3</span>
-          <div class="mini-sidenav">
-            <div class="mini-sidenav__link">Understanding Users</div>
-            <div class="mini-sidenav__link">Journey Map</div>
-            <div class="mini-sidenav__link mini-sidenav__link--active">Defining the Challenge</div>
-            <div class="mini-sidenav__link">Design Process</div>
-            <div class="mini-sidenav__link">Outcomes</div>
-          </div>
+          <span class="preview-label">Default (active on first section)</span>
+          <img src="/images/docs/sidenav-default.png" alt="SideNav with The Problem highlighted as active section" />
         </div>
       </div>
     </div>
@@ -935,32 +901,10 @@
     <!-- Visual Preview -->
     <h3>Visual Preview</h3>
     <div class="preview">
-      <div class="preview-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="preview-grid preview-grid--wide">
         <div class="preview-item">
-          <span class="preview-label">Default</span>
-          <div class="mini-prevnext">
-            <div class="mini-prevnext__side">
-              <div class="mini-prevnext__label">&larr; Previous</div>
-              <div class="mini-prevnext__title">ComBoard</div>
-            </div>
-            <div class="mini-prevnext__side mini-prevnext__side--next">
-              <div class="mini-prevnext__label">Next &rarr;</div>
-              <div class="mini-prevnext__title">Portfolio Site</div>
-            </div>
-          </div>
-        </div>
-        <div class="preview-item">
-          <span class="preview-label">Hover (previous)</span>
-          <div class="mini-prevnext mini-prevnext--hover">
-            <div class="mini-prevnext__side">
-              <div class="mini-prevnext__label">&larr; Previous</div>
-              <div class="mini-prevnext__title">ComBoard</div>
-            </div>
-            <div class="mini-prevnext__side mini-prevnext__side--next">
-              <div class="mini-prevnext__label">Next &rarr;</div>
-              <div class="mini-prevnext__title">Portfolio Site</div>
-            </div>
-          </div>
+          <span class="preview-label">Hover (previous link)</span>
+          <img src="/images/docs/prevnext-hover.png" alt="PrevNextNav showing Budget App as previous and A11y Consulting as next, with hover on previous" />
         </div>
       </div>
     </div>
@@ -1051,45 +995,10 @@
     <!-- Visual Preview -->
     <h3>Visual Preview</h3>
     <div class="preview">
-      <div class="preview-grid" style="grid-template-columns: 1fr;">
+      <div class="preview-grid preview-grid--wide">
         <div class="preview-item">
           <span class="preview-label">Desktop</span>
-          <div class="mini-header">
-            <div class="mini-header__logo"></div>
-            <div class="mini-header__pills">
-              <span class="mini-pill" style="background: var(--color-accent);">Projects</span>
-              <span class="mini-pill" style="background: var(--color-orange);">1-Pagers</span>
-              <span class="mini-pill" style="background: var(--color-teal);">About Me</span>
-              <span class="mini-pill" style="background: var(--color-green);">Email</span>
-              <span class="mini-pill" style="background: var(--color-mauve);">Resume</span>
-            </div>
-          </div>
-        </div>
-        <div class="preview-item">
-          <span class="preview-label">Hover state on pill</span>
-          <div class="mini-header">
-            <div class="mini-header__logo"></div>
-            <div class="mini-header__pills">
-              <span class="mini-pill" style="background: var(--color-accent);">Projects</span>
-              <span class="mini-pill mini-pill--hover" style="background: var(--color-orange);">1-Pagers</span>
-              <span class="mini-pill" style="background: var(--color-teal);">About Me</span>
-              <span class="mini-pill" style="background: var(--color-green);">Email</span>
-              <span class="mini-pill" style="background: var(--color-mauve);">Resume</span>
-            </div>
-          </div>
-        </div>
-        <div class="preview-item">
-          <span class="preview-label">Disabled pill (upcoming project)</span>
-          <div class="mini-header">
-            <div class="mini-header__logo"></div>
-            <div class="mini-header__pills">
-              <span class="mini-pill" style="background: var(--color-accent);">Projects</span>
-              <span class="mini-pill" style="background: var(--color-orange);">1-Pagers</span>
-              <span class="mini-pill" style="background: var(--color-teal);">About Me</span>
-              <span class="mini-pill mini-pill--disabled" style="background: var(--color-pink);">Paints</span>
-              <span class="mini-pill" style="background: var(--color-mauve);">Resume</span>
-            </div>
-          </div>
+          <img src="/images/docs/header-desktop.png" alt="Header with logo and color-coded pill navigation buttons: Projects, View 1-Pagers, About Me, Email Lidia, Resume" />
         </div>
       </div>
     </div>
@@ -1188,26 +1097,10 @@
     <!-- Visual Preview -->
     <h3>Visual Preview</h3>
     <div class="preview">
-      <div class="preview-grid" style="grid-template-columns: 1fr;">
+      <div class="preview-grid preview-grid--wide">
         <div class="preview-item">
           <span class="preview-label">Desktop (2-column)</span>
-          <div class="mini-footer" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <div>
-              <div class="mini-footer__heading">Let's make designs that help people</div>
-              <div class="mini-footer__text">Have a project in mind? I'd love to hear about it.</div>
-              <div class="mini-footer__links">
-                <span class="mini-footer__link" style="background: var(--color-green);">Email Lidia</span>
-                <span class="mini-footer__link" style="background: var(--color-teal);">LinkedIn</span>
-              </div>
-            </div>
-            <div style="background: rgba(255,255,255,0.3); border-radius: 8px; padding: 8px; font-size: 0.625rem; color: var(--color-text-secondary);">
-              <div style="margin-bottom: 4px; font-weight: 600;">Contact Form</div>
-              <div style="background: white; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px; border: 1px solid var(--color-border);">Name</div>
-              <div style="background: white; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px; border: 1px solid var(--color-border);">Email</div>
-              <div style="background: white; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px; border: 1px solid var(--color-border); min-height: 24px;">Message</div>
-              <span class="mini-footer__link" style="background: var(--color-accent); font-size: 0.5625rem;">Send Message</span>
-            </div>
-          </div>
+          <img src="/images/docs/footer-desktop.png" alt="Footer with CTA heading, Let's Connect and LinkedIn buttons, contact form with Name, Email, Message fields, and copyright" />
         </div>
       </div>
     </div>

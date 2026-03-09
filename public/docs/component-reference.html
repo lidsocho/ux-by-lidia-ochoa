@@ -16,10 +16,21 @@
       --color-border: #e0e0e0;
       --color-accent: #ffd44f;
       --color-teal: #4cc4cf;
+      --color-orange: #ffad00;
+      --color-green: #75d349;
+      --color-mauve: #bea7be;
+      --color-pink: #f13989;
       --color-shadow: #2d2d2d;
       --color-code-bg: #f5f4f0;
+      --color-card-bg: #f0efeb;
+      --color-footer-bg: #cbedf0;
       --font-heading: 'Bricolage Grotesque', sans-serif;
       --font-body: 'Commissioner', sans-serif;
+      --radius-full: 9999px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --border-neo-thick: 4px;
+      --transition-fast: 150ms ease;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -30,6 +41,8 @@
         --color-border: #333;
         --color-shadow: #555;
         --color-code-bg: #222;
+        --color-card-bg: #252525;
+        --color-footer-bg: #1e3a4a;
       }
     }
 
@@ -222,6 +235,379 @@
       margin: 2rem 0;
     }
 
+    /* --- Visual Preview --- */
+    .preview {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .preview-item {
+      text-align: center;
+    }
+
+    .preview-label {
+      display: block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Mini ProjectCard preview */
+    .mini-card {
+      background: var(--color-card-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 2px solid var(--color-shadow);
+      border-right-width: var(--border-neo-thick);
+      border-bottom-width: var(--border-neo-thick);
+      text-align: left;
+      max-width: 220px;
+      margin: 0 auto;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .mini-card--hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .mini-card--focus .mini-card__cta {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .mini-card--disabled {
+      pointer-events: none;
+      background: #d5d3cf;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .mini-card--disabled { background: #1e1e1e; }
+    }
+
+    .mini-card__img {
+      height: 80px;
+      background: var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+    }
+
+    .mini-card__body {
+      padding: 0.75rem;
+    }
+
+    .mini-card__meta {
+      font-size: 0.625rem;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 2px;
+    }
+
+    .mini-card__title {
+      font-family: var(--font-heading);
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .mini-card__desc {
+      font-size: 0.6875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .mini-card__cta {
+      display: inline-block;
+      font-size: 0.625rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--color-shadow);
+      border-right-width: 3px;
+      border-bottom-width: 3px;
+      background: var(--color-accent);
+      color: var(--color-text);
+    }
+
+    .mini-card__coming-soon {
+      display: inline-block;
+      font-size: 0.625rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--color-border);
+      background: #e8e8e8;
+      color: #555;
+      letter-spacing: 0.03em;
+    }
+
+    /* Mini SideNav preview */
+    .mini-sidenav {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: left;
+      font-size: 0.75rem;
+      position: relative;
+    }
+
+    .mini-sidenav__link {
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    .mini-sidenav__link--active {
+      color: var(--color-text);
+      font-weight: 600;
+      background: var(--color-teal);
+    }
+
+    /* Mini PrevNextNav preview */
+    .mini-prevnext {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--color-border);
+      padding-top: 0.75rem;
+      font-size: 0.75rem;
+      text-align: left;
+    }
+
+    .mini-prevnext__side { max-width: 45%; }
+
+    .mini-prevnext__label {
+      font-size: 0.5625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+    }
+
+    .mini-prevnext__title {
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .mini-prevnext__side--next {
+      text-align: right;
+    }
+
+    .mini-prevnext--hover .mini-prevnext__side:first-child {
+      background: var(--color-card-bg);
+      border-radius: var(--radius-md);
+      padding: 4px 8px;
+    }
+
+    /* Mini Header preview */
+    .mini-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 6px 12px;
+      border-radius: 6px 6px 0 0;
+      font-size: 0.6875rem;
+    }
+
+    .mini-header__logo {
+      width: 24px;
+      height: 24px;
+      background: var(--color-border);
+      border-radius: 4px;
+    }
+
+    .mini-header__pills {
+      display: flex;
+      gap: 4px;
+    }
+
+    .mini-pill {
+      font-size: 0.5625rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--color-shadow);
+      border-right-width: 2.5px;
+      border-bottom-width: 2.5px;
+      white-space: nowrap;
+    }
+
+    .mini-pill--hover {
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    .mini-pill--disabled {
+      opacity: 0.5;
+    }
+
+    /* Mini Footer preview */
+    .mini-footer {
+      background: var(--color-footer-bg);
+      border-top: 2px solid var(--color-shadow);
+      padding: 12px;
+      border-radius: 0 0 6px 6px;
+      font-size: 0.6875rem;
+      text-align: left;
+    }
+
+    .mini-footer__heading {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.8125rem;
+      margin-bottom: 4px;
+    }
+
+    .mini-footer__text {
+      font-size: 0.625rem;
+      color: rgba(45,45,45,0.7);
+      margin-bottom: 6px;
+    }
+
+    .mini-footer__links {
+      display: flex;
+      gap: 4px;
+    }
+
+    .mini-footer__link {
+      font-size: 0.5625rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--color-shadow);
+      border-right-width: 2.5px;
+      border-bottom-width: 2.5px;
+    }
+
+    /* Code snippet */
+    .code-block {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .code-block .tag { color: #569cd6; }
+    .code-block .attr { color: #9cdcfe; }
+    .code-block .str { color: #ce9178; }
+    .code-block .comment { color: #6a9955; }
+
+    /* Do / Don't */
+    .guidelines {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .guidelines { grid-template-columns: 1fr; }
+    }
+
+    .guideline {
+      border-radius: 8px;
+      padding: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .guideline--do {
+      background: rgba(76, 196, 207, 0.1);
+      border: 1px solid var(--color-teal);
+    }
+
+    .guideline--dont {
+      background: rgba(241, 57, 137, 0.08);
+      border: 1px solid var(--color-pink);
+    }
+
+    .guideline__label {
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .guideline--do .guideline__label { color: #2a9da8; }
+    .guideline--dont .guideline__label { color: var(--color-pink); }
+
+    @media (prefers-color-scheme: dark) {
+      .guideline--do .guideline__label { color: var(--color-teal); }
+    }
+
+    .guideline ul {
+      list-style: none;
+      padding: 0;
+      font-size: 0.8125rem;
+    }
+
+    .guideline li {
+      padding: 2px 0;
+    }
+
+    .guideline--do li::before { content: "\2713\00a0"; color: #2a9da8; font-weight: 700; }
+    .guideline--dont li::before { content: "\2717\00a0"; color: var(--color-pink); font-weight: 700; }
+
+    @media (prefers-color-scheme: dark) {
+      .guideline--do li::before { color: var(--color-teal); }
+    }
+
+    /* Responsive behavior */
+    .responsive-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .responsive-table th {
+      font-size: 0.6875rem;
+      padding: 0.4rem 0.75rem;
+    }
+
+    .responsive-table td {
+      padding: 0.4rem 0.75rem;
+    }
+
+    .bp-badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: var(--color-accent);
+      color: var(--color-text);
+    }
+
     .design-tokens-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -266,12 +652,70 @@
     <li><a href="#design-tokens">Design Tokens</a></li>
   </ul>
 
-  <!-- ===== ProjectCard ===== -->
+  <!-- =========================================================== -->
+  <!-- ProjectCard                                                  -->
+  <!-- =========================================================== -->
   <h2 id="project-card">ProjectCard</h2>
   <div class="component">
     <div class="component-name">ProjectCard <span class="component-type component-type--reusable">Reusable</span></div>
     <p class="component-desc">Displays a project with thumbnail, metadata, description, and CTA. Renders as a list item within the projects grid.</p>
 
+    <!-- Visual Preview -->
+    <h3>Visual Preview</h3>
+    <div class="preview">
+      <div class="preview-grid">
+        <div class="preview-item">
+          <span class="preview-label">Default</span>
+          <div class="mini-card">
+            <div class="mini-card__img">4 : 3 thumbnail</div>
+            <div class="mini-card__body">
+              <div class="mini-card__meta">4/24 &ndash; 9/25 &middot; UXR &amp; Design</div>
+              <div class="mini-card__title">ComBoard</div>
+              <div class="mini-card__desc">ETRAN keyboard reduced eye strain &amp; increased spelling 980%</div>
+              <span class="mini-card__cta">Read Case Study &rarr;</span>
+            </div>
+          </div>
+        </div>
+        <div class="preview-item">
+          <span class="preview-label">Hover</span>
+          <div class="mini-card mini-card--hover">
+            <div class="mini-card__img">4 : 3 thumbnail</div>
+            <div class="mini-card__body">
+              <div class="mini-card__meta">4/24 &ndash; 9/25 &middot; UXR &amp; Design</div>
+              <div class="mini-card__title">ComBoard</div>
+              <div class="mini-card__desc">ETRAN keyboard reduced eye strain &amp; increased spelling 980%</div>
+              <span class="mini-card__cta">Read Case Study &rarr;</span>
+            </div>
+          </div>
+        </div>
+        <div class="preview-item">
+          <span class="preview-label">Focus-visible</span>
+          <div class="mini-card mini-card--focus">
+            <div class="mini-card__img">4 : 3 thumbnail</div>
+            <div class="mini-card__body">
+              <div class="mini-card__meta">4/24 &ndash; 9/25 &middot; UXR &amp; Design</div>
+              <div class="mini-card__title">ComBoard</div>
+              <div class="mini-card__desc">ETRAN keyboard reduced eye strain &amp; increased spelling 980%</div>
+              <span class="mini-card__cta">Read Case Study &rarr;</span>
+            </div>
+          </div>
+        </div>
+        <div class="preview-item">
+          <span class="preview-label">Disabled</span>
+          <div class="mini-card mini-card--disabled">
+            <div class="mini-card__img">4 : 3 thumbnail</div>
+            <div class="mini-card__body">
+              <div class="mini-card__meta">Coming 2026 &middot; Art</div>
+              <div class="mini-card__title">Lidia Paints</div>
+              <div class="mini-card__desc">Upcoming personal art portfolio</div>
+              <span class="mini-card__coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Props -->
     <h3>Props</h3>
     <table>
       <thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
@@ -288,6 +732,32 @@
       </tbody>
     </table>
 
+    <!-- Usage -->
+    <h3>Usage</h3>
+    <div class="code-block"><span class="comment">&lt;!-- Active project with custom accent --&gt;</span>
+<span class="tag">&lt;ProjectCard</span>
+  <span class="attr">image</span>=<span class="str">"/images/comboard/thumbnail.png"</span>
+  <span class="attr">alt</span>=<span class="str">"ComBoard app showing ETRAN keyboard"</span>
+  <span class="attr">date</span>=<span class="str">"4/24 &ndash; 9/25"</span>
+  <span class="attr">role</span>=<span class="str">"UXR &amp; Design"</span>
+  <span class="attr">title</span>=<span class="str">"ComBoard"</span>
+  <span class="attr">description</span>=<span class="str">"ETRAN keyboard reduced eye strain"</span>
+  <span class="attr">href</span>=<span class="str">"/comboard"</span>
+  <span class="attr">accentColor</span>=<span class="str">"#4cc4cf"</span>
+<span class="tag">/&gt;</span>
+
+<span class="comment">&lt;!-- Upcoming project (disabled) --&gt;</span>
+<span class="tag">&lt;ProjectCard</span>
+  <span class="attr">image</span>=<span class="str">"/images/placeholder.png"</span>
+  <span class="attr">alt</span>=<span class="str">"Lidia Paints preview"</span>
+  <span class="attr">date</span>=<span class="str">"Coming 2026"</span>
+  <span class="attr">role</span>=<span class="str">"Art"</span>
+  <span class="attr">title</span>=<span class="str">"Lidia Paints"</span>
+  <span class="attr">description</span>=<span class="str">"Personal art portfolio"</span>
+  <span class="attr">disabled</span>
+<span class="tag">/&gt;</span></div>
+
+    <!-- Tokens -->
     <h3>Tokens Used</h3>
     <table>
       <thead><tr><th>Property</th><th>Token</th><th>Value</th></tr></thead>
@@ -303,6 +773,7 @@
       </tbody>
     </table>
 
+    <!-- States -->
     <h3>States</h3>
     <ul class="states-list">
       <li><span class="state-name">Default</span> Static card with accent bar and CTA</li>
@@ -310,14 +781,77 @@
       <li><span class="state-name">Focus-visible</span> <code>3px solid var(--color-accent)</code> outline with 2px offset</li>
       <li><span class="state-name">Disabled</span> <code>pointer-events: none</code>, muted background, "Coming Soon" badge replaces CTA</li>
     </ul>
+
+    <!-- Do / Don't -->
+    <h3>Guidelines</h3>
+    <div class="guidelines">
+      <div class="guideline guideline--do">
+        <div class="guideline__label">Do</div>
+        <ul>
+          <li>Use inside a <code>&lt;ul&gt;</code> grid for proper list semantics</li>
+          <li>Provide a unique <code>accentColor</code> per project for visual distinction</li>
+          <li>Write concise descriptions under two lines</li>
+          <li>Always include meaningful <code>alt</code> text for the thumbnail</li>
+        </ul>
+      </div>
+      <div class="guideline guideline--dont">
+        <div class="guideline__label">Don't</div>
+        <ul>
+          <li>Use for non-project content (blog posts, team bios, etc.)</li>
+          <li>Omit <code>href</code> on active projects &mdash; every shipped project needs a link</li>
+          <li>Set <code>disabled</code> and <code>href</code> together &mdash; pick one</li>
+          <li>Reuse the same <code>accentColor</code> for adjacent cards</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Responsive -->
+    <h3>Responsive Behavior</h3>
+    <table class="responsive-table">
+      <thead><tr><th>Breakpoint</th><th>Layout</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><span class="bp-badge">&ge; 768px</span></td><td>3-column grid</td><td>Cards share equal width, images maintain 4:3</td></tr>
+        <tr><td><span class="bp-badge">&lt; 768px</span></td><td>Single column</td><td>Cards stack full-width, same internal spacing</td></tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- ===== SideNav ===== -->
+  <!-- =========================================================== -->
+  <!-- SideNav                                                      -->
+  <!-- =========================================================== -->
   <h2 id="side-nav">SideNav</h2>
   <div class="component">
     <div class="component-name">SideNav <span class="component-type component-type--reusable">Reusable</span></div>
     <p class="component-desc">Sticky sidebar navigation with scroll-spy highlighting. Displays section links with an animated highlight pill that follows the active section.</p>
 
+    <!-- Visual Preview -->
+    <h3>Visual Preview</h3>
+    <div class="preview">
+      <div class="preview-grid" style="grid-template-columns: repeat(2, auto); justify-content: center;">
+        <div class="preview-item">
+          <span class="preview-label">Default</span>
+          <div class="mini-sidenav">
+            <div class="mini-sidenav__link mini-sidenav__link--active">Understanding Users</div>
+            <div class="mini-sidenav__link">Journey Map</div>
+            <div class="mini-sidenav__link">Defining the Challenge</div>
+            <div class="mini-sidenav__link">Design Process</div>
+            <div class="mini-sidenav__link">Outcomes</div>
+          </div>
+        </div>
+        <div class="preview-item">
+          <span class="preview-label">Scrolled to &sect;3</span>
+          <div class="mini-sidenav">
+            <div class="mini-sidenav__link">Understanding Users</div>
+            <div class="mini-sidenav__link">Journey Map</div>
+            <div class="mini-sidenav__link mini-sidenav__link--active">Defining the Challenge</div>
+            <div class="mini-sidenav__link">Design Process</div>
+            <div class="mini-sidenav__link">Outcomes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Props -->
     <h3>Props</h3>
     <table>
       <thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
@@ -326,6 +860,17 @@
       </tbody>
     </table>
 
+    <!-- Usage -->
+    <h3>Usage</h3>
+    <div class="code-block"><span class="tag">&lt;SideNav</span> <span class="attr">sections</span>={[
+  { <span class="attr">id</span>: <span class="str">"understanding-users"</span>, <span class="attr">label</span>: <span class="str">"Understanding Users"</span> },
+  { <span class="attr">id</span>: <span class="str">"journey-map"</span>,        <span class="attr">label</span>: <span class="str">"Journey Map"</span> },
+  { <span class="attr">id</span>: <span class="str">"defining-challenge"</span>,  <span class="attr">label</span>: <span class="str">"Defining the Challenge"</span> },
+  { <span class="attr">id</span>: <span class="str">"design-process"</span>,      <span class="attr">label</span>: <span class="str">"Design Process"</span> },
+  { <span class="attr">id</span>: <span class="str">"outcomes"</span>,            <span class="attr">label</span>: <span class="str">"Outcomes"</span> },
+]} <span class="tag">/&gt;</span></div>
+
+    <!-- Tokens -->
     <h3>Tokens Used</h3>
     <table>
       <thead><tr><th>Property</th><th>Token</th><th>Value</th></tr></thead>
@@ -340,22 +885,87 @@
       </tbody>
     </table>
 
+    <!-- States -->
     <h3>States</h3>
     <ul class="states-list">
       <li><span class="state-name">Default</span> Muted text, no background</li>
       <li><span class="state-name">Active</span> <code>aria-current="true"</code>, bold text, colored highlight pill behind link</li>
     </ul>
 
-    <h3>Behavior</h3>
-    <p>Hidden below 992px. Scroll-spy script updates <code>aria-current</code> and translates the highlight element to the active link position.</p>
+    <!-- Do / Don't -->
+    <h3>Guidelines</h3>
+    <div class="guidelines">
+      <div class="guideline guideline--do">
+        <div class="guideline__label">Do</div>
+        <ul>
+          <li>Match <code>id</code> values to actual section IDs on the page</li>
+          <li>Keep labels short (2&ndash;3 words) so they fit without wrapping</li>
+          <li>Set <code>--color-project</code> on the page to match the project theme</li>
+        </ul>
+      </div>
+      <div class="guideline guideline--dont">
+        <div class="guideline__label">Don't</div>
+        <ul>
+          <li>Use on pages with fewer than 3 sections &mdash; not worth the chrome</li>
+          <li>Duplicate the SideNav &mdash; only one per page for scroll-spy to work</li>
+          <li>Add external links &mdash; this is for in-page navigation only</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Responsive -->
+    <h3>Responsive Behavior</h3>
+    <table class="responsive-table">
+      <thead><tr><th>Breakpoint</th><th>Behavior</th></tr></thead>
+      <tbody>
+        <tr><td><span class="bp-badge">&ge; 992px</span></td><td>Visible as sticky sidebar, scroll-spy active</td></tr>
+        <tr><td><span class="bp-badge">&lt; 992px</span></td><td>Hidden entirely (<code>display: none</code>). Users scroll freely or use the header nav.</td></tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- ===== PrevNextNav ===== -->
+  <!-- =========================================================== -->
+  <!-- PrevNextNav                                                  -->
+  <!-- =========================================================== -->
   <h2 id="prev-next-nav">PrevNextNav</h2>
   <div class="component">
     <div class="component-name">PrevNextNav <span class="component-type component-type--reusable">Reusable</span></div>
     <p class="component-desc">Project pagination bar shown at the bottom of case study pages. Displays previous and next project links.</p>
 
+    <!-- Visual Preview -->
+    <h3>Visual Preview</h3>
+    <div class="preview">
+      <div class="preview-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="preview-item">
+          <span class="preview-label">Default</span>
+          <div class="mini-prevnext">
+            <div class="mini-prevnext__side">
+              <div class="mini-prevnext__label">&larr; Previous</div>
+              <div class="mini-prevnext__title">ComBoard</div>
+            </div>
+            <div class="mini-prevnext__side mini-prevnext__side--next">
+              <div class="mini-prevnext__label">Next &rarr;</div>
+              <div class="mini-prevnext__title">Portfolio Site</div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-item">
+          <span class="preview-label">Hover (previous)</span>
+          <div class="mini-prevnext mini-prevnext--hover">
+            <div class="mini-prevnext__side">
+              <div class="mini-prevnext__label">&larr; Previous</div>
+              <div class="mini-prevnext__title">ComBoard</div>
+            </div>
+            <div class="mini-prevnext__side mini-prevnext__side--next">
+              <div class="mini-prevnext__label">Next &rarr;</div>
+              <div class="mini-prevnext__title">Portfolio Site</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Props -->
     <h3>Props</h3>
     <table>
       <thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
@@ -365,6 +975,20 @@
       </tbody>
     </table>
 
+    <!-- Usage -->
+    <h3>Usage</h3>
+    <div class="code-block"><span class="comment">&lt;!-- Both directions --&gt;</span>
+<span class="tag">&lt;PrevNextNav</span>
+  <span class="attr">prev</span>={{ <span class="attr">title</span>: <span class="str">"ComBoard"</span>, <span class="attr">href</span>: <span class="str">"/comboard"</span> }}
+  <span class="attr">next</span>={{ <span class="attr">title</span>: <span class="str">"Portfolio Site"</span>, <span class="attr">href</span>: <span class="str">"/portfolio-site"</span> }}
+<span class="tag">/&gt;</span>
+
+<span class="comment">&lt;!-- First project (no previous) --&gt;</span>
+<span class="tag">&lt;PrevNextNav</span>
+  <span class="attr">next</span>={{ <span class="attr">title</span>: <span class="str">"Portfolio Site"</span>, <span class="attr">href</span>: <span class="str">"/portfolio-site"</span> }}
+<span class="tag">/&gt;</span></div>
+
+    <!-- Tokens -->
     <h3>Tokens Used</h3>
     <table>
       <thead><tr><th>Property</th><th>Token</th><th>Value</th></tr></thead>
@@ -378,22 +1002,99 @@
       </tbody>
     </table>
 
+    <!-- States -->
     <h3>States</h3>
     <ul class="states-list">
       <li><span class="state-name">Default</span> Label + title stacked vertically, no background</li>
       <li><span class="state-name">Hover</span> <code>background: var(--color-card-bg)</code> fills the link area</li>
     </ul>
 
-    <h3>Behavior</h3>
-    <p>Either prop can be omitted. An empty <code>&lt;div&gt;</code> fills the space when a direction is unavailable, preserving the <code>justify-content: space-between</code> layout. The next link auto-aligns right with <code>margin-left: auto</code>.</p>
+    <!-- Do / Don't -->
+    <h3>Guidelines</h3>
+    <div class="guidelines">
+      <div class="guideline guideline--do">
+        <div class="guideline__label">Do</div>
+        <ul>
+          <li>Place at the very bottom of each case study, after all content</li>
+          <li>Omit <code>prev</code> on the first project and <code>next</code> on the last</li>
+          <li>Use the exact project title as it appears in the card</li>
+        </ul>
+      </div>
+      <div class="guideline guideline--dont">
+        <div class="guideline__label">Don't</div>
+        <ul>
+          <li>Link to external pages &mdash; this is for internal project navigation only</li>
+          <li>Use on the homepage or non-case-study pages</li>
+          <li>Pass both props as empty &mdash; if there is no navigation, omit the component</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Responsive -->
+    <h3>Responsive Behavior</h3>
+    <table class="responsive-table">
+      <thead><tr><th>Breakpoint</th><th>Behavior</th></tr></thead>
+      <tbody>
+        <tr><td><span class="bp-badge">&ge; 0px</span></td><td>Always visible. Flexbox layout with <code>space-between</code>. Both links remain side-by-side at all widths. Text truncates naturally if the viewport is very narrow.</td></tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- ===== Header ===== -->
+  <!-- =========================================================== -->
+  <!-- Header                                                       -->
+  <!-- =========================================================== -->
   <h2 id="header">Header</h2>
   <div class="component">
     <div class="component-name">Header <span class="component-type component-type--layout">Layout</span></div>
     <p class="component-desc">Sticky site header with logo, desktop pill navigation, projects dropdown, and mobile hamburger menu. No props &mdash; navigation items are hard-coded.</p>
 
+    <!-- Visual Preview -->
+    <h3>Visual Preview</h3>
+    <div class="preview">
+      <div class="preview-grid" style="grid-template-columns: 1fr;">
+        <div class="preview-item">
+          <span class="preview-label">Desktop</span>
+          <div class="mini-header">
+            <div class="mini-header__logo"></div>
+            <div class="mini-header__pills">
+              <span class="mini-pill" style="background: var(--color-accent);">Projects</span>
+              <span class="mini-pill" style="background: var(--color-orange);">1-Pagers</span>
+              <span class="mini-pill" style="background: var(--color-teal);">About Me</span>
+              <span class="mini-pill" style="background: var(--color-green);">Email</span>
+              <span class="mini-pill" style="background: var(--color-mauve);">Resume</span>
+            </div>
+          </div>
+        </div>
+        <div class="preview-item">
+          <span class="preview-label">Hover state on pill</span>
+          <div class="mini-header">
+            <div class="mini-header__logo"></div>
+            <div class="mini-header__pills">
+              <span class="mini-pill" style="background: var(--color-accent);">Projects</span>
+              <span class="mini-pill mini-pill--hover" style="background: var(--color-orange);">1-Pagers</span>
+              <span class="mini-pill" style="background: var(--color-teal);">About Me</span>
+              <span class="mini-pill" style="background: var(--color-green);">Email</span>
+              <span class="mini-pill" style="background: var(--color-mauve);">Resume</span>
+            </div>
+          </div>
+        </div>
+        <div class="preview-item">
+          <span class="preview-label">Disabled pill (upcoming project)</span>
+          <div class="mini-header">
+            <div class="mini-header__logo"></div>
+            <div class="mini-header__pills">
+              <span class="mini-pill" style="background: var(--color-accent);">Projects</span>
+              <span class="mini-pill" style="background: var(--color-orange);">1-Pagers</span>
+              <span class="mini-pill" style="background: var(--color-teal);">About Me</span>
+              <span class="mini-pill mini-pill--disabled" style="background: var(--color-pink);">Paints</span>
+              <span class="mini-pill" style="background: var(--color-mauve);">Resume</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Structure -->
     <h3>Structure</h3>
     <table>
       <thead><tr><th>Element</th><th>Description</th></tr></thead>
@@ -405,6 +1106,20 @@
       </tbody>
     </table>
 
+    <!-- Usage -->
+    <h3>Usage</h3>
+    <div class="code-block"><span class="comment">&lt;!-- No props. Include once in the base layout. --&gt;</span>
+<span class="tag">&lt;Header /&gt;</span>
+
+<span class="comment">&lt;!-- Typical layout structure: --&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;SkipLink /&gt;</span>
+  <span class="tag">&lt;Header /&gt;</span>
+  <span class="tag">&lt;main</span> <span class="attr">id</span>=<span class="str">"main-content"</span><span class="tag">&gt;</span> ... <span class="tag">&lt;/main&gt;</span>
+  <span class="tag">&lt;Footer /&gt;</span>
+<span class="tag">&lt;/body&gt;</span></div>
+
+    <!-- Tokens -->
     <h3>Tokens Used</h3>
     <table>
       <thead><tr><th>Property</th><th>Token</th><th>Value</th></tr></thead>
@@ -419,6 +1134,7 @@
       </tbody>
     </table>
 
+    <!-- States -->
     <h3>States</h3>
     <ul class="states-list">
       <li><span class="state-name">Default</span> Colored pill with neo-brutalist border</li>
@@ -428,14 +1144,75 @@
       <li><span class="state-name">Dropdown open</span> <code>aria-expanded="true"</code>, panel visible</li>
       <li><span class="state-name">Mobile open</span> Menu slides in, toggle becomes close icon</li>
     </ul>
+
+    <!-- Do / Don't -->
+    <h3>Guidelines</h3>
+    <div class="guidelines">
+      <div class="guideline guideline--do">
+        <div class="guideline__label">Do</div>
+        <ul>
+          <li>Include exactly once per page, at the top of the layout</li>
+          <li>Pair with <code>&lt;SkipLink /&gt;</code> for keyboard accessibility</li>
+          <li>Update the dropdown project list when new case studies are added</li>
+        </ul>
+      </div>
+      <div class="guideline guideline--dont">
+        <div class="guideline__label">Don't</div>
+        <ul>
+          <li>Override pill colors via external CSS &mdash; edit the inline styles in the component</li>
+          <li>Remove the mobile menu &mdash; it is the primary nav under 960px</li>
+          <li>Nest inside a container with <code>overflow: hidden</code> &mdash; the sticky position and dropdown will break</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Responsive -->
+    <h3>Responsive Behavior</h3>
+    <table class="responsive-table">
+      <thead><tr><th>Breakpoint</th><th>Behavior</th></tr></thead>
+      <tbody>
+        <tr><td><span class="bp-badge">&ge; 960px</span></td><td>Full desktop nav with pill buttons and Projects dropdown. Mobile toggle hidden.</td></tr>
+        <tr><td><span class="bp-badge">&lt; 960px</span></td><td>Desktop pills hidden. Hamburger toggle appears. Tapping it reveals a full-screen mobile nav with all links stacked vertically.</td></tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- ===== Footer ===== -->
+  <!-- =========================================================== -->
+  <!-- Footer                                                       -->
+  <!-- =========================================================== -->
   <h2 id="footer">Footer</h2>
   <div class="component">
     <div class="component-name">Footer <span class="component-type component-type--layout">Layout</span></div>
     <p class="component-desc">Site-wide footer with CTA heading, social links, and contact form. No props &mdash; content is hard-coded.</p>
 
+    <!-- Visual Preview -->
+    <h3>Visual Preview</h3>
+    <div class="preview">
+      <div class="preview-grid" style="grid-template-columns: 1fr;">
+        <div class="preview-item">
+          <span class="preview-label">Desktop (2-column)</span>
+          <div class="mini-footer" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+              <div class="mini-footer__heading">Let's make designs that help people</div>
+              <div class="mini-footer__text">Have a project in mind? I'd love to hear about it.</div>
+              <div class="mini-footer__links">
+                <span class="mini-footer__link" style="background: var(--color-green);">Email Lidia</span>
+                <span class="mini-footer__link" style="background: var(--color-teal);">LinkedIn</span>
+              </div>
+            </div>
+            <div style="background: rgba(255,255,255,0.3); border-radius: 8px; padding: 8px; font-size: 0.625rem; color: var(--color-text-secondary);">
+              <div style="margin-bottom: 4px; font-weight: 600;">Contact Form</div>
+              <div style="background: white; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px; border: 1px solid var(--color-border);">Name</div>
+              <div style="background: white; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px; border: 1px solid var(--color-border);">Email</div>
+              <div style="background: white; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px; border: 1px solid var(--color-border); min-height: 24px;">Message</div>
+              <span class="mini-footer__link" style="background: var(--color-accent); font-size: 0.5625rem;">Send Message</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Structure -->
     <h3>Structure</h3>
     <table>
       <thead><tr><th>Element</th><th>Description</th></tr></thead>
@@ -446,6 +1223,16 @@
       </tbody>
     </table>
 
+    <!-- Usage -->
+    <h3>Usage</h3>
+    <div class="code-block"><span class="comment">&lt;!-- No props. Include once at the bottom of the layout. --&gt;</span>
+<span class="tag">&lt;Footer /&gt;</span>
+
+<span class="comment">&lt;!-- The contact form uses Web3Forms. --&gt;</span>
+<span class="comment">&lt;!-- The API key is set inside the component. --&gt;</span>
+<span class="comment">&lt;!-- Success state is handled via inline JS. --&gt;</span></div>
+
+    <!-- Tokens -->
     <h3>Tokens Used</h3>
     <table>
       <thead><tr><th>Property</th><th>Token</th><th>Value</th></tr></thead>
@@ -459,14 +1246,48 @@
       </tbody>
     </table>
 
+    <!-- States -->
     <h3>States</h3>
     <ul class="states-list">
       <li><span class="state-name">Link hover</span> <code>brightness(0.88)</code>, <code>translateY(-2px)</code>, shadow</li>
       <li><span class="state-name">Form submit</span> Button disabled during send, success message with <code>aria-live="polite"</code></li>
     </ul>
+
+    <!-- Do / Don't -->
+    <h3>Guidelines</h3>
+    <div class="guidelines">
+      <div class="guideline guideline--do">
+        <div class="guideline__label">Do</div>
+        <ul>
+          <li>Include once per page, always as the last element before <code>&lt;/body&gt;</code></li>
+          <li>Test the contact form after deploying &mdash; Web3Forms needs a valid API key</li>
+          <li>Keep the CTA heading action-oriented and personal</li>
+        </ul>
+      </div>
+      <div class="guideline guideline--dont">
+        <div class="guideline__label">Don't</div>
+        <ul>
+          <li>Add navigation links here &mdash; that's the header's job</li>
+          <li>Remove the <code>aria-live</code> region &mdash; it announces form success to screen readers</li>
+          <li>Expose the Web3Forms API key in client-side logs</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Responsive -->
+    <h3>Responsive Behavior</h3>
+    <table class="responsive-table">
+      <thead><tr><th>Breakpoint</th><th>Behavior</th></tr></thead>
+      <tbody>
+        <tr><td><span class="bp-badge">&ge; 768px</span></td><td>Two-column grid: CTA + links on left, contact form on right</td></tr>
+        <tr><td><span class="bp-badge">&lt; 768px</span></td><td>Single column: CTA section stacks above the contact form</td></tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- ===== Design Tokens ===== -->
+  <!-- =========================================================== -->
+  <!-- Design Tokens                                                -->
+  <!-- =========================================================== -->
   <h2 id="design-tokens">Design Tokens</h2>
   <p>All components draw from a shared set of CSS custom properties defined on <code>:root</code>. Dark mode overrides are handled via <code>prefers-color-scheme: dark</code>.</p>
 
@@ -544,7 +1365,6 @@
       </table>
     </div>
   </div>
-
 
 </body>
 </html>

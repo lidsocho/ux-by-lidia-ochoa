@@ -39,7 +39,7 @@ const sections = [
       <section class="case-section section" id="the-problem" aria-labelledby="the-problem-heading">
         <div class="container">
           <h2 id="the-problem-heading" class="case-section__heading reveal">The Problem</h2>
-          <p class="reveal">My original portfolio was a Webflow site. It had case studies and presented my work, but I had limited control over the underlying code. Webflow's generated markup loaded six font families, offered no dark mode, no skip links, no semantic landmarks, and no support for reduced-motion preferences. For a designer whose core claim is accessibility expertise, the site itself was undermining the message. I needed to own every line of HTML and CSS so the portfolio could be proof of the skills it describes.</p>
+          <p class="reveal">My original portfolio was a Webflow site. It had case studies and presented my work, but the build itself had accumulated accessibility gaps: six font families, no dark mode, no skip links, underused semantic landmarks, and no reduced-motion handling. Webflow supports these features — I simply had not implemented them. For a designer whose core claim is accessibility expertise, the site was undermining the message. Rather than retrofit the existing build, I chose to start fresh in Astro so I could own every line of HTML and CSS and make the portfolio itself proof of the skills it describes.</p>
 
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
@@ -104,30 +104,44 @@ const sections = [
           <p class="reveal">I prioritized the case study reading experience first — that is where recruiters spend the most time — and worked outward to the homepage, navigation, and visual polish.</p>
 
           <h3 class="reveal">Architecture (Week 1)</h3>
-          <p class="reveal">Webflow generates monolithic HTML with inline styles and platform-specific class names, making it difficult to enforce accessibility standards or build a true component system. I restructured into a component-based Astro project: a shared BaseLayout, reusable components (Header, Footer, SideNav, ProjectCard, PrevNextNav), and dedicated pages for each case study. This gave me full control over semantic markup, ARIA attributes, and a CSS custom property system that Webflow could not provide.</p>
-          <img src="/images/portfolio/before-after-arch.svg" alt="Diagram comparing the Webflow-generated markup architecture with the new component-based Astro architecture, showing shared layouts, reusable components, typed props, and design tokens" class="reveal" loading="lazy" />
-
-          <img src="/images/portfolio/site-homepage.png" alt="Live portfolio homepage showing the hero section with navigation (Projects, View 1-Pagers, About Me, Email Lidia, Resume), headline 'UX/Product Designer | A11y & Learning Tools', profile photo, and call to action for accessibility-focused case studies" class="reveal" loading="lazy" />
+          <p class="reveal">My Webflow build relied on platform-generated class names and lacked a component structure, making it hard to enforce consistent accessibility patterns across pages. Rather than retrofit, I restructured everything into a component-based Astro project: a shared BaseLayout, reusable components (Header, Footer, SideNav, ProjectCard, PrevNextNav), and dedicated pages for each case study. This gave me full control over semantic markup, ARIA attributes, and a CSS custom property system.</p>
+          <img src="/images/portfolio/before-after-arch.svg" alt="Diagram comparing the original Webflow build architecture with the new component-based Astro architecture, showing shared layouts, reusable components, and design tokens" class="reveal" loading="lazy" />
 
           <h3 class="reveal">Visual Design (Week 2–3)</h3>
           <p class="reveal">I chose a neo-brutalist style to stand out in a sea of minimal portfolios. Thick offset borders, pill-shaped buttons, and bold project accent colors give each case study its own identity while a shared design token system keeps everything consistent. The color palette assigns each project a theme color — teal for ComBoard, green for Budget App, yellow for this portfolio — that cascades through headings, badges, card backgrounds, and interactive elements via a single CSS custom property.</p>
 
-          <img src="/images/portfolio/site-about.png" alt="Live portfolio About Me page showing Core Skills tags (User Research, Design Thinking, Collaboration, User Testing, Figma, Wireframing, Prototyping, Design Systems) and My Story section with classroom photo of students working together" class="reveal" loading="lazy" />
-          <img src="/images/portfolio/site-case-study.png" alt="Live portfolio ComBoard case study page showing the Understanding Users section with side navigation, user persona Ellie's goals and frustrations, and outcome badges for 980% increased spelling and 5/5 user preference" class="reveal" loading="lazy" />
+          <div class="annotated-image reveal">
+            <img src="/images/portfolio/site-homepage.png" alt="Live portfolio homepage showing pill-shaped navigation buttons in multiple accent colors and a pill-shaped call-to-action button" loading="lazy" />
+            <span class="annotated-image__label" style="top: 2%; left: 45%;">Pill-shaped buttons</span>
+            <span class="annotated-image__label" style="top: 2%; right: 2%; left: auto;">Bold accent colors per section</span>
+            <span class="annotated-image__label" style="bottom: 16%; left: 18%;">Pill CTA with project accent color</span>
+          </div>
+
+          <div class="annotated-image reveal">
+            <img src="/images/portfolio/site-case-study.png" alt="Live portfolio ComBoard case study page showing thick offset borders on the goals and frustrations card, teal accent color on headings and badges, and pill-shaped outcome badges" loading="lazy" />
+            <span class="annotated-image__label" style="top: 56%; left: 32%;">Thick offset border</span>
+            <span class="annotated-image__label" style="top: 44%; right: 2%; left: auto;">Pill-shaped outcome badges</span>
+            <span class="annotated-image__label" style="top: 4%; left: 32%;">Project accent color (teal)</span>
+          </div>
+
+          <div class="annotated-image reveal">
+            <img src="/images/portfolio/site-about.png" alt="Live portfolio About Me page showing pill-shaped skill tags with offset borders for Core Skills section" loading="lazy" />
+            <span class="annotated-image__label" style="top: 10%; left: 16%;">Pill-shaped skill tags with offset borders</span>
+          </div>
 
           <h3 class="reveal">Before &amp; After</h3>
-          <p class="reveal">The Webflow site had the content, but the code underneath was working against me. The rebuild keeps the same case study depth while replacing the entire technical foundation.</p>
+          <p class="reveal">The original Webflow build had the content, but the implementation had not prioritized accessibility or maintainability. The rebuild keeps the same case study depth while replacing the technical foundation.</p>
 
           <div class="comparison reveal">
             <div class="comparison__item">
-              <p class="comparison__label">Before (Webflow)</p>
+              <p class="comparison__label">Before (Original Build)</p>
               <ul class="styled-list" style="font-size: 0.875rem;">
-                <li>6 font families loaded via WebFont loader</li>
-                <li>Webflow-generated markup, no semantic control</li>
-                <li>No skip links, landmarks, or ARIA</li>
-                <li>Inline styles, no design tokens</li>
-                <li>No dark mode or reduced-motion support</li>
-                <li>No reusable component system</li>
+                <li>6 font families loaded</li>
+                <li>Semantic tags underused</li>
+                <li>No skip links or ARIA landmarks implemented</li>
+                <li>No design token system in place</li>
+                <li>Dark mode and reduced-motion not set up</li>
+                <li>No reusable component structure</li>
               </ul>
             </div>
             <div class="comparison__item">
@@ -187,7 +201,7 @@ const sections = [
       <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
         <div class="container">
           <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
-          <p class="reveal">The redesign transformed a static single-page Webflow site into a fully accessible, component-driven portfolio that puts the work front and center.</p>
+          <p class="reveal">The rebuild transformed the original portfolio into a fully accessible, component-driven site that puts the work front and center.</p>
           <div class="goal-pair reveal">
             <div class="goals-frustrations-banner">
               <h3>Performance</h3>

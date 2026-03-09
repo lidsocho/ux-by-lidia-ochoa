@@ -7,7 +7,6 @@
 
   <!-- Card Preview -->
   <rect x="40" y="80" width="320" height="400" rx="12" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <rect x="40" y="80" width="320" height="6" rx="12" fill="#ffd44f"/>
 
   <!-- Card image area -->
   <rect x="60" y="100" width="280" height="160" rx="8" fill="#f0f0ec"/>

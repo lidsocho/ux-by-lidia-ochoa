@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Component Reference — Lidia Ochoa Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Commissioner:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+    :root {
+      --color-bg: #fafaf8;
+      --color-text: #2d2d2d;
+      --color-text-secondary: #555;
+      --color-border: #e0e0e0;
+      --color-accent: #ffd44f;
+      --color-teal: #4cc4cf;
+      --color-shadow: #2d2d2d;
+      --color-code-bg: #f5f4f0;
+      --font-heading: 'Bricolage Grotesque', sans-serif;
+      --font-body: 'Commissioner', sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #1a1a1a;
+        --color-text: #e8e8e8;
+        --color-text-secondary: #aaa;
+        --color-border: #333;
+        --color-shadow: #555;
+        --color-code-bg: #222;
+      }
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      padding: 2rem 1.5rem 4rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      margin-bottom: 0.25rem;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--color-accent);
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p { margin-bottom: 1rem; }
+
+    .subtitle {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .component {
+      background: var(--color-code-bg);
+      border: 2px solid var(--color-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .component-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .component-type {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .component-type--reusable {
+      background: var(--color-teal);
+      color: #2d2d2d;
+    }
+    .component-type--layout {
+      background: var(--color-accent);
+      color: #2d2d2d;
+    }
+
+    .component-desc {
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    th {
+      text-align: left;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--color-border);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+    }
+
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: top;
+    }
+
+    code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.8125rem;
+      background: var(--color-code-bg);
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    .component table code {
+      background: var(--color-bg);
+    }
+
+    .token-value {
+      font-weight: 600;
+      color: #b89a00;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .token-value { color: var(--color-accent); }
+    }
+
+    .states-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .states-list li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.875rem;
+    }
+
+    .states-list li:last-child { border-bottom: none; }
+
+    .state-name {
+      font-weight: 600;
+      display: inline-block;
+      min-width: 100px;
+    }
+
+    .toc {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .toc a {
+      display: inline-block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.375rem 1rem;
+      border-radius: 9999px;
+      border: 2px solid var(--color-shadow);
+      color: var(--color-text);
+      text-decoration: none;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .toc a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: 2rem 0;
+    }
+
+    .design-tokens-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .design-tokens-grid { grid-template-columns: 1fr; }
+    }
+
+    .token-group {
+      background: var(--color-code-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .token-group h3 {
+      margin-top: 0;
+      font-size: 0.875rem;
+    }
+
+    .token-group table { font-size: 0.8125rem; }
+    .token-group td, .token-group th { padding: 0.25rem 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <a href="/portfolio-site#dev-handoff" class="back-link">&larr; Back to case study</a>
+
+  <h1>Component Reference</h1>
+  <p class="subtitle">Portfolio Design System &mdash; Dev Handoff Documentation</p>
+
+  <p>Every reusable element on this site follows the same pattern: clearly typed props, consistent use of design tokens, and predictable interaction states. A new case study page can be added by writing content and passing props to existing components, with no new CSS required.</p>
+
+  <ul class="toc">
+    <li><a href="#project-card">ProjectCard</a></li>
+    <li><a href="#side-nav">SideNav</a></li>
+    <li><a href="#prev-next-nav">PrevNextNav</a></li>
+    <li><a href="#header">Header</a></li>
+    <li><a href="#footer">Footer</a></li>
+    <li><a href="#design-tokens">Design Tokens</a></li>
+  </ul>
+
+  <!-- ===== ProjectCard ===== -->
+  <h2 id="project-card">ProjectCard</h2>
+  <div class="component">
+    <div class="component-name">ProjectCard <span class="component-type component-type--reusable">Reusable</span></div>
+    <p class="component-desc">Displays a project with thumbnail, metadata, description, and CTA. Renders as a list item within the projects grid.</p>
+
+    <h3>Props</h3>
+    <table>
+      <thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>image</code></td><td><code>string</code></td><td>Yes</td><td>Thumbnail image path</td></tr>
+        <tr><td><code>alt</code></td><td><code>string</code></td><td>Yes</td><td>Image alt text</td></tr>
+        <tr><td><code>date</code></td><td><code>string</code></td><td>Yes</td><td>Timeline range (e.g. "4/24 &ndash; 9/25")</td></tr>
+        <tr><td><code>role</code></td><td><code>string</code></td><td>Yes</td><td>Designer role on project</td></tr>
+        <tr><td><code>title</code></td><td><code>string</code></td><td>Yes</td><td>Project name (rendered as h3)</td></tr>
+        <tr><td><code>description</code></td><td><code>string</code></td><td>Yes</td><td>One-line project summary</td></tr>
+        <tr><td><code>href</code></td><td><code>string</code></td><td>No</td><td>Link to case study page</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>No</td><td>Shows "Coming Soon" badge instead of CTA</td></tr>
+        <tr><td><code>accentColor</code></td><td><code>string</code></td><td>No</td><td>Sets <code>--card-accent</code> for theme color</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tokens Used</h3>
+    <table>
+      <thead><tr><th>Property</th><th>Token</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Card radius</td><td><code>--radius-lg</code></td><td class="token-value">20px</td></tr>
+        <tr><td>Body padding</td><td><code>--space-md</code></td><td class="token-value">24px</td></tr>
+        <tr><td>Image aspect ratio</td><td>&mdash;</td><td class="token-value">4 / 3</td></tr>
+        <tr><td>Border</td><td><code>--border-neo-thick</code></td><td class="token-value">2px sides, 4px right + bottom</td></tr>
+        <tr><td>Meta font</td><td>&mdash;</td><td class="token-value">0.8125rem / 600</td></tr>
+        <tr><td>Title font</td><td><code>--font-heading</code></td><td class="token-value">Bricolage Grotesque 700</td></tr>
+        <tr><td>Body font</td><td><code>--font-body</code></td><td class="token-value">0.9375rem / 500</td></tr>
+        <tr><td>CTA radius</td><td><code>--radius-full</code></td><td class="token-value">pill (9999px)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>States</h3>
+    <ul class="states-list">
+      <li><span class="state-name">Default</span> Static card with accent bar and CTA</li>
+      <li><span class="state-name">Hover</span> <code>translateY(-4px)</code>, box-shadow grows, image zooms to <code>scale(1.06)</code></li>
+      <li><span class="state-name">Focus-visible</span> <code>3px solid var(--color-accent)</code> outline with 2px offset</li>
+      <li><span class="state-name">Disabled</span> <code>pointer-events: none</code>, muted background, "Coming Soon" badge replaces CTA</li>
+    </ul>
+  </div>
+
+  <!-- ===== SideNav ===== -->
+  <h2 id="side-nav">SideNav</h2>
+  <div class="component">
+    <div class="component-name">SideNav <span class="component-type component-type--reusable">Reusable</span></div>
+    <p class="component-desc">Sticky sidebar navigation with scroll-spy highlighting. Displays section links with an animated highlight pill that follows the active section.</p>
+
+    <h3>Props</h3>
+    <table>
+      <thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>sections</code></td><td><code>{ id: string; label: string }[]</code></td><td>Yes</td><td>Array of section IDs and display labels</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tokens Used</h3>
+    <table>
+      <thead><tr><th>Property</th><th>Token</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Sticky offset</td><td>&mdash;</td><td class="token-value">top: 80px</td></tr>
+        <tr><td>Link padding</td><td>&mdash;</td><td class="token-value">4px 12px</td></tr>
+        <tr><td>Link font</td><td>&mdash;</td><td class="token-value">0.8125rem / 500</td></tr>
+        <tr><td>Highlight radius</td><td><code>--radius-full</code></td><td class="token-value">pill (9999px)</td></tr>
+        <tr><td>Highlight color</td><td><code>--color-project</code></td><td class="token-value">Per-project theme color</td></tr>
+        <tr><td>Animation</td><td><code>--transition-base</code></td><td class="token-value">300ms ease</td></tr>
+        <tr><td>Gap</td><td>&mdash;</td><td class="token-value">6px</td></tr>
+      </tbody>
+    </table>
+
+    <h3>States</h3>
+    <ul class="states-list">
+      <li><span class="state-name">Default</span> Muted text, no background</li>
+      <li><span class="state-name">Active</span> <code>aria-current="true"</code>, bold text, colored highlight pill behind link</li>
+    </ul>
+
+    <h3>Behavior</h3>
+    <p>Hidden below 992px. Scroll-spy script updates <code>aria-current</code> and translates the highlight element to the active link position.</p>
+  </div>
+
+  <!-- ===== PrevNextNav ===== -->
+  <h2 id="prev-next-nav">PrevNextNav</h2>
+  <div class="component">
+    <div class="component-name">PrevNextNav <span class="component-type component-type--reusable">Reusable</span></div>
+    <p class="component-desc">Project pagination bar shown at the bottom of case study pages. Displays previous and next project links.</p>
+
+    <h3>Props</h3>
+    <table>
+      <thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>prev</code></td><td><code>{ title: string; href: string }</code></td><td>No</td><td>Previous project link and title</td></tr>
+        <tr><td><code>next</code></td><td><code>{ title: string; href: string }</code></td><td>No</td><td>Next project link and title</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tokens Used</h3>
+    <table>
+      <thead><tr><th>Property</th><th>Token</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Container gap</td><td><code>--space-md</code></td><td class="token-value">24px</td></tr>
+        <tr><td>Padding</td><td><code>--space-sm</code></td><td class="token-value">16px</td></tr>
+        <tr><td>Border radius</td><td><code>--radius-md</code></td><td class="token-value">12px</td></tr>
+        <tr><td>Label font</td><td>&mdash;</td><td class="token-value">0.75rem / 600, uppercase</td></tr>
+        <tr><td>Title font</td><td>&mdash;</td><td class="token-value">1rem / 600</td></tr>
+        <tr><td>Top border</td><td><code>--color-border</code></td><td class="token-value">1px solid</td></tr>
+      </tbody>
+    </table>
+
+    <h3>States</h3>
+    <ul class="states-list">
+      <li><span class="state-name">Default</span> Label + title stacked vertically, no background</li>
+      <li><span class="state-name">Hover</span> <code>background: var(--color-card-bg)</code> fills the link area</li>
+    </ul>
+
+    <h3>Behavior</h3>
+    <p>Either prop can be omitted. An empty <code>&lt;div&gt;</code> fills the space when a direction is unavailable, preserving the <code>justify-content: space-between</code> layout. The next link auto-aligns right with <code>margin-left: auto</code>.</p>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <h2 id="header">Header</h2>
+  <div class="component">
+    <div class="component-name">Header <span class="component-type component-type--layout">Layout</span></div>
+    <p class="component-desc">Sticky site header with logo, desktop pill navigation, projects dropdown, and mobile hamburger menu. No props &mdash; navigation items are hard-coded.</p>
+
+    <h3>Structure</h3>
+    <table>
+      <thead><tr><th>Element</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Logo</td><td>Links to home, 48px height</td></tr>
+        <tr><td>Nav pills</td><td>Color-coded pill buttons with individual inline accent colors</td></tr>
+        <tr><td>Projects dropdown</td><td>Click-triggered, closes on outside click or Escape</td></tr>
+        <tr><td>Mobile menu</td><td>Hamburger toggle, full nav list, visible below 960px</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tokens Used</h3>
+    <table>
+      <thead><tr><th>Property</th><th>Token</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Background</td><td><code>--color-nav-bg</code></td><td class="token-value">#faf9f6 / #222</td></tr>
+        <tr><td>Position</td><td>&mdash;</td><td class="token-value">sticky, top: 0, z-index: 1000</td></tr>
+        <tr><td>Inner max-width</td><td><code>--max-width</code></td><td class="token-value">1200px</td></tr>
+        <tr><td>Pill padding</td><td><code>--space-xs</code> / <code>--space-md</code></td><td class="token-value">8px 24px</td></tr>
+        <tr><td>Pill radius</td><td><code>--radius-full</code></td><td class="token-value">pill (9999px)</td></tr>
+        <tr><td>Pill font</td><td>&mdash;</td><td class="token-value">0.875rem / 500</td></tr>
+        <tr><td>Border</td><td><code>--border-neo-thick</code></td><td class="token-value">2px + 4px offset</td></tr>
+      </tbody>
+    </table>
+
+    <h3>States</h3>
+    <ul class="states-list">
+      <li><span class="state-name">Default</span> Colored pill with neo-brutalist border</li>
+      <li><span class="state-name">Hover</span> <code>brightness(0.88)</code>, <code>translateY(-2px)</code>, subtle shadow</li>
+      <li><span class="state-name">Focus-visible</span> <code>3px solid var(--color-accent)</code> outline</li>
+      <li><span class="state-name">Disabled</span> <code>opacity: 0.5</code>, <code>pointer-events: none</code></li>
+      <li><span class="state-name">Dropdown open</span> <code>aria-expanded="true"</code>, panel visible</li>
+      <li><span class="state-name">Mobile open</span> Menu slides in, toggle becomes close icon</li>
+    </ul>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <h2 id="footer">Footer</h2>
+  <div class="component">
+    <div class="component-name">Footer <span class="component-type component-type--layout">Layout</span></div>
+    <p class="component-desc">Site-wide footer with CTA heading, social links, and contact form. No props &mdash; content is hard-coded.</p>
+
+    <h3>Structure</h3>
+    <table>
+      <thead><tr><th>Element</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>CTA section</td><td>Heading, body text, Email + LinkedIn pill buttons</td></tr>
+        <tr><td>Contact form</td><td>Name, Email, Message fields via Web3Forms API</td></tr>
+        <tr><td>Footer bottom</td><td>Copyright + attribution</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tokens Used</h3>
+    <table>
+      <thead><tr><th>Property</th><th>Token</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Background</td><td><code>--color-footer-bg</code></td><td class="token-value">#cbedf0 / #1e3a4a</td></tr>
+        <tr><td>Text</td><td><code>--color-footer-text</code></td><td class="token-value">#2d2d2d / #e8e8e8</td></tr>
+        <tr><td>Grid layout</td><td>&mdash;</td><td class="token-value">1col &rarr; 2col at 768px</td></tr>
+        <tr><td>Padding</td><td><code>--space-xl</code> / <code>--space-lg</code></td><td class="token-value">64px top, 40px bottom</td></tr>
+        <tr><td>Top border</td><td><code>--color-shadow</code></td><td class="token-value">3px solid</td></tr>
+        <tr><td>Link pills</td><td><code>--radius-full</code></td><td class="token-value">Same neo-brutalist style as header</td></tr>
+      </tbody>
+    </table>
+
+    <h3>States</h3>
+    <ul class="states-list">
+      <li><span class="state-name">Link hover</span> <code>brightness(0.88)</code>, <code>translateY(-2px)</code>, shadow</li>
+      <li><span class="state-name">Form submit</span> Button disabled during send, success message with <code>aria-live="polite"</code></li>
+    </ul>
+  </div>
+
+  <!-- ===== Design Tokens ===== -->
+  <h2 id="design-tokens">Design Tokens</h2>
+  <p>All components draw from a shared set of CSS custom properties defined on <code>:root</code>. Dark mode overrides are handled via <code>prefers-color-scheme: dark</code>.</p>
+
+  <div class="design-tokens-grid">
+    <div class="token-group">
+      <h3>Spacing</h3>
+      <table>
+        <tbody>
+          <tr><td><code>--space-xs</code></td><td class="token-value">0.5rem (8px)</td></tr>
+          <tr><td><code>--space-sm</code></td><td class="token-value">1rem (16px)</td></tr>
+          <tr><td><code>--space-md</code></td><td class="token-value">1.5rem (24px)</td></tr>
+          <tr><td><code>--space-lg</code></td><td class="token-value">2.5rem (40px)</td></tr>
+          <tr><td><code>--space-xl</code></td><td class="token-value">4rem (64px)</td></tr>
+          <tr><td><code>--space-2xl</code></td><td class="token-value">6rem (96px)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="token-group">
+      <h3>Radii</h3>
+      <table>
+        <tbody>
+          <tr><td><code>--radius-sm</code></td><td class="token-value">8px</td></tr>
+          <tr><td><code>--radius-md</code></td><td class="token-value">12px</td></tr>
+          <tr><td><code>--radius-lg</code></td><td class="token-value">20px</td></tr>
+          <tr><td><code>--radius-full</code></td><td class="token-value">9999px (pill)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="token-group">
+      <h3>Colors</h3>
+      <table>
+        <tbody>
+          <tr><td><code>--color-accent</code></td><td class="token-value">#ffd44f</td></tr>
+          <tr><td><code>--color-orange</code></td><td class="token-value">#ffad00</td></tr>
+          <tr><td><code>--color-teal</code></td><td class="token-value">#4cc4cf</td></tr>
+          <tr><td><code>--color-green</code></td><td class="token-value">#75d349</td></tr>
+          <tr><td><code>--color-mauve</code></td><td class="token-value">#bea7be</td></tr>
+          <tr><td><code>--color-pink</code></td><td class="token-value">#f13989</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="token-group">
+      <h3>Typography</h3>
+      <table>
+        <tbody>
+          <tr><td><code>--font-heading</code></td><td class="token-value">Bricolage Grotesque</td></tr>
+          <tr><td><code>--font-body</code></td><td class="token-value">Commissioner</td></tr>
+          <tr><td>Base size</td><td class="token-value">1rem (16px)</td></tr>
+          <tr><td>Line height</td><td class="token-value">1.6</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="token-group">
+      <h3>Borders</h3>
+      <table>
+        <tbody>
+          <tr><td><code>--border-neo</code></td><td class="token-value">2px solid</td></tr>
+          <tr><td><code>--border-neo-thick</code></td><td class="token-value">4px (right + bottom)</td></tr>
+          <tr><td><code>--color-shadow</code></td><td class="token-value">#2d2d2d / #555</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="token-group">
+      <h3>Transitions</h3>
+      <table>
+        <tbody>
+          <tr><td><code>--transition-fast</code></td><td class="token-value">150ms ease</td></tr>
+          <tr><td><code>--transition-base</code></td><td class="token-value">300ms ease</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr />
+
+  <p style="font-size: 0.8125rem; color: var(--color-text-secondary);">This documentation was generated from the live component source code in <code>src/components/</code> and <code>src/styles/global.css</code>.</p>
+
+</body>
+</html>

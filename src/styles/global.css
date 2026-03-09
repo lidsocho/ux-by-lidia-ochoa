@@ -2122,6 +2122,12 @@ strong {
   display: block;
 }
 
+.before-after__desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
 .before-after__figure figcaption {
   font-size: 0.8rem;
   font-weight: 600;

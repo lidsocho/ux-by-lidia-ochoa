@@ -1819,6 +1819,16 @@ strong {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+.contact-form__success {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--color-teal);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
 /* --- Scroll Reveal Animations (Audit #19) --- */
 @media (prefers-reduced-motion: no-preference) {
   .reveal {

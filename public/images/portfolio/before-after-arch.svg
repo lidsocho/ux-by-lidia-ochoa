@@ -1,117 +1,117 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" font-family="Commissioner, Inter, sans-serif">
-  <rect width="960" height="580" fill="#fafaf8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" font-family="Commissioner, Inter, sans-serif">
+  <rect width="960" height="600" fill="#fafaf8"/>
 
   <!-- Title -->
   <text x="40" y="36" font-size="18" font-weight="700" fill="#2d2d2d">Architecture: Before &amp; After</text>
   <text x="40" y="54" font-size="11" font-weight="600" fill="#888" style="text-transform:uppercase; letter-spacing:0.5px">Original Webflow Build vs. Astro Rebuild</text>
 
   <!-- ==================== BEFORE PANEL ==================== -->
-  <rect x="40" y="80" width="420" height="480" rx="12" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <rect x="40" y="80" width="420" height="500" rx="12" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
   <text x="250" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#2d2d2d">My Original Webflow Build</text>
 
-  <!-- Each page is independent — no shared layout or components -->
+  <!-- Shared styles block -->
+  <rect x="100" y="130" width="300" height="44" rx="10" fill="#f5f4f0" stroke="#ccc" stroke-width="2"/>
+  <text x="250" y="148" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">Shared styles</text>
+  <text x="250" y="164" text-anchor="middle" font-size="10" fill="#888">reused across pages, but hard to manage</text>
+
+  <!-- Lines from shared styles to pages -->
+  <line x1="155" y1="174" x2="155" y2="200" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="250" y1="174" x2="250" y2="200" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="345" y1="174" x2="345" y2="200" stroke="#ccc" stroke-width="1.5"/>
+
   <!-- Homepage -->
-  <rect x="70" y="135" width="170" height="80" rx="10" fill="#f5f4f0" stroke="#ccc" stroke-width="2"/>
-  <text x="155" y="158" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">Homepage</text>
-  <text x="155" y="176" text-anchor="middle" font-size="10" fill="#888">own styles, fonts, markup</text>
-  <text x="155" y="190" text-anchor="middle" font-size="10" fill="#888">w-mod-* classes</text>
+  <rect x="70" y="200" width="170" height="70" rx="10" fill="#f5f4f0" stroke="#ccc" stroke-width="2"/>
+  <text x="155" y="224" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">Homepage</text>
+  <text x="155" y="242" text-anchor="middle" font-size="10" fill="#888">+ unique overrides</text>
 
   <!-- ComBoard -->
-  <rect x="260" y="135" width="170" height="80" rx="10" fill="#f5f4f0" stroke="#ccc" stroke-width="2"/>
-  <text x="345" y="158" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">ComBoard</text>
-  <text x="345" y="176" text-anchor="middle" font-size="10" fill="#888">own styles, fonts, markup</text>
-  <text x="345" y="190" text-anchor="middle" font-size="10" fill="#888">w-mod-* classes</text>
+  <rect x="260" y="200" width="170" height="70" rx="10" fill="#f5f4f0" stroke="#ccc" stroke-width="2"/>
+  <text x="345" y="224" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">ComBoard</text>
+  <text x="345" y="242" text-anchor="middle" font-size="10" fill="#888">+ unique overrides</text>
 
   <!-- Budget App -->
-  <rect x="70" y="230" width="170" height="80" rx="10" fill="#f5f4f0" stroke="#ccc" stroke-width="2"/>
-  <text x="155" y="253" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">Budget App</text>
-  <text x="155" y="271" text-anchor="middle" font-size="10" fill="#888">own styles, fonts, markup</text>
-  <text x="155" y="285" text-anchor="middle" font-size="10" fill="#888">w-mod-* classes</text>
-
-  <!-- No shared anything label -->
-  <rect x="260" y="230" width="170" height="80" rx="10" fill="#f5f4f0" stroke="#ccc" stroke-width="2" stroke-dasharray="6 4"/>
-  <text x="345" y="262" text-anchor="middle" font-size="11" font-weight="500" fill="#aaa">No shared layout,</text>
-  <text x="345" y="278" text-anchor="middle" font-size="11" font-weight="500" fill="#aaa">components, or tokens</text>
+  <rect x="165" y="285" width="170" height="70" rx="10" fill="#f5f4f0" stroke="#ccc" stroke-width="2"/>
+  <text x="250" y="309" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">Budget App</text>
+  <text x="250" y="327" text-anchor="middle" font-size="10" fill="#888">+ unique overrides</text>
 
   <!-- Issues -->
-  <text x="80" y="345" font-size="13" font-weight="500" fill="#c44">6 font families loaded</text>
-  <text x="80" y="365" font-size="13" font-weight="500" fill="#c44">No skip links implemented</text>
-  <text x="80" y="385" font-size="13" font-weight="500" fill="#c44">Dark mode not set up</text>
-  <text x="80" y="405" font-size="13" font-weight="500" fill="#c44">No reduced-motion handling</text>
-  <text x="80" y="425" font-size="13" font-weight="500" fill="#c44">Semantic tags underused</text>
-  <text x="80" y="445" font-size="13" font-weight="500" fill="#c44">No design token system in place</text>
-  <text x="80" y="465" font-size="13" font-weight="500" fill="#c44">No reusable component structure</text>
+  <text x="80" y="390" font-size="13" font-weight="500" fill="#c44">6 font families loaded</text>
+  <text x="80" y="410" font-size="13" font-weight="500" fill="#c44">No skip links implemented</text>
+  <text x="80" y="430" font-size="13" font-weight="500" fill="#c44">Dark mode not set up</text>
+  <text x="80" y="450" font-size="13" font-weight="500" fill="#c44">No reduced-motion handling</text>
+  <text x="80" y="470" font-size="13" font-weight="500" fill="#c44">Semantic tags underused</text>
+  <text x="80" y="490" font-size="13" font-weight="500" fill="#c44">No design token system in place</text>
 
-  <text x="80" y="505" font-size="11" font-weight="400" font-style="italic" fill="#999">Webflow supports these features — they were not</text>
-  <text x="80" y="520" font-size="11" font-weight="400" font-style="italic" fill="#999">used in this build.</text>
+  <text x="80" y="530" font-size="11" font-weight="400" font-style="italic" fill="#999">Webflow supports these features — they were not</text>
+  <text x="80" y="545" font-size="11" font-weight="400" font-style="italic" fill="#999">used in this build.</text>
 
   <!-- ==================== AFTER PANEL ==================== -->
-  <rect x="500" y="80" width="420" height="480" rx="12" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <rect x="500" y="80" width="420" height="500" rx="12" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
   <text x="710" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#2d2d2d">Astro Rebuild</text>
 
-  <!-- BaseLayout — wraps every page -->
-  <rect x="610" y="130" width="200" height="36" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="710" y="153" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">BaseLayout.astro</text>
+  <!-- BaseLayout with "always includes" inside -->
+  <rect x="600" y="130" width="220" height="48" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="710" y="150" text-anchor="middle" font-size="13" font-weight="600" fill="#2d2d2d">BaseLayout.astro</text>
+  <text x="710" y="168" text-anchor="middle" font-size="10" fill="#888">always includes &#x2193;</text>
 
   <!-- Lines from BaseLayout down to its 3 always-included components -->
-  <line x1="620" y1="166" x2="570" y2="190" stroke="#2d2d2d" stroke-width="1.5"/>
-  <line x1="710" y1="166" x2="710" y2="190" stroke="#2d2d2d" stroke-width="1.5"/>
-  <line x1="800" y1="166" x2="850" y2="190" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="620" y1="178" x2="570" y2="205" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="710" y1="178" x2="710" y2="205" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="800" y1="178" x2="850" y2="205" stroke="#2d2d2d" stroke-width="1.5"/>
 
-  <!-- Always-included components (inside BaseLayout) -->
-  <rect x="520" y="190" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="570" y="211" text-anchor="middle" font-size="13" fill="#2d2d2d">SkipLink</text>
+  <!-- Always-included components -->
+  <rect x="520" y="205" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="570" y="226" text-anchor="middle" font-size="13" fill="#2d2d2d">SkipLink</text>
 
-  <rect x="660" y="190" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="710" y="211" text-anchor="middle" font-size="13" fill="#2d2d2d">Header</text>
+  <rect x="660" y="205" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="710" y="226" text-anchor="middle" font-size="13" fill="#2d2d2d">Header</text>
 
-  <rect x="800" y="190" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="850" y="211" text-anchor="middle" font-size="13" fill="#2d2d2d">Footer</text>
+  <rect x="800" y="205" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="850" y="226" text-anchor="middle" font-size="13" fill="#2d2d2d">Footer</text>
 
-  <!-- "includes" label -->
-  <text x="710" y="180" text-anchor="middle" font-size="9" fill="#888">always includes</text>
+  <!-- Pages row -->
+  <text x="710" y="260" text-anchor="middle" font-size="9" fill="#888">pages (each wrapped in BaseLayout)</text>
 
-  <!-- Pages row — each page wraps in BaseLayout -->
-  <text x="710" y="252" text-anchor="middle" font-size="9" fill="#888">pages (each wrapped in BaseLayout)</text>
+  <rect x="520" y="270" width="82" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="561" y="291" text-anchor="middle" font-size="13" fill="#2d2d2d">home</text>
 
-  <rect x="520" y="260" width="82" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="561" y="281" text-anchor="middle" font-size="13" fill="#2d2d2d">index</text>
+  <rect x="612" y="270" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="662" y="291" text-anchor="middle" font-size="13" fill="#2d2d2d">comboard</text>
 
-  <rect x="612" y="260" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="662" y="281" text-anchor="middle" font-size="13" fill="#2d2d2d">comboard</text>
+  <rect x="722" y="270" width="82" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="763" y="291" text-anchor="middle" font-size="13" fill="#2d2d2d">budget</text>
 
-  <rect x="722" y="260" width="82" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="763" y="281" text-anchor="middle" font-size="13" fill="#2d2d2d">budget</text>
+  <rect x="814" y="270" width="86" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="857" y="291" text-anchor="middle" font-size="13" fill="#2d2d2d">portfolio</text>
 
-  <rect x="814" y="260" width="86" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="857" y="281" text-anchor="middle" font-size="13" fill="#2d2d2d">portfolio</text>
+  <!-- Connector: home uses ProjectCard -->
+  <line x1="561" y1="302" x2="561" y2="340" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="580" y="326" font-size="9" fill="#888">imports</text>
 
-  <!-- Connector: index uses ProjectCard -->
-  <line x1="561" y1="292" x2="561" y2="330" stroke="#2d2d2d" stroke-width="1.5"/>
+  <rect x="516" y="340" width="110" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="571" y="361" text-anchor="middle" font-size="13" fill="#2d2d2d">ProjectCard</text>
 
-  <rect x="516" y="330" width="110" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="571" y="351" text-anchor="middle" font-size="13" fill="#2d2d2d">ProjectCard</text>
-  <text x="571" y="316" text-anchor="middle" font-size="9" fill="#888">imports</text>
+  <!-- Connectors: case study pages converge on shared component container -->
+  <line x1="662" y1="302" x2="662" y2="380" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="763" y1="302" x2="763" y2="380" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="857" y1="302" x2="857" y2="380" stroke="#2d2d2d" stroke-width="1.5"/>
 
-  <!-- Connector: case study pages use SideNav + PrevNextNav -->
-  <!-- Shared connector from the 3 case study pages -->
-  <line x1="662" y1="292" x2="710" y2="322" stroke="#2d2d2d" stroke-width="1.5"/>
-  <line x1="763" y1="292" x2="710" y2="322" stroke="#2d2d2d" stroke-width="1.5"/>
-  <line x1="857" y1="292" x2="810" y2="322" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="762" y="326" font-size="9" fill="#888">import</text>
 
-  <text x="760" y="316" text-anchor="middle" font-size="9" fill="#888">import</text>
+  <!-- Shared case study components container -->
+  <rect x="640" y="380" width="240" height="48" rx="10" fill="#f5f4f0" stroke="#2d2d2d" stroke-width="1.5"/>
 
-  <rect x="660" y="330" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="710" y="351" text-anchor="middle" font-size="13" fill="#2d2d2d">SideNav</text>
+  <rect x="650" y="388" width="100" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="700" y="409" text-anchor="middle" font-size="13" fill="#2d2d2d">SideNav</text>
 
-  <rect x="770" y="330" width="120" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="830" y="351" text-anchor="middle" font-size="13" fill="#2d2d2d">PrevNextNav</text>
+  <rect x="760" y="388" width="110" height="32" rx="10" fill="#fff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="815" y="409" text-anchor="middle" font-size="13" fill="#2d2d2d">PrevNextNav</text>
 
   <!-- Wins -->
-  <text x="560" y="400" font-size="13" font-weight="500" fill="#2a8c2a">Hand-written semantic HTML + ARIA</text>
-  <text x="560" y="420" font-size="13" font-weight="500" fill="#2a8c2a">Reusable Astro components</text>
-  <text x="560" y="440" font-size="13" font-weight="500" fill="#2a8c2a">CSS custom properties as design tokens</text>
-  <text x="560" y="460" font-size="13" font-weight="500" fill="#2a8c2a">Dark mode + prefers-reduced-motion</text>
-  <text x="560" y="480" font-size="13" font-weight="500" fill="#2a8c2a">Skip links, landmarks, focus management</text>
-  <text x="560" y="500" font-size="13" font-weight="500" fill="#2a8c2a">2 font families, optimized loading</text>
+  <text x="560" y="460" font-size="13" font-weight="500" fill="#2a8c2a">Hand-written semantic HTML + ARIA</text>
+  <text x="560" y="480" font-size="13" font-weight="500" fill="#2a8c2a">Reusable Astro components</text>
+  <text x="560" y="500" font-size="13" font-weight="500" fill="#2a8c2a">CSS custom properties as design tokens</text>
+  <text x="560" y="520" font-size="13" font-weight="500" fill="#2a8c2a">Dark mode + prefers-reduced-motion</text>
+  <text x="560" y="540" font-size="13" font-weight="500" fill="#2a8c2a">Skip links, landmarks, focus management</text>
+  <text x="560" y="560" font-size="13" font-weight="500" fill="#2a8c2a">2 font families, optimized loading</text>
 </svg>

@@ -104,7 +104,7 @@ const sections = [
           <p class="reveal">I prioritized the case study reading experience first — that is where recruiters spend the most time — and worked outward to the homepage, navigation, and visual polish.</p>
 
           <h3 class="reveal">Architecture (Week 1)</h3>
-          <p class="reveal">My Webflow build relied on platform-generated class names and lacked a component structure, making it hard to enforce consistent accessibility patterns across pages. Rather than retrofit, I restructured everything into a component-based Astro project: a shared BaseLayout, reusable components (Header, Footer, SideNav, ProjectCard, PrevNextNav), and dedicated pages for each case study. This gave me full control over semantic markup, ARIA attributes, and a CSS custom property system.</p>
+          <p class="reveal">My Webflow build had shared styles across pages, but they were difficult to manage — each page accumulated its own unique overrides and platform-generated class names, making it hard to enforce consistent accessibility patterns. Rather than retrofit, I restructured everything into a component-based Astro project: a shared BaseLayout, reusable components (Header, Footer, SideNav, ProjectCard, PrevNextNav), and dedicated pages for each case study. This gave me full control over semantic markup, ARIA attributes, and a CSS custom property system.</p>
           <img src="/images/portfolio/before-after-arch.svg" alt="Diagram comparing the original Webflow build architecture with the new component-based Astro architecture, showing shared layouts, reusable components, and design tokens" class="reveal" loading="lazy" />
 
           <h3 class="reveal">Visual Design (Week 2–3)</h3>
@@ -112,21 +112,21 @@ const sections = [
 
           <div class="annotated-image reveal">
             <img src="/images/portfolio/site-homepage.png" alt="Live portfolio homepage showing pill-shaped navigation buttons in multiple accent colors and a pill-shaped call-to-action button" loading="lazy" />
-            <span class="annotated-image__label" style="top: 2%; left: 45%;">Pill-shaped buttons</span>
-            <span class="annotated-image__label" style="top: 2%; right: 2%; left: auto;">Bold accent colors per section</span>
-            <span class="annotated-image__label" style="bottom: 16%; left: 18%;">Pill CTA with project accent color</span>
+            <span class="annotated-image__label" style="top: 9%; left: 45%;">Pill-shaped buttons</span>
+            <span class="annotated-image__label" style="top: 9%; right: 2%; left: auto;">Bold accent colors per section</span>
+            <span class="annotated-image__label" style="bottom: 9%; left: 18%;">Pill CTA with project accent color</span>
           </div>
 
           <div class="annotated-image reveal">
             <img src="/images/portfolio/site-case-study.png" alt="Live portfolio ComBoard case study page showing thick offset borders on the goals and frustrations card, teal accent color on headings and badges, and pill-shaped outcome badges" loading="lazy" />
-            <span class="annotated-image__label" style="top: 56%; left: 32%;">Thick offset border</span>
+            <span class="annotated-image__label" style="top: 18%; left: 32%;">Thick offset border</span>
             <span class="annotated-image__label" style="top: 44%; right: 2%; left: auto;">Pill-shaped outcome badges</span>
-            <span class="annotated-image__label" style="top: 4%; left: 32%;">Project accent color (teal)</span>
+            <span class="annotated-image__label" style="bottom: 4%; left: 32%;">Project accent color (teal)</span>
           </div>
 
           <div class="annotated-image reveal">
             <img src="/images/portfolio/site-about.png" alt="Live portfolio About Me page showing pill-shaped skill tags with offset borders for Core Skills section" loading="lazy" />
-            <span class="annotated-image__label" style="top: 10%; left: 16%;">Pill-shaped skill tags with offset borders</span>
+            <span class="annotated-image__label" style="top: 22%; left: 16%;">Pill-shaped skill tags with offset borders</span>
           </div>
 
           <h3 class="reveal">Before &amp; After</h3>

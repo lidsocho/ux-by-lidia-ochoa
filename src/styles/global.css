@@ -1378,12 +1378,11 @@ strong {
   font-size: 0.9375rem;
 }
 
-.next-step--done {
-  border-left: 4px solid var(--color-teal);
-}
-
-.next-step--done .next-step__title {
+.next-step__done {
+  font-size: 0.8125rem;
+  font-weight: 600;
   color: var(--color-teal);
+  margin-left: 0.5rem;
 }
 
 .next-step__update {

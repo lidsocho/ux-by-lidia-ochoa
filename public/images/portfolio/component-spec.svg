@@ -54,7 +54,7 @@
   <!-- Font size annotations on card -->
   <text x="390" y="312" font-size="9" font-weight="600" fill="#b89a00">← 20px / 700</text>
   <text x="390" y="350" font-size="9" font-weight="600" fill="#b89a00">← 13px / 500</text>
-  <text x="224" y="385" font-size="9" font-weight="600" fill="#b89a00">↓ 13px / 600</text>
+  <text x="230" y="413" font-size="9" font-weight="600" fill="#b89a00">← 13px / 600</text>
 
   <!-- Padding left -->
   <line x1="40" y1="500" x2="60" y2="500" stroke="#ffd44f" stroke-width="1.5" stroke-dasharray="4 3"/>

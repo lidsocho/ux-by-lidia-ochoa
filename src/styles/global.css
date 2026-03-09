@@ -2098,6 +2098,44 @@ strong {
   }
 }
 
+/* --- Before & After Pairs --- */
+.before-after {
+  margin-bottom: var(--space-md);
+}
+
+.before-after__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.before-after__figure {
+  margin: 0;
+}
+
+.before-after__figure img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-shadow);
+  border-right-width: var(--border-neo-thick);
+  border-bottom-width: var(--border-neo-thick);
+  display: block;
+}
+
+.before-after__figure figcaption {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .before-after__pair {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --- Styled List Utility --- */
 .styled-list {
   list-style: disc;

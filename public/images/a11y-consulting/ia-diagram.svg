@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" font-family="Commissioner, Inter, sans-serif">
-  <!-- Background with neo-brutalist offset border -->
-  <rect x="0" y="0" width="816" height="516" rx="12" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2" transform="translate(4,4)"/>
-  <rect width="816" height="516" rx="12" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 540" font-family="Commissioner, Inter, sans-serif">
+  <!-- Background with neo-brutalist offset border — solid black offset -->
+  <rect x="4" y="4" width="816" height="536" rx="12" fill="#2d2d2d"/>
+  <rect width="816" height="536" rx="12" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2"/>
 
   <!-- Title -->
   <text x="410" y="36" text-anchor="middle" font-family="Bricolage Grotesque, Raleway, sans-serif" font-weight="700" font-size="18" fill="#2d2d2d">Information Architecture &amp; User Journey</text>
@@ -13,26 +13,26 @@
   <line x1="410" y1="110" x2="410" y2="150" stroke="#2d2d2d" stroke-width="2"/>
   <line x1="480" y1="85" x2="680" y2="150" stroke="#2d2d2d" stroke-width="2"/>
 
-  <!-- Homepage node — neo-brutalist offset -->
-  <rect x="310" y="60" width="200" height="50" rx="4" fill="#2d2d2d" transform="translate(3,3)"/>
+  <!-- Homepage node — solid black offset -->
+  <rect x="313" y="63" width="200" height="50" rx="4" fill="#2d2d2d"/>
   <rect x="310" y="60" width="200" height="50" rx="4" fill="#B85042" stroke="#2d2d2d" stroke-width="2"/>
   <text x="410" y="82" text-anchor="middle" font-weight="700" font-size="15" fill="#FAF6F0">Homepage</text>
   <text x="410" y="98" text-anchor="middle" font-size="10" fill="#FAF6F0" opacity="0.85">index.html</text>
 
-  <!-- Guide page — neo-brutalist offset -->
-  <rect x="60" y="150" width="160" height="50" rx="4" fill="#2d2d2d" transform="translate(3,3)"/>
+  <!-- Guide page — solid black offset -->
+  <rect x="63" y="153" width="160" height="50" rx="4" fill="#2d2d2d"/>
   <rect x="60" y="150" width="160" height="50" rx="4" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
   <text x="140" y="172" text-anchor="middle" font-weight="600" font-size="13" fill="#3D2B1F">Quick Wins Guide</text>
   <text x="140" y="188" text-anchor="middle" font-size="10" fill="#8C7B6B">guide.html</text>
 
-  <!-- Scorecard page — neo-brutalist offset -->
-  <rect x="330" y="150" width="160" height="50" rx="4" fill="#2d2d2d" transform="translate(3,3)"/>
+  <!-- Scorecard page — solid black offset -->
+  <rect x="333" y="153" width="160" height="50" rx="4" fill="#2d2d2d"/>
   <rect x="330" y="150" width="160" height="50" rx="4" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
   <text x="410" y="172" text-anchor="middle" font-weight="600" font-size="13" fill="#3D2B1F">Scorecard</text>
   <text x="410" y="188" text-anchor="middle" font-size="10" fill="#8C7B6B">Interactive preview</text>
 
-  <!-- Accessibility Statement — neo-brutalist offset -->
-  <rect x="600" y="150" width="160" height="50" rx="4" fill="#2d2d2d" transform="translate(3,3)"/>
+  <!-- Accessibility Statement — solid black offset -->
+  <rect x="603" y="153" width="160" height="50" rx="4" fill="#2d2d2d"/>
   <rect x="600" y="150" width="160" height="50" rx="4" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
   <text x="680" y="172" text-anchor="middle" font-weight="600" font-size="13" fill="#3D2B1F">A11y Statement</text>
   <text x="680" y="188" text-anchor="middle" font-size="10" fill="#8C7B6B">accessibility.html</text>
@@ -43,8 +43,8 @@
 
   <!-- === USER JOURNEY (bottom half) === -->
 
-  <!-- Step 1: Discover — neo-brutalist -->
-  <rect x="30" y="280" width="140" height="70" rx="4" fill="#2d2d2d" transform="translate(3,3)"/>
+  <!-- Step 1: Discover -->
+  <rect x="33" y="283" width="140" height="70" rx="4" fill="#2d2d2d"/>
   <rect x="30" y="280" width="140" height="70" rx="4" fill="#FAF6F0" stroke="#2d2d2d" stroke-width="2"/>
   <text x="100" y="302" text-anchor="middle" font-weight="700" font-size="20" fill="#B85042">1</text>
   <text x="100" y="322" text-anchor="middle" font-weight="600" font-size="12" fill="#3D2B1F">Discover</text>
@@ -54,7 +54,7 @@
   <line x1="173" y1="315" x2="197" y2="315" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead)"/>
 
   <!-- Step 2: Evaluate -->
-  <rect x="200" y="280" width="140" height="70" rx="4" fill="#2d2d2d" transform="translate(3,3)"/>
+  <rect x="203" y="283" width="140" height="70" rx="4" fill="#2d2d2d"/>
   <rect x="200" y="280" width="140" height="70" rx="4" fill="#FAF6F0" stroke="#2d2d2d" stroke-width="2"/>
   <text x="270" y="302" text-anchor="middle" font-weight="700" font-size="20" fill="#B85042">2</text>
   <text x="270" y="322" text-anchor="middle" font-weight="600" font-size="12" fill="#3D2B1F">Evaluate</text>
@@ -64,7 +64,7 @@
   <line x1="343" y1="315" x2="367" y2="315" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead)"/>
 
   <!-- Step 3: Try Free Tools (highlighted) -->
-  <rect x="370" y="280" width="140" height="70" rx="4" fill="#2d2d2d" transform="translate(3,3)"/>
+  <rect x="373" y="283" width="140" height="70" rx="4" fill="#2d2d2d"/>
   <rect x="370" y="280" width="140" height="70" rx="4" fill="#B85042" stroke="#2d2d2d" stroke-width="2"/>
   <text x="440" y="302" text-anchor="middle" font-weight="700" font-size="20" fill="#FAF6F0">3</text>
   <text x="440" y="322" text-anchor="middle" font-weight="600" font-size="12" fill="#FAF6F0">Try Free Tools</text>
@@ -74,7 +74,7 @@
   <line x1="513" y1="315" x2="537" y2="315" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead)"/>
 
   <!-- Step 4: Build Trust -->
-  <rect x="540" y="280" width="140" height="70" rx="4" fill="#2d2d2d" transform="translate(3,3)"/>
+  <rect x="543" y="283" width="140" height="70" rx="4" fill="#2d2d2d"/>
   <rect x="540" y="280" width="140" height="70" rx="4" fill="#FAF6F0" stroke="#2d2d2d" stroke-width="2"/>
   <text x="610" y="302" text-anchor="middle" font-weight="700" font-size="20" fill="#B85042">4</text>
   <text x="610" y="322" text-anchor="middle" font-weight="600" font-size="12" fill="#3D2B1F">Build Trust</text>
@@ -84,22 +84,22 @@
   <line x1="683" y1="315" x2="707" y2="315" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead)"/>
 
   <!-- Step 5: Contact -->
-  <rect x="710" y="280" width="80" height="70" rx="4" fill="#2d2d2d" transform="translate(3,3)"/>
+  <rect x="713" y="283" width="80" height="70" rx="4" fill="#2d2d2d"/>
   <rect x="710" y="280" width="80" height="70" rx="4" fill="#3D2B1F" stroke="#2d2d2d" stroke-width="2"/>
   <text x="750" y="302" text-anchor="middle" font-weight="700" font-size="20" fill="#FAF6F0">5</text>
   <text x="750" y="322" text-anchor="middle" font-weight="600" font-size="12" fill="#FAF6F0">Contact</text>
   <text x="750" y="338" text-anchor="middle" font-size="10" fill="#FAF6F0" opacity="0.85">Get in touch</text>
 
-  <!-- Key insight box — neo-brutalist -->
-  <rect x="60" y="380" width="700" height="56" rx="4" fill="#2d2d2d" transform="translate(3,3)"/>
+  <!-- Key insight box -->
+  <rect x="63" y="383" width="700" height="56" rx="4" fill="#2d2d2d"/>
   <rect x="60" y="380" width="700" height="56" rx="4" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
   <text x="410" y="404" text-anchor="middle" font-weight="600" font-size="13" fill="#3D2B1F">Design intent: Every page earns trust before asking for commitment.</text>
   <text x="410" y="422" text-anchor="middle" font-size="12" fill="#5C4A3A">Free tools (scorecard + guide) demonstrate expertise so potential clients experience the value before any ask.</text>
 
   <!-- Homepage sections detail -->
-  <rect x="60" y="450" width="700" height="56" rx="4" fill="#FAF6F0" stroke="#2d2d2d" stroke-width="1.5"/>
-  <text x="410" y="470" text-anchor="middle" font-weight="600" font-size="12" fill="#3D2B1F">Homepage sections (single scroll):</text>
-  <text x="410" y="490" text-anchor="middle" font-size="11" fill="#5C4A3A">Hero → Why Accessibility Matters (data) → About → Services (3 tiers) → Scorecard Preview → Free Guide CTA → Contact Form</text>
+  <rect x="60" y="456" width="700" height="56" rx="4" fill="#FAF6F0" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="410" y="476" text-anchor="middle" font-weight="600" font-size="12" fill="#3D2B1F">Homepage sections (single scroll):</text>
+  <text x="410" y="496" text-anchor="middle" font-size="11" fill="#5C4A3A">Hero → Why Accessibility Matters (data) → About → Services (3 tiers) → Scorecard Preview → Free Guide CTA → Contact Form</text>
 
   <!-- Arrowhead marker -->
   <defs>

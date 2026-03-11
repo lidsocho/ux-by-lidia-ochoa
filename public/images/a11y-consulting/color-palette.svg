@@ -1,64 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" font-family="Commissioner, Inter, sans-serif">
-  <!-- Background with neo-brutalist offset border -->
-  <rect x="0" y="0" width="816" height="476" rx="12" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2" transform="translate(4,4)"/>
-  <rect width="816" height="476" rx="12" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" font-family="Commissioner, Inter, sans-serif">
+  <!-- Background with neo-brutalist offset border — solid black offset -->
+  <rect x="4" y="4" width="816" height="456" rx="12" fill="#2d2d2d"/>
+  <rect width="816" height="456" rx="12" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2"/>
 
   <!-- Title -->
   <text x="410" y="40" text-anchor="middle" font-family="Bricolage Grotesque, Raleway, sans-serif" font-weight="700" font-size="18" fill="#2d2d2d">Color Palette</text>
 
   <!-- Row 1: Dark colors — labels in cream/light text inside swatches -->
   <!-- Terracotta -->
-  <rect x="30" y="66" width="185" height="130" rx="8" fill="#B85042" stroke="#2d2d2d" stroke-width="2"/>
+  <rect x="30" y="66" width="185" height="150" rx="8" fill="#B85042" stroke="#2d2d2d" stroke-width="2"/>
   <text x="122" y="100" text-anchor="middle" font-weight="700" font-size="15" fill="#FAF6F0">Terracotta</text>
   <text x="122" y="120" text-anchor="middle" font-size="12" fill="#FAF6F0" opacity="0.9">#B85042</text>
   <text x="122" y="140" text-anchor="middle" font-size="11" fill="#FAF6F0" opacity="0.8">--terracotta</text>
   <text x="122" y="162" text-anchor="middle" font-size="11" font-weight="600" fill="#FAF6F0">CTAs, Focus, Accents</text>
+  <text x="122" y="184" text-anchor="middle" font-size="10" fill="#FAF6F0" opacity="0.7">on Cream: 4.8:1 (AA)</text>
 
   <!-- Deep Brown -->
-  <rect x="225" y="66" width="185" height="130" rx="8" fill="#3D2B1F" stroke="#2d2d2d" stroke-width="2"/>
+  <rect x="225" y="66" width="185" height="150" rx="8" fill="#3D2B1F" stroke="#2d2d2d" stroke-width="2"/>
   <text x="317" y="100" text-anchor="middle" font-weight="700" font-size="15" fill="#FAF6F0">Deep Brown</text>
   <text x="317" y="120" text-anchor="middle" font-size="12" fill="#FAF6F0" opacity="0.9">#3D2B1F</text>
   <text x="317" y="140" text-anchor="middle" font-size="11" fill="#FAF6F0" opacity="0.8">--deep-brown</text>
   <text x="317" y="162" text-anchor="middle" font-size="11" font-weight="600" fill="#FAF6F0">Primary Text</text>
+  <text x="317" y="184" text-anchor="middle" font-size="10" fill="#FAF6F0" opacity="0.7">on Cream: 12.4:1 (AAA)</text>
 
   <!-- Warm Brown -->
-  <rect x="420" y="66" width="185" height="130" rx="8" fill="#5C4A3A" stroke="#2d2d2d" stroke-width="2"/>
+  <rect x="420" y="66" width="185" height="150" rx="8" fill="#5C4A3A" stroke="#2d2d2d" stroke-width="2"/>
   <text x="512" y="100" text-anchor="middle" font-weight="700" font-size="15" fill="#FAF6F0">Warm Brown</text>
   <text x="512" y="120" text-anchor="middle" font-size="12" fill="#FAF6F0" opacity="0.9">#5C4A3A</text>
   <text x="512" y="140" text-anchor="middle" font-size="11" fill="#FAF6F0" opacity="0.8">--text-secondary</text>
   <text x="512" y="162" text-anchor="middle" font-size="11" font-weight="600" fill="#FAF6F0">Secondary Text</text>
+  <text x="512" y="184" text-anchor="middle" font-size="10" fill="#FAF6F0" opacity="0.7">on Cream: 7.1:1 (AAA)</text>
 
   <!-- Warm Gray -->
-  <rect x="615" y="66" width="185" height="130" rx="8" fill="#8C7B6B" stroke="#2d2d2d" stroke-width="2"/>
+  <rect x="615" y="66" width="185" height="150" rx="8" fill="#8C7B6B" stroke="#2d2d2d" stroke-width="2"/>
   <text x="707" y="100" text-anchor="middle" font-weight="700" font-size="15" fill="#FAF6F0">Muted</text>
   <text x="707" y="120" text-anchor="middle" font-size="12" fill="#FAF6F0" opacity="0.9">#8C7B6B</text>
   <text x="707" y="140" text-anchor="middle" font-size="11" fill="#FAF6F0" opacity="0.8">--text-muted</text>
   <text x="707" y="162" text-anchor="middle" font-size="11" font-weight="600" fill="#FAF6F0">Captions</text>
+  <text x="707" y="184" text-anchor="middle" font-size="10" fill="#FAF6F0" opacity="0.7">on Cream: 3.5:1 (AA lg)</text>
 
   <!-- Row 2: Light/cream colors — labels in dark text inside swatches -->
   <!-- Cream -->
-  <rect x="30" y="210" width="250" height="130" rx="8" fill="#FAF6F0" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="155" y="244" text-anchor="middle" font-weight="700" font-size="15" fill="#3D2B1F">Cream</text>
-  <text x="155" y="264" text-anchor="middle" font-size="12" fill="#5C4A3A">#FAF6F0</text>
-  <text x="155" y="284" text-anchor="middle" font-size="11" fill="#8C7B6B">--cream</text>
-  <text x="155" y="306" text-anchor="middle" font-size="11" font-weight="600" fill="#3D2B1F">Backgrounds</text>
+  <rect x="30" y="230" width="250" height="130" rx="8" fill="#FAF6F0" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="155" y="264" text-anchor="middle" font-weight="700" font-size="15" fill="#3D2B1F">Cream</text>
+  <text x="155" y="284" text-anchor="middle" font-size="12" fill="#5C4A3A">#FAF6F0</text>
+  <text x="155" y="304" text-anchor="middle" font-size="11" fill="#8C7B6B">--cream</text>
+  <text x="155" y="326" text-anchor="middle" font-size="11" font-weight="600" fill="#3D2B1F">Backgrounds</text>
 
   <!-- Sand -->
-  <rect x="290" y="210" width="250" height="130" rx="8" fill="#E8DCC8" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="415" y="244" text-anchor="middle" font-weight="700" font-size="15" fill="#3D2B1F">Sand</text>
-  <text x="415" y="264" text-anchor="middle" font-size="12" fill="#5C4A3A">#E8DCC8</text>
-  <text x="415" y="284" text-anchor="middle" font-size="11" fill="#8C7B6B">--sand</text>
-  <text x="415" y="306" text-anchor="middle" font-size="11" font-weight="600" fill="#3D2B1F">Borders, Dividers</text>
+  <rect x="290" y="230" width="250" height="130" rx="8" fill="#E8DCC8" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="415" y="264" text-anchor="middle" font-weight="700" font-size="15" fill="#3D2B1F">Sand</text>
+  <text x="415" y="284" text-anchor="middle" font-size="12" fill="#5C4A3A">#E8DCC8</text>
+  <text x="415" y="304" text-anchor="middle" font-size="11" fill="#8C7B6B">--sand</text>
+  <text x="415" y="326" text-anchor="middle" font-size="11" font-weight="600" fill="#3D2B1F">Borders, Dividers</text>
 
-  <!-- Site Background (faf9f6) -->
-  <rect x="550" y="210" width="250" height="130" rx="8" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="675" y="244" text-anchor="middle" font-weight="700" font-size="15" fill="#3D2B1F">Off-White</text>
-  <text x="675" y="264" text-anchor="middle" font-size="12" fill="#5C4A3A">#FAF9F6</text>
-  <text x="675" y="284" text-anchor="middle" font-size="11" fill="#8C7B6B">--color-bg</text>
-  <text x="675" y="306" text-anchor="middle" font-size="11" font-weight="600" fill="#3D2B1F">Page Background</text>
+  <!-- Site Background -->
+  <rect x="550" y="230" width="250" height="130" rx="8" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="675" y="264" text-anchor="middle" font-weight="700" font-size="15" fill="#3D2B1F">Off-White</text>
+  <text x="675" y="284" text-anchor="middle" font-size="12" fill="#5C4A3A">#FAF9F6</text>
+  <text x="675" y="304" text-anchor="middle" font-size="11" fill="#8C7B6B">--color-bg</text>
+  <text x="675" y="326" text-anchor="middle" font-size="11" font-weight="600" fill="#3D2B1F">Page Background</text>
 
-  <!-- Contrast ratios note -->
-  <rect x="30" y="368" width="760" height="80" rx="8" fill="#FAF6F0" stroke="#2d2d2d" stroke-width="2"/>
-  <text x="410" y="396" text-anchor="middle" font-size="12" fill="#3D2B1F" font-weight="600">Contrast ratios: Terracotta on Cream = 4.8:1 (passes AA text) · Deep Brown on Cream = 12.4:1 (passes AAA)</text>
-  <text x="410" y="418" text-anchor="middle" font-size="12" fill="#5C4A3A">All UI components meet 3:1 minimum · No information conveyed by color alone</text>
+  <!-- Bottom note — only the non-contrast info -->
+  <rect x="30" y="386" width="760" height="46" rx="8" fill="#FAF6F0" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="410" y="414" text-anchor="middle" font-size="12" fill="#5C4A3A">All UI components meet 3:1 minimum · No information conveyed by color alone</text>
 </svg>

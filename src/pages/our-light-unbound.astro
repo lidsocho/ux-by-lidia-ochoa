@@ -6,6 +6,7 @@ import PrevNextNav from '../components/PrevNextNav.astro';
 const sections = [
   { id: 'overview', label: 'Overview' },
   { id: 'curation', label: 'Curation & Planning' },
+  { id: 'community', label: 'Community & Social Media' },
   { id: 'the-exhibition', label: 'The Exhibition' },
   { id: 'design-process', label: 'Design Process' },
   { id: 'accessibility', label: 'Accessibility' },
@@ -24,7 +25,7 @@ const sections = [
         <dl class="case-hero__meta">
           <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Jun 2024 – Jan 2026</dd></div>
           <div class="case-hero__meta-item"><dt>Role:</dt><dd>Co-Curator, Design &amp; Dev</dd></div>
-          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Figma, HTML, CSS, JavaScript</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Google Drive, Eventbrite, Instagram, Figma, HTML/CSS/JS</dd></div>
         </dl>
         <p class="case-hero__tagline">An accessible digital catalogue for a curated art exhibition — designed so every visitor, whether in the gallery or at home, can discover the art and artists behind a show celebrating hope, resilience, and creative freedom.</p>
         <a href="https://lidsocho.github.io/our-light-unbound/" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="View the live Our Light Unbound site (opens in new tab)">
@@ -45,6 +46,11 @@ const sections = [
           <p class="reveal">"Our Light Unbound" was an art exhibition running January 9–31, 2026 that explored tapping into the part of ourselves that believes peace will return — the part that inspires us to believe, hope, and dream again. I co-curated the show alongside Yaz (they/them), and together we built a strong social media presence and community integration around the exhibition over the course of a year and a half of planning.</p>
           <p class="reveal">For the exhibition's digital catalogue, the question was: how do we create a compact, easily navigable, and accessible way for people to discover the art and artists — and become even more immersed in the work through their descriptions — whether they are standing in the gallery or browsing from home? The catalogue was built in collaboration with the artists themselves, who provided their bios and art descriptions, and Yaz supported design decisions throughout.</p>
           <p class="reveal">Traditional gallery practice is to print artist statements and descriptions to display alongside artwork, but that creates barriers to access: limited font sizes, finite wall space, and visitors crowding around small text to read. A digital catalogue eliminates those issues entirely — visitors can browse at their own pace, on their own device, with text they can resize and content they can search.</p>
+
+          <div class="two-col reveal">
+            <img src="/images/our-light-unbound/curator-conversation.jpg" alt="Two people in conversation at the gallery, surrounded by artwork including paintings and a world map, with art on display throughout the space" loading="lazy" />
+            <img src="/images/our-light-unbound/visitor-browsing.jpg" alt="A visitor pausing to examine a framed artwork on the gallery wall, with other visitors browsing deeper in the space" loading="lazy" />
+          </div>
 
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
@@ -75,23 +81,63 @@ const sections = [
       <section class="case-section section" id="curation" aria-labelledby="curation-heading">
         <div class="container">
           <h2 id="curation-heading" class="case-section__heading reveal">Curation &amp; Planning</h2>
-          <p class="reveal">Yaz and I began planning "Our Light Unbound" a year and a half before opening night — in mid-2024. We used Google Drive as our shared workspace, building out a detailed timeline with plenty of wiggle room for unexpected changes, dividing responsibilities, and tracking every moving piece from artist outreach to event logistics.</p>
+          <p class="reveal">Yaz and I began planning "Our Light Unbound" a year and a half before opening night. We used Google Drive as our shared workspace, building out a detailed month-by-month timeline with buffer room for the unexpected — travel schedules, shifting deadlines, and the realities of coordinating with a group of working artists. We divided responsibilities clearly: I led workshop scheduling, artist communication, reception logistics, and the digital catalogue; Yaz focused on merch design, social media content, and visual identity for promotional materials.</p>
 
-          <h3 class="reveal">How We Organized</h3>
-          <div class="decisions-grid reveal">
-            <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-              <p class="decision-card__response"><strong>Detailed timeline</strong> — mapped out every milestone from initial artist outreach through opening night, with buffer time built in for the inevitable surprises.</p>
+          <h3 class="reveal">The Timeline</h3>
+          <p class="reveal">We mapped every phase from initial planning through closing night. Here is a condensed view of the major milestones:</p>
+
+          <div class="next-steps reveal">
+            <div class="next-step">
+              <h3 class="next-step__title">Sep – Nov 2024: Foundation</h3>
+              <p class="next-step__text">Established our plan of action, confirmed meeting cadence, visited the gallery space, and outlined roles. Created a vision board, finalized which space we would use, and started drafting artist contracts and documentation. Began working on a budget and figuring out how finances would work.</p>
             </div>
-            <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-              <p class="decision-card__response"><strong>Divided responsibilities</strong> — clear ownership between co-curators so nothing fell through the cracks and we could work in parallel.</p>
+            <div class="next-step">
+              <h3 class="next-step__title">Dec 2024 – Jan 2025: Theme &amp; Outreach</h3>
+              <p class="next-step__text">Solidified the exhibition title, theme, and description. Created the Instagram account (@our_light_unbound) and started collecting social media content. Sent artist invitations with a February deadline to confirm involvement. Began planning the group artist project and set up Eventbrite for the show and workshops.</p>
             </div>
-            <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-              <p class="decision-card__response"><strong>Social media &amp; community</strong> — built a social media presence to generate excitement and integrate the exhibition into the broader community well before the doors opened.</p>
+            <div class="next-step">
+              <h3 class="next-step__title">Feb – May 2025: Artists &amp; Grants</h3>
+              <p class="next-step__text">Artists confirmed their participation — number of pieces and artists locked in. Started workshop ideation and scheduling with artists. Began grant hunting and submitting applications. Drafted and finalized artist contracts. Kicked off early design work for promotional materials.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Jun – Sep 2025: Design &amp; Production</h3>
+              <p class="next-step__text">Design completed for flyers, window display, and merch. Hired a musician for the reception and started outreach and planning for opening night — including requirements for the wine bar. Built Eventbrite pages for all events and workshops. Began artist shoutout campaign on social media. Started digitally organizing the gallery layout.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Oct – Nov 2025: Final Production</h3>
+              <p class="next-step__text">Merch finalized and ordered (magnets, totes, stickers, postcards — split between artist-fund and show-themed categories). Partnered businesses began displaying merch and flyers. Completed Eventbrite pages and created event-specific flyers with links. Published artist shoutouts and submitted to Art Display magazine. Finalized workshop schedules — collage, paint and sip, origami, and artist talk.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Dec 2025: Final Push</h3>
+              <p class="next-step__text">Finalized artist list, artwork list, and signed contracts. Made art labels, hired art installers, and planned gallery layout. Collected artwork descriptions and bios from artists. Produced the digital catalogue website with art descriptions, artist bios, and images. Created and printed QR codes for the gallery entrance linking to the catalogue. Ordered workshop supplies, got volunteers, and prepped interactive installations. Designed the gallery description window cling.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Jan 2026: Showtime</h3>
+              <p class="next-step__text">Artwork delivered January 1–7. Physically decorated the space — placed labels, installed window display, set lighting. Final inventory and signatures at drop-off. Artist reception and opening night January 9 with DJ Tremendadiosa. Ran workshops throughout the month (collage, paint and sip, origami). Curated a playlist for the vibes. Closing event January 31 with banquet permit secured.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Community & Social Media -->
+      <section class="case-section section" id="community" aria-labelledby="community-heading">
+        <div class="container">
+          <h2 id="community-heading" class="case-section__heading reveal">Community &amp; Social Media</h2>
+          <p class="reveal">Community integration was central to the exhibition from the start. We created the @our_light_unbound Instagram account early in the planning process and used it to build excitement, spotlight artists, and promote events. By opening night the account had 36 posts, 148 followers, and a post about the exhibition reel that reached 2.5K views with 119 likes.</p>
+
+          <div class="two-col reveal">
+            <img src="/images/our-light-unbound/instagram-profile.png" alt="Our Light Unbound Instagram profile showing 36 posts, 148 followers, and bio describing a free art show featuring emerging BIPOC artists celebrating life and the creation of identity" loading="lazy" />
+            <img src="/images/our-light-unbound/instagram-grid.png" alt="Instagram grid showing artist shoutout posts, the online exhibition catalogue announcement with QR code, and collaboration posts — individual artist spotlights received between 247 and 1,698 views" loading="lazy" />
+          </div>
+
+          <p class="reveal">Each artist received a dedicated shoutout post featuring their work, bio, and social media handles. We promoted the full event lineup — collage workshops, paint and sip, origami, an artist talk, and the closing event — through designed flyers linking to Eventbrite pages. The account also served as the launch point for the digital catalogue, with a post featuring the QR code that visitors would later scan in the gallery.</p>
+
+          <div class="two-col reveal">
+            <img src="/images/our-light-unbound/instagram-full-grid.png" alt="Full Instagram grid showing the range of content: gallery hours, open call for art, event flyers for workshops and the reception, stories, and reels from the exhibition" loading="lazy" />
+            <img src="/images/our-light-unbound/instagram-workshop.png" alt="Instagram post from an origami mobile workshop at the exhibition, showing a participant holding up their completed origami mobile, tagged @our_light_unbound" loading="lazy" />
+          </div>
+
+          <p class="reveal">The social media strategy extended beyond the account itself. We collaborated with the gallery (@slip_belltown), partnered businesses, and the artists' own social platforms to cross-promote. The exhibition was listed as a community event, featured in local art walk promotions, and tagged across artist networks — creating a web of visibility that brought in visitors who might not have found the show otherwise.</p>
         </div>
       </section>
 
@@ -99,11 +145,26 @@ const sections = [
       <section class="case-section section" id="the-exhibition" aria-labelledby="exhibition-heading">
         <div class="container">
           <h2 id="exhibition-heading" class="case-section__heading reveal">The Exhibition</h2>
+          <p class="reveal">The show opened January 9 at Slip Gallery in Belltown, Seattle. The space filled with visitors from the art community and beyond — many discovering the artists for the first time through the social media campaign we had been building for months.</p>
+
+          <div class="two-col reveal">
+            <img src="/images/our-light-unbound/opening-night-crowd.jpg" alt="Opening night at Our Light Unbound — the gallery packed with visitors viewing artwork on the walls, artwork ranging from paintings to mixed media installations" loading="lazy" />
+            <img src="/images/our-light-unbound/visitors-examining-art.jpg" alt="Visitors examining paintings up close at the exhibition, pointing at and discussing the artwork on display" loading="lazy" />
+          </div>
+
+          <p class="reveal">The exhibition featured emerging BIPOC artists working across painting, photography, sculpture, and mixed media. Throughout the month we hosted workshops — collage, paint and sip, origami — and an artist talk, turning the gallery into an active creative space rather than a static display.</p>
+
+          <div class="two-col reveal">
+            <img src="/images/our-light-unbound/mixed-media-display.jpg" alt="Gallery wall showing a mix of photography, sculpture, and mixed media art — small printed art labels visible beside each piece, illustrating the physical labels the digital catalogue was designed to supplement" loading="lazy" />
+            <img src="/images/our-light-unbound/interactive-installation.jpg" alt="Visitors engaging with artwork and interactive installations, gathering around pieces and discussing them with each other" loading="lazy" />
+          </div>
+
+          <h3 class="reveal">The Digital Catalogue</h3>
           <p class="reveal">The exhibition's theme — finding and freeing the light within — called for a design that felt intimate and contemplative rather than clinical. The deep purple and gold palette evokes twilight and candlelight, creating warmth within darkness. The typography uses italicized serif headers to echo handwritten gallery labels, paired with clean sans-serif body text for readability.</p>
 
           <img src="/images/our-light-unbound/homepage.png" alt="Our Light Unbound homepage showing the exhibition title in italic serif on a gradient purple background, exhibition dates, artist statement, and a search bar for browsing artists and artworks" class="reveal" loading="lazy" />
 
-          <p class="reveal">The homepage opens with the exhibition statement — a poetic framing that sets the emotional context before visitors encounter any navigation or catalogue content. Below, a search bar lets visitors find specific artists or artworks, and an accordion-style catalogue organizes works by artist with expandable sections for biographies and individual pieces.</p>
+          <p class="reveal">The homepage opens with the exhibition statement — a poetic framing that sets the emotional context before visitors encounter any navigation or catalogue content. Below, a search bar lets visitors find specific artists or artworks, and an accordion-style catalogue organizes works by artist with expandable sections for biographies and individual pieces. A printed QR code at the gallery entrance linked directly to the catalogue, so visitors could pull it up on their phones while standing in front of the art.</p>
 
           <h3 class="reveal">Key Navigation Elements</h3>
           <div class="decisions-grid reveal">
@@ -170,11 +231,24 @@ const sections = [
       <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
         <div class="container">
           <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
-          <p class="reveal">The site launched before the exhibition opening and served as the digital companion throughout the show's run — replacing the need for printed artist statements and giving visitors a richer, more accessible way to engage with the work.</p>
+          <p class="reveal">The exhibition ran for the full month of January 2026. The digital catalogue launched before opening night and served as the primary way visitors engaged with artist bios and artwork descriptions — both in the gallery via QR code and from home.</p>
+
+          <img src="/images/our-light-unbound/instagram-opening-post.png" alt="Instagram reel from opening night reaching 2,500 views and 119 likes, with the caption celebrating the show and listing all directors and collaborators" class="reveal" style="max-width: 380px;" loading="lazy" />
+
           <div class="goal-pair reveal">
             <div class="goals-frustrations-banner">
-              <h3>Deliverables</h3>
-              <p>A fully accessible, dark-themed digital catalogue with artist bios and artwork descriptions provided by the artists, real-time search, gallery hours, event listings, and purchasing contact flow — designed in collaboration with co-curator Yaz and built on a timeline planned over 18 months.</p>
+              <h3>Exhibition</h3>
+              <p>A 3-week exhibition at Slip Gallery featuring emerging BIPOC artists across painting, photography, sculpture, and mixed media. Opening night with DJ Tremendadiosa. Four workshops held during the run (collage, paint and sip, origami, artist talk) plus a closing event.</p>
+            </div>
+            <div class="goals-frustrations-banner">
+              <h3>Community Reach</h3>
+              <p>36 social media posts, 148 followers, and 930 profile views in 30 days. Opening night reel reached 2,500 views with 119 likes. Individual artist shoutouts ranged from 247 to 1,698 views. Cross-promotion with gallery, partnered businesses, and artist networks.</p>
+            </div>
+          </div>
+          <div class="goal-pair reveal">
+            <div class="goals-frustrations-banner">
+              <h3>Digital Catalogue</h3>
+              <p>A fully accessible, dark-themed digital catalogue with artist bios and artwork descriptions provided by the artists, real-time search, gallery hours, event listings, and purchasing contact flow. QR code at the gallery entrance gave visitors instant access on their phones.</p>
             </div>
             <div class="goals-frustrations-banner">
               <h3>Accessibility</h3>

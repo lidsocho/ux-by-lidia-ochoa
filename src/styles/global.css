@@ -1924,6 +1924,11 @@ strong {
 .mb-md { margin-bottom: var(--space-md); }
 .mb-lg { margin-bottom: var(--space-lg); }
 
+/* --- Embed Scroll Container (interactive previews) --- */
+.embed-scroll-container {
+  margin-top: var(--space-lg);
+}
+
 /* --- Goals & Frustrations Full-Width Banner --- */
 .goals-frustrations-banner {
   background: var(--color-card-bg);

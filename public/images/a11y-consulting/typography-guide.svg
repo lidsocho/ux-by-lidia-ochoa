@@ -1,45 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" font-family="Commissioner, Inter, sans-serif">
-  <!-- Background -->
-  <rect width="820" height="380" rx="12" fill="#faf9f6" stroke="#e0e0e0" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" font-family="Commissioner, Inter, sans-serif">
+  <!-- Background with neo-brutalist offset border -->
+  <rect x="0" y="0" width="816" height="416" rx="12" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2" transform="translate(4,4)"/>
+  <rect width="816" height="416" rx="12" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2"/>
 
   <!-- Title -->
-  <text x="410" y="38" text-anchor="middle" font-family="Bricolage Grotesque, Raleway, sans-serif" font-weight="700" font-size="18" fill="#2d2d2d">Typography</text>
+  <text x="410" y="40" text-anchor="middle" font-family="Bricolage Grotesque, Raleway, sans-serif" font-weight="700" font-size="18" fill="#2d2d2d">Typography</text>
 
-  <!-- DM Serif Display -->
-  <rect x="30" y="58" width="370" height="140" rx="8" fill="#ffffff" stroke="#E8DCC8" stroke-width="1.5"/>
-  <rect x="30" y="58" width="370" height="6" rx="3" fill="#B85042"/>
-  <text x="50" y="90" font-family="Georgia, serif" font-weight="700" font-size="24" fill="#3D2B1F">DM Serif Display</text>
-  <text x="50" y="112" font-size="11" fill="#8C7B6B" letter-spacing="0.05em" font-weight="600" text-transform="uppercase">--serif · HEADINGS &amp; DISPLAY</text>
-  <text x="50" y="136" font-family="Georgia, serif" font-size="14" fill="#5C4A3A">Section titles, hero headlines, card headers</text>
-  <text x="50" y="156" font-family="Georgia, serif" font-size="14" fill="#5C4A3A">Communicates warmth and authority</text>
-  <text x="50" y="180" font-size="11" fill="#8C7B6B">Weights: 400 (Regular), 400 Italic</text>
+  <!-- DM Serif Display card — with offset shadow -->
+  <rect x="30" y="62" width="370" height="148" rx="8" fill="#2d2d2d" transform="translate(3,3)"/>
+  <rect x="30" y="62" width="370" height="148" rx="8" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="50" y="94" font-family="Georgia, serif" font-weight="700" font-size="24" fill="#3D2B1F">DM Serif Display</text>
+  <text x="50" y="116" font-size="11" fill="#8C7B6B" letter-spacing="0.05em" font-weight="600">--serif · HEADINGS &amp; DISPLAY</text>
+  <rect x="50" y="128" width="330" height="24" rx="4" fill="#B85042" opacity="0.12"/>
+  <text x="60" y="145" font-size="12" fill="#B85042" font-weight="600">Section titles, hero headlines, card headers</text>
+  <text x="50" y="168" font-family="Georgia, serif" font-size="13" fill="#5C4A3A">Communicates warmth and authority</text>
+  <text x="50" y="192" font-size="11" fill="#8C7B6B">Weights: 400 (Regular), 400 Italic</text>
 
-  <!-- Source Sans 3 -->
-  <rect x="420" y="58" width="370" height="140" rx="8" fill="#ffffff" stroke="#E8DCC8" stroke-width="1.5"/>
-  <rect x="420" y="58" width="370" height="6" rx="3" fill="#B85042"/>
-  <text x="440" y="90" font-weight="400" font-size="22" fill="#3D2B1F">Source Sans 3</text>
-  <text x="440" y="112" font-size="11" fill="#8C7B6B" letter-spacing="0.05em" font-weight="600">--sans · BODY TEXT</text>
-  <text x="440" y="136" font-size="14" fill="#5C4A3A">Paragraphs, lists, form labels, descriptions</text>
-  <text x="440" y="156" font-size="14" fill="#5C4A3A">Optimized for clarity and readability</text>
-  <text x="440" y="180" font-size="11" fill="#8C7B6B">Weights: 300, 400, 500, 600, 700 + Italics</text>
+  <!-- Source Sans 3 card — with offset shadow -->
+  <rect x="420" y="62" width="370" height="148" rx="8" fill="#2d2d2d" transform="translate(3,3)"/>
+  <rect x="420" y="62" width="370" height="148" rx="8" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="440" y="94" font-weight="400" font-size="22" fill="#3D2B1F">Source Sans 3</text>
+  <text x="440" y="116" font-size="11" fill="#8C7B6B" letter-spacing="0.05em" font-weight="600">--sans · BODY TEXT</text>
+  <rect x="440" y="128" width="330" height="24" rx="4" fill="#B85042" opacity="0.12"/>
+  <text x="450" y="145" font-size="12" fill="#B85042" font-weight="600">Paragraphs, lists, form labels, descriptions</text>
+  <text x="440" y="168" font-size="13" fill="#5C4A3A">Optimized for clarity and readability</text>
+  <text x="440" y="192" font-size="11" fill="#8C7B6B">Weights: 300, 400, 500, 600, 700 + Italics</text>
 
-  <!-- Monospace -->
-  <rect x="30" y="214" width="370" height="100" rx="8" fill="#ffffff" stroke="#E8DCC8" stroke-width="1.5"/>
-  <rect x="30" y="214" width="370" height="6" rx="3" fill="#8C7B6B"/>
-  <text x="50" y="248" font-family="Consolas, monospace" font-size="18" fill="#3D2B1F">SF Mono / JetBrains Mono</text>
-  <text x="50" y="268" font-size="11" fill="#8C7B6B" letter-spacing="0.05em" font-weight="600">--mono · CODE &amp; DATA</text>
-  <text x="50" y="290" font-size="13" fill="#5C4A3A">WCAG references, score values, page footers</text>
+  <!-- Monospace card — with offset shadow -->
+  <rect x="30" y="228" width="370" height="120" rx="8" fill="#2d2d2d" transform="translate(3,3)"/>
+  <rect x="30" y="228" width="370" height="120" rx="8" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="50" y="262" font-family="Consolas, monospace" font-size="18" fill="#3D2B1F">SF Mono / JetBrains Mono</text>
+  <text x="50" y="282" font-size="11" fill="#8C7B6B" letter-spacing="0.05em" font-weight="600">--mono · CODE &amp; DATA</text>
+  <rect x="50" y="294" width="330" height="24" rx="4" fill="#8C7B6B" opacity="0.12"/>
+  <text x="60" y="311" font-size="12" fill="#5C4A3A" font-weight="600">WCAG references, score values, page footers</text>
 
-  <!-- Scale reference -->
-  <rect x="420" y="214" width="370" height="100" rx="8" fill="#ffffff" stroke="#E8DCC8" stroke-width="1.5"/>
-  <rect x="420" y="214" width="370" height="6" rx="3" fill="#3D2B1F"/>
-  <text x="440" y="248" font-weight="700" font-size="16" fill="#3D2B1F">Type Scale</text>
-  <text x="440" y="272" font-size="12" fill="#5C4A3A">
+  <!-- Scale reference card — with offset shadow -->
+  <rect x="420" y="228" width="370" height="120" rx="8" fill="#2d2d2d" transform="translate(3,3)"/>
+  <rect x="420" y="228" width="370" height="120" rx="8" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="440" y="262" font-weight="700" font-size="16" fill="#3D2B1F">Type Scale</text>
+  <text x="440" y="286" font-size="12" fill="#5C4A3A">
     <tspan x="440">h1: 2.25rem · h2: 1.75rem · h3: 1.25rem</tspan>
     <tspan x="440" dy="20">Body: 1rem / 1.5 line-height · Small: 0.875rem</tspan>
   </text>
+  <rect x="440" y="316" width="330" height="20" rx="4" fill="#B85042" opacity="0.12"/>
+  <text x="450" y="331" font-size="11" fill="#B85042" font-weight="600">Base font: 16px (1rem) · No text below 12px</text>
 
   <!-- Note -->
-  <rect x="30" y="330" width="760" height="36" rx="8" fill="#FAF6F0" stroke="#E8DCC8" stroke-width="1.5"/>
-  <text x="410" y="354" text-anchor="middle" font-size="12" fill="#5C4A3A">All text meets WCAG 2.1 AA minimum size requirements · Base font: 16px (1rem) · No text below 12px</text>
+  <rect x="30" y="372" width="760" height="32" rx="8" fill="#FAF6F0" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="410" y="394" text-anchor="middle" font-size="12" fill="#5C4A3A">All text meets WCAG 2.1 AA minimum size requirements</text>
 </svg>

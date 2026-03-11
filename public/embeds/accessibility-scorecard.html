@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Scorecard — UX by Lidia Ochoa</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF6F0;
+      --sand: #E8DCC8;
+      --sand-light: #F2ECE0;
+      --terracotta: #B85042;
+      --terracotta-dark: #9A3C30;
+      --terracotta-light: #D4796E;
+      --deep-brown: #3D2B1F;
+      --warm-brown: #5C4033;
+      --warm-gray: #8C7B6B;
+      --soft-white: #FFFCF7;
+      --text-primary: #2E1F14;
+      --text-secondary: #5C4A3A;
+      --text-muted: #8C7B6B;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+      --mono: 'SF Mono', 'Consolas', 'Courier New', monospace;
+
+      /* Severity colors */
+      --severity-critical: #B85042;
+      --severity-major: #C4864C;
+      --severity-moderate: #8C7B6B;
+      --severity-minor: #A8B07A;
+    }
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text-primary);
+      background: #e0ddd8;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    /* ===== PAGE SHELL ===== */
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      background: var(--cream);
+      margin: 24px auto;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media print {
+      body { background: none; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        min-height: 100vh;
+      }
+    }
+
+    /* Top accent bar */
+    .page::before {
+      content: '';
+      display: block;
+      height: 6px;
+      background: var(--deep-brown);
+      flex-shrink: 0;
+    }
+
+    .page-body {
+      flex: 1;
+      padding: 28px 48px 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-content {
+      flex: 1;
+    }
+
+    /* ===== PAGE FOOTER ===== */
+    .page-footer {
+      border-top: 1px solid var(--sand);
+      padding: 10px 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+    .page-footer-left { color: var(--terracotta-light); }
+
+    /* ===== PAGE HEADER (pages 2-4) ===== */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--sand);
+      margin-bottom: 18px;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .page-header-right {
+      font-family: var(--mono);
+      font-weight: 600;
+      color: var(--deep-brown);
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+
+    /* ===== COMMON ELEMENTS ===== */
+    .section-title {
+      font-family: var(--serif);
+      font-size: 1.85rem;
+      color: var(--deep-brown);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--terracotta);
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+
+    .fillable {
+      background: #fff;
+      border: 1px solid var(--sand);
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      min-height: 36px;
+    }
+    .fillable:focus {
+      outline: 2px solid var(--terracotta);
+      outline-offset: 1px;
+    }
+    .fillable-large {
+      min-height: 200px;
+      resize: vertical;
+      width: 100%;
+      line-height: 1.6;
+    }
+
+    /* ===== PAGE 1: COVER ===== */
+    .cover-branding {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--deep-brown);
+      margin-bottom: 4px;
+    }
+    .cover-branding-line {
+      width: 140px;
+      height: 3px;
+      background: var(--terracotta);
+      border-radius: 2px;
+      margin-top: 6px;
+    }
+
+    .cover-title {
+      font-family: var(--serif);
+      font-size: 3.6rem;
+      color: var(--deep-brown);
+      line-height: 1.1;
+      margin-top: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .cover-subtitle {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    .cover-fields {
+      margin-top: 32px;
+      background: var(--soft-white);
+      border: 1px solid var(--sand);
+      border-radius: 12px;
+      padding: 24px 32px;
+    }
+    .cover-field {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+    .cover-field:not(:last-child) {
+      border-bottom: 1px solid rgba(232,220,200,0.5);
+    }
+    .cover-field-label {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      width: 140px;
+      flex-shrink: 0;
+    }
+    .cover-field .fillable {
+      flex: 1;
+      border: none;
+      border-bottom: 1px solid var(--sand);
+      border-radius: 0;
+      background: transparent;
+      padding: 4px 0;
+      font-size: 1rem;
+    }
+
+    .cover-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-top: auto;
+      padding-bottom: 16px;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--sand);
+      padding: 10px 0 20px;
+      margin-top: 8px;
+    }
+    .cover-footer-left {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--terracotta-light);
+      letter-spacing: 0.02em;
+    }
+    .cover-footer-right {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== PAGE 2: SCORING SUMMARY ===== */
+    .scoring-category {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(232,220,200,0.4);
+    }
+    .scoring-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .scoring-number.n1 { background: var(--deep-brown); }
+    .scoring-number.n2 { background: var(--warm-brown); }
+    .scoring-number.n3 { background: var(--warm-gray); }
+    .scoring-number.n4 { background: var(--terracotta-light); }
+    .scoring-number.n5 { background: var(--terracotta); }
+
+    .scoring-info { flex: 1; }
+    .scoring-name {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--deep-brown);
+    }
+    .scoring-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    .scoring-score {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .scoring-score-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .scoring-score .fillable {
+      width: 56px;
+      text-align: center;
+      padding: 6px 4px;
+      font-weight: 600;
+    }
+    .scoring-score-max {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Overall score bar */
+    .overall-score {
+      background: var(--sand-light);
+      border-radius: 10px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .overall-score-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--deep-brown);
+      flex-shrink: 0;
+    }
+    .overall-score-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-style: italic;
+      flex: 1;
+    }
+    .overall-score .fillable {
+      width: 64px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 8px 4px;
+    }
+    .overall-score-max {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Issue counts */
+    .issue-counts {
+      margin-top: 16px;
+    }
+    .issue-counts-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--deep-brown);
+      margin-bottom: 8px;
+    }
+    .issue-counts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .issue-count-card {
+      text-align: center;
+      padding: 16px 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--sand);
+      background: var(--soft-white);
+    }
+    .issue-count-card .fillable {
+      width: 48px;
+      margin: 0 auto 6px;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 4px;
+      border: none;
+      background: transparent;
+    }
+    .issue-count-bar {
+      height: 4px;
+      border-radius: 2px;
+      margin: 0 auto 8px;
+      width: 80%;
+    }
+    .issue-count-bar.critical { background: var(--severity-critical); }
+    .issue-count-bar.major { background: var(--severity-major); }
+    .issue-count-bar.moderate { background: var(--severity-moderate); }
+    .issue-count-bar.minor { background: var(--severity-minor); }
+
+    .issue-count-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .issue-count-sublabel {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      line-height: 1.3;
+    }
+
+    /* UX Interpretation */
+    .ux-interpretation {
+      margin-top: 16px;
+    }
+    .ux-interpretation-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--deep-brown);
+      margin-bottom: 6px;
+    }
+    .ux-interpretation-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* ===== PAGE 3: TOP 10 ISSUES ===== */
+    .issues-table-header {
+      display: grid;
+      grid-template-columns: 36px 1fr 120px 90px 120px;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 2px solid var(--sand);
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-secondary);
+    }
+
+    .issue-row {
+      display: grid;
+      grid-template-columns: 36px 1fr 120px 90px 120px;
+      gap: 12px;
+      padding: 12px 0;
+      align-items: start;
+      background: var(--soft-white);
+      border-radius: 6px;
+      margin-bottom: 6px;
+      padding: 14px 12px;
+    }
+    .issue-row:nth-child(even) {
+      background: rgba(232,220,200,0.2);
+    }
+
+    .issue-num {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding-top: 6px;
+    }
+
+    .issue-row .fillable {
+      font-size: 0.85rem;
+      padding: 6px 8px;
+    }
+    .issue-desc-field {
+      min-height: 48px;
+      resize: vertical;
+    }
+    .issue-small-field {
+      min-height: 32px;
+    }
+
+    /* ===== PAGE 2: TOP 10 ACCESSIBILITY CRITERIA ===== */
+    .criteria-table-header {
+      display: grid;
+      grid-template-columns: 30px 1fr 110px 80px 80px 120px;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 2px solid var(--sand);
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-secondary);
+      align-items: center;
+    }
+
+    .criteria-row {
+      background: var(--soft-white);
+      border-radius: 6px;
+      margin-bottom: 2px;
+      padding: 5px 10px 4px;
+    }
+    .criteria-row:nth-child(even) {
+      background: rgba(232,220,200,0.2);
+    }
+
+    .criteria-row-top {
+      display: grid;
+      grid-template-columns: 30px 1fr 110px 80px 80px 120px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .criteria-num {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .criteria-info {}
+    .criteria-name {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--deep-brown);
+      line-height: 1.2;
+    }
+    .criteria-covers {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+
+    .criteria-wcag {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .criteria-category {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .criteria-score {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .criteria-score .fillable {
+      width: 44px;
+      text-align: center;
+      padding: 4px 2px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .criteria-score-max {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .criteria-notes {
+      margin-top: 2px;
+      padding-left: 40px;
+    }
+    .criteria-notes textarea.fillable {
+      width: 100%;
+      min-height: 90px;
+      font-size: 0.78rem;
+      resize: vertical;
+      padding: 4px 8px;
+    }
+
+    /* Severity dropdown select */
+    .severity-select {
+      background: #fff;
+      border: 1px solid var(--sand);
+      border-radius: 4px;
+      padding: 5px 24px 5px 8px;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--text-primary);
+      min-height: 28px;
+      width: 100%;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C7B6B' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 6px center;
+      background-size: 10px 7px;
+    }
+    .severity-select:focus {
+      outline: 2px solid var(--terracotta);
+      outline-offset: 1px;
+    }
+
+    /* Medium textarea for consolidated page */
+    .fillable-medium {
+      min-height: 120px;
+      resize: vertical;
+      width: 100%;
+      line-height: 1.6;
+    }
+
+    /* ===== PAGE 4: DETAILED NOTES ===== */
+    .detailed-notes-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .next-steps {
+      margin-top: 18px;
+    }
+    .next-step {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .next-step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .next-step-num.s1 { background: var(--warm-brown); }
+    .next-step-num.s2 { background: var(--warm-gray); }
+    .next-step-num.s3 { background: var(--terracotta-light); }
+    .next-step .fillable {
+      flex: 1;
+      min-height: 40px;
+    }
+
+    /* CTA card */
+    .cta-card {
+      background: var(--deep-brown);
+      border-radius: 12px;
+      padding: 28px 36px;
+      margin-top: 24px;
+    }
+    .cta-card-title {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+    .cta-card-text {
+      font-size: 0.95rem;
+      color: rgba(250,246,240,0.75);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .cta-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--terracotta);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .cta-contact {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: rgba(250,246,240,0.55);
+    }
+    .cta-contact-divider {
+      margin: 0 6px;
+    }
+
+    /* Get in Touch section */
+    .get-in-touch {
+      margin-top: 28px;
+    }
+    .get-in-touch-title {
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--deep-brown);
+      margin-bottom: 8px;
+    }
+    .get-in-touch-row {
+      display: flex;
+      gap: 32px;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Closing tagline */
+    .closing-tagline {
+      text-align: center;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--terracotta);
+      margin-top: 24px;
+      padding-top: 8px;
+    }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      .page { break-inside: avoid; }
+      .fillable { border: 1px solid #ccc; }
+      .severity-select { border: 1px solid #ccc; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ PAGE 1: COVER ============ -->
+  <div class="page" id="page-1">
+    <div class="page-body">
+      <div class="page-content">
+        <!-- Branding -->
+        <div class="cover-branding">UX by Lidia Ochoa</div>
+        <div class="cover-branding-line"></div>
+
+
+        <!-- Title -->
+        <h1 class="cover-title">Accessibility<br>Scorecard</h1>
+        <p class="cover-subtitle">A personalized accessibility review of your EdTech platform</p>
+
+        <!-- Info fields -->
+        <div class="cover-fields">
+          <div class="cover-field">
+            <span class="cover-field-label">Platform</span>
+            <input type="text" class="fillable" aria-label="Platform name">
+          </div>
+          <div class="cover-field">
+            <span class="cover-field-label">URL</span>
+            <input type="text" class="fillable" aria-label="Platform URL">
+          </div>
+          <div class="cover-field">
+            <span class="cover-field-label">Prepared For</span>
+            <input type="text" class="fillable" aria-label="Prepared for">
+          </div>
+          <div class="cover-field">
+            <span class="cover-field-label">Date</span>
+            <input type="text" class="fillable" aria-label="Date">
+          </div>
+        </div>
+
+        <!-- Tagline at bottom -->
+        <p class="cover-tagline">
+          Your mission is to meet every learner where they are.<br>
+          Mine is to help you get there.
+        </p>
+      </div>
+      <div class="cover-footer">
+        <span class="cover-footer-left"></span>
+        <span class="cover-footer-right">uxbylidiaochoa.com</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PAGE 2: TOP 10 ACCESSIBILITY CRITERIA ============ -->
+  <div class="page" id="page-2">
+    <div class="page-body">
+      <div class="page-content">
+        <div class="page-header">
+          <span>Accessibility Scorecard</span>
+          <span class="page-header-right"></span>
+        </div>
+
+        <h2 class="section-title">Top 10 Accessibility Criteria</h2>
+        <div style="margin-top: 16px;">
+          <!-- Table header -->
+          <div class="criteria-table-header">
+            <span>#</span>
+            <span>Criterion</span>
+            <span>Severity</span>
+            <span>Score</span>
+            <span>WCAG SC</span>
+            <span>Category</span>
+          </div>
+
+          <!-- 1. Heading Hierarchy -->
+          <div class="criteria-row">
+            <div class="criteria-row-top">
+              <span class="criteria-num">1</span>
+              <div class="criteria-info">
+                <div class="criteria-name">Heading Hierarchy</div>
+                <div class="criteria-covers">Logical heading levels (h1&ndash;h6)</div>
+              </div>
+              <select class="severity-select" aria-label="Heading Hierarchy severity">
+                <option value=""></option>
+                <option value="critical">Critical</option>
+                <option value="major">Major</option>
+                <option value="moderate">Moderate</option>
+                <option value="minor">Minor</option>
+                <option value="na">N/A</option>
+              </select>
+              <div class="criteria-score">
+                <input type="text" class="fillable" aria-label="Heading Hierarchy score">
+                <span class="criteria-score-max">/ 20</span>
+              </div>
+              <span class="criteria-wcag">1.3.1</span>
+              <span class="criteria-category">Navigation &amp; Structure</span>
+            </div>
+            <div class="criteria-notes">
+              <textarea class="fillable" aria-label="Heading Hierarchy notes" rows="1" placeholder="Notes on findings..."></textarea>
+            </div>
+          </div>
+
+          <!-- 2. Contrast Ratios -->
+          <div class="criteria-row">
+            <div class="criteria-row-top">
+              <span class="criteria-num">2</span>
+              <div class="criteria-info">
+                <div class="criteria-name">Contrast Ratios</div>
+                <div class="criteria-covers">Text and UI component contrast</div>
+              </div>
+              <select class="severity-select" aria-label="Contrast Ratios severity">
+                <option value=""></option>
+                <option value="critical">Critical</option>
+                <option value="major">Major</option>
+                <option value="moderate">Moderate</option>
+                <option value="minor">Minor</option>
+                <option value="na">N/A</option>
+              </select>
+              <div class="criteria-score">
+                <input type="text" class="fillable" aria-label="Contrast Ratios score">
+                <span class="criteria-score-max">/ 20</span>
+              </div>
+              <span class="criteria-wcag">1.4.3</span>
+              <span class="criteria-category">Color &amp; Visual Design</span>
+            </div>
+            <div class="criteria-notes">
+              <textarea class="fillable" aria-label="Contrast Ratios notes" rows="1" placeholder="Notes on findings..."></textarea>
+            </div>
+          </div>
+
+          <!-- 3. Color-Only Information -->
+          <div class="criteria-row">
+            <div class="criteria-row-top">
+              <span class="criteria-num">3</span>
+              <div class="criteria-info">
+                <div class="criteria-name">Color-Only Information</div>
+                <div class="criteria-covers">Info not conveyed by color alone</div>
+              </div>
+              <select class="severity-select" aria-label="Color-Only Information severity">
+                <option value=""></option>
+                <option value="critical">Critical</option>
+                <option value="major">Major</option>
+                <option value="moderate">Moderate</option>
+                <option value="minor">Minor</option>
+                <option value="na">N/A</option>
+              </select>
+              <div class="criteria-score">
+                <input type="text" class="fillable" aria-label="Color-Only Information score">
+                <span class="criteria-score-max">/ 20</span>
+              </div>
+              <span class="criteria-wcag">1.4.1</span>
+              <span class="criteria-category">Color &amp; Visual Design</span>
+            </div>
+            <div class="criteria-notes">
+              <textarea class="fillable" aria-label="Color-Only Information notes" rows="1" placeholder="Notes on findings..."></textarea>
+            </div>
+          </div>
+
+          <!-- 4. Text Sizing & Spacing -->
+          <div class="criteria-row">
+            <div class="criteria-row-top">
+              <span class="criteria-num">4</span>
+              <div class="criteria-info">
+                <div class="criteria-name">Text Sizing &amp; Spacing</div>
+                <div class="criteria-covers">Resizable text, adequate spacing</div>
+              </div>
+              <select class="severity-select" aria-label="Text Sizing and Spacing severity">
+                <option value=""></option>
+                <option value="critical">Critical</option>
+                <option value="major">Major</option>
+                <option value="moderate">Moderate</option>
+                <option value="minor">Minor</option>
+                <option value="na">N/A</option>
+              </select>
+              <div class="criteria-score">
+                <input type="text" class="fillable" aria-label="Text Sizing and Spacing score">
+                <span class="criteria-score-max">/ 20</span>
+              </div>
+              <span class="criteria-wcag">1.4.4</span>
+              <span class="criteria-category">Color &amp; Visual Design</span>
+            </div>
+            <div class="criteria-notes">
+              <textarea class="fillable" aria-label="Text Sizing and Spacing notes" rows="1" placeholder="Notes on findings..."></textarea>
+            </div>
+          </div>
+
+          <!-- 5. Form Labels & Inputs -->
+          <div class="criteria-row">
+            <div class="criteria-row-top">
+              <span class="criteria-num">5</span>
+              <div class="criteria-info">
+                <div class="criteria-name">Form Labels &amp; Inputs</div>
+                <div class="criteria-covers">Programmatic labels, input types, required fields</div>
+              </div>
+              <select class="severity-select" aria-label="Form Labels and Inputs severity">
+                <option value=""></option>
+                <option value="critical">Critical</option>
+                <option value="major">Major</option>
+                <option value="moderate">Moderate</option>
+                <option value="minor">Minor</option>
+                <option value="na">N/A</option>
+              </select>
+              <div class="criteria-score">
+                <input type="text" class="fillable" aria-label="Form Labels and Inputs score">
+                <span class="criteria-score-max">/ 20</span>
+              </div>
+              <span class="criteria-wcag">1.3.1 / 4.1.2</span>
+              <span class="criteria-category">Forms &amp; Interactions</span>
+            </div>
+            <div class="criteria-notes">
+              <textarea class="fillable" aria-label="Form Labels and Inputs notes" rows="1" placeholder="Notes on findings..."></textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span class="page-footer-left">UX by Lidia Ochoa</span>
+        <span>Page 2</span>
+        <span>Accessibility Scorecard</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PAGE 3: ACCESSIBILITY CRITERIA 6-10 ============ -->
+  <div class="page" id="page-3">
+    <div class="page-body">
+      <div class="page-content">
+        <div class="page-header">
+          <span>Accessibility Scorecard</span>
+          <span class="page-header-right"></span>
+        </div>
+
+        <h2 class="section-title">Top 10 Accessibility Criteria</h2>
+        <div style="margin-top: 16px;">
+          <!-- Table header (repeated) -->
+          <div class="criteria-table-header">
+            <span>#</span>
+            <span>Criterion</span>
+            <span>Severity</span>
+            <span>Score</span>
+            <span>WCAG SC</span>
+            <span>Category</span>
+          </div>
+
+          <!-- 6. Error Identification & Recovery -->
+          <div class="criteria-row">
+            <div class="criteria-row-top">
+              <span class="criteria-num">6</span>
+              <div class="criteria-info">
+                <div class="criteria-name">Error Identification &amp; Recovery</div>
+                <div class="criteria-covers">Error messages, suggestions, prevention</div>
+              </div>
+              <select class="severity-select" aria-label="Error Identification and Recovery severity">
+                <option value=""></option>
+                <option value="critical">Critical</option>
+                <option value="major">Major</option>
+                <option value="moderate">Moderate</option>
+                <option value="minor">Minor</option>
+                <option value="na">N/A</option>
+              </select>
+              <div class="criteria-score">
+                <input type="text" class="fillable" aria-label="Error Identification and Recovery score">
+                <span class="criteria-score-max">/ 20</span>
+              </div>
+              <span class="criteria-wcag">3.3.1 / 3.3.3</span>
+              <span class="criteria-category">Forms &amp; Interactions</span>
+            </div>
+            <div class="criteria-notes">
+              <textarea class="fillable" aria-label="Error Identification and Recovery notes" rows="1" placeholder="Notes on findings..."></textarea>
+            </div>
+          </div>
+
+          <!-- 7. Focus States -->
+          <div class="criteria-row">
+            <div class="criteria-row-top">
+              <span class="criteria-num">7</span>
+              <div class="criteria-info">
+                <div class="criteria-name">Focus States</div>
+                <div class="criteria-covers">Visible focus indicators on all elements</div>
+              </div>
+              <select class="severity-select" aria-label="Focus States severity">
+                <option value=""></option>
+                <option value="critical">Critical</option>
+                <option value="major">Major</option>
+                <option value="moderate">Moderate</option>
+                <option value="minor">Minor</option>
+                <option value="na">N/A</option>
+              </select>
+              <div class="criteria-score">
+                <input type="text" class="fillable" aria-label="Focus States score">
+                <span class="criteria-score-max">/ 20</span>
+              </div>
+              <span class="criteria-wcag">2.4.7</span>
+              <span class="criteria-category">Keyboard &amp; Focus</span>
+            </div>
+            <div class="criteria-notes">
+              <textarea class="fillable" aria-label="Focus States notes" rows="1" placeholder="Notes on findings..."></textarea>
+            </div>
+          </div>
+
+          <!-- 8. Keyboard Access -->
+          <div class="criteria-row">
+            <div class="criteria-row-top">
+              <span class="criteria-num">8</span>
+              <div class="criteria-info">
+                <div class="criteria-name">Keyboard Access</div>
+                <div class="criteria-covers">Full functionality via keyboard only</div>
+              </div>
+              <select class="severity-select" aria-label="Keyboard Access severity">
+                <option value=""></option>
+                <option value="critical">Critical</option>
+                <option value="major">Major</option>
+                <option value="moderate">Moderate</option>
+                <option value="minor">Minor</option>
+                <option value="na">N/A</option>
+              </select>
+              <div class="criteria-score">
+                <input type="text" class="fillable" aria-label="Keyboard Access score">
+                <span class="criteria-score-max">/ 20</span>
+              </div>
+              <span class="criteria-wcag">2.1.1</span>
+              <span class="criteria-category">Keyboard &amp; Focus</span>
+            </div>
+            <div class="criteria-notes">
+              <textarea class="fillable" aria-label="Keyboard Access notes" rows="1" placeholder="Notes on findings..."></textarea>
+            </div>
+          </div>
+
+          <!-- 9. Alt Text & Images -->
+          <div class="criteria-row">
+            <div class="criteria-row-top">
+              <span class="criteria-num">9</span>
+              <div class="criteria-info">
+                <div class="criteria-name">Alt Text &amp; Images</div>
+                <div class="criteria-covers">Meaningful alt text on all images</div>
+              </div>
+              <select class="severity-select" aria-label="Alt Text and Images severity">
+                <option value=""></option>
+                <option value="critical">Critical</option>
+                <option value="major">Major</option>
+                <option value="moderate">Moderate</option>
+                <option value="minor">Minor</option>
+                <option value="na">N/A</option>
+              </select>
+              <div class="criteria-score">
+                <input type="text" class="fillable" aria-label="Alt Text and Images score">
+                <span class="criteria-score-max">/ 20</span>
+              </div>
+              <span class="criteria-wcag">1.1.1</span>
+              <span class="criteria-category">Media &amp; Content</span>
+            </div>
+            <div class="criteria-notes">
+              <textarea class="fillable" aria-label="Alt Text and Images notes" rows="1" placeholder="Notes on findings..."></textarea>
+            </div>
+          </div>
+
+          <!-- 10. Link Purpose & Interactive Labels -->
+          <div class="criteria-row">
+            <div class="criteria-row-top">
+              <span class="criteria-num">10</span>
+              <div class="criteria-info">
+                <div class="criteria-name">Link Purpose &amp; Interactive Labels</div>
+                <div class="criteria-covers">Descriptive link text, labeled buttons and controls</div>
+              </div>
+              <select class="severity-select" aria-label="Link Purpose and Interactive Labels severity">
+                <option value=""></option>
+                <option value="critical">Critical</option>
+                <option value="major">Major</option>
+                <option value="moderate">Moderate</option>
+                <option value="minor">Minor</option>
+                <option value="na">N/A</option>
+              </select>
+              <div class="criteria-score">
+                <input type="text" class="fillable" aria-label="Link Purpose and Interactive Labels score">
+                <span class="criteria-score-max">/ 20</span>
+              </div>
+              <span class="criteria-wcag">2.4.4 / 4.1.2</span>
+              <span class="criteria-category">Links &amp; Labeling</span>
+            </div>
+            <div class="criteria-notes">
+              <textarea class="fillable" aria-label="Link Purpose and Interactive Labels notes" rows="1" placeholder="Notes on findings..."></textarea>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Overall Score -->
+        <div class="overall-score" style="margin-top: 12px;">
+          <span class="overall-score-title">Overall Score</span>
+          <span class="overall-score-subtitle">Sum of all criteria</span>
+          <input type="text" class="fillable" aria-label="Overall score">
+          <span class="overall-score-max">/</span>
+          <input type="text" class="fillable" aria-label="Overall score maximum" style="width: 56px; text-align: center; font-size: 1.1rem; font-weight: 700; padding: 8px 4px;">
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span class="page-footer-left">UX by Lidia Ochoa</span>
+        <span>Page 3</span>
+        <span>Accessibility Scorecard</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PAGE 4: SUMMARY & NEXT STEPS ============ -->
+  <div class="page" id="page-4">
+    <div class="page-body">
+      <div class="page-content">
+        <div class="page-header">
+          <span>Accessibility Scorecard</span>
+          <span class="page-header-right"></span>
+        </div>
+
+        <!-- Issue Counts -->
+        <div class="issue-counts">
+          <h3 class="issue-counts-title">Severity Counts</h3>
+          <div class="issue-counts-grid">
+            <div class="issue-count-card">
+              <input type="text" class="fillable" aria-label="Critical issue count">
+              <div class="issue-count-bar critical"></div>
+              <div class="issue-count-label">Critical</div>
+              <div class="issue-count-sublabel">Completely blocks access for some users. Must fix immediately.</div>
+            </div>
+            <div class="issue-count-card">
+              <input type="text" class="fillable" aria-label="Major issue count">
+              <div class="issue-count-bar major"></div>
+              <div class="issue-count-label">Major</div>
+              <div class="issue-count-sublabel">Creates significant barriers. High priority for remediation.</div>
+            </div>
+            <div class="issue-count-card">
+              <input type="text" class="fillable" aria-label="Moderate issue count">
+              <div class="issue-count-bar moderate"></div>
+              <div class="issue-count-label">Moderate</div>
+              <div class="issue-count-sublabel">Causes friction and frustration. Should be addressed soon.</div>
+            </div>
+            <div class="issue-count-card">
+              <input type="text" class="fillable" aria-label="Minor issue count">
+              <div class="issue-count-bar minor"></div>
+              <div class="issue-count-label">Minor</div>
+              <div class="issue-count-sublabel">Small usability improvements. Fix when resources allow.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UX Interpretation -->
+        <div class="ux-interpretation">
+          <h3 class="ux-interpretation-title">UX Interpretation</h3>
+          <p class="ux-interpretation-desc">Your personalized assessment of the platform's overall accessibility posture:</p>
+          <textarea class="fillable fillable-medium" aria-label="UX Interpretation" rows="5"></textarea>
+        </div>
+
+        <!-- Recommended Next Steps -->
+        <div class="next-steps">
+          <h3 class="section-title">Recommended Next Steps</h3>
+          <div style="margin-top: 16px;">
+            <div class="next-step">
+              <div class="next-step-num s1">1</div>
+              <input type="text" class="fillable" aria-label="Next step 1">
+            </div>
+            <div class="next-step">
+              <div class="next-step-num s2">2</div>
+              <input type="text" class="fillable" aria-label="Next step 2">
+            </div>
+            <div class="next-step">
+              <div class="next-step-num s3">3</div>
+              <input type="text" class="fillable" aria-label="Next step 3">
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Card -->
+        <div class="cta-card">
+          <h3 class="cta-card-title">Ready to go deeper?</h3>
+          <p class="cta-card-text">The Essential Evaluation ($500) covers 3&ndash;5 key pages with cross-page pattern analysis,<br>a summary deck, and WCAG 2.1 AA compliance summary.</p>
+          <div class="cta-card-actions">
+            <a href="mailto:lidia.ochoa@uxbylidiaochoa.com" class="cta-btn">Book Your Evaluation</a>
+            <span class="cta-contact">lidia.ochoa@uxbylidiaochoa.com<span class="cta-contact-divider">&nbsp;|&nbsp;</span>uxbylidiaochoa.com</span>
+          </div>
+        </div>
+
+        <!-- Closing tagline -->
+        <p class="closing-tagline">Accessibility isn't a checklist. It's a commitment to people.</p>
+      </div>
+
+      <div class="page-footer">
+        <span class="page-footer-left">UX by Lidia Ochoa</span>
+        <span>Page 4</span>
+        <span>Accessibility Scorecard</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -59,7 +59,7 @@ const sections = [
       <section class="case-section section" id="the-problem" aria-labelledby="the-problem-heading">
         <div class="container">
           <h2 id="the-problem-heading" class="case-section__heading reveal">The Problem</h2>
-          <p class="reveal">EdTech platforms are built to educate, but many of them exclude the learners who need them most. One in five Americans lives with a disability, yet most educational software fails basic accessibility standards — unlabeled forms, missing heading hierarchy, no keyboard navigation, insufficient contrast. Over 4,000 ADA lawsuits were filed in 2024, and Title II compliance is now tied to federal education funding. The need is urgent, but many EdTech teams do not know where to start or what to fix first.</p>
+          <p class="reveal">EdTech platforms are built to educate, but many exclude the learners who need them most. One in five Americans lives with a disability, yet many educational platforms fall short of basic accessibility standards — unlabeled forms, missing heading hierarchy, no keyboard navigation, insufficient contrast. In 2024 alone, over 4,000 ADA-related web and digital accessibility lawsuits were filed in federal and state courts (<a href="https://blog.usablenet.com/2024-digital-accessibility-lawsuit-report-relased-insights-for-2025" target="_blank" rel="noopener noreferrer">UsableNet, 2024</a>), and Title II compliance is now tied to federal education funding. The need is urgent, but many EdTech teams do not know where to start or what to fix first.</p>
           <p class="reveal">I wanted to bridge that gap: take my 7 years of classroom experience working directly with disabled students and translate it into actionable, approachable accessibility consulting that meets EdTech teams where they are.</p>
 
           <div class="goals-frustrations-banner reveal">
@@ -111,8 +111,6 @@ const sections = [
               <p class="decision-card__response"><strong>Comprehensive Evaluation ($2,000)</strong> — full usability audit with assistive technology testing, a 30-minute walkthrough, and a remediation roadmap.</p>
             </div>
           </div>
-
-          <img src="/images/a11y-consulting/site-services.png" alt="Live consulting site Services page showing three pricing tiers: Accessibility Scorecard (free), Essential Evaluation ($500, most popular), and Comprehensive Evaluation ($2,000) with detailed feature lists for each tier" class="reveal" loading="lazy" />
         </div>
       </section>
 
@@ -120,18 +118,19 @@ const sections = [
       <section class="case-section section" id="design-process" aria-labelledby="design-process-heading">
         <div class="container">
           <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
-          <p class="reveal">I prioritized the free deliverables first — the scorecard and quick wins guide — because they needed to be strong enough to stand on their own as demonstrations of expertise before any paid service made sense.</p>
-
-          <img src="/images/a11y-consulting/site-hero.png" alt="Live consulting site homepage hero section with the headline 'Your mission is to meet every learner where they are. Mine is to help you get there.' and calls to action for Get Your Free Scorecard and View Services" class="reveal" loading="lazy" />
 
           <h3 class="reveal">Visual Identity</h3>
           <p class="reveal">I chose a warm, earthy palette — cream backgrounds, terracotta accents, deep brown text — to feel approachable and human rather than clinical or corporate. EdTech teams are often overwhelmed by accessibility jargon; the visual tone needed to say "I'll help you understand this" rather than "you're doing it wrong." Typography pairs DM Serif Display for headings (warmth, authority) with Source Sans 3 for body text (clarity, readability).</p>
+
+          <img src="/images/a11y-consulting/color-palette.svg" alt="Color palette for the A11y Consulting site: Cream (#FAF6F0) for backgrounds, Sand (#E8DCC8) for borders and dividers, Terracotta (#B85042) for CTAs, focus states, and accents, Deep Brown (#3D2B1F) for primary text, Warm Brown (#5C4A3A) for secondary text, and Warm Gray (#8C7B6B) for captions. Terracotta on Cream passes AA at 4.8:1, Deep Brown on Cream passes AAA at 12.4:1." class="reveal" loading="lazy" />
+          <img src="/images/a11y-consulting/typography-guide.svg" alt="Typography guide: DM Serif Display (--serif) for headings and display text conveying warmth and authority; Source Sans 3 (--sans) for body text optimized for clarity and readability in weights 300–700; SF Mono / JetBrains Mono (--mono) for code and WCAG references. Type scale from h1 at 2.25rem to body at 1rem with 1.5 line-height. All text meets WCAG 2.1 AA minimum size requirements with a 16px base." class="reveal" loading="lazy" />
 
           <h3 class="reveal">Content Strategy</h3>
           <p class="reveal">The homepage opens with four data points — disability statistics, lawsuit numbers, user retention rates, and federal funding requirements — to establish urgency without being alarmist. The about section leads with classroom experience, not certifications, because empathy is the differentiator. Services are presented as tiers rather than a single price, so potential clients can self-select based on their readiness and budget.</p>
 
           <h3 class="reveal">Information Architecture</h3>
           <p class="reveal">The site is intentionally small: a homepage with everything a potential client needs to evaluate, decide, and reach out, plus dedicated pages for the guide, scorecard, and accessibility statement. No blog, no pricing calculator, no complexity — just a clear path from "I need help" to "here's how to get it."</p>
+          <img src="/images/a11y-consulting/ia-diagram.svg" alt="Information architecture diagram showing the site structure: Homepage connects to Quick Wins Guide, Scorecard, and Accessibility Statement pages. Primary user journey flows through 5 steps: Discover (land on homepage), Evaluate (read stats and services), Try Free Tools (scorecard or guide), Build Trust (see expertise in action), and Contact (get in touch). Every page earns trust before asking for commitment." class="reveal" loading="lazy" />
 
           <h3 class="reveal">Interactive Features</h3>
           <p class="reveal">The scorecard preview section uses an image carousel with keyboard navigation (arrow keys), dot pagination, and a lightbox for full-size viewing. The contact form integrates with Web3Forms for serverless submission. Both features were built with accessibility as a hard requirement: focus trapping in the lightbox, Escape to close, ARIA attributes on all controls.</p>
@@ -142,12 +141,57 @@ const sections = [
       <section class="case-section section" id="the-scorecard" aria-labelledby="scorecard-heading">
         <div class="container">
           <h2 id="scorecard-heading" class="case-section__heading reveal">The Scorecard</h2>
+          <p class="reveal">The free deliverables — the scorecard and quick wins guide — needed to do more than just introduce the consulting service. They had to be substantive enough to earn credibility on their own, demonstrating the depth and clarity of thinking a potential client would receive in a paid engagement. When someone downloads a free resource and finds it genuinely useful, trust is built before a single conversation takes place.</p>
           <p class="reveal">The accessibility scorecard is the centerpiece of the consulting offering. It evaluates a single page against 10 criteria drawn directly from WCAG 2.1, each scored out of 20 points with a severity rating and actionable recommendation. The goal was to create something useful enough that a team could act on it immediately, and specific enough that they would trust the expertise behind it.</p>
 
-          <img src="/images/a11y-consulting/scorecard-criteria.svg" alt="Grid showing all 10 evaluation criteria: Heading Hierarchy, Contrast Ratios, Color-Only Information, Text Sizing and Spacing, Form Labels and Inputs, Error Identification, Focus States, Keyboard Access, Alt Text and Images, and Link Purpose. Each scored out of 20 with severity ratings from Critical to Minor." class="reveal" loading="lazy" />
-          <img src="/images/a11y-consulting/site-scorecard.png" alt="Live consulting site showing the Sample Scorecard section with the headline 'See what you'll receive' and an interactive carousel displaying the Top 10 Accessibility Criteria evaluation with scores, severity ratings, and detailed findings for each criterion" class="reveal" loading="lazy" />
+          <div class="embed-scroll-container reveal" aria-label="Interactive preview of the Accessibility Scorecard template">
+            <iframe src="/embeds/accessibility-scorecard.html" title="Accessibility Scorecard — interactive preview" loading="lazy" style="width: 100%; height: 600px; border: 2px solid var(--color-border); border-radius: var(--radius-md); background: #e0ddd8;"></iframe>
+          </div>
 
-          <p class="reveal">I chose these 10 criteria because they cover the issues I encountered most often in my years working with disabled students: unlabeled controls that screen readers skip, contrast too low for students with low vision, keyboard traps that lock out switch users. Every criterion maps to a specific WCAG success criterion so the report doubles as a compliance reference.</p>
+          <h3 class="reveal">The 10 Evaluation Criteria</h3>
+          <p class="reveal">Each criterion was chosen because it addresses one of the most common and impactful accessibility barriers found on digital platforms. Together, they form a focused yet comprehensive snapshot that covers structure, perception, interaction, and error recovery — the areas where users with disabilities encounter the most friction.</p>
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/></svg></div>
+              <p class="decision-card__response"><strong>1. Heading Hierarchy</strong> (WCAG 1.3.1) — A logical heading structure is how screen readers build a navigable outline of the page. Without it, users who cannot see the layout have no way to scan or orient themselves.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <p class="decision-card__response"><strong>2. Contrast Ratios</strong> (WCAG 1.4.3) — Low contrast is one of the most widespread barriers on the web. It affects users with low vision, aging eyes, and anyone in bright lighting — a fix that benefits the broadest range of people.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <p class="decision-card__response"><strong>3. Color-Only Information</strong> (WCAG 1.4.1) — When color is the only way to convey meaning (red for errors, green for success), colorblind users miss the message entirely. Redundant cues like icons or text labels close that gap.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div>
+              <p class="decision-card__response"><strong>4. Text Sizing &amp; Spacing</strong> (WCAG 1.4.4) — Users who need larger text or adjusted spacing to read comfortably should not have to fight the interface to get it. Text that resizes and reflows without breaking is foundational.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+              <p class="decision-card__response"><strong>5. Form Labels &amp; Inputs</strong> (WCAG 1.3.1 / 4.1.2) — Unlabeled form fields are invisible to assistive technology. If a screen reader cannot announce what a field is for, the user cannot fill it out — making entire workflows inaccessible.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+              <p class="decision-card__response"><strong>6. Error Identification &amp; Recovery</strong> (WCAG 3.3.1 / 3.3.3) — When something goes wrong, users need to know what happened and how to fix it. Vague or invisible error messages leave people stranded, especially those who cannot visually scan for red text.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 12m-3 0a3 3 0 1 0 6 0 3 3 0 1 0 -6 0"/></svg></div>
+              <p class="decision-card__response"><strong>7. Focus States</strong> (WCAG 2.4.7) — Keyboard users need a visible indicator showing where they are on the page. Missing or suppressed focus outlines make navigation feel like operating in the dark.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg></div>
+              <p class="decision-card__response"><strong>8. Keyboard Access</strong> (WCAG 2.1.1) — Every interactive element must be reachable and operable by keyboard alone. This is non-negotiable for switch users, screen reader users, and anyone who cannot use a mouse.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+              <p class="decision-card__response"><strong>9. Alt Text &amp; Images</strong> (WCAG 1.1.1) — Images without meaningful alt text are blank spots for screen reader users. Instructional images especially must describe what they teach, not just what they show.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+              <p class="decision-card__response"><strong>10. Link Purpose &amp; Interactive Labels</strong> (WCAG 2.4.4 / 4.1.2) — "Click here" and "Read more" tell a screen reader user nothing about where a link goes. Clear, descriptive labels make navigation predictable and efficient for everyone.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -157,8 +201,10 @@ const sections = [
           <h2 id="guide-heading" class="case-section__heading reveal">The Guide</h2>
           <p class="reveal">The "5 Accessibility Quick Wins for EdTech Platforms" guide serves two purposes: it gives potential clients immediate value at no cost, and it demonstrates the kind of clear, actionable thinking they would get from a paid engagement. Each of the five wins was chosen because it has an outsized impact relative to its implementation effort — the kind of fix a developer can ship in an afternoon that meaningfully improves the experience for disabled users.</p>
           <p class="reveal">The guide is available both as a dedicated web page (fully accessible, naturally) and as a downloadable PDF. I designed it with the same warm visual identity as the main site so it reads as a cohesive extension of the brand rather than a generic freebie.</p>
-          <img src="/images/a11y-consulting/site-guide-cover.png" alt="Quick Wins guide cover page titled '5 Accessibility Quick Wins for EdTech Platforms — High-impact fixes you can make today' with the tagline 'Built from 7 years working directly with students with disabilities'" class="reveal" loading="lazy" />
-          <img src="/images/a11y-consulting/site-guide-detail.png" alt="Quick Wins guide detail page listing the 5 wins: Add Meaningful Alt Text to Instructional Images, Make Video Keyboard-Navigable with Captions On, Fix Color Contrast on Interactive Elements, Add Visible Focus Indicators to Every Interactive Element, and Structure Content with Proper Heading Hierarchy" class="reveal" loading="lazy" />
+
+          <div class="embed-scroll-container reveal" aria-label="Interactive preview of the 5 Accessibility Quick Wins Guide">
+            <iframe src="/embeds/5-accessibility-quick-wins-guide.html" title="5 Accessibility Quick Wins for EdTech Platforms — interactive preview" loading="lazy" style="width: 100%; height: 600px; border: 2px solid var(--color-border); border-radius: var(--radius-md); background: #FAF6F0;"></iframe>
+          </div>
         </div>
       </section>
 
@@ -166,7 +212,7 @@ const sections = [
       <section class="case-section section" id="accessibility" aria-labelledby="a11y-heading">
         <div class="container">
           <h2 id="a11y-heading" class="case-section__heading reveal">Accessibility</h2>
-          <p class="reveal">An accessibility consulting site that fails its own standards would be career-ending. Every element was built and tested to WCAG 2.1 Level AA, with a published accessibility statement inviting users to report barriers.</p>
+          <p class="reveal">An accessibility consulting site has to meet its own standards — anything less undermines the entire premise. Every element was built and tested to WCAG 2.1 Level AA, with a published accessibility statement inviting users to report barriers.</p>
 
           <div class="decisions-grid reveal">
             <div class="decision-card">
@@ -188,7 +234,6 @@ const sections = [
           </div>
 
           <p class="reveal">The site includes a full accessibility statement detailing conformance claims, testing methods, known limitations, and a feedback process with a two-business-day response commitment. If a consultant is going to ask clients to take accessibility seriously, they need to see that seriousness modeled.</p>
-          <img src="/images/a11y-consulting/site-contact.png" alt="Live consulting site contact section with the headline 'Let's make your platform work for every learner', a contact form with fields for name, email, company, interest area, website URL, and platform type, alongside contact details showing email, Seattle location, and LinkedIn link" class="reveal" loading="lazy" />
         </div>
       </section>
 
@@ -206,12 +251,6 @@ const sections = [
               <h3>Accessibility</h3>
               <p>WCAG 2.1 AA conformance across all pages. Semantic HTML, keyboard navigation, skip links, focus management, ARIA landmarks, contrast compliance, reflow at 320px, and prefers-reduced-motion support.</p>
             </div>
-          </div>
-          <div class="user-intro__stats reveal" style="justify-content: center;">
-            <div class="case-hero__badge">10 criteria<span class="case-hero__badge-label">WCAG-mapped scorecard</span></div>
-            <div class="case-hero__badge">3 service tiers<span class="case-hero__badge-label">Free to $2,000</span></div>
-            <div class="case-hero__badge">WCAG 2.1 AA<span class="case-hero__badge-label">Full conformance</span></div>
-            <div class="case-hero__badge">5 quick wins<span class="case-hero__badge-label">Free guide (web + PDF)</span></div>
           </div>
         </div>
       </section>

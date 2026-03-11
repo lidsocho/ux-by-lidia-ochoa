@@ -5,6 +5,7 @@ import PrevNextNav from '../components/PrevNextNav.astro';
 
 const sections = [
   { id: 'overview', label: 'Overview' },
+  { id: 'curation', label: 'Curation & Planning' },
   { id: 'the-exhibition', label: 'The Exhibition' },
   { id: 'design-process', label: 'Design Process' },
   { id: 'accessibility', label: 'Accessibility' },
@@ -21,11 +22,14 @@ const sections = [
       <div class="reveal">
         <h1>Our Light Unbound</h1>
         <dl class="case-hero__meta">
-          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Dec 2025 – Jan 2026</dd></div>
-          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Design &amp; Dev (solo)</dd></div>
+          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Jun 2024 – Jan 2026</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Co-Curator, Design &amp; Dev</dd></div>
           <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Figma, HTML, CSS, JavaScript</dd></div>
         </dl>
-        <p class="case-hero__tagline">An accessible art exhibition website that invites every visitor — regardless of ability — to experience a gallery celebrating hope, resilience, and creative freedom.</p>
+        <p class="case-hero__tagline">An accessible digital catalogue for a curated art exhibition — designed so every visitor, whether in the gallery or at home, can discover the art and artists behind a show celebrating hope, resilience, and creative freedom.</p>
+        <a href="https://lidsocho.github.io/our-light-unbound/" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="View the live Our Light Unbound site (opens in new tab)">
+          View Live Site &rarr;
+        </a>
       </div>
     </div>
   </section>
@@ -38,16 +42,17 @@ const sections = [
       <section class="case-section section" id="overview" aria-labelledby="overview-heading">
         <div class="container">
           <h2 id="overview-heading" class="case-section__heading reveal">Overview</h2>
-          <p class="reveal">"Our Light Unbound" was a real art exhibition running January 9–31, 2026. The show explored tapping into the part of ourselves that believes peace will return — the part that inspires us to believe, hope, and dream again. I was asked to design and build the exhibition's web presence: a digital catalogue where visitors could browse artists and artworks, find gallery hours and upcoming events, and contact the gallery for purchasing details.</p>
-          <p class="reveal">The challenge was designing an accessible experience within a dark, atmospheric aesthetic that matched the exhibition's emotional tone. Dark themes are notoriously difficult for accessibility — low contrast, light-on-dark text fatigue, and focus visibility all become harder. I wanted to prove that moody, immersive design and accessibility are not in conflict.</p>
+          <p class="reveal">"Our Light Unbound" was an art exhibition running January 9–31, 2026 that explored tapping into the part of ourselves that believes peace will return — the part that inspires us to believe, hope, and dream again. I co-curated the show alongside Yaz (they/them), and together we built a strong social media presence and community integration around the exhibition over the course of a year and a half of planning.</p>
+          <p class="reveal">For the exhibition's digital catalogue, the question was: how do we create a compact, easily navigable, and accessible way for people to discover the art and artists — and become even more immersed in the work through their descriptions — whether they are standing in the gallery or browsing from home? The catalogue was built in collaboration with the artists themselves, who provided their bios and art descriptions, and Yaz supported design decisions throughout.</p>
+          <p class="reveal">Traditional gallery practice is to print artist statements and descriptions to display alongside artwork, but that creates barriers to access: limited font sizes, finite wall space, and visitors crowding around small text to read. A digital catalogue eliminates those issues entirely — visitors can browse at their own pace, on their own device, with text they can resize and content they can search.</p>
 
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
               <div>
                 <h3>Goals</h3>
                 <ul class="styled-list">
-                  <li>Create a digital home for the exhibition that captures its emotional tone</li>
-                  <li>Make every artwork and artist discoverable and browsable</li>
+                  <li>Create a compact, navigable digital catalogue that replaces printed artist statements</li>
+                  <li>Make every artwork and artist discoverable whether visitors are in-gallery or at home</li>
                   <li>Ensure full accessibility in a dark-themed, atmospheric design</li>
                   <li>Provide clear paths to gallery hours, events, and purchasing</li>
                 </ul>
@@ -56,11 +61,35 @@ const sections = [
                 <h3>Constraints</h3>
                 <ul class="styled-list">
                   <li>Dark color scheme required to match the exhibition's visual identity</li>
-                  <li>Must accommodate a growing catalogue of artists and artworks</li>
-                  <li>Tight timeline — site needed to launch before the exhibition opening</li>
-                  <li>Solo project — design, content, and code all on me</li>
+                  <li>Content dependent on artists providing their own bios and descriptions</li>
+                  <li>Site needed to launch before the exhibition opening night</li>
+                  <li>Design decisions made collaboratively with co-curator Yaz</li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Curation & Planning -->
+      <section class="case-section section" id="curation" aria-labelledby="curation-heading">
+        <div class="container">
+          <h2 id="curation-heading" class="case-section__heading reveal">Curation &amp; Planning</h2>
+          <p class="reveal">Yaz and I began planning "Our Light Unbound" a year and a half before opening night — in mid-2024. We used Google Drive as our shared workspace, building out a detailed timeline with plenty of wiggle room for unexpected changes, dividing responsibilities, and tracking every moving piece from artist outreach to event logistics.</p>
+
+          <h3 class="reveal">How We Organized</h3>
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+              <p class="decision-card__response"><strong>Detailed timeline</strong> — mapped out every milestone from initial artist outreach through opening night, with buffer time built in for the inevitable surprises.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <p class="decision-card__response"><strong>Divided responsibilities</strong> — clear ownership between co-curators so nothing fell through the cracks and we could work in parallel.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <p class="decision-card__response"><strong>Social media &amp; community</strong> — built a social media presence to generate excitement and integrate the exhibition into the broader community well before the doors opened.</p>
             </div>
           </div>
         </div>
@@ -103,10 +132,10 @@ const sections = [
           <p class="reveal">The deep purple (#1a0a2e) background with gold (#d4a537) accent text was chosen to feel luxurious and gallery-like. But dark themes require deliberate contrast work: I tested every text/background combination against WCAG AA thresholds, using lighter purples and off-whites for body text to avoid the eye strain that comes from pure white on near-black. The gradient overlays on the hero section use semi-transparent layers to ensure text remains legible regardless of the background image underneath.</p>
 
           <h3 class="reveal">Information Architecture</h3>
-          <p class="reveal">The site is structured around the browse-and-discover pattern common in gallery and museum sites. The artist accordion collapses content by default so visitors can scan the full catalogue without scrolling endlessly, then expand individual artists to explore their work. Each artist section contains a biography ("About the Artist") and their exhibited pieces with descriptions — functioning as both a digital catalogue and an exhibition guide.</p>
+          <p class="reveal">The core design question was compactness: how do you present a full exhibition's worth of artists, bios, and artwork descriptions without overwhelming the visitor? The artist accordion collapses content by default so visitors can scan the full catalogue without endless scrolling, then expand individual artists to explore their work. Each artist section contains a biography ("About the Artist") and their exhibited pieces with descriptions — all provided by the artists themselves — functioning as both a digital catalogue and an exhibition guide that visitors can access from anywhere.</p>
 
           <h3 class="reveal">Search</h3>
-          <p class="reveal">The search bar filters artists and artworks in real time as visitors type. For an exhibition with a growing roster, this prevents the catalogue from becoming unwieldy. The search is prominently placed between the exhibition statement and the catalogue, following the natural reading flow: context first, then discovery.</p>
+          <p class="reveal">The search bar filters artists and artworks in real time as visitors type, making discovery instant whether someone is looking for a specific artist or just browsing. The search is prominently placed between the exhibition statement and the catalogue, following the natural reading flow: context first, then discovery.</p>
         </div>
       </section>
 
@@ -114,7 +143,7 @@ const sections = [
       <section class="case-section section" id="accessibility" aria-labelledby="a11y-heading">
         <div class="container">
           <h2 id="a11y-heading" class="case-section__heading reveal">Accessibility</h2>
-          <p class="reveal">Dark-themed sites present unique accessibility challenges. The goal was to prove that atmospheric, immersive design can be fully accessible without visual compromise.</p>
+          <p class="reveal">The digital catalogue removes physical barriers — crowded wall text, small print, limited space — but the dark-themed design introduced its own accessibility challenges. The goal was to ensure that the immersive, atmospheric aesthetic never came at the cost of usability.</p>
 
           <div class="decisions-grid reveal">
             <div class="decision-card">
@@ -141,15 +170,15 @@ const sections = [
       <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
         <div class="container">
           <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
-          <p class="reveal">The site launched before the exhibition opening and served as the digital companion throughout the show's run.</p>
+          <p class="reveal">The site launched before the exhibition opening and served as the digital companion throughout the show's run — replacing the need for printed artist statements and giving visitors a richer, more accessible way to engage with the work.</p>
           <div class="goal-pair reveal">
             <div class="goals-frustrations-banner">
               <h3>Deliverables</h3>
-              <p>A fully accessible, dark-themed exhibition website with artist catalogue, real-time search, gallery hours, event listings, and purchasing contact flow — all designed and built solo within a tight timeline.</p>
+              <p>A fully accessible, dark-themed digital catalogue with artist bios and artwork descriptions provided by the artists, real-time search, gallery hours, event listings, and purchasing contact flow — designed in collaboration with co-curator Yaz and built on a timeline planned over 18 months.</p>
             </div>
             <div class="goals-frustrations-banner">
               <h3>Accessibility</h3>
-              <p>WCAG 2.1 AA contrast on all text/background combinations in a dark theme. Keyboard-navigable accordion catalogue, labeled search with live results, semantic HTML, and custom gold focus indicators.</p>
+              <p>WCAG 2.1 AA contrast on all text/background combinations in a dark theme. Keyboard-navigable accordion catalogue, labeled search with live results, semantic HTML, and custom gold focus indicators — eliminating the access barriers of printed wall text.</p>
             </div>
           </div>
         </div>
@@ -159,8 +188,9 @@ const sections = [
       <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
         <div class="container">
           <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
-          <p class="reveal">This project challenged the assumption that dark themes and accessibility are inherently at odds. They are not — they just require more intentional contrast work. The biggest lesson was that atmospheric design and WCAG compliance reinforce each other: the gold-on-purple palette that gives the site its gallery feel is also what makes focus indicators pop and headings scannable. The constraints forced better design decisions, not worse ones.</p>
-          <p class="reveal">Working with real artwork and real artists also deepened my understanding of how accessibility serves creative communities. Art is meant to be experienced by everyone. A gallery website that excludes visitors with disabilities contradicts the exhibition's own message about finding and freeing inner light. The accessibility work was not just a technical requirement — it was an extension of the show's values.</p>
+          <p class="reveal">Co-curating an exhibition over 18 months taught me that the organizational work — the timelines, the shared drives, the divided responsibilities — is what makes the creative work possible. Planning with Yaz showed me how much stronger outcomes get when you build in buffer time and trust your collaborator's strengths.</p>
+          <p class="reveal">On the design side, building the digital catalogue reframed how I think about accessibility in physical spaces. Printed artist statements are so standard in galleries that their limitations are invisible: small text, crowded walls, inaccessible to visitors with low vision or mobility constraints. Replacing them with a searchable, resizable digital format was not just a convenience — it was a fundamentally more inclusive way to share the artists' words. The dark theme added its own accessibility challenges, but the constraints forced better design decisions: the gold-on-purple palette that gives the site its gallery feel is also what makes focus indicators pop and headings scannable.</p>
+          <p class="reveal">Working directly with the artists — receiving their bios and descriptions in their own words — also deepened my respect for collaborative content creation. The catalogue is better because the artists shaped it, not just me.</p>
         </div>
       </section>
 

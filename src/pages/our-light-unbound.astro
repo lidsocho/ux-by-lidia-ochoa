@@ -219,48 +219,42 @@ const sections = [
 
           <h3 class="reveal">Workshops &amp; Events</h3>
           <p class="reveal">Throughout the month we hosted workshops — collage, paint and sip, origami mobiles, flexagon zines — and an artist talk, turning the gallery into an active creative space rather than a static display.</p>
+          <p class="workshop-hint reveal">Click an image to see it full size with details.</p>
 
-          <div class="flush-grid cols-3 reveal">
-            <figure class="photo-figure">
+          <div class="flush-grid cols-3 workshop-grid reveal">
+            <figure class="photo-figure" data-lightbox data-description="Participants gathered around long tables in the gallery space, cutting and pasting from magazines and printed materials to create personal collages. The brick-walled gallery provided a warm, creative atmosphere with exhibition artwork visible on the surrounding walls.">
               <img src="/images/our-light-unbound/collage-workshop.png" alt="Participants seated at long tables working on collages during the collage workshop, surrounded by art materials and magazine clippings" loading="lazy" />
               <figcaption>Collage workshop</figcaption>
             </figure>
-            <figure class="photo-figure">
-              <img src="/images/our-light-unbound/paint-and-sip.png" alt="Two participants painting at the paint and sip workshop with artwork displayed on the gallery walls behind them" loading="lazy" />
-              <figcaption>Paint and sip</figcaption>
-            </figure>
-            <figure class="photo-figure">
+            <figure class="photo-figure" data-lightbox data-description="An artist presenting their work during the artist talk, gesturing toward a wall of vibrant paintings spanning styles from abstract to figurative. Visitors gathered to hear about the creative process and inspiration behind the exhibited pieces.">
               <img src="/images/our-light-unbound/artist-talk.png" alt="An artist presenting and gesturing toward their paintings on the gallery wall during the artist talk event" loading="lazy" />
               <figcaption>Artist talk</figcaption>
             </figure>
+            <figure class="photo-figure" data-lightbox data-description="Participants at the closing night event creating art activism collages — a collaborative workshop where attendees used mixed media and found materials to create pieces responding to themes of identity, community, and resilience.">
+              <img src="/images/our-light-unbound/closing-event-art-activism.png" alt="Participants at the closing event art activism workshop gathered around a table with collage materials, creating artwork together" loading="lazy" />
+              <figcaption>Closing event — art activism</figcaption>
+            </figure>
           </div>
 
-          <div class="flush-grid cols-3 reveal">
-            <figure class="photo-figure">
+          <div class="flush-grid cols-3 workshop-grid reveal">
+            <figure class="photo-figure" data-lightbox data-description="Participants folding origami cranes at a long table by the gallery windows, with colorful paper squares, completed cranes, and craft supplies spread across the workspace. The street-facing windows brought natural light into the creative session.">
               <img src="/images/our-light-unbound/origami-mobile-workshop-1.png" alt="Participants folding origami cranes at a long table during the origami mobile workshop, with colorful paper and completed cranes visible" loading="lazy" />
               <figcaption>Origami mobile workshop</figcaption>
             </figure>
-            <figure class="photo-figure">
+            <figure class="photo-figure" data-lightbox data-description="A workshop participant proudly holding up their completed origami crane mobile — multiple folded cranes suspended from a wooden embroidery hoop, creating a hanging sculpture they could take home.">
               <img src="/images/our-light-unbound/origami-mobile-workshop-2.png" alt="A participant holding up their completed origami crane mobile, smiling proudly at their creation" loading="lazy" />
               <figcaption>A finished origami mobile</figcaption>
             </figure>
-            <figure class="photo-figure">
+            <figure class="photo-figure" data-lightbox data-description="An artist leading the flexagon zine workshop, teaching participants how to fold a single sheet of paper into an interactive mini-zine with multiple hidden panels. The workshop combined printmaking, illustration, and paper engineering.">
               <img src="/images/our-light-unbound/flexagon-zine-workshop.png" alt="An artist leading the flexagon zine workshop, standing at the head of a table with participants seated around colorful paper materials" loading="lazy" />
               <figcaption>Flexagon zine workshop</figcaption>
-            </figure>
-          </div>
-
-          <div class="flush-grid cols-2 reveal">
-            <figure class="photo-figure">
-              <img src="/images/our-light-unbound/closing-event-art-activism.png" alt="Participants at the closing event art activism workshop gathered around a table with collage materials, creating artwork together" loading="lazy" />
-              <figcaption>Closing event — art activism workshop</figcaption>
             </figure>
           </div>
 
           <h3 class="reveal">The Digital Catalogue</h3>
           <p class="reveal">The exhibition's theme — finding and freeing the light within — called for a design that felt intimate and contemplative. The deep purple and gold palette evokes twilight and candlelight, creating warmth within darkness. The search bar is a critical component of the site, designed to aid in navigation. It lets visitors find specific artists or artworks without scrolling, and an accordion-style catalogue organizes works by artist with expandable sections for biographies and individual pieces. A printed QR code at the gallery entrance linked directly to the catalogue, so visitors could pull it up on their phones while standing in front of the art.</p>
 
-          <img src="/images/our-light-unbound/catalogue-expanded.png" alt="Digital catalogue showing an expanded artist accordion for Ranger Liu with their biography, a photograph of their sculptural work 'Side Effects May Include' made from testosterone gel boxes and tubes, artwork details including price and dimensions, and the artist's description of the piece" class="reveal" style="max-width: 500px;" loading="lazy" />
+          <img src="/images/our-light-unbound/catalogue-expanded.png" alt="Digital catalogue showing an expanded artist accordion for Ranger Liu with their biography, a photograph of their sculptural work 'Side Effects May Include' made from testosterone gel boxes and tubes, artwork details including price and dimensions, and the artist's description of the piece" class="reveal img-centered" style="max-width: 500px;" loading="lazy" />
 
           <h3 class="reveal">Key Navigation Elements</h3>
           <div class="decisions-grid reveal">
@@ -390,6 +384,49 @@ const sections = [
 
     </div>
   </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" />
+      <p class="lightbox-caption"></p>
+    </div>
+  </div>
 </BaseLayout>
 
 <script is:inline src="/scripts/scroll-spy.js"></script>
+<script is:inline>
+  (function () {
+    var overlay = document.getElementById('lightbox');
+    if (!overlay) return;
+    var lbImg = overlay.querySelector('.lightbox-content img');
+    var lbCaption = overlay.querySelector('.lightbox-caption');
+
+    document.querySelectorAll('[data-lightbox]').forEach(function (fig) {
+      fig.addEventListener('click', function () {
+        var img = fig.querySelector('img');
+        if (!img) return;
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCaption.textContent = fig.getAttribute('data-description') || '';
+        overlay.classList.add('is-active');
+        overlay.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
+        overlay.classList.remove('is-active');
+        overlay.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-active')) {
+        overlay.classList.remove('is-active');
+        overlay.setAttribute('aria-hidden', 'true');
+      }
+    });
+  })();
+</script>

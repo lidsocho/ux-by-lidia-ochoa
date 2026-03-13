@@ -885,6 +885,101 @@ strong {
 }
 
 
+/* Links inside case study sections get a colored underline */
+.case-section a:not(.prototype-link):not(.photo-credit a) {
+  text-decoration: underline;
+  text-decoration-color: var(--color-project, var(--color-accent));
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+.case-section a:not(.prototype-link):not(.photo-credit a):hover {
+  text-decoration-color: var(--color-text);
+}
+
+/* Centered image utility */
+.img-centered {
+  display: block;
+  margin-inline: auto;
+}
+
+/* --- Lightbox --- */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  cursor: pointer;
+}
+
+.lightbox-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: default;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+.lightbox-caption {
+  color: #faf9f6;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 600px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: none;
+  border: none;
+  color: #faf9f6;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: var(--space-xs);
+}
+
+/* Clickable workshop figures */
+.workshop-grid .photo-figure {
+  cursor: pointer;
+}
+
+.workshop-grid .photo-figure:hover img {
+  filter: brightness(0.9);
+  transition: filter 0.2s ease;
+}
+
+/* Workshop hint text */
+.workshop-hint {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+
 .case-section {
   padding-block: var(--space-lg);
 }

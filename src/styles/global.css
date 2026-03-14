@@ -1310,6 +1310,7 @@ strong {
   overflow: hidden;
   background: #000;
   position: relative;
+  aspect-ratio: 9 / 19.5;
 }
 
 @media (min-width: 768px) {
@@ -1322,7 +1323,9 @@ strong {
 .phone-frame__screen video {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 .phone-frame__still {
@@ -1882,7 +1885,7 @@ strong {
 .case-img--centered {
   display: block;
   margin-inline: auto;
-  max-width: 480px;
+  max-width: min(480px, 100%);
 }
 
 /* --- Footer (Audit #2, #13) --- */
@@ -2563,6 +2566,10 @@ strong {
   margin-top: var(--space-xs);
 }
 
+.styled-list li + li {
+  margin-top: 0.25rem;
+}
+
 /* --- Focus-Visible Overrides (Audit #13) --- */
 .site-header__nav-link:focus-visible,
 .project-card__cta:focus-visible,
@@ -2576,5 +2583,118 @@ strong {
 @media (max-width: 479px) {
   .container {
     padding-inline: var(--space-sm);
+  }
+}
+
+/* --- Responsive: Mobile Spacing & Layout Fixes --- */
+@media (max-width: 767px) {
+  :root {
+    --space-xl: 2rem;
+    --space-lg: 1.25rem;
+    --space-2xl: 2.5rem;
+    --space-md: 1rem;
+  }
+
+  /* Remove double horizontal padding: case-body + container */
+  .case-body {
+    padding-inline: 0;
+  }
+
+  /* Hero: tighter padding, left-align badges, wrap tagline row */
+  .case-hero {
+    padding-block: var(--space-lg) var(--space-md);
+  }
+
+  .case-hero__tagline-row {
+    flex-wrap: wrap;
+  }
+
+  .case-hero__badges {
+    justify-content: flex-start;
+  }
+
+  /* Case sections: tighter vertical rhythm */
+  .case-section {
+    padding-block: var(--space-md);
+  }
+
+  .case-section h3 {
+    margin-top: var(--space-md);
+  }
+
+  .case-section img {
+    margin-block: var(--space-sm);
+  }
+
+  /* Section padding */
+  .section {
+    padding-block: var(--space-lg);
+  }
+
+  /* Cards: tighter internal padding */
+  .decision-card,
+  .next-step,
+  .problem-statement,
+  .goal-card,
+  .learning-item,
+  .impact-metric,
+  .user-profile {
+    padding: var(--space-sm);
+  }
+
+  /* Goals/frustrations banner: remove double padding */
+  .goals-frustrations-banner {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .goals-frustrations-banner__inner {
+    padding-inline: 0;
+  }
+
+  /* Device frames: scale to fit viewport */
+  .phone-frame__body {
+    width: min(260px, 70vw);
+  }
+
+  .ipad-frame__body {
+    padding: 14px 18px;
+    border-radius: 18px;
+  }
+
+  .desktop-frame__body {
+    padding: 10px 10px 8px;
+  }
+
+  .desktop-frame__stand svg {
+    width: 120px;
+    height: 30px;
+  }
+
+  /* Lists: tighter on mobile */
+  .styled-list li + li {
+    margin-top: 0.125rem;
+  }
+
+  /* Footer: wrap link buttons, stack bottom row */
+  .site-footer {
+    padding-block: var(--space-lg) var(--space-md);
+  }
+
+  .site-footer__links {
+    flex-wrap: wrap;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  /* Catch any images that overflow */
+  .case-section img,
+  .case-section video,
+  .figma-embed iframe {
+    max-width: 100%;
+    height: auto;
   }
 }

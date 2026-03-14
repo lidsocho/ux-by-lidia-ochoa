@@ -156,37 +156,70 @@ const sections = [
       <section class="case-section section" id="accessibility" aria-labelledby="a11y-heading">
         <div class="container">
           <h2 id="a11y-heading" class="case-section__heading reveal">Accessibility</h2>
-          <p class="reveal">Financial tools that exclude users with disabilities exclude people who may need them most. Budgeting anxiety is already a barrier — inaccessible UI should never be another one. This tool was built with accessibility in mind from the start, though a formal audit revealed gaps that remain as next steps.</p>
+          <p class="reveal">Financial tools that exclude users with disabilities exclude people who may need them most. Budgeting anxiety is already a barrier — inaccessible UI should never be another one. An honest audit of the tool revealed six concrete gaps. Rather than claim compliance I hadn't earned, I treated each gap as a design task and fixed them.</p>
 
-          <h3 class="reveal">What's Working</h3>
+          <h3 class="reveal">What the Audit Found — and What I Fixed</h3>
           <div class="decisions-grid reveal">
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
-              <p class="decision-card__response"><strong>High contrast body text:</strong> Primary text (#292524 on #fafaf9) achieves ~16.5:1 contrast, well above AAA requirements. The warm, muted palette reduces visual stress compared to typical finance app color schemes.</p>
+              <p class="decision-card__response"><strong>Text contrast:</strong> Secondary text (helper text, inactive tabs, chart labels) was upgraded from stone-400 to stone-500/600 across all components. All text now meets WCAG AA. Primary body text (#292524 on #fafaf9) achieves ~16.5:1.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg></div>
+              <p class="decision-card__response"><strong>Colorblind-safe palette:</strong> Replaced red/green income/expense coding with teal (#0d6e6e) and wine (#c92250) — distinguishable by users with protanopia, deuteranopia, and tritanopia. Applied consistently across all views and charts.</p>
             </div>
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-              <p class="decision-card__response"><strong>Semantic HTML:</strong> Native buttons, form inputs, and select elements provide baseline keyboard operability and screen reader support without custom ARIA. The balance snapshot form uses proper label/input pairs.</p>
+              <p class="decision-card__response"><strong>Form labels everywhere:</strong> Every input, select, and filter now has a proper <code>&lt;label&gt;</code> with <code>htmlFor</code> association — including Settings budget targets, subscription fields, balance snapshot inputs, and inline category edits. No more placeholder-only inputs.</p>
             </div>
             <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-              <p class="decision-card__response"><strong>Minimal, focused layouts:</strong> One task per screen reduces cognitive load. Generous whitespace, clear hierarchy, and limited elements per view help users who are easily overwhelmed by dense financial interfaces.</p>
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <p class="decision-card__response"><strong>Chart accessibility:</strong> Added screen-reader-only data tables as alternatives for all three Recharts visualizations. Chart containers have <code>role="img"</code> with descriptive <code>aria-label</code> attributes so assistive technology can convey the chart's purpose.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg></div>
+              <p class="decision-card__response"><strong>Keyboard navigation:</strong> The account filter dropdown now supports Arrow Up/Down, Home/End, Enter/Space to select, and Escape to close — with proper <code>role="listbox"</code>, <code>role="option"</code>, and <code>aria-selected</code> attributes.</p>
             </div>
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-              <p class="decision-card__response"><strong>Destructive action safeguards:</strong> "Clear All Data" requires double confirmation and is visually separated from other actions — preventing accidental data loss, which is especially important for users with motor impairments.</p>
+              <p class="decision-card__response"><strong>Screen reader support:</strong> Added a skip-to-content link, <code>aria-live="polite"</code> on the transaction counter, proper tab navigation ARIA (<code>role="tablist"</code>, <code>aria-selected</code>, <code>aria-controls</code>), and <code>aria-hidden="true"</code> on all decorative icons.</p>
             </div>
           </div>
 
-          <h3 class="reveal">Known Gaps</h3>
-          <p class="reveal">An honest review of the tool revealed areas that need improvement before any WCAG conformance claim can be made:</p>
+          <h3 class="reveal">Before &amp; After</h3>
+
+          <div class="before-after reveal">
+            <p class="before-after__desc">The Income vs Expenses chart originally used olive green and muted rose — colors that are difficult to distinguish for users with protanopia or deuteranopia. The updated palette uses teal and wine, which maintain clear separation across all common types of color vision deficiency.</p>
+            <div class="before-after__pair">
+              <figure class="before-after__figure">
+                <img src="/images/offline-budget/trends-income-vs-spending.png" alt="Before: Income vs Expenses bar chart using olive green and muted rose colors that are hard to distinguish with color vision deficiency" loading="lazy" />
+                <figcaption>Before</figcaption>
+              </figure>
+              <figure class="before-after__figure">
+                <img src="/images/offline-budget/trends-after.png" alt="After: Income vs Expenses bar chart using teal and wine colors that are distinguishable across all common types of color vision deficiency" loading="lazy" />
+                <figcaption>After</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="before-after reveal">
+            <p class="before-after__desc">The Settings page previously relied on low-contrast placeholder text and lacked visible labels on many inputs. After the update, all form inputs have proper labels, category names use higher-contrast text, and the overall hierarchy is clearer.</p>
+            <div class="before-after__pair">
+              <figure class="before-after__figure">
+                <img src="/images/offline-budget/settings.png" alt="Before: Settings page with low-contrast secondary text and inputs lacking proper visible labels" loading="lazy" />
+                <figcaption>Before</figcaption>
+              </figure>
+              <figure class="before-after__figure">
+                <img src="/images/offline-budget/settings-after.png" alt="After: Settings page with improved text contrast, proper form labels on all inputs, and clearer visual hierarchy" loading="lazy" />
+                <figcaption>After</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <h3 class="reveal">Remaining Work</h3>
           <ul class="reveal styled-list">
-            <li>Secondary text colors (helper text, inactive tabs, chart labels) fall below AA contrast thresholds</li>
-            <li>Income/expense color coding (green vs. red) is not colorblind-safe — the most common accessibility issue in finance tools, and one this tool has not yet solved</li>
-            <li>Several form inputs rely on placeholder text instead of proper labels — especially in Settings and inline editing</li>
-            <li>Charts (Recharts) lack keyboard navigation, ARIA labels, and accessible data table alternatives</li>
-            <li>Custom dropdown components lack proper keyboard patterns (arrow keys, Escape to close)</li>
-            <li>No screen reader testing has been conducted</li>
+            <li>Recharts elements themselves are not keyboard-navigable (library limitation) — the sr-only data tables serve as the workaround</li>
+            <li>No hands-on screen reader testing (NVDA, JAWS, VoiceOver) has been conducted yet</li>
           </ul>
         </div>
       </section>
@@ -220,7 +253,7 @@ const sections = [
         <div class="container">
           <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
           <p class="reveal">Using this tool every day changed how I think about design. Every friction point I hit while categorizing my own transactions became a feature — the auto-categorize function, the "mark all categorized as reviewed" shortcut, the progress bar that turns a chore into a completable task. Being both the designer and the daily user means nothing stays broken for long.</p>
-          <p class="reveal">The biggest technical surprise was how capable localStorage is as a persistence layer. With JSON export/import for backup and careful data structure design, it handles over a thousand transactions without performance issues — no server, no database, no accounts. The biggest design lesson was about honesty: I initially assumed my high-contrast, minimal layouts meant the tool was fully accessible. An honest audit revealed gaps in secondary text contrast, chart accessibility, and input labeling that I had overlooked. Accessibility is not a box you check once — it is an ongoing practice.</p>
+          <p class="reveal">The biggest technical surprise was how capable localStorage is as a persistence layer. With JSON export/import for backup and careful data structure design, it handles over a thousand transactions without performance issues — no server, no database, no accounts. The biggest design lesson was about honesty: I initially assumed my high-contrast, minimal layouts meant the tool was fully accessible. A real audit revealed six concrete gaps — secondary text contrast, colorblind-unsafe colors, missing labels, inaccessible charts, broken keyboard patterns, and no screen reader support. Treating each gap as a design task and fixing them taught me more about accessibility than any checklist ever could.</p>
         </div>
       </section>
 
@@ -230,20 +263,20 @@ const sections = [
           <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
           <div class="next-steps reveal">
             <div class="next-step">
-              <h3 class="next-step__title">Fix Contrast &amp; Labeling Gaps</h3>
-              <p class="next-step__text">Audit and fix secondary text colors that fall below 4.5:1 contrast ratio. Add visible labels or accessible names to every input, select, and interactive element — especially in Settings and the Review filter controls.</p>
-            </div>
-            <div class="next-step">
-              <h3 class="next-step__title">Make Charts Accessible</h3>
-              <p class="next-step__text">Add a data table alternative for every Recharts visualization so users who cannot perceive the charts can still access the information. Introduce a colorblind-safe palette so Trends and Summary views do not rely on color alone.</p>
-            </div>
-            <div class="next-step">
-              <h3 class="next-step__title">Screen Reader Testing</h3>
-              <p class="next-step__text">Conduct hands-on testing with NVDA, JAWS, and VoiceOver — particularly for chart interactions, the transaction table, and modal dialogs — to catch issues that automated tools miss.</p>
+              <h3 class="next-step__title">Screen Reader Testing <span class="next-step__done">Up next</span></h3>
+              <p class="next-step__text">Conduct hands-on testing with NVDA, JAWS, and VoiceOver — particularly for chart data table alternatives, the transaction table, and the account filter dropdown — to validate the ARIA implementation against real assistive technology.</p>
             </div>
             <div class="next-step">
               <h3 class="next-step__title">Recurring Transaction Detection</h3>
               <p class="next-step__text">Automatically identify recurring charges from transaction history and pre-populate the fixed expenses section, reducing repetitive manual entry each month.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Keyboard-Navigable Charts</h3>
+              <p class="next-step__text">Recharts does not support keyboard navigation of individual data points. Explore custom chart components or an alternative library that allows users to arrow through data series and hear values announced.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">High-Contrast Mode</h3>
+              <p class="next-step__text">Test and optimize for Windows High Contrast Mode and <code>forced-colors</code> media query to ensure all UI boundaries, interactive states, and chart elements remain visible.</p>
             </div>
           </div>
 

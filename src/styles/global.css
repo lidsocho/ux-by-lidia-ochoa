@@ -1325,6 +1325,10 @@ strong {
   height: auto;
 }
 
+.phone-frame__still {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
   .phone-frame__body {
     background: #3a3a3a;
@@ -2098,6 +2102,16 @@ strong {
   text-align: center;
 }
 
+.contact-form__error {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #d94040;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
 /* --- Scroll Reveal Animations (Audit #19) --- */
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
@@ -2149,6 +2163,14 @@ strong {
 
   .bouncy {
     animation: none !important;
+  }
+
+  .phone-frame__screen video {
+    display: none;
+  }
+
+  .phone-frame__still {
+    display: block;
   }
 
   * {

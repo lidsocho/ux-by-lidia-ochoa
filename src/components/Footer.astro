@@ -1,5 +1,5 @@
 <!-- Site Footer (Audit #2, #13) -->
-<footer class="site-footer" role="contentinfo">
+<footer class="site-footer" id="contact">
   <div class="container">
     <div class="site-footer__grid">
       <div class="site-footer__cta">
@@ -61,6 +61,8 @@
           <span aria-hidden="true">&rarr;</span>
         </button>
         <p class="contact-form__success" aria-live="polite" hidden>Thank you for your message! I will get back to you very soon.</p>
+        <p class="contact-form__error" aria-live="assertive" hidden>Something went wrong. Please try again.</p>
+        <noscript><p class="contact-form__error" style="margin-top:1rem">This form requires JavaScript. You can reach me directly at <a href="mailto:lidia.ochoa@uxbylidiaochoa.com">lidia.ochoa@uxbylidiaochoa.com</a>.</p></noscript>
       </form>
     </div>
     <div class="site-footer__divider"></div>
@@ -73,8 +75,12 @@
 
 <script>
   const form = document.querySelector('.contact-form');
+  const successMsg = form.querySelector('.contact-form__success');
+  const errorMsg = form.querySelector('.contact-form__error');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    successMsg.hidden = true;
+    errorMsg.hidden = true;
     const btn = form.querySelector('.contact-form__submit');
     btn.disabled = true;
     btn.textContent = 'Sending…';
@@ -84,13 +90,13 @@
     });
     if (res.ok) {
       form.reset();
-      const msg = form.querySelector('.contact-form__success');
-      msg.hidden = false;
-      btn.textContent = 'Sent!';
+      successMsg.hidden = false;
+      btn.disabled = false;
+      btn.innerHTML = 'Send Message <span aria-hidden="true">&rarr;</span>';
     } else {
       btn.disabled = false;
       btn.innerHTML = 'Send Message <span aria-hidden="true">&rarr;</span>';
-      alert('Something went wrong. Please try again.');
+      errorMsg.hidden = false;
     }
   });
 </script>

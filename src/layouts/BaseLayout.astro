@@ -8,9 +8,11 @@ interface Props {
   title: string;
   description?: string;
   projectColor?: string;
+  ogImage?: string;
 }
 
-const { title, description = 'UX/Product Designer specializing in accessible learning and financial tools.', projectColor } = Astro.props;
+const { title, description = 'UX/Product Designer specializing in accessible learning and financial tools.', projectColor, ogImage } = Astro.props;
+const resolvedOgImage = ogImage ? `https://uxbylidiaochoa.com${ogImage}` : 'https://uxbylidiaochoa.com/images/lidia-profile.png';
 
 // Compute a static color-mix fallback (10% project color on #fafafa) at build time
 function mixFallback(hex: string): string {
@@ -45,11 +47,11 @@ const cardBgFallbackDark = projectColorDark ? mixFallback(projectColorDark) : un
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={`https://uxbylidiaochoa.com${Astro.url.pathname}`} />
-  <meta property="og:image" content="https://uxbylidiaochoa.com/images/lidia-profile.png" />
+  <meta property="og:image" content={resolvedOgImage} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content="https://uxbylidiaochoa.com/images/lidia-profile.png" />
+  <meta name="twitter:image" content={resolvedOgImage} />
   {projectColorDark && (
     <style set:html={`
       @media (prefers-color-scheme: dark) {

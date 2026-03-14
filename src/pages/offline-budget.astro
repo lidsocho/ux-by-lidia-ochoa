@@ -14,20 +14,23 @@ const sections = [
   { id: 'next-steps', label: 'Next Steps' },
 ];
 ---
-<BaseLayout title="Offline Budget Tool — Case Study | Lidia Ochoa" description="An offline-first, WCAG 2.2 AAA personal budget app designed for users overwhelmed by traditional financial tools." projectColor="#4cc4cf">
+<BaseLayout title="Offline Budget Tool — Case Study | Lidia Ochoa" description="A privacy-first budgeting tool that runs entirely in the browser — secure, automated, and personalizable without the overwhelm." projectColor="#4cc4cf">
 
   <!-- Hero -->
   <section class="case-hero">
     <div class="container">
       <div class="reveal">
-        <h1>Offline Personal Budget Tool</h1>
+        <h1>Offline Budget Tool</h1>
         <dl class="case-hero__meta">
           <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Oct 2025 – Mar 2026</dd></div>
           <div class="case-hero__meta-item"><dt>Role:</dt><dd>Design &amp; Dev (solo)</dd></div>
-          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>HTML, CSS, JavaScript, localStorage</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>React, Tailwind CSS, Recharts, localStorage</dd></div>
         </dl>
         <div class="case-hero__tagline-row">
-          <p class="case-hero__tagline">An offline-first personal budget tool built for people who find traditional financial apps overwhelming — accessible, private, and simple enough to actually use.</p>
+          <p class="case-hero__tagline">A privacy-first budgeting tool that automates the tedious parts of tracking finances while keeping the user in control — secure by design, with no server, no account, and no data leaving the browser.</p>
+          <a href="https://lidsocho.github.io/bb-budget/" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="Try the Offline Budget Tool (opens in new tab)">
+            Try the Tool &rarr;
+          </a>
         </div>
       </div>
     </div>
@@ -41,18 +44,19 @@ const sections = [
       <section class="case-section section" id="overview" aria-labelledby="overview-heading">
         <div class="container">
           <h2 id="overview-heading" class="case-section__heading reveal">Overview</h2>
-          <p class="reveal">Most budgeting apps assume their users already understand personal finance. They bury core actions in menus, use jargon-heavy interfaces, and require account linking that raises privacy concerns. For someone who has never budgeted before — or who gave up on previous tools because they were too complicated — these apps create more anxiety than they solve.</p>
-          <p class="reveal">Bb Budget is designed from the opposite direction: start simple, stay private, and make the most important actions the most visible. It runs entirely in the browser with no server, no account, and no data leaving the device. All data lives in localStorage — the user's finances stay on their machine.</p>
+          <p class="reveal">Most budgeting apps require linking bank accounts through third-party services, creating a trust problem before the user even starts. For someone already overwhelmed by finances, handing credentials to an app they don't fully understand is a non-starter. The ones that don't require linking tend to be manual-entry tools that demand too much effort, or spreadsheets that offer no guidance.</p>
+          <div class="problem-statement reveal">The challenge was designing a tool that is <strong>secure</strong> enough that financial data never leaves the device, <strong>automated</strong> enough that CSV imports and auto-categorization reduce the tedious work, but <strong>engaged</strong> enough that users verify their numbers through balance snapshots during each budgeting session — and <strong>personalizable</strong> enough that users can set and track their own budget targets and goals without overwhelm.</div>
+          <p class="reveal">The result is a tool that runs entirely in the browser with no server, no account, and no data leaving the device. Users import bank CSVs, categorize transactions with smart auto-suggestions, set budget targets, and track trends over time — all stored in localStorage on their machine. Balance snapshots let users periodically confirm their account totals against the computed values, catching discrepancies and building trust in the tool's accuracy.</p>
 
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
               <div>
                 <h3>Goals</h3>
                 <ul class="styled-list">
-                  <li>Make budgeting approachable for first-time users</li>
-                  <li>Build an offline-first tool with zero data privacy concerns</li>
-                  <li>Meet WCAG 2.2 AAA from day one — contrast, text size, labels</li>
-                  <li>Support tiered complexity so users can grow into the tool</li>
+                  <li>Keep financial data fully private — no server, no account, no third-party access</li>
+                  <li>Automate repetitive tasks (CSV parsing, categorization) while keeping the user in the verification loop</li>
+                  <li>Let users personalize budget targets, categories, and subscriptions to match their life</li>
+                  <li>Build progressive complexity — simple to start, powerful as confidence grows</li>
                 </ul>
               </div>
               <div>
@@ -73,34 +77,30 @@ const sections = [
       <section class="case-section section" id="understanding-users" aria-labelledby="understanding-users-heading">
         <div class="container">
           <h2 id="understanding-users-heading" class="case-section__heading reveal">Understanding Users</h2>
-          <p class="reveal">The primary user is someone like Edgar — a 42-year-old HVAC manager who tried to budget in his 20s but became stressed as adult responsibilities piled up and gave up. Now settled in his career and thinking about retirement, he wants a budgeting app that is accessible, easy to use, and simple. As Edgar puts it: "I've always wanted to be better with money, but it always seems too complicated, and the tools that are supposed to help don't make it much easier."</p>
+          <p class="reveal">This tool was born from my own frustration. I used to budget with a spreadsheet I maintained by hand — downloading CSVs from multiple bank accounts, copying rows into tabs, categorizing each transaction, and manually calculating totals. It worked, but it was tedious enough that I'd put it off for weeks, then face a backlog of hundreds of transactions. I needed a tool that did the repetitive parts for me while still letting me verify every number myself.</p>
+          <p class="reveal">The people who would benefit most from a tool like this share a few common traits:</p>
 
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
               <div>
-                <h3>Edgar's Goals</h3>
+                <h3>Who This Is For</h3>
                 <ul class="styled-list">
-                  <li>Plan for retirement effectively</li>
-                  <li>Create simple budgets easily</li>
-                  <li>Learn basic financial management</li>
+                  <li>People who budget with spreadsheets and want something faster</li>
+                  <li>People who distrust apps that require bank login credentials</li>
+                  <li>People who have tried budgeting apps and found them overwhelming</li>
+                  <li>People who want to see exactly where their money goes without jargon</li>
                 </ul>
               </div>
               <div>
-                <h3>Edgar's Frustrations</h3>
+                <h3>Common Challenges</h3>
                 <ul class="styled-list">
-                  <li>Spreadsheet budgets are confusing</li>
-                  <li>Apps hide core actions in menus</li>
-                  <li>Visual impairment makes many apps unusable</li>
-                  <li>Overwhelmed by financial jargon</li>
+                  <li>Manual data entry is tedious enough to kill the habit</li>
+                  <li>Linking bank accounts feels like a security risk</li>
+                  <li>Most apps show too much at once — dashboards with dozens of widgets</li>
+                  <li>No way to verify that the app's numbers match reality</li>
                 </ul>
               </div>
             </div>
-          </div>
-
-          <div class="user-intro__stats reveal" style="justify-content: center;">
-            <div class="case-hero__badge">75% &rarr; 90%<span class="case-hero__badge-label">Satisfaction grew after iterative testing</span></div>
-            <div class="case-hero__badge">WCAG 2.2 AAA<span class="case-hero__badge-label">From day 1 — contrast, text size, labels</span></div>
-            <div class="case-hero__badge">Tiered complexity<span class="case-hero__badge-label">"Learn" hub supports financial literacy</span></div>
           </div>
         </div>
       </section>
@@ -111,13 +111,14 @@ const sections = [
           <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
 
           <h3 class="reveal">Visual Design</h3>
-          <p class="reveal">The warm, muted palette — olive green for income, muted rose for expenses — was chosen to reduce the anxiety that comes with financial dashboards. Most budget apps use aggressive reds and greens that make every spending moment feel like a warning. Bb Budget uses softer tones that convey information without judgment. The clean, warm-toned background and generous whitespace make the interface feel calm rather than clinical.</p>
+          <p class="reveal">The warm, muted palette — olive green for income, muted rose for expenses — was chosen to reduce the anxiety that comes with financial dashboards. Most budget apps use aggressive reds and greens that make every spending moment feel like a warning. This tool uses softer tones that convey information without judgment. The clean, warm-toned background and generous whitespace make the interface feel calm rather than clinical.</p>
 
           <h3 class="reveal">Information Architecture</h3>
-          <p class="reveal">The app is organized around five primary tabs — Review, Summary, Trends, Balances, and Settings — each representing a core budgeting task. This flat navigation means every feature is one click away. No nested menus, no hidden panels, no "more options" drawers. The most important actions (importing transactions, reviewing spending) come first in the tab order.</p>
+          <p class="reveal">The app is organized around five primary tabs — Review, Summary, Trends, Balances, and Settings — each with a single, focused purpose. This flat navigation means every feature is one click away. No nested menus, no hidden panels, no "more options" drawers. The most important actions (importing transactions, reviewing spending) come first in the tab order.</p>
+          <img src="/images/offline-budget/ia-diagram.svg" alt="Information architecture diagram showing the five-tab structure: Review (CSV import, auto-categorize, bulk actions), Summary (variable expenses with progress bars, fixed expenses, subscriptions), Trends (income vs spending, category breakdown, account balances), Balances (computed balances, log snapshots, snapshot history), and Settings (budget targets, custom categories, data management). All data stored in browser localStorage." class="reveal" loading="lazy" />
 
-          <h3 class="reveal">Progressive Complexity</h3>
-          <p class="reveal">New users start with the Review tab: import a CSV, categorize transactions, done. As they build confidence, they discover the Summary tab (budget targets vs. actual spending), then Trends (month-over-month patterns). The tool grows with the user rather than overwhelming them upfront. Settings lets users customize categories, manage subscriptions, and export/import backups — power features accessible when needed, invisible when not.</p>
+          <h3 class="reveal">One Task Per Screen</h3>
+          <p class="reveal">The core design choice is limiting how much a user has to process on each screen. Each tab answers one question: Review asks "what did I spend?" Summary asks "am I on budget?" Trends asks "what are the patterns?" Balances asks "are the numbers right?" Settings asks "how do I want this to work?" By isolating these tasks, the user always has a clear path to complete what they came to do without being distracted by unrelated information.</p>
         </div>
       </section>
 
@@ -150,26 +151,38 @@ const sections = [
       <section class="case-section section" id="accessibility" aria-labelledby="a11y-heading">
         <div class="container">
           <h2 id="a11y-heading" class="case-section__heading reveal">Accessibility</h2>
-          <p class="reveal">Financial tools that exclude users with disabilities exclude people who may need them most. Bb Budget targets WCAG 2.2 AAA — not just the minimum, but the highest conformance level — because budgeting anxiety is already a barrier, and inaccessible UI should never be another one.</p>
+          <p class="reveal">Financial tools that exclude users with disabilities exclude people who may need them most. Budgeting anxiety is already a barrier — inaccessible UI should never be another one. This tool was built with accessibility in mind from the start, though a formal audit revealed gaps that remain as next steps.</p>
 
+          <h3 class="reveal">What's Working</h3>
           <div class="decisions-grid reveal">
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
-              <p class="decision-card__response"><strong>AAA contrast throughout:</strong> Text, charts, and interactive elements all exceed 7:1 contrast. The olive/rose color palette was specifically chosen to be distinguishable by colorblind users.</p>
-            </div>
-            <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg></div>
-              <p class="decision-card__response"><strong>Full keyboard navigation:</strong> Every tab, dropdown, button, and chart tooltip is reachable and operable by keyboard alone. Tab order follows the visual layout.</p>
+              <p class="decision-card__response"><strong>High contrast body text:</strong> Primary text (#292524 on #fafaf9) achieves ~16.5:1 contrast, well above AAA requirements. The warm, muted palette reduces visual stress compared to typical finance app color schemes.</p>
             </div>
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-              <p class="decision-card__response"><strong>Labeled inputs everywhere:</strong> Every form control — category dropdowns, budget targets, search filters, CSV upload — has a programmatic label. No placeholder-only inputs.</p>
+              <p class="decision-card__response"><strong>Semantic HTML:</strong> Native buttons, form inputs, and select elements provide baseline keyboard operability and screen reader support without custom ARIA. The balance snapshot form uses proper label/input pairs.</p>
             </div>
             <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-              <p class="decision-card__response"><strong>Chart accessibility:</strong> Tooltips with exact values on hover/focus. Chart colors are distinguishable without relying on color alone — patterns and labels supplement the palette.</p>
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+              <p class="decision-card__response"><strong>Minimal, focused layouts:</strong> One task per screen reduces cognitive load. Generous whitespace, clear hierarchy, and limited elements per view help users who are easily overwhelmed by dense financial interfaces.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <p class="decision-card__response"><strong>Destructive action safeguards:</strong> "Clear All Data" requires double confirmation and is visually separated from other actions — preventing accidental data loss, which is especially important for users with motor impairments.</p>
             </div>
           </div>
+
+          <h3 class="reveal">Known Gaps</h3>
+          <p class="reveal">An honest review of the tool revealed areas that need improvement before any WCAG conformance claim can be made:</p>
+          <ul class="reveal styled-list">
+            <li>Secondary text colors (helper text, inactive tabs, chart labels) fall below AA contrast thresholds</li>
+            <li>Income/expense color coding (green vs. red) is not colorblind-safe — the most common accessibility issue in finance tools, and one this tool has not yet solved</li>
+            <li>Several form inputs rely on placeholder text instead of proper labels — especially in Settings and inline editing</li>
+            <li>Charts (Recharts) lack keyboard navigation, ARIA labels, and accessible data table alternatives</li>
+            <li>Custom dropdown components lack proper keyboard patterns (arrow keys, Escape to close)</li>
+            <li>No screen reader testing has been conducted</li>
+          </ul>
         </div>
       </section>
 
@@ -177,21 +190,21 @@ const sections = [
       <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
         <div class="container">
           <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
-          <p class="reveal">Bb Budget is a functional, daily-use budgeting tool processing over 1,300 real transactions — not a prototype, but a working product built and used from the ground up.</p>
+          <p class="reveal">This is not a prototype — it's a working tool I use to manage my own finances. It has processed over 1,300 real transactions across multiple bank accounts, and it replaced the spreadsheet I maintained for years.</p>
           <div class="goal-pair reveal">
             <div class="goals-frustrations-banner">
               <h3>Deliverables</h3>
-              <p>A fully functional offline budgeting app with CSV import, transaction categorization (manual + auto), budget targets, three trend visualizations, multi-account balance tracking, subscription management, and JSON backup/restore — all in the browser with zero server dependencies.</p>
+              <p>A fully functional offline budgeting tool with CSV import (Wells Fargo, SoFi, Venmo, Discover), auto-categorization with 100+ merchant rules, budget targets with progress tracking, three trend visualizations, multi-account balance snapshots, subscription management, and JSON backup/restore — all in the browser with zero server dependencies.</p>
             </div>
             <div class="goals-frustrations-banner">
-              <h3>Accessibility</h3>
-              <p>WCAG 2.2 AAA conformance. 7:1+ contrast ratios, fully labeled forms, keyboard-operable charts and tables, colorblind-safe palette, and accessible data management controls including destructive action safeguards.</p>
+              <h3>What It Solved</h3>
+              <p>Eliminated hours of manual spreadsheet work each month. CSV import and auto-categorization handle the tedious parts, while balance snapshots and review workflows keep me actively verifying the numbers. My financial data never touches a third-party server.</p>
             </div>
           </div>
           <div class="user-intro__stats reveal" style="justify-content: center;">
             <div class="case-hero__badge">1,300+ transactions<span class="case-hero__badge-label">Real daily usage</span></div>
-            <div class="case-hero__badge">WCAG 2.2 AAA<span class="case-hero__badge-label">Highest conformance level</span></div>
-            <div class="case-hero__badge">Zero dependencies<span class="case-hero__badge-label">Offline-first, localStorage only</span></div>
+            <div class="case-hero__badge">100% offline<span class="case-hero__badge-label">No server, no account</span></div>
+            <div class="case-hero__badge">100+ auto-rules<span class="case-hero__badge-label">Smart categorization</span></div>
             <div class="case-hero__badge">5 core views<span class="case-hero__badge-label">Review, Summary, Trends, Balances, Settings</span></div>
           </div>
         </div>
@@ -201,8 +214,8 @@ const sections = [
       <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
         <div class="container">
           <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
-          <p class="reveal">Building a tool I actually use every day changed how I think about design decisions. Every friction point I encountered while categorizing my own transactions became a feature improvement — the auto-categorize function, the "mark all categorized as reviewed" shortcut, the progress bar that turns a chore into a completable task. Dogfooding is not just a testing strategy; it is a design methodology.</p>
-          <p class="reveal">The biggest technical lesson was that localStorage is a more capable persistence layer than most developers assume. With JSON export/import for backup and careful data structure design, it handles 1,300+ transactions without performance issues. The biggest design lesson was that accessibility at AAA level does not require compromise — the constraints pushed me toward a calmer, more readable interface that benefits every user, not just those with disabilities.</p>
+          <p class="reveal">Using this tool every day changed how I think about design. Every friction point I hit while categorizing my own transactions became a feature — the auto-categorize function, the "mark all categorized as reviewed" shortcut, the progress bar that turns a chore into a completable task. Being both the designer and the daily user means nothing stays broken for long.</p>
+          <p class="reveal">The biggest technical surprise was how capable localStorage is as a persistence layer. With JSON export/import for backup and careful data structure design, it handles over a thousand transactions without performance issues — no server, no database, no accounts. The biggest design lesson was about honesty: I initially assumed my high-contrast, minimal layouts meant the tool was fully accessible. An honest audit revealed gaps in secondary text contrast, chart accessibility, and input labeling that I had overlooked. Accessibility is not a box you check once — it is an ongoing practice.</p>
         </div>
       </section>
 
@@ -212,20 +225,20 @@ const sections = [
           <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
           <div class="next-steps reveal">
             <div class="next-step">
-              <h3 class="next-step__title">Learn Hub</h3>
-              <p class="next-step__text">Add an educational section with plain-language financial literacy content — budgeting basics, understanding credit, planning for retirement — tailored to users who are just getting started.</p>
+              <h3 class="next-step__title">Fix Contrast &amp; Labeling Gaps</h3>
+              <p class="next-step__text">Audit and fix secondary text colors that fall below 4.5:1 contrast ratio. Add visible labels or accessible names to every input, select, and interactive element — especially in Settings and the Review filter controls.</p>
             </div>
             <div class="next-step">
-              <h3 class="next-step__title">Recurring Transaction Detection</h3>
-              <p class="next-step__text">Automatically identify recurring charges (subscriptions, rent, utilities) from transaction history and pre-populate the fixed expenses section.</p>
+              <h3 class="next-step__title">Make Charts Accessible</h3>
+              <p class="next-step__text">Add a data table alternative for every Recharts visualization so users who cannot perceive the charts can still access the information. Introduce a colorblind-safe palette so Trends and Summary views do not rely on color alone.</p>
             </div>
             <div class="next-step">
               <h3 class="next-step__title">Screen Reader Testing</h3>
-              <p class="next-step__text">Conduct formal testing with NVDA, JAWS, and VoiceOver — particularly for chart interactions and the transaction table — to validate beyond automated tools.</p>
+              <p class="next-step__text">Conduct hands-on testing with NVDA, JAWS, and VoiceOver — particularly for chart interactions, the transaction table, and modal dialogs — to catch issues that automated tools miss.</p>
             </div>
             <div class="next-step">
-              <h3 class="next-step__title">Goal Setting</h3>
-              <p class="next-step__text">Let users set savings goals with visual progress tracking — connecting daily categorization work to long-term financial outcomes to maintain motivation.</p>
+              <h3 class="next-step__title">Recurring Transaction Detection</h3>
+              <p class="next-step__text">Automatically identify recurring charges from transaction history and pre-populate the fixed expenses section, reducing repetitive manual entry each month.</p>
             </div>
           </div>
 

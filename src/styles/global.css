@@ -886,14 +886,14 @@ strong {
 
 
 /* Links inside case study sections get a colored underline */
-.case-section a:not(.prototype-link):not(.photo-credit a) {
+.case-section a:not(.prototype-link):not(.photo-credit a):not(.prev-next-nav__link) {
   text-decoration: underline;
   text-decoration-color: var(--color-project, var(--color-accent));
   text-underline-offset: 3px;
   text-decoration-thickness: 2px;
 }
 
-.case-section a:not(.prototype-link):not(.photo-credit a):hover {
+.case-section a:not(.prototype-link):not(.photo-credit a):not(.prev-next-nav__link):hover {
   text-decoration-color: var(--color-text);
 }
 

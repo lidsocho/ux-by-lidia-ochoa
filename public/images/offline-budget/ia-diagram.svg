@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" font-family="Commissioner, Inter, sans-serif">
+  <!-- Background with neo-brutalist offset border -->
+  <rect x="4" y="4" width="816" height="476" rx="12" fill="#2d2d2d"/>
+  <rect width="816" height="476" rx="12" fill="#faf9f6" stroke="#2d2d2d" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="410" y="36" text-anchor="middle" font-family="Bricolage Grotesque, Raleway, sans-serif" font-weight="700" font-size="18" fill="#2d2d2d">Information Architecture</text>
+
+  <!-- === TAB BAR (top) === -->
+
+  <!-- Connecting lines BEHIND the App box -->
+  <line x1="170" y1="100" x2="90" y2="155" stroke="#2d2d2d" stroke-width="2"/>
+  <line x1="290" y1="100" x2="250" y2="155" stroke="#2d2d2d" stroke-width="2"/>
+  <line x1="410" y1="100" x2="410" y2="155" stroke="#2d2d2d" stroke-width="2"/>
+  <line x1="530" y1="100" x2="570" y2="155" stroke="#2d2d2d" stroke-width="2"/>
+  <line x1="650" y1="100" x2="730" y2="155" stroke="#2d2d2d" stroke-width="2"/>
+
+  <!-- App node -->
+  <rect x="313" y="63" width="200" height="44" rx="4" fill="#2d2d2d"/>
+  <rect x="310" y="60" width="200" height="44" rx="4" fill="#4cc4cf" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="410" y="80" text-anchor="middle" font-weight="700" font-size="14" fill="#2d2d2d">Bb Budget</text>
+  <text x="410" y="95" text-anchor="middle" font-size="10" fill="#2d2d2d" opacity="0.7">5-tab navigation</text>
+
+  <!-- Tab 1: Review -->
+  <rect x="23" y="158" width="140" height="44" rx="4" fill="#2d2d2d"/>
+  <rect x="20" y="155" width="140" height="44" rx="4" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="90" y="175" text-anchor="middle" font-weight="600" font-size="13" fill="#2d2d2d">Review</text>
+  <text x="90" y="190" text-anchor="middle" font-size="10" fill="#78716c">Import &amp; categorize</text>
+
+  <!-- Tab 2: Summary -->
+  <rect x="183" y="158" width="140" height="44" rx="4" fill="#2d2d2d"/>
+  <rect x="180" y="155" width="140" height="44" rx="4" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="250" y="175" text-anchor="middle" font-weight="600" font-size="13" fill="#2d2d2d">Summary</text>
+  <text x="250" y="190" text-anchor="middle" font-size="10" fill="#78716c">Budget vs. actual</text>
+
+  <!-- Tab 3: Trends -->
+  <rect x="343" y="158" width="140" height="44" rx="4" fill="#2d2d2d"/>
+  <rect x="340" y="155" width="140" height="44" rx="4" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="410" y="175" text-anchor="middle" font-weight="600" font-size="13" fill="#2d2d2d">Trends</text>
+  <text x="410" y="190" text-anchor="middle" font-size="10" fill="#78716c">Charts &amp; patterns</text>
+
+  <!-- Tab 4: Balances -->
+  <rect x="503" y="158" width="140" height="44" rx="4" fill="#2d2d2d"/>
+  <rect x="500" y="155" width="140" height="44" rx="4" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="570" y="175" text-anchor="middle" font-weight="600" font-size="13" fill="#2d2d2d">Balances</text>
+  <text x="570" y="190" text-anchor="middle" font-size="10" fill="#78716c">Snapshots &amp; tracking</text>
+
+  <!-- Tab 5: Settings -->
+  <rect x="663" y="158" width="140" height="44" rx="4" fill="#2d2d2d"/>
+  <rect x="660" y="155" width="140" height="44" rx="4" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="730" y="175" text-anchor="middle" font-weight="600" font-size="13" fill="#2d2d2d">Settings</text>
+  <text x="730" y="190" text-anchor="middle" font-size="10" fill="#78716c">Personalization</text>
+
+  <!-- === FEATURE DETAILS (below tabs) === -->
+
+  <!-- Connecting lines from tabs to features -->
+  <line x1="90" y1="199" x2="90" y2="225" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="250" y1="199" x2="250" y2="225" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="410" y1="199" x2="410" y2="225" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="570" y1="199" x2="570" y2="225" stroke="#2d2d2d" stroke-width="1.5"/>
+  <line x1="730" y1="199" x2="730" y2="225" stroke="#2d2d2d" stroke-width="1.5"/>
+
+  <!-- Review features -->
+  <rect x="20" y="225" width="140" height="120" rx="4" fill="#f0fafa" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="90" y="244" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">CSV import</text>
+  <text x="90" y="260" text-anchor="middle" font-size="10" fill="#78716c">Auto-detect bank format</text>
+  <text x="90" y="280" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Auto-categorize</text>
+  <text x="90" y="296" text-anchor="middle" font-size="10" fill="#78716c">100+ merchant rules</text>
+  <text x="90" y="316" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Bulk actions</text>
+  <text x="90" y="332" text-anchor="middle" font-size="10" fill="#78716c">Review &amp; apply similar</text>
+
+  <!-- Summary features -->
+  <rect x="180" y="225" width="140" height="120" rx="4" fill="#f0fafa" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="250" y="244" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Variable expenses</text>
+  <text x="250" y="260" text-anchor="middle" font-size="10" fill="#78716c">Progress bars vs. targets</text>
+  <text x="250" y="280" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Fixed expenses</text>
+  <text x="250" y="296" text-anchor="middle" font-size="10" fill="#78716c">Rent, utilities, insurance</text>
+  <text x="250" y="316" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Subscriptions</text>
+  <text x="250" y="332" text-anchor="middle" font-size="10" fill="#78716c">Itemized recurring</text>
+
+  <!-- Trends features -->
+  <rect x="340" y="225" width="140" height="120" rx="4" fill="#f0fafa" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="410" y="244" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Income vs. Spending</text>
+  <text x="410" y="260" text-anchor="middle" font-size="10" fill="#78716c">Monthly bar chart</text>
+  <text x="410" y="280" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Category breakdown</text>
+  <text x="410" y="296" text-anchor="middle" font-size="10" fill="#78716c">Stacked bar by month</text>
+  <text x="410" y="316" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Account balances</text>
+  <text x="410" y="332" text-anchor="middle" font-size="10" fill="#78716c">Multi-line over time</text>
+
+  <!-- Balances features -->
+  <rect x="500" y="225" width="140" height="120" rx="4" fill="#f0fafa" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="570" y="244" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Computed balances</text>
+  <text x="570" y="260" text-anchor="middle" font-size="10" fill="#78716c">Snapshot + transactions</text>
+  <text x="570" y="280" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Log snapshots</text>
+  <text x="570" y="296" text-anchor="middle" font-size="10" fill="#78716c">Manual verification</text>
+  <text x="570" y="316" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Snapshot history</text>
+  <text x="570" y="332" text-anchor="middle" font-size="10" fill="#78716c">Track over time</text>
+
+  <!-- Settings features -->
+  <rect x="660" y="225" width="140" height="120" rx="4" fill="#f0fafa" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="730" y="244" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Budget targets</text>
+  <text x="730" y="260" text-anchor="middle" font-size="10" fill="#78716c">Per-category limits</text>
+  <text x="730" y="280" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Custom categories</text>
+  <text x="730" y="296" text-anchor="middle" font-size="10" fill="#78716c">Add, rename, remove</text>
+  <text x="730" y="316" text-anchor="middle" font-size="10" fill="#2d2d2d" font-weight="600">Data management</text>
+  <text x="730" y="332" text-anchor="middle" font-size="10" fill="#78716c">Export / import / clear</text>
+
+  <!-- Design intent box -->
+  <rect x="63" y="375" width="700" height="56" rx="4" fill="#2d2d2d"/>
+  <rect x="60" y="372" width="700" height="56" rx="4" fill="#ffffff" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="410" y="396" text-anchor="middle" font-weight="600" font-size="13" fill="#2d2d2d">Design intent: Each tab has a single, focused purpose.</text>
+  <text x="410" y="414" text-anchor="middle" font-size="12" fill="#5C4A3A">Users complete one task per screen — no nested menus, no hidden panels, no cognitive overload.</text>
+
+  <!-- Data flow note -->
+  <rect x="60" y="446" width="700" height="28" rx="4" fill="#f0fafa" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="410" y="465" text-anchor="middle" font-size="11" fill="#2d2d2d">All data stored in browser localStorage — no server, no account, no data leaves the device</text>
+</svg>

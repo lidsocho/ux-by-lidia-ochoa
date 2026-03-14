@@ -28,24 +28,22 @@ const sections = [
           <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Google Drive, Eventbrite, Instagram, Figma, HTML/CSS/JS</dd></div>
         </dl>
         <div class="case-hero__tagline-row">
-          <p class="case-hero__tagline">An accessible digital catalogue for a curated art exhibition — designed so every visitor, whether in the gallery or at home, can discover the art and artists behind a show celebrating hope, resilience, and creative freedom.</p>
+          <p class="case-hero__tagline">A mobile-first digital catalogue for a curated art exhibition — designed so every visitor can pull up the catalogue on their phone while standing in the gallery, discovering the art and artists behind a show celebrating hope, resilience, and creative freedom.</p>
           <a href="https://lidsocho.github.io/our-light-unbound/" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="View the live Our Light Unbound site (opens in new tab)">
             View Live Site &rarr;
           </a>
         </div>
       </div>
-      <div class="desktop-frame reveal" aria-label="Desktop monitor displaying the Our Light Unbound digital catalogue">
-        <div class="desktop-frame__body">
-          <div class="desktop-frame__screen">
-            <img src="/images/our-light-unbound/homepage.png"
-                 alt="Our Light Unbound homepage showing the exhibition title in italic serif on a gradient purple background, exhibition dates, and artist statement" />
+      <div class="phone-frame reveal" aria-label="iPhone displaying the Our Light Unbound mobile catalogue">
+        <div class="phone-frame__body">
+          <div class="phone-frame__notch" aria-hidden="true"></div>
+          <div class="phone-frame__screen">
+            <video autoplay loop muted playsinline aria-label="Screen recording scrolling through the Our Light Unbound mobile catalogue — showing the exhibition hero, search bar, artist accordion, and artwork details">
+              <source src="/images/our-light-unbound/mobile-recording-compressed.mp4" type="video/mp4" />
+              <img src="/images/our-light-unbound/homepage-mobile.png"
+                   alt="Our Light Unbound mobile catalogue showing the exhibition title, artist statement, search bar, and accordion-style artist list on a deep purple gradient background" />
+            </video>
           </div>
-        </div>
-        <div class="desktop-frame__stand" aria-hidden="true">
-          <svg viewBox="0 0 200 50" fill="none">
-            <path d="M85 0 H115 L130 38 H70 Z" fill="currentColor"/>
-            <rect x="50" y="38" width="100" height="8" rx="4" fill="currentColor"/>
-          </svg>
         </div>
       </div>
     </div>
@@ -60,8 +58,8 @@ const sections = [
         <div class="container">
           <h2 id="overview-heading" class="case-section__heading reveal">Overview</h2>
           <p class="reveal">"Our Light Unbound" was an art exhibition running January 9–31, 2026 that explored tapping into the part of ourselves that believes peace will return — the part that inspires us to believe, hope, and dream again. I co-curated the show alongside Yaz (they/them), and together we built a strong social media presence and community integration around the exhibition over the course of a year and a half of planning.</p>
-          <div class="problem-statement reveal">For the exhibition's digital catalogue, the question was: how do we create a compact, easily navigable, and accessible way for people to discover the art and artists — and become even more immersed in the work through their descriptions — whether they are standing in the gallery or browsing from home? The catalogue was built in collaboration with the artists themselves, who provided their bios and art descriptions, and Yaz supported design decisions throughout.</div>
-          <div class="problem-statement reveal">Traditional gallery practice is to print artist statements and descriptions to display alongside artwork, but that creates barriers to access: limited font sizes, finite wall space, and visitors crowding around small text to read. A digital catalogue eliminates those issues entirely — visitors can browse at their own pace, on their own device, with text they can resize and content they can search.</div>
+          <div class="problem-statement reveal">For the exhibition's digital catalogue, the question was: how do we create a compact, mobile-friendly, and accessible way for people to discover the art and artists — right from their phones while standing in the gallery? The catalogue was designed mobile-first, because that's exactly how visitors would use it: scanning a QR code at the entrance and pulling it up on their phone. It was built in collaboration with the artists themselves, who provided their bios and art descriptions, and Yaz supported design decisions throughout.</div>
+          <div class="problem-statement reveal">Traditional gallery practice is to print artist statements and descriptions to display alongside artwork, but that creates barriers to access: limited font sizes, finite wall space, and visitors crowding around small text to read. A mobile-first digital catalogue eliminates those issues entirely — visitors can browse at their own pace, on their own phone, with text they can resize and content they can search.</div>
 
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
@@ -252,7 +250,7 @@ const sections = [
           </div>
 
           <h3 class="reveal">The Digital Catalogue</h3>
-          <p class="reveal">The exhibition's theme — finding and freeing the light within — called for a design that felt intimate and contemplative. The deep purple and gold palette evokes twilight and candlelight, creating warmth within darkness. The search bar is a critical component of the site, designed to aid in navigation. It lets visitors find specific artists or artworks without scrolling, and an accordion-style catalogue organizes works by artist with expandable sections for biographies and individual pieces. A printed QR code at the gallery entrance linked directly to the catalogue, so visitors could pull it up on their phones while standing in front of the art.</p>
+          <p class="reveal">The catalogue was designed mobile-first — because the primary use case was visitors scanning a QR code at the gallery entrance and browsing on their phones while standing in front of the art. The deep purple and gold palette evokes twilight and candlelight, creating warmth within darkness. The search bar is a critical component, designed for quick one-handed use on a phone screen. It lets visitors find specific artists or artworks without scrolling, and an accordion-style catalogue organizes works by artist with expandable sections for biographies and individual pieces — all optimized for touch interaction and small screens.</p>
 
           <img src="/images/our-light-unbound/catalogue-expanded.png" alt="Digital catalogue showing an expanded artist accordion for Ranger Liu with their biography, a photograph of their sculptural work 'Side Effects May Include' made from testosterone gel boxes and tubes, artwork details including price and dimensions, and the artist's description of the piece" class="reveal img-centered" style="max-width: 500px;" loading="lazy" />
 
@@ -302,7 +300,7 @@ const sections = [
               <p class="decision-card__response"><strong>Contrast on dark backgrounds:</strong> Gold headings on deep purple tested above 4.5:1. Body text uses lighter tones (#e0d0f0) to reduce strain while maintaining readability.</p>
             </div>
             <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg></div>
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg></div>
               <p class="decision-card__response"><strong>Focus visibility:</strong> Custom focus outlines using the gold accent color — highly visible on dark backgrounds, unlike browser defaults which often disappear on dark themes.</p>
             </div>
             <div class="decision-card">
@@ -336,7 +334,7 @@ const sections = [
           <div class="goal-pair reveal">
             <div class="goals-frustrations-banner">
               <h3>Digital Catalogue</h3>
-              <p>A fully accessible, dark-themed digital catalogue with artist bios and artwork descriptions provided by the artists, real-time search, gallery hours, event listings, and purchasing contact flow. QR code at the gallery entrance gave visitors instant access on their phones.</p>
+              <p>A mobile-first, fully accessible, dark-themed digital catalogue with artist bios and artwork descriptions provided by the artists, real-time search, gallery hours, event listings, and purchasing contact flow. Designed for phones first — visitors scanned a QR code at the gallery entrance and browsed on their own devices.</p>
             </div>
             <div class="goals-frustrations-banner">
               <h3>Accessibility</h3>

@@ -623,7 +623,7 @@ strong {
 .case-hero__badge-label {
   font-size: 0.7rem;
   font-weight: 500;
-  opacity: 0.85;
+  color: #444;
 }
 
 .case-hero__image {
@@ -1246,6 +1246,82 @@ strong {
   }
 }
 
+/* --- Phone Frame --- */
+.phone-frame {
+  margin-top: var(--space-lg);
+  display: flex;
+  justify-content: center;
+}
+
+.phone-frame__body {
+  position: relative;
+  background: #2d2d2d;
+  border-radius: 36px;
+  padding: 12px;
+  border: 3px solid #1a1a1a;
+  width: 260px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+@media (min-width: 768px) {
+  .phone-frame__body {
+    width: 300px;
+    border-radius: 44px;
+    padding: 14px;
+  }
+}
+
+.phone-frame__notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 22px;
+  background: #2d2d2d;
+  border-radius: 0 0 14px 14px;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .phone-frame__notch {
+    top: 14px;
+    width: 90px;
+    height: 24px;
+  }
+}
+
+.phone-frame__screen {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .phone-frame__screen {
+    border-radius: 30px;
+  }
+}
+
+.phone-frame__screen img,
+.phone-frame__screen video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .phone-frame__body {
+    background: #3a3a3a;
+    border-color: #222;
+  }
+
+  .phone-frame__notch {
+    background: #3a3a3a;
+  }
+}
+
 /* --- Journey Map --- */
 .journey-map {
   margin-block: var(--space-md);
@@ -1597,7 +1673,7 @@ strong {
 
 @media (min-width: 768px) {
   .about-hero {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
   }
 }
 
@@ -1660,13 +1736,13 @@ strong {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  opacity: 0.7;
+  color: #1a1a1a;
 }
 
 .recent-win__sub {
   font-size: 0.7rem;
   font-weight: 500;
-  opacity: 0.85;
+  color: #2d2d2d;
 }
 
 .skills-list {
@@ -1717,6 +1793,78 @@ strong {
 
 .story-section__image img {
   width: 100%;
+}
+
+.story-section__image .story-section__circle-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-shadow);
+  margin: 0 auto;
+}
+
+.story-section__image--compact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.story-section__image--compact img {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* "What I'm Looking For" layout */
+.looking-for {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  background: var(--color-bg);
+  border: 2px solid var(--color-shadow);
+  border-right-width: var(--border-neo-thick);
+  border-bottom-width: var(--border-neo-thick);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.looking-for__text {
+  max-width: 26rem;
+}
+
+.looking-for__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.looking-for__photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid var(--color-shadow);
+}
+
+@media (max-width: 600px) {
+  .looking-for {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Centered case study image */
+.case-img--centered {
+  display: block;
+  margin-inline: auto;
+  max-width: 480px;
 }
 
 /* --- Footer (Audit #2, #13) --- */

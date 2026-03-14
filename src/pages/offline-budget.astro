@@ -148,7 +148,7 @@ const sections = [
 
           <h3 class="reveal">Settings & Data Management</h3>
           <p class="reveal">Users own their data completely. The Settings tab lets them customize expense categories (add, rename, delete), manage subscriptions, set budget targets, and — critically — export and import full JSON backups. The "Clear All Data" action is separated and styled as a destructive action. Data never leaves the browser unless the user explicitly exports it.</p>
-          <img src="/images/offline-budget/settings.png" alt="Bb Budget Settings tab showing Monthly Budget Targets with per-category spending limits, Subscriptions section (Spotify, Hulu, Planet Fitness, iCloud, Audible, Comcast Internet totaling $123.75/month), Expense Categories as deletable tag chips, and Data Management section with Export Backup, Import Backup, and Clear All Data buttons." class="reveal" loading="lazy" />
+          <img src="/images/offline-budget/settings.png" alt="Bb Budget Settings tab showing Monthly Budget Targets with per-category spending limits, Subscriptions section (Spotify, Hulu, Planet Fitness, iCloud, Audible, Comcast Internet totaling $123.75/month), Expense Categories as deletable tag chips, and Data Management section with Export Backup, Import Backup, and Clear All Data buttons." class="reveal case-img--centered" loading="lazy" />
         </div>
       </section>
 
@@ -165,7 +165,7 @@ const sections = [
               <p class="decision-card__response"><strong>Text contrast:</strong> Secondary text (helper text, inactive tabs, chart labels) was upgraded from stone-400 to stone-500/600 across all components. All text now meets WCAG AA. Primary body text (#292524 on #fafaf9) achieves ~16.5:1.</p>
             </div>
             <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg></div>
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
               <p class="decision-card__response"><strong>Colorblind-safe palette:</strong> Replaced red/green income/expense coding with teal (#0d6e6e) and wine (#c92250) — distinguishable by users with protanopia, deuteranopia, and tritanopia. Applied consistently across all views and charts.</p>
             </div>
             <div class="decision-card">
@@ -181,7 +181,7 @@ const sections = [
               <p class="decision-card__response"><strong>Keyboard navigation:</strong> The account filter dropdown now supports Arrow Up/Down, Home/End, Enter/Space to select, and Escape to close — with proper <code>role="listbox"</code>, <code>role="option"</code>, and <code>aria-selected</code> attributes.</p>
             </div>
             <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></div>
               <p class="decision-card__response"><strong>Screen reader support:</strong> Added a skip-to-content link, <code>aria-live="polite"</code> on the transaction counter, proper tab navigation ARIA (<code>role="tablist"</code>, <code>aria-selected</code>, <code>aria-controls</code>), and <code>aria-hidden="true"</code> on all decorative icons.</p>
             </div>
           </div>
@@ -192,7 +192,7 @@ const sections = [
             <p class="before-after__desc">The Income vs Expenses chart originally used olive green and muted rose — colors that are difficult to distinguish for users with protanopia or deuteranopia. The updated palette uses teal and wine, which maintain clear separation across all common types of color vision deficiency.</p>
             <div class="before-after__pair">
               <figure class="before-after__figure">
-                <img src="/images/offline-budget/trends-income-vs-spending.png" alt="Before: Income vs Expenses bar chart using olive green and muted rose colors that are hard to distinguish with color vision deficiency" loading="lazy" />
+                <img src="/images/offline-budget/trends-income-vs-spending-crop.png" alt="Before: Income vs Expenses bar chart using olive green and muted rose colors that are hard to distinguish with color vision deficiency" loading="lazy" />
                 <figcaption>Before</figcaption>
               </figure>
               <figure class="before-after__figure">
@@ -206,11 +206,11 @@ const sections = [
             <p class="before-after__desc">The Settings page previously relied on low-contrast placeholder text and lacked visible labels on many inputs. After the update, all form inputs have proper labels, category names use higher-contrast text, and the overall hierarchy is clearer.</p>
             <div class="before-after__pair">
               <figure class="before-after__figure">
-                <img src="/images/offline-budget/settings.png" alt="Before: Settings page with low-contrast secondary text and inputs lacking proper visible labels" loading="lazy" />
+                <img src="/images/offline-budget/settings-crop-annotated.png" alt="Before: Subscriptions and Expense Categories with low-contrast text and inputs lacking proper visible labels, problem areas circled in red" loading="lazy" />
                 <figcaption>Before</figcaption>
               </figure>
               <figure class="before-after__figure">
-                <img src="/images/offline-budget/settings-after.png" alt="After: Settings page with improved text contrast, proper form labels on all inputs, and clearer visual hierarchy" loading="lazy" />
+                <img src="/images/offline-budget/settings-after-crop-annotated.png" alt="After: Subscriptions and Expense Categories with improved text contrast, proper form labels, and clearer hierarchy, improvements circled in green" loading="lazy" />
                 <figcaption>After</figcaption>
               </figure>
             </div>
@@ -238,12 +238,6 @@ const sections = [
               <h3>What It Solved</h3>
               <p>Eliminated hours of manual spreadsheet work each month. CSV import and auto-categorization handle the tedious parts, while balance snapshots and review workflows keep me actively verifying the numbers. My financial data never touches a third-party server.</p>
             </div>
-          </div>
-          <div class="user-intro__stats reveal" style="justify-content: center;">
-            <div class="case-hero__badge">1,300+ transactions<span class="case-hero__badge-label">Real daily usage</span></div>
-            <div class="case-hero__badge">100% offline<span class="case-hero__badge-label">No server, no account</span></div>
-            <div class="case-hero__badge">100+ auto-rules<span class="case-hero__badge-label">Smart categorization</span></div>
-            <div class="case-hero__badge">5 core views<span class="case-hero__badge-label">Review, Summary, Trends, Balances, Settings</span></div>
           </div>
         </div>
       </section>

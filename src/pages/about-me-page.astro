@@ -9,27 +9,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h1 id="about-hero-heading">Hi, I'm Lidia</h1>
           <p class="mt-md">I didn't come to accessibility through UX — I came to UX through accessibility. After 7 years teaching math and working closely with autistic, disabled, and neurodivergent students, I now design products that remove the barriers I watched my students hit every day.</p>
+          <div class="recent-wins mt-md">
+            <div class="recent-win recent-win--orange">
+              <span class="recent-win__label">Recent Win #1</span>
+              140% boost in EOC pass rates<span class="recent-win__sub">Inclusive, data-informed instruction at Bob Hope HS</span>
+            </div>
+            <div class="recent-win recent-win--teal">
+              <span class="recent-win__label">Recent Win #2</span>
+              980% boost in AAC use<span class="recent-win__sub">ComBoard AAC tool for a disabled student</span>
+            </div>
+            <div class="recent-win" style="background: var(--color-bg); border: 2px solid var(--color-shadow); border-right-width: 4px; border-bottom-width: 4px;">
+              <span class="recent-win__label">Location</span>
+              Seattle, WA<span class="recent-win__sub">Open to remote &amp; hybrid</span>
+            </div>
+          </div>
         </div>
         <div class="about-hero__image about-hero__image--circle">
           <img
-            src="/images/lidia-profile.png"
-            alt="Lidia smiles, wearing a mustard yellow cardigan and reclining on a bright orange park bench."
+            src="/images/lidia-ruins-crop.jpg"
+            alt="Lidia grins while peeking through a stone opening at a desert ruins site."
             loading="eager"
           />
-        </div>
-        <div class="recent-wins">
-          <div class="recent-win recent-win--orange">
-            <span class="recent-win__label">Recent Win #1</span>
-            140% increase in EOC pass rates<span class="recent-win__sub">Inclusive, data-informed instruction at Bob Hope HS</span>
-          </div>
-          <div class="recent-win recent-win--teal">
-            <span class="recent-win__label">Recent Win #2</span>
-            980% increase in independent spelling<span class="recent-win__sub">ComBoard AAC tool for a disabled student</span>
-          </div>
-          <div class="recent-win" style="background: var(--color-bg); border: 2px solid var(--color-shadow); border-right-width: 4px; border-bottom-width: 4px;">
-            <span class="recent-win__label">Location</span>
-            Seattle, WA<span class="recent-win__sub">Open to remote &amp; hybrid</span>
-          </div>
         </div>
       </div>
     </div>
@@ -117,12 +117,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- What I'm Looking For -->
   <section class="section" aria-labelledby="looking-for-heading">
     <div class="container">
-      <h2 id="looking-for-heading" class="reveal">What I'm Looking For</h2>
-      <p class="reveal" style="max-width: 42rem;">I'm looking for a product design role where accessibility is part of the design culture. I do my best work on teams that value research, care about the people they're building for, and give designers room to advocate for inclusive solutions.</p>
-      <a href="/#contact" class="hero__cta reveal" style="display: inline-block; margin-top: var(--space-md);">
-        Let's talk
-        <span aria-hidden="true">&rarr;</span>
-      </a>
+      <div class="looking-for reveal">
+        <div class="looking-for__right">
+          <img
+            src="/images/about/lidia-gallery.jpg"
+            alt="Lidia smiles in a black blazer at her Our Light Unbound art exhibition."
+            class="looking-for__photo"
+            loading="lazy"
+          />
+          <a href="/#contact" class="hero__cta">
+            Let's talk
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+        <div class="looking-for__text">
+          <h2 id="looking-for-heading">What I'm Looking For</h2>
+          <p class="mt-sm">I'm looking for a product design role where accessibility is part of the design culture. I do my best work on teams that value research, care about the people they're building for, and give designers room to advocate for inclusive solutions.</p>
+        </div>
+      </div>
     </div>
   </section>
 

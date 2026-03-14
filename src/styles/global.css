@@ -40,6 +40,7 @@
 
   /* Card tint — light blue default, overridden to project color on case studies */
   --color-card-tint: var(--color-teal);
+  --color-card-bg: #f0fafa; /* fallback for browsers without color-mix() */
   --color-card-bg: color-mix(in srgb, var(--color-card-tint) 10%, var(--color-bg));
 
   --font-heading: 'Bricolage Grotesque', 'Raleway', sans-serif;
@@ -71,16 +72,27 @@
     --color-text: #e8e8e8;
     --color-text-secondary: #aaaaaa;
     --color-nav-bg: #222222;
+    --color-card-bg: #1d2224; /* fallback for browsers without color-mix() */
     --color-card-bg: color-mix(in srgb, var(--color-card-tint) 6%, var(--color-bg));
     --color-border: #333333;
     --color-link: #e8e8e8;
-    --color-link-hover: #ffd44f;
+    --color-link-hover: #d4b03e;
     --color-footer-bg: #1e3a4a;
     --color-footer-text: #e8e8e8;
     --color-hero-bg: #161616;
     --color-badge-bg: #3a3a3a;
     --color-badge-text: #bbbbbb;
-    --color-shadow: #555555;
+    --color-shadow: #000000;
+
+    /* Muted brand palette for dark theme */
+    --color-orange: #d99300;
+    --color-teal: #3a9ea8;
+    --color-green: #5cb339;
+    --color-mauve: #9c8a9c;
+    --color-pink: #cc2e72;
+    --color-blue: #a3cdd2;
+    --color-accent: #d4b03e;
+    --color-accent-hover: #c4a232;
   }
 }
 
@@ -271,6 +283,7 @@ strong {
 .site-header__nav-link {
   font-size: 0.875rem;
   font-weight: 500;
+  color: #2d2d2d;
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-full);
   white-space: nowrap;
@@ -285,7 +298,7 @@ strong {
 
 .site-header__nav-link:hover {
   filter: brightness(0.88);
-  color: var(--color-text);
+  color: #2d2d2d;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -338,7 +351,7 @@ strong {
   padding: var(--space-xs) var(--space-sm);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: #2d2d2d;
   background: var(--item-accent, var(--color-accent));
   border-radius: var(--radius-full);
   border: 2px solid var(--color-shadow);
@@ -349,7 +362,7 @@ strong {
 
 .projects-dropdown__item:hover {
   filter: brightness(0.88);
-  color: var(--color-text);
+  color: #2d2d2d;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -417,6 +430,7 @@ strong {
   display: block;
   padding: var(--space-xs) var(--space-md);
   font-size: 0.9375rem;
+  color: #2d2d2d;
   border-radius: var(--radius-full);
   border: 2px solid var(--color-shadow);
   border-right-width: var(--border-neo-thick);
@@ -456,7 +470,7 @@ strong {
   gap: var(--space-xs);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: #2d2d2d;
   background: var(--color-orange);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-full);
@@ -468,7 +482,7 @@ strong {
 
 .hero__cta:hover {
   background: #e69a00;
-  color: var(--color-text);
+  color: #2d2d2d;
   filter: brightness(0.88);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -481,7 +495,7 @@ strong {
   gap: var(--space-xs);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: #2d2d2d;
   background: var(--color-mauve);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-full);
@@ -493,7 +507,7 @@ strong {
 
 .about-preview__cta:hover {
   background: #a890a8;
-  color: var(--color-text);
+  color: #2d2d2d;
   filter: brightness(0.88);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -783,7 +797,7 @@ strong {
   gap: 0.25rem;
   font-weight: 600;
   font-size: 0.875rem;
-  color: var(--color-text);
+  color: #2d2d2d;
   background: var(--card-accent, var(--color-accent));
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-full);
@@ -794,7 +808,7 @@ strong {
 }
 
 .project-card__cta:hover {
-  color: var(--color-text);
+  color: #2d2d2d;
   filter: brightness(0.88);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -874,7 +888,7 @@ strong {
 }
 
 .side-nav__link[aria-current="true"] {
-  color: var(--color-text);
+  color: #2d2d2d;
   font-weight: 600;
 }
 
@@ -1875,7 +1889,7 @@ strong {
   border-top: 3px solid var(--color-shadow);
 }
 
-.site-footer a {
+.site-footer a:not(.site-footer__link) {
   color: var(--color-footer-text);
 }
 
@@ -1922,6 +1936,7 @@ strong {
   align-items: center;
   gap: var(--space-xs);
   padding: var(--space-xs) var(--space-md);
+  color: #2d2d2d;
   border: 2px solid var(--color-shadow);
   border-right-width: var(--border-neo-thick);
   border-bottom-width: var(--border-neo-thick);
@@ -1933,7 +1948,7 @@ strong {
 
 .site-footer__link:hover {
   filter: brightness(0.88);
-  color: var(--color-text);
+  color: #2d2d2d;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

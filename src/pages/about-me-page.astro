@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="about-hero reveal">
         <div>
           <h1 id="about-hero-heading">Hi, I'm Lidia</h1>
-          <p class="mt-md">I am a UX/Product designer in Seattle, WA specializing in accessible learning and financial tools. I spent 7 years teaching math and working closely with autistic, disabled, and other diverse learners. I now use that experience to design products that remove barriers for disabled and neurodivergent individuals.</p>
+          <p class="mt-md">I didn't come to accessibility through UX — I came to UX through accessibility. After 7 years teaching math and working closely with autistic, disabled, and neurodivergent students, I now design products that remove the barriers I watched my students hit every day.</p>
         </div>
         <div class="about-hero__image about-hero__image--circle">
           <img
@@ -26,6 +26,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="recent-win__label">Recent Win #2</span>
             980% increase in independent spelling<span class="recent-win__sub">ComBoard AAC tool for a disabled student</span>
           </div>
+          <div class="recent-win" style="background: var(--color-bg); border: 2px solid var(--color-shadow); border-right-width: 4px; border-bottom-width: 4px;">
+            <span class="recent-win__label">Location</span>
+            Seattle, WA<span class="recent-win__sub">Open to remote &amp; hybrid</span>
+          </div>
         </div>
       </div>
     </div>
@@ -35,15 +39,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section" aria-labelledby="core-skills-heading">
     <div class="container">
       <h2 id="core-skills-heading" class="reveal">Core Skills</h2>
+      <h3 class="reveal">What I Do</h3>
       <ul class="skills-list reveal" role="list">
-        <li class="skill-tag">User Research</li>
-        <li class="skill-tag">Design Thinking</li>
-        <li class="skill-tag">Collaboration</li>
-        <li class="skill-tag">User Testing</li>
-        <li class="skill-tag">Figma</li>
-        <li class="skill-tag">Wireframing</li>
-        <li class="skill-tag">Prototyping</li>
-        <li class="skill-tag">Design Systems</li>
+        <li class="skill-tag">User Research (20+ interviews across 6 projects)</li>
+        <li class="skill-tag">Accessibility Auditing (WCAG 2.2, Stark, axe)</li>
+        <li class="skill-tag">Prototyping &amp; Design Systems (Figma)</li>
+        <li class="skill-tag">Front-End Prototyping (HTML, CSS, Astro)</li>
+      </ul>
+      <h3 class="reveal">What I Bring</h3>
+      <ul class="skills-list reveal" role="list">
+        <li class="skill-tag">7 years teaching diverse learners</li>
+        <li class="skill-tag">Participatory design with disabled users</li>
+        <li class="skill-tag">Exhibit curation &amp; community programming</li>
+        <li class="skill-tag">AI-assisted design workflows</li>
+        <li class="skill-tag">Building functional tools, not just prototypes</li>
       </ul>
     </div>
   </section>
@@ -53,13 +62,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <h2 id="my-story-heading" class="reveal">My Story</h2>
 
-      <!-- Inclusive at School & in UX Design -->
+      <!-- The Moment I Noticed -->
       <div class="story-section reveal">
         <div>
-          <h3>Inclusive at School &amp; in UX Design</h3>
-          <p class="mt-sm">Empathy, collaboration, and inclusivity have driven my work in the classroom. Every day of my career, I have used data, technology, and one-on-one support to help students get closer to their goals. I am proud to say that these efforts contributed to a 140% increase in Algebra I EOC pass rates during my time at BHS.</p>
-          <p>One of the most impactful parts of my teaching career was my time working as a support to a non-speaking student with cerebral palsy. Learning to co-create communication strategies with her and her family inspired my work on ComBoard, a personalized AAC for that student.</p>
-          <p>These experiences are what has led me to UX and inspired my passion for accessible, inclusive, and educational product design that supports the neurodivergent and disabled user.</p>
+          <h3>The Moment I Noticed</h3>
+          <p class="mt-sm">In my fourth year teaching, I met a nonspeaking student with cerebral palsy who had rejected every AAC device. They exhausted her, blocked her face, and simply did not work for her because they weren't designed for her, but for the average user. I saw her frustration, and got to work building something with her that would actually solve her problems. Working with her and her family to co-create communication strategies became the most meaningful work of my teaching career. From this effort came ComBoard, a personalized AAC tool that increased the student's independent spelling by 980%.</p>
+          <p>That experience changed how I saw every tool, every app, every interface. I started noticing who was being left out of the design process in assistive technology, in learning software, in finance tools, and even in physical spaces. The defaults are not working for everyone.</p>
+          <p>This wasn't my first time redesigning around the user. At Bob Hope High School, I rebuilt my Algebra I instruction using student data, differentiated support, and accessible technology — raising end-of-course pass rates by 140%. I was doing UX before I knew the term.</p>
         </div>
         <div class="story-section__image">
           <img
@@ -70,12 +79,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <!-- Research Driven -->
+      <!-- The Shift -->
       <div class="story-section story-section--reverse reveal">
         <div>
-          <h3>Research Driven</h3>
-          <p class="mt-sm">UX work has sharpened my education skills in several ways. I have conducted market research, usability studies, created affinity maps in Miro, and crafted personas based on user interviews. I have created wireframes and iterated on low and high fidelity flows in Figma, using data and feedback to best meet user needs.</p>
-          <p>I have even applied current AI tools to super power my design process and assist with prototyping while staying true to user needs, design goals, and best practices.</p>
+          <h3>The Shift</h3>
+          <p class="mt-sm">I started learning UX the way I teach — by doing. I conducted user interviews, built affinity maps, ran usability studies, and iterated on wireframes and prototypes in Figma. Each project sharpened a different skill: ComBoard taught me participatory design with a real user. The Budget App taught me to scope an MVP around one critical moment. The Offline Budget Tool taught me to ship — to build something real, use it daily, and fix what breaks.</p>
+          <p>Along the way, I earned Google's UX Design Professional Certificate, which formalized the research and design thinking methods I was already practicing. But the foundation — designing <em>with</em> the people you're designing <em>for</em> — came from the classroom.</p>
         </div>
         <div class="story-section__image">
           <img
@@ -86,11 +95,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <!-- Google UX Certificate (Audit #20 — fix alt text) -->
+      <!-- The Practice -->
       <div class="story-section reveal">
         <div>
-          <h3>Google UX Certificate</h3>
-          <p class="mt-sm">In 2025, I completed Google's comprehensive UX Design professional certification program, mastering the fundamentals of user-centered design through hands on projects and real world applications. This intensive program deepened my understanding of design thinking, user research methodologies, wireframing, prototyping, and usability testing — reinforcing the foundation that drives my inclusive design approach.</p>
+          <h3>The Practice</h3>
+          <p class="mt-sm">Today, my work sits at the intersection of accessibility, education, and financial tools. I've curated an art exhibition with 1,000+ visitors, built an accessibility consulting site with free evaluation tools for EdTech, designed and shipped an offline budgeting tool I use to manage my own finances, and rebuilt this portfolio from Webflow to hand-coded Astro to practice what I preach about performance and semantic HTML.</p>
+          <p>I also use AI-assisted workflows — from generating demo datasets to auditing accessibility gaps to accelerating code iteration — as tools that support the design process, not replace it.</p>
+          <p>What I bring to a team: the ability to see a problem from the user's perspective — especially users who have been overlooked — and the technical skills to move from research to shipped product.</p>
         </div>
         <div class="story-section__image">
           <img
@@ -100,6 +111,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           />
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- What I'm Looking For -->
+  <section class="section" aria-labelledby="looking-for-heading">
+    <div class="container">
+      <h2 id="looking-for-heading" class="reveal">What I'm Looking For</h2>
+      <p class="reveal" style="max-width: 42rem;">I'm looking for a product design role where accessibility is part of the design culture. I do my best work on teams that value research, care about the people they're building for, and give designers room to advocate for inclusive solutions.</p>
+      <a href="/#contact" class="hero__cta reveal" style="display: inline-block; margin-top: var(--space-md);">
+        Let's talk
+        <span aria-hidden="true">&rarr;</span>
+      </a>
     </div>
   </section>
 

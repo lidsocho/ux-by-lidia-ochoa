@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(node:*)",
+      "Bash(cp:*)",
+      "Bash(unzip:*)",
+      "Bash(ls -lh \"C:/Users/qwer1/OneDrive/Desktop/ux-by-lidia-ochoa/\"IMG_*)"
     ]
   }
 }

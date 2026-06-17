@@ -5,6 +5,7 @@ import PrevNextNav from '../components/PrevNextNav.astro';
 
 const sections = [
   { id: 'overview', label: 'Overview' },
+  { id: 'campaign-design', label: 'Campaign & Brand Design' },
   { id: 'curation', label: 'Curation & Planning' },
   { id: 'community', label: 'Community & Social Media' },
   { id: 'the-exhibition', label: 'The Exhibition' },
@@ -15,7 +16,7 @@ const sections = [
   { id: 'next-steps', label: 'Next Steps' },
 ];
 ---
-<BaseLayout title="Our Light Unbound — Case Study | Lidia Ochoa" description="Designing an accessible art exhibition website that celebrates resilience through an inclusive, dark-themed gallery experience." projectColor="#bea7be" ogImage="/images/home/our-light-thumb.png">
+<BaseLayout title="Our Light Unbound — Brand & Campaign Design | Lidia Ochoa" description="Designing the brand identity and full promotional campaign — flyers, social graphics, and event collateral — for a month-long art exhibition, plus an accessible mobile-first digital catalogue." projectColor="#bea7be" ogImage="/images/home/our-light-thumb.png">
 
   <!-- Hero -->
   <section class="case-hero">
@@ -24,11 +25,11 @@ const sections = [
         <h1>Our Light Unbound</h1>
         <dl class="case-hero__meta">
           <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Jun 2024 – Jan 2026</dd></div>
-          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Co-Curator, Design &amp; Dev</dd></div>
-          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Google Drive, Eventbrite, Instagram, Figma, HTML/CSS/JS</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Co-Curator · Campaign &amp; Brand Design · Web Design &amp; Dev</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Figma, Canva, Eventbrite, Instagram, HTML/CSS/JS</dd></div>
         </dl>
         <div class="case-hero__tagline-row">
-          <p class="case-hero__tagline">A mobile-first digital catalogue for a curated art exhibition — designed so every visitor can pull up the catalogue on their phone while standing in the gallery, discovering the art and artists behind a show celebrating hope, resilience, and creative freedom.</p>
+          <p class="case-hero__tagline">Brand identity and a full promotional campaign — event flyers, social graphics, and event collateral — for a month-long community art exhibition, paired with an accessible, mobile-first digital catalogue. A cohesive visual system carried across formats, from Instagram to the gallery wall to the phone in every visitor's hand.</p>
           <a href="https://lidsocho.github.io/our-light-unbound/" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="View the live Our Light Unbound site (opens in new tab)">
             View Live Site &rarr;
           </a>
@@ -87,11 +88,56 @@ const sections = [
         </div>
       </section>
 
+      <!-- Campaign & Brand Design -->
+      <section class="case-section section" id="campaign-design" aria-labelledby="campaign-design-heading">
+        <div class="container">
+          <h2 id="campaign-design-heading" class="case-section__heading reveal">Campaign &amp; Brand Design</h2>
+          <p class="reveal">Beyond the digital catalogue, the exhibition needed to be <em>seen</em> — across Instagram, printed flyers, gallery windows, and event listings. I designed most of the promotional campaign: the exhibition poster, the landscape exhibit ad, social graphics, and the event-series collateral, working from a shared visual identity developed in collaboration with my co-curator Yaz, who also led merch design.</p>
+          <p class="reveal">The challenge was consistency across very different formats and audiences. One brand system — the <strong>"Our Light UnBound" wordmark</strong>, a twilight gradient palette (deep purples, warm gold, and dawn tones), and a distinctive display typeface — had to hold together whether it appeared as a portrait flyer, a square Instagram post, or a landscape ad. Every piece carries the same lockup, a clear call to action, and a scannable QR code, with the 4Culture sponsor acknowledgment where required.</p>
+          <p class="workshop-hint reveal">Click any piece to see it full size with design notes.</p>
+
+          <div class="flush-grid cols-2 reveal">
+            <figure class="photo-figure" data-lightbox data-description="Main exhibition poster (portrait). The hero promotional piece, used for print and digital. Establishes the brand: the 'Our Light UnBound' wordmark, twilight gradient, and featured artwork. Anchors the key details — dates, 'FREE' admission, venue — with a scannable QR code and 4Culture sponsor acknowledgment. Designed to read clearly at a glance on a gallery window or an Instagram feed.">
+              <img src="/images/our-light-unbound/campaign-poster.png" alt="Our Light Unbound exhibition poster with the wordmark, featured artwork, dates, free admission, and a QR code on a deep twilight gradient background" loading="lazy" />
+              <figcaption>Main exhibition poster</figcaption>
+            </figure>
+            <figure class="photo-figure" data-lightbox data-description="Exhibition ad (landscape). The same brand system adapted to a horizontal format for listings and digital placements. Leads with the show's mission statement — a community-centered, free art exhibition featuring BIPOC artists — with the dates, venue (Slip Gallery, Seattle), QR code, and 4Culture lockup. Demonstrates carrying one identity across aspect ratios without losing hierarchy.">
+              <img src="/images/our-light-unbound/campaign-exhibit-ad.png" alt="Landscape Our Light Unbound exhibit ad with the mission statement, exhibition dates, venue, QR code, and 4Culture logo on a glowing gradient" loading="lazy" />
+              <figcaption>Exhibition ad — landscape format</figcaption>
+            </figure>
+            <figure class="photo-figure" data-lightbox data-description="Open call for art (Instagram, square). A recruitment post inviting artists to submit work, built in the same visual system but with its own job to do: a bold 'Open Call for Art' headline framed by wavy accent rules, a submission QR code, and the December 1 deadline. Posted to @our_light_unbound during the outreach phase.">
+              <img src="/images/our-light-unbound/campaign-open-call.png" alt="Open Call for Art Instagram graphic for Our Light Unbound with the wordmark, a bold call-to-submit headline, a QR code, submission deadline, and venue on a twilight gradient" loading="lazy" />
+              <figcaption>Open call for art — Instagram</figcaption>
+            </figure>
+            <figure class="photo-figure" data-lightbox data-description="Event-series graphic. A schedule layout promoting the month's free programming — opening night, zine making, and the artist talk — using dated cards, strong date/title hierarchy, an 'RSVP on Eventbrite' call to action, and a QR code. Built so the same template could be reused as individual event flyers.">
+              <img src="/images/our-light-unbound/campaign-events.png" alt="Free Upcoming Events graphic listing opening night, zine making, and artist talk with dates, descriptions, an RSVP call to action, and a QR code" loading="lazy" />
+              <figcaption>Event-series promotion</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="reveal">Design decisions</h3>
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V4h16v3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
+              <p class="decision-card__response"><strong>One system, many formats:</strong> a single wordmark, palette, and type treatment carried across portrait, square, and landscape layouts so the show was instantly recognizable wherever it appeared.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+              <p class="decision-card__response"><strong>Legibility on dark, atmospheric art:</strong> high-contrast headline type and restrained body copy over rich gradient backgrounds keep details readable on a phone screen or a printed flyer alike.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><rect x="14" y="14" width="6" height="6"/></svg></div>
+              <p class="decision-card__response"><strong>Always a next step:</strong> every asset pairs a clear call to action with a QR code, turning a glance into an RSVP, a catalogue scan, or a gallery visit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Curation & Planning -->
       <section class="case-section section" id="curation" aria-labelledby="curation-heading">
         <div class="container">
           <h2 id="curation-heading" class="case-section__heading reveal">Curation &amp; Planning</h2>
-          <p class="reveal">Yaz and I began planning "Our Light Unbound" a year and a half before opening night. We used Google Drive as our shared workspace, building out a detailed month-by-month timeline with buffer room for the unexpected — travel schedules, shifting deadlines, and the realities of coordinating with a group of working artists. We divided responsibilities clearly: I led workshop scheduling, artist communication, reception logistics, and the digital catalogue; Yaz focused on merch design, social media content, and visual identity for promotional materials.</p>
+          <p class="reveal">Yaz and I began planning "Our Light Unbound" a year and a half before opening night. We used Google Drive as our shared workspace, building out a detailed month-by-month timeline with buffer room for the unexpected — travel schedules, shifting deadlines, and the realities of coordinating with a group of working artists. We divided responsibilities clearly: I led workshop scheduling, artist communication, reception logistics, the digital catalogue, and most of the promotional design — the poster, exhibit ad, social graphics, and event collateral; Yaz led merch design and the show's core visual identity, which we shaped together.</p>
 
           <div class="reveal">
             <figure class="photo-figure">
@@ -118,7 +164,7 @@ const sections = [
             </div>
             <div class="next-step">
               <h3 class="next-step__title">Jun – Sep 2025: Design &amp; Production</h3>
-              <p class="next-step__text"><strong>Yaz:</strong> Completed design for flyers, window display, and merch. Began artist shoutout campaign on social media.<br/><strong>Lidia:</strong> Hired a musician for the reception. Built Eventbrite pages for all events and workshops. Started digitally organizing the gallery layout.<br/><strong>Together:</strong> Outreach and planning for opening night — including requirements for the wine bar.</p>
+              <p class="next-step__text"><strong>Yaz:</strong> Completed the window display and merch designs, and shaped the show's core visual identity. Began artist shoutout campaign on social media.<br/><strong>Lidia:</strong> Designed the exhibition poster, exhibit ad, and promotional social graphics. Hired a musician for the reception. Built Eventbrite pages for all events and workshops. Started digitally organizing the gallery layout.<br/><strong>Together:</strong> Outreach and planning for opening night — including requirements for the wine bar.</p>
             </div>
             <div class="next-step">
               <h3 class="next-step__title">Oct – Nov 2025: Final Production</h3>
@@ -375,8 +421,8 @@ const sections = [
           </div>
 
           <PrevNextNav
-            prev={{ title: "A11y Consulting", href: "/a11y-consulting" }}
-            next={{ title: "Offline Budget Tool", href: "/offline-budget" }}
+            prev={{ title: "Budget App", href: "/budgetapp" }}
+            next={{ title: "Portfolio Site", href: "/portfolio-site" }}
           />
         </div>
       </section>

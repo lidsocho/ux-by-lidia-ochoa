@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SideNav from '../components/SideNav.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+
+const sections = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'brand-research', label: 'Brand Research' },
+  { id: 'localization', label: 'Localization Strategy' },
+  { id: 'design-decisions', label: 'Design Decisions' },
+  { id: 'the-assets', label: 'The Assets' },
+  { id: 'learnings', label: 'What I Learned' },
+];
+---
+<BaseLayout title="Synology LATAM Concept Campaign — Marketing Design | Lidia Ochoa" description="A concept bilingual mini-campaign for Synology's DS124 NAS — adapting the same creative across Spanish and English while maintaining brand consistency." projectColor="#2684FF" ogImage="/images/home/synology-thumb.png">
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="reveal">
+        <h1>Synology LATAM Campaign</h1>
+        <dl class="case-hero__meta">
+          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>Jun 2026 (concept)</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Marketing Design &amp; Localization</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Figma</dd></div>
+        </dl>
+        <div class="case-hero__tagline-row">
+          <p class="case-hero__tagline">A concept bilingual mini-campaign for Synology's DiskStation DS124 — adapting the same creative across Spanish and English while keeping brand consistency, proving I don't just translate, I adapt design and message for the LATAM audience.</p>
+          <div class="disclaimer-callout">
+            <strong>Speculative / concept work.</strong> This is an original, self-initiated project created for my portfolio. It is not affiliated with, endorsed by, or produced for Synology Inc. All trademarks, product names, and product imagery belong to their respective owners.
+          </div>
+        </div>
+      </div>
+      <div class="synology-hero-assets reveal">
+        <img src="/images/synology/social-square-es.png" alt="Synology LATAM social media square in Spanish — dark background, DS124 product photo, headline 'Tu trabajo, siempre seguro' with blue accent text, and a 'Mas informacion' CTA button" class="synology-hero-assets__square" />
+        <img src="/images/synology/web-banner-es.png" alt="Synology LATAM web banner in Spanish — landscape format featuring the DS124, headline 'Almacenamiento que crece contigo' with feature icons for remote access, smart backup, and cloud sync" class="synology-hero-assets__banner" />
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- Overview -->
+      <section class="case-section section" id="overview" aria-labelledby="overview-heading">
+        <div class="container">
+          <h2 id="overview-heading" class="case-section__heading reveal">Overview</h2>
+          <p class="reveal">I created a concept bilingual mini-campaign for a Synology LATAM product to demonstrate how I'd approach localized marketing design. The campaign targets the DiskStation DS124, a prosumer/SMB NAS device, with assets designed for Instagram, Facebook, LinkedIn, and web use.</p>
+          <div class="problem-statement reveal">The core challenge: how do you adapt a single creative across two languages and multiple formats while maintaining brand consistency, respecting the target audience's cultural context, and following Synology's established design language?</div>
+
+          <div class="goals-frustrations-banner reveal">
+            <div class="goals-frustrations-banner__inner">
+              <div>
+                <h3>Goals</h3>
+                <ul class="styled-list">
+                  <li>Demonstrate bilingual (EN/ES) marketing design at a professional level</li>
+                  <li>Maintain visual and tonal consistency across languages and formats</li>
+                  <li>Follow Synology's actual brand guidelines — typography, color, logo usage, product naming</li>
+                  <li>Adapt messaging to match the DS124's real professional positioning</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Constraints</h3>
+                <ul class="styled-list">
+                  <li>Concept work — no access to internal brand assets or style guides beyond what's public</li>
+                  <li>Must clearly read as unofficial/concept, not imply Synology endorsement</li>
+                  <li>All copy adapted (not just translated) for natural LATAM Spanish</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand Research -->
+      <section class="case-section section" id="brand-research" aria-labelledby="brand-research-heading">
+        <div class="container">
+          <h2 id="brand-research-heading" class="case-section__heading reveal">Brand Research</h2>
+          <p class="reveal">Before designing anything, I audited Synology's public-facing brand presence to reverse-engineer their design language and ensure my concept work would feel authentic.</p>
+
+          <h3 class="reveal">What I Found</h3>
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <p class="decision-card__response"><strong>Dark aesthetic:</strong> Synology's website and marketing use deep blacks (#0B0D10) and dark backgrounds, creating a tone of security and sophistication — not the navy gradients common in generic tech marketing.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-card__response"><strong>Typography:</strong> Inter is used across their web presence — clean, professional, highly legible at small sizes. Not the rounder/heavier Poppins that many tech brands default to.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-card__response"><strong>Brand blue:</strong> Their signature accent blue appears consistently across CTAs and highlights. I matched this exactly from their site rather than approximating.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-card__response"><strong>Product positioning:</strong> The DS124 product page targets professionals and small businesses — "Take command of your most important data." This informed my copy direction away from personal/consumer messaging.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-card__response"><strong>Logo rules:</strong> White-on-dark is an approved variation. The registered trademark symbol (&#174;) is always present. "DiskStation" is written as one capitalized word per their naming guidelines.</p>
+            </div>
+            <div class="decision-card">
+              <p class="decision-card__response"><strong>Tone:</strong> Corporate-professional with accessibility — clear feature documentation over aggressive marketing. CTAs are simple: "Learn more" rather than urgency-driven language.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Localization Strategy -->
+      <section class="case-section section" id="localization" aria-labelledby="localization-heading">
+        <div class="container">
+          <h2 id="localization-heading" class="case-section__heading reveal">Localization Strategy</h2>
+          <p class="reveal">The EN/ES pair is the strongest portfolio piece in this campaign. It proves that I don't just run copy through a translator — I adapt design, messaging, and cultural tone while keeping the visual system identical.</p>
+
+          <h3 class="reveal">Side by Side</h3>
+          <div class="two-col reveal">
+            <figure class="photo-figure">
+              <img src="/images/synology/social-square-es.png" alt="Spanish social square — 'Tu trabajo, siempre seguro' with DS124 product photo on dark background" loading="lazy" />
+              <figcaption>ES — "Tu trabajo, siempre seguro."</figcaption>
+            </figure>
+            <figure class="photo-figure">
+              <img src="/images/synology/social-square-en.png" alt="English social square — 'Your hard work, always safe' with DS124 product photo on dark background" loading="lazy" />
+              <figcaption>EN — "Your hard work, always safe."</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="reveal">What Changed Between Languages</h3>
+          <div class="goals-frustrations-banner reveal">
+            <div class="goals-frustrations-banner__inner">
+              <div>
+                <h3>Visual (Nothing)</h3>
+                <ul class="styled-list">
+                  <li>Same layout, spacing, and composition</li>
+                  <li>Same product image placement and size</li>
+                  <li>Same CTA style and position</li>
+                  <li>Same typographic hierarchy and weights</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Copy (Adapted, Not Translated)</h3>
+                <ul class="styled-list">
+                  <li>"Tu trabajo" / "Your hard work" — not a literal translation; both feel natural in their language</li>
+                  <li>"siempre seguro" / "always safe" — maintains the same emotional weight</li>
+                  <li>Subhead rewritten to flow naturally in each language rather than mirroring sentence structure</li>
+                  <li>CTA localized: "Mas informacion" / "Learn More"</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design Decisions -->
+      <section class="case-section section" id="design-decisions" aria-labelledby="design-decisions-heading">
+        <div class="container">
+          <h2 id="design-decisions-heading" class="case-section__heading reveal">Design Decisions</h2>
+
+          <h3 class="reveal">Why I Changed the Copy from "Memories" to "Work"</h3>
+          <p class="reveal">The initial brief used placeholder copy targeting personal/consumer use: "Your memories, always safe." After researching the DS124's actual product page, I found Synology positions this device squarely at professionals and small businesses. I adapted the messaging to match: "Your hard work, always safe" / "Tu trabajo, siempre seguro." This wasn't a deviation from the brief — it was an improvement based on actual product research.</p>
+
+          <h3 class="reveal">Dark Background over Navy Gradient</h3>
+          <p class="reveal">The initial HTML mockups used a navy-to-dark-blue gradient. Synology's actual marketing uses deep blacks. I matched the real aesthetic, which also provides stronger contrast for the product photography and white headline text.</p>
+
+          <h3 class="reveal">Real Product Photography</h3>
+          <p class="reveal">The initial mockups used a CSS-drawn NAS illustration as a placeholder. I replaced this with the actual DS124 product render, immediately making the designs read as legitimate marketing rather than generic tech mockups.</p>
+
+          <h3 class="reveal">Icon-Based Feature Bullets (Web Banner)</h3>
+          <p class="reveal">The original web banner used pill-shaped text badges for features. I replaced these with icon + text pairs (clipboard for access, checkmark for backup, cloud for sync) which are more scannable at the small sizes a web banner is typically viewed at.</p>
+        </div>
+      </section>
+
+      <!-- The Assets -->
+      <section class="case-section section" id="the-assets" aria-labelledby="the-assets-heading">
+        <div class="container">
+          <h2 id="the-assets-heading" class="case-section__heading reveal">The Assets</h2>
+
+          <h3 class="reveal">01 — Social Square (ES) &middot; 1080&times;1080</h3>
+          <p class="reveal">Instagram/Facebook post targeting LATAM Spanish-speaking professionals. Features the DiskStation DS124 product line label, professional-focused headline, and synology.com/es-latam URL.</p>
+          <img src="/images/synology/social-square-es.png" alt="Full-size Spanish social media square: dark background with Synology logo, 'DiskStation DS124' label, headline 'Tu trabajo, siempre seguro' with 'seguro' in brand blue, body copy about secure private cloud access, DS124 product photo on right, and blue 'Mas informacion' CTA pill button" class="reveal" loading="lazy" />
+
+          <h3 class="reveal">02 — Social Square (EN) &middot; 1080&times;1080</h3>
+          <p class="reveal">Same creative, localized for English. Identical layout and visual weight; copy adapted (not literally translated) for natural English. URLs point to synology.com (global) instead of the LATAM subdomain.</p>
+          <img src="/images/synology/social-square-en.png" alt="Full-size English social media square: identical layout to the Spanish version with headline 'Your hard work, always safe' — 'safe' highlighted in brand blue, adapted English body copy, and 'Learn More' CTA" class="reveal" loading="lazy" />
+
+          <h3 class="reveal">03 — Web Banner (ES) &middot; 1200&times;628</h3>
+          <p class="reveal">Landscape format for web, LinkedIn, and link previews. Features the "Almacenamiento que crece contigo" headline with three icon-paired feature callouts: remote access, smart backup, and cloud sync.</p>
+          <img src="/images/synology/web-banner-es.png" alt="Full-size Spanish web banner in landscape format: Synology logo and 'DiskStation DS124 para tu negocio' label at top, large headline 'Almacenamiento que crece contigo' with 'crece contigo' in brand blue, three feature rows with icons — access, backup, cloud sync — DS124 product render on right, and blue 'Mas informacion' CTA" class="reveal" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- Learnings -->
+      <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
+        <div class="container">
+          <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
+          <p class="reveal">Brand research before design saves rework. My first instinct was to use the brief's navy gradient and Poppins font, but spending time on Synology's actual website revealed a distinctly different design language — deeper blacks, Inter typeface, professional rather than consumer messaging. Starting from the brand's reality rather than assumptions produced more authentic work.</p>
+          <p class="reveal">Localization is design work, not translation work. The EN and ES versions look identical at a glance, but achieving that required conscious decisions about line breaks, character count differences, and natural phrasing in each language. "Mas informacion" and "Learn More" don't have the same character count — the layout has to accommodate both without breaking.</p>
+          <p class="reveal">Concept campaigns need a clear boundary. Marking this as unofficial and concept-only from the start (in the brief, in the presentation, and in the file naming) protects both my credibility and the brand's. It shows I understand how brand permissions work in a professional context.</p>
+
+          <PrevNextNav
+            prev={{ title: "Our Light Unbound", href: "/our-light-unbound" }}
+            next={{ title: "ComBoard", href: "/comboard-app" }}
+          />
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .disclaimer-callout {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--color-project, #2684FF);
+    background: var(--color-card-bg, rgba(38, 132, 255, 0.06));
+    border-radius: 0 6px 6px 0;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+  .synology-hero-assets {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    align-items: center;
+  }
+  .synology-hero-assets__square {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.18);
+  }
+  .synology-hero-assets__banner {
+    width: 100%;
+    max-width: 720px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.18);
+  }
+</style>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

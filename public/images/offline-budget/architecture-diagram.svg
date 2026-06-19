@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" fill="none" role="img" aria-label="Bb Budget cloud architecture diagram showing data flow from Browser through Supabase, Vercel Edge Functions, and Plaid">
+  <style>
+    .box { rx: 12; stroke-width: 2; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #2d2d2d; text-anchor: middle; }
+    .label-bold { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #2d2d2d; text-anchor: middle; }
+    .sub { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #666; text-anchor: middle; }
+    .group-label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; fill: #888; text-anchor: middle; letter-spacing: 1.5px; text-transform: uppercase; }
+    .arrow { stroke: #aaa; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .arrow-bi { stroke: #aaa; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); marker-start: url(#arrowhead-start); }
+    .arrow-label { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; fill: #999; text-anchor: middle; }
+    @media (prefers-color-scheme: dark) {
+      .label, .label-bold { fill: #e8e8e8; }
+      .sub { fill: #aaa; }
+      .group-label { fill: #888; }
+      .arrow, .arrow-bi { stroke: #666; }
+      .arrow-label { fill: #888; }
+    }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#aaa"/>
+    </marker>
+    <marker id="arrowhead-start" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto-start-reverse">
+      <path d="M8,0 L0,3 L8,6" fill="#aaa"/>
+    </marker>
+  </defs>
+
+  <!-- ==================== ROW 1: Browser ==================== -->
+  <text x="450" y="28" class="group-label">Client</text>
+
+  <!-- React App -->
+  <rect x="140" y="42" width="200" height="70" class="box" fill="#f0fafa" stroke="#4cc4cf"/>
+  <text x="240" y="72" class="label-bold">React 19 SPA</text>
+  <text x="240" y="90" class="sub">Tailwind CSS 4 + Recharts</text>
+
+  <!-- In-Memory State -->
+  <rect x="370" y="42" width="160" height="70" class="box" fill="#f0fafa" stroke="#4cc4cf"/>
+  <text x="450" y="72" class="label-bold">In-Memory State</text>
+  <text x="450" y="90" class="sub">Legacy data shape</text>
+
+  <!-- Cloud Adapter -->
+  <rect x="560" y="42" width="200" height="70" class="box" fill="#f0fafa" stroke="#4cc4cf"/>
+  <text x="660" y="67" class="label-bold">Cloud Adapter</text>
+  <text x="660" y="84" class="sub">Diff engine + optimistic</text>
+  <text x="660" y="98" class="sub">writes + realtime listener</text>
+
+  <!-- Arrows: React <-> State <-> Adapter -->
+  <line x1="340" y1="77" x2="370" y2="77" class="arrow-bi"/>
+  <line x1="530" y1="77" x2="560" y2="77" class="arrow-bi"/>
+
+  <!-- ==================== ROW 2: Supabase ==================== -->
+  <text x="300" y="168" class="group-label">Supabase</text>
+
+  <!-- Auth -->
+  <rect x="80" y="182" width="150" height="70" class="box" fill="#faf5f0" stroke="#e8a84c"/>
+  <text x="155" y="212" class="label-bold">Auth</text>
+  <text x="155" y="230" class="sub">Email + password + MFA</text>
+
+  <!-- PostgreSQL -->
+  <rect x="260" y="182" width="180" height="70" class="box" fill="#faf5f0" stroke="#e8a84c"/>
+  <text x="350" y="212" class="label-bold">PostgreSQL</text>
+  <text x="350" y="230" class="sub">RLS policies per table</text>
+
+  <!-- Realtime -->
+  <rect x="470" y="182" width="150" height="70" class="box" fill="#faf5f0" stroke="#e8a84c"/>
+  <text x="545" y="212" class="label-bold">Realtime</text>
+  <text x="545" y="230" class="sub">WebSocket subscriptions</text>
+
+  <!-- Edge Functions (Supabase) -->
+  <rect x="650" y="182" width="170" height="70" class="box" fill="#faf5f0" stroke="#e8a84c"/>
+  <text x="735" y="212" class="label-bold">Edge Functions</text>
+  <text x="735" y="230" class="sub">Invite emails + webhooks</text>
+
+  <!-- Arrows: Browser -> Supabase row -->
+  <line x1="200" y1="112" x2="155" y2="182" class="arrow"/>
+  <text x="155" y="150" class="arrow-label">session</text>
+
+  <line x1="660" y1="112" x2="545" y2="182" class="arrow-bi"/>
+  <text x="615" y="145" class="arrow-label">realtime sync</text>
+
+  <line x1="660" y1="112" x2="350" y2="182" class="arrow"/>
+  <text x="480" y="138" class="arrow-label">diff writes</text>
+
+  <!-- ==================== ROW 3: Vercel ==================== -->
+  <text x="300" y="310" class="group-label">Vercel</text>
+
+  <!-- Encryption Edge Function -->
+  <rect x="140" y="324" width="200" height="70" class="box" fill="#f5f0fa" stroke="#bea7be"/>
+  <text x="240" y="349" class="label-bold">Encryption Service</text>
+  <text x="240" y="367" class="sub">AES-GCM via Edge Functions</text>
+  <text x="240" y="381" class="sub">Keys never reach browser</text>
+
+  <!-- Plaid Token Exchange -->
+  <rect x="380" y="324" width="200" height="70" class="box" fill="#f5f0fa" stroke="#bea7be"/>
+  <text x="480" y="349" class="label-bold">Plaid Proxy</text>
+  <text x="480" y="367" class="sub">Token exchange + webhook</text>
+  <text x="480" y="381" class="sub">receiver + account mapping</text>
+
+  <!-- SPA Hosting -->
+  <rect x="620" y="324" width="180" height="70" class="box" fill="#f5f0fa" stroke="#bea7be"/>
+  <text x="710" y="354" class="label-bold">SPA Hosting</text>
+  <text x="710" y="372" class="sub">Static build + SPA routing</text>
+
+  <!-- Arrows: Supabase <-> Vercel -->
+  <line x1="350" y1="252" x2="240" y2="324" class="arrow-bi"/>
+  <text x="270" y="286" class="arrow-label">encrypt/decrypt</text>
+
+  <line x1="735" y1="252" x2="480" y2="324" class="arrow"/>
+  <text x="630" y="286" class="arrow-label">webhook relay</text>
+
+  <!-- ==================== ROW 4: Plaid ==================== -->
+  <text x="480" y="445" class="group-label">External</text>
+
+  <!-- Plaid -->
+  <rect x="350" y="458" width="200" height="55" class="box" fill="#f0faf2" stroke="#75d349"/>
+  <text x="450" y="483" class="label-bold">Plaid API</text>
+  <text x="450" y="498" class="sub">Bank account aggregation</text>
+
+  <!-- Arrow: Vercel -> Plaid -->
+  <line x1="480" y1="394" x2="450" y2="458" class="arrow-bi"/>
+  <text x="445" y="430" class="arrow-label">transactions</text>
+
+  <!-- Plaid Link arrow from browser -->
+  <path d="M 240 112 L 240 140 Q 240 150 230 150 L 90 150 Q 70 150 70 170 L 70 470 Q 70 490 90 490 L 350 490" class="arrow" stroke-dasharray="5,3"/>
+  <text x="60" y="340" class="arrow-label" text-anchor="end" transform="rotate(-90, 60, 340)">Plaid Link (browser)</text>
+</svg>

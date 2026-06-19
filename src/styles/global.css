@@ -1442,6 +1442,30 @@ strong {
   }
 }
 
+.view-modes-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+@media (min-width: 768px) {
+  .view-modes-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.view-modes-gallery figure { margin: 0; }
+.view-modes-gallery img {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border, #d6d3d1);
+}
+.view-modes-gallery figcaption {
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #78716c);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
 .decision-card {
   background: var(--color-card-bg);
   padding: var(--space-md);

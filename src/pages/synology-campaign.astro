@@ -5,11 +5,9 @@ import PrevNextNav from '../components/PrevNextNav.astro';
 
 const sections = [
   { id: 'overview', label: 'Overview' },
-  { id: 'brand-research', label: 'Brand Research' },
-  { id: 'localization', label: 'Localization Strategy' },
   { id: 'design-decisions', label: 'Design Decisions' },
-  { id: 'the-assets', label: 'The Assets' },
-  { id: 'learnings', label: 'What I Learned' },
+  { id: 'the-work', label: 'The Work' },
+  { id: 'reflection', label: 'Reflection' },
 ];
 ---
 <BaseLayout title="Synology LATAM Concept Campaign — Marketing Design | Lidia Ochoa" description="A concept bilingual mini-campaign for Synology's DS124 NAS — adapting the same creative across Spanish and English while maintaining brand consistency." projectColor="#2684FF" ogImage="/images/home/synology-thumb.png">
@@ -71,13 +69,13 @@ const sections = [
         </div>
       </section>
 
-      <!-- Brand Research -->
-      <section class="case-section section" id="brand-research" aria-labelledby="brand-research-heading">
+      <!-- Design Decisions -->
+      <section class="case-section section" id="design-decisions" aria-labelledby="design-decisions-heading">
         <div class="container">
-          <h2 id="brand-research-heading" class="case-section__heading reveal">Brand Research</h2>
-          <p class="reveal">Before designing anything, I audited Synology's public-facing brand presence to reverse-engineer their design language and ensure my concept work would feel authentic.</p>
+          <h2 id="design-decisions-heading" class="case-section__heading reveal">Design Decisions</h2>
 
-          <h3 class="reveal">What I Found</h3>
+          <h3 class="reveal">Brand research</h3>
+          <p class="reveal">Before designing, I audited Synology's public brand presence to reverse-engineer their design language.</p>
           <div class="decisions-grid reveal">
             <div class="decision-card">
               <p class="decision-card__response"><strong>Dark aesthetic:</strong> Synology's website and marketing use deep blacks (#0B0D10) and dark backgrounds, creating a tone of security and sophistication — not the navy gradients common in generic tech marketing.</p>
@@ -98,16 +96,10 @@ const sections = [
               <p class="decision-card__response"><strong>Tone:</strong> Corporate-professional with accessibility — clear feature documentation over aggressive marketing. CTAs are simple: "Learn more" rather than urgency-driven language.</p>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Localization Strategy -->
-      <section class="case-section section" id="localization" aria-labelledby="localization-heading">
-        <div class="container">
-          <h2 id="localization-heading" class="case-section__heading reveal">Localization Strategy</h2>
-          <p class="reveal">The EN/ES pair is the strongest portfolio piece in this campaign. It proves that I don't just run copy through a translator — I adapt design, messaging, and cultural tone while keeping the visual system identical.</p>
+          <h3 class="reveal">Localization</h3>
+          <p class="reveal">The EN/ES pair proves I don't just translate — I adapt design, messaging, and cultural tone while keeping the visual system identical.</p>
 
-          <h3 class="reveal">Side by Side</h3>
           <div class="two-col reveal">
             <figure class="photo-figure mock-watermark">
               <img src="/images/synology/social-square-es.png" alt="Spanish social square — 'Tu trabajo, siempre seguro' with DS124 product photo on dark background" loading="lazy" />
@@ -119,7 +111,7 @@ const sections = [
             </figure>
           </div>
 
-          <h3 class="reveal">What Changed Between Languages</h3>
+          <h3 class="reveal">What changed between languages</h3>
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
               <div>
@@ -142,32 +134,25 @@ const sections = [
               </div>
             </div>
           </div>
+
+          <h3 class="reveal">Copy direction</h3>
+          <p class="reveal">The initial brief used placeholder copy targeting personal/consumer use: "Your memories, always safe." After researching the DS124's actual product page, I adapted the messaging to match its professional positioning: "Your hard work, always safe" / "Tu trabajo, siempre seguro."</p>
+
+          <h3 class="reveal">Dark background over navy gradient</h3>
+          <p class="reveal">The initial mockups used a navy-to-dark-blue gradient. Synology's actual marketing uses deep blacks. I matched the real aesthetic, which also provides stronger contrast for product photography and white headline text.</p>
+
+          <h3 class="reveal">Real product photography</h3>
+          <p class="reveal">The initial mockups used a CSS-drawn NAS illustration. I replaced this with the actual DS124 product render, making the designs read as legitimate marketing rather than generic tech mockups.</p>
+
+          <h3 class="reveal">Icon-based feature bullets</h3>
+          <p class="reveal">The original web banner used pill-shaped text badges. I replaced these with icon + text pairs (clipboard for access, checkmark for backup, cloud for sync) — more scannable at the small sizes a web banner is typically viewed at.</p>
         </div>
       </section>
 
-      <!-- Design Decisions -->
-      <section class="case-section section" id="design-decisions" aria-labelledby="design-decisions-heading">
+      <!-- The Work -->
+      <section class="case-section section" id="the-work" aria-labelledby="the-work-heading">
         <div class="container">
-          <h2 id="design-decisions-heading" class="case-section__heading reveal">Design Decisions</h2>
-
-          <h3 class="reveal">Why I Changed the Copy from "Memories" to "Work"</h3>
-          <p class="reveal">The initial brief used placeholder copy targeting personal/consumer use: "Your memories, always safe." After researching the DS124's actual product page, I found Synology positions this device squarely at professionals and small businesses. I adapted the messaging to match: "Your hard work, always safe" / "Tu trabajo, siempre seguro." This wasn't a deviation from the brief — it was an improvement based on actual product research.</p>
-
-          <h3 class="reveal">Dark Background over Navy Gradient</h3>
-          <p class="reveal">The initial HTML mockups used a navy-to-dark-blue gradient. Synology's actual marketing uses deep blacks. I matched the real aesthetic, which also provides stronger contrast for the product photography and white headline text.</p>
-
-          <h3 class="reveal">Real Product Photography</h3>
-          <p class="reveal">The initial mockups used a CSS-drawn NAS illustration as a placeholder. I replaced this with the actual DS124 product render, immediately making the designs read as legitimate marketing rather than generic tech mockups.</p>
-
-          <h3 class="reveal">Icon-Based Feature Bullets (Web Banner)</h3>
-          <p class="reveal">The original web banner used pill-shaped text badges for features. I replaced these with icon + text pairs (clipboard for access, checkmark for backup, cloud for sync) which are more scannable at the small sizes a web banner is typically viewed at.</p>
-        </div>
-      </section>
-
-      <!-- The Assets -->
-      <section class="case-section section" id="the-assets" aria-labelledby="the-assets-heading">
-        <div class="container">
-          <h2 id="the-assets-heading" class="case-section__heading reveal">The Assets</h2>
+          <h2 id="the-work-heading" class="case-section__heading reveal">The Work</h2>
 
           <h3 class="reveal">01 — Social Square (ES) &middot; 1080&times;1080</h3>
           <p class="reveal">Instagram/Facebook post targeting LATAM Spanish-speaking professionals. Features the DiskStation DS124 product line label, professional-focused headline, and synology.com/es-latam URL.</p>
@@ -183,13 +168,15 @@ const sections = [
         </div>
       </section>
 
-      <!-- Learnings -->
-      <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
+      <!-- Reflection -->
+      <section class="case-section section" id="reflection" aria-labelledby="reflection-heading">
         <div class="container">
-          <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
-          <p class="reveal">Brand research before design saves rework. My first instinct was to use the brief's navy gradient and Poppins font, but spending time on Synology's actual website revealed a distinctly different design language — deeper blacks, Inter typeface, professional rather than consumer messaging. Starting from the brand's reality rather than assumptions produced more authentic work.</p>
-          <p class="reveal">Localization is design work, not translation work. The EN and ES versions look identical at a glance, but achieving that required conscious decisions about line breaks, character count differences, and natural phrasing in each language. "Mas informacion" and "Learn More" don't have the same character count — the layout has to accommodate both without breaking.</p>
-          <p class="reveal">Concept campaigns need a clear boundary. Watermarking renders as mock-ups and labeling the work as a concept project protects both my credibility and the brand's. It shows I understand how brand permissions work in a professional context.</p>
+          <h2 id="reflection-heading" class="case-section__heading reveal">Reflection</h2>
+          <ul class="styled-list reveal">
+            <li><strong>Brand research before design saves rework.</strong> My first instinct was to use the brief's navy gradient and Poppins font, but Synology's actual site revealed a different design language — deeper blacks, Inter typeface, professional messaging. Starting from the brand's reality produced more authentic work.</li>
+            <li><strong>Localization is design work, not translation work.</strong> The EN and ES versions look identical at a glance, but achieving that required conscious decisions about line breaks, character counts, and natural phrasing. "Mas informacion" and "Learn More" don't have the same length — the layout has to accommodate both.</li>
+            <li><strong>Concept campaigns need clear boundaries.</strong> Watermarking renders as mock-ups and labeling the work as concept protects both my credibility and the brand's — it shows I understand how brand permissions work professionally.</li>
+          </ul>
 
           <PrevNextNav
             prev={{ title: "Our Light Unbound", href: "/our-light-unbound" }}

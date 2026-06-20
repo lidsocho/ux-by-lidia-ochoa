@@ -5,16 +5,11 @@ import PrevNextNav from '../components/PrevNextNav.astro';
 
 const sections = [
   { id: 'overview', label: 'Overview' },
-  { id: 'understanding-users', label: 'Understanding Users' },
-  { id: 'design-process', label: 'Design Process' },
-  { id: 'features', label: 'Features' },
+  { id: 'design-decisions', label: 'Design Decisions' },
   { id: 'accessibility', label: 'Accessibility' },
-  { id: 'from-solo-to-shared', label: 'From Solo to Shared' },
-  { id: 'cloud-architecture', label: 'Cloud Architecture' },
-  { id: 'household-features', label: 'Household Features' },
+  { id: 'the-work', label: 'The Work' },
   { id: 'outcomes', label: 'Outcomes' },
-  { id: 'learnings', label: 'What I Learned' },
-  { id: 'next-steps', label: 'Next Steps' },
+  { id: 'reflection', label: 'Reflection' },
 ];
 ---
 <BaseLayout title="Bb Budget — From Offline Tool to Cloud Platform | Lidia Ochoa" description="A budgeting tool that evolved from a solo offline prototype into a multi-user cloud platform with real-time sync, bank integration, and end-to-end encryption." projectColor="#4cc4cf" ogImage="/images/home/offline-budget-thumb.png">
@@ -30,7 +25,7 @@ const sections = [
           <div class="case-hero__meta-item"><dt>Tools:</dt><dd>React, Tailwind CSS, Supabase, Plaid, Vercel</dd></div>
         </dl>
         <div class="case-hero__tagline-row">
-          <p class="case-hero__tagline">A budgeting tool that started as a solo offline prototype and evolved into a multi-user cloud platform with real-time sync, bank integration, and end-to-end encryption.</p>
+          <p class="case-hero__tagline">A budgeting tool I designed, built, and use daily — from solo offline prototype to multi-user cloud platform with bank integration and end-to-end encryption.</p>
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
             <a href="https://lidsocho.github.io/bb-budget/" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="Try the offline version of Bb Budget (opens in new tab)">
               Offline Version &rarr;
@@ -41,6 +36,7 @@ const sections = [
           </div>
         </div>
       </div>
+      <img src="/images/home/offline-budget-thumb.png" alt="Bb Budget cloud version on a laptop — Trends tab showing Income vs Spending bar chart, household member sidebar, and net income area chart" class="reveal" style="width: 100%; max-width: 900px; margin-top: var(--space-lg); margin-inline: auto;" />
     </div>
   </section>
 
@@ -52,9 +48,8 @@ const sections = [
       <section class="case-section section" id="overview" aria-labelledby="overview-heading">
         <div class="container">
           <h2 id="overview-heading" class="case-section__heading reveal">Overview</h2>
-          <p class="reveal">Most budgeting apps require linking bank accounts through third-party services, creating a trust problem before the user even starts. For someone already overwhelmed by finances, handing credentials to an app they don't fully understand is a non-starter. The ones that don't require linking tend to be manual-entry tools that demand too much effort, or spreadsheets that offer no guidance.</p>
-          <div class="problem-statement reveal">The challenge was designing a tool that is <strong>secure</strong> enough that financial data never leaves the device, <strong>automated</strong> enough that CSV imports and auto-categorization reduce the tedious work, but <strong>engaged</strong> enough that users verify their numbers through balance snapshots during each budgeting session — and <strong>personalizable</strong> enough that users can set and track their own budget targets and goals without overwhelm.</div>
-          <p class="reveal">The result is a tool that runs entirely in the browser with no server, no account, and no data leaving the device. Users import bank CSVs, categorize transactions with smart auto-suggestions, set budget targets, and track trends over time — all stored in localStorage on their machine. Balance snapshots let users periodically confirm their account totals against the computed values, catching discrepancies and building trust in the tool's accuracy.</p>
+          <p class="reveal">Bb Budget started as a personal fix — I was budgeting with a spreadsheet, downloading CSVs from multiple banks, categorizing transactions by hand, and putting it off for weeks at a time. I needed a tool that automated the tedious parts while keeping me in control of every number. Unlike the Budget App case study — which focuses on research and prototyping — this project is about designing, building, and shipping a real product I use to manage my own finances.</p>
+          <div class="problem-statement reveal">Design a budgeting tool that is <strong>secure</strong> enough that financial data never leaves the device, <strong>automated</strong> enough that CSV imports and auto-categorization reduce the tedious work, and <strong>personalizable</strong> enough that users can set their own budget targets without overwhelm.</div>
 
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
@@ -78,15 +73,6 @@ const sections = [
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- Understanding Users -->
-      <section class="case-section section" id="understanding-users" aria-labelledby="understanding-users-heading">
-        <div class="container">
-          <h2 id="understanding-users-heading" class="case-section__heading reveal">Understanding Users</h2>
-          <p class="reveal">This tool was born from my own frustration. I used to budget with a spreadsheet I maintained by hand — downloading CSVs from multiple bank accounts, copying rows into tabs, categorizing each transaction, and manually calculating totals. It worked, but it was tedious enough that I'd put it off for weeks, then face a backlog of hundreds of transactions. I needed a tool that did the repetitive parts for me while still letting me verify every number myself.</p>
-          <p class="reveal">The people who would benefit most from a tool like this share a few common traits:</p>
 
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
@@ -113,49 +99,69 @@ const sections = [
         </div>
       </section>
 
-      <!-- Design Process -->
-      <section class="case-section section" id="design-process" aria-labelledby="design-process-heading">
+      <!-- Design Decisions -->
+      <section class="case-section section" id="design-decisions" aria-labelledby="design-decisions-heading">
         <div class="container">
-          <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
+          <h2 id="design-decisions-heading" class="case-section__heading reveal">Design Decisions</h2>
 
           <h3 class="reveal">Visual Design</h3>
-          <p class="reveal">The warm, muted palette — olive green for income, muted rose for expenses — was chosen to reduce the anxiety that comes with financial dashboards. Colors, widgets, and icons in budgeting apps can be overstimulating. This tool uses softer tones that convey information without judgment. The clean, warm-toned background and generous whitespace make the interface feel calm rather than clinical.</p>
+          <p class="reveal">A warm, muted palette — olive green for income, muted rose for expenses — reduces the anxiety that comes with financial dashboards. Softer tones convey information without judgment, and generous whitespace keeps the interface calm rather than clinical.</p>
 
           <h3 class="reveal">Information Architecture</h3>
-          <p class="reveal">The app is organized around five primary tabs — Review, Summary, Trends, Balances, and Settings — each with a single, focused purpose. This flat navigation means every feature is one click away. No nested menus, no hidden panels, no "more options" drawers. The most important actions (importing transactions, reviewing spending) come first in the tab order.</p>
-          <img src="/images/offline-budget/ia-diagram.svg" alt="Information architecture diagram showing the five-tab structure: Review (CSV import, auto-categorize, bulk actions), Summary (variable expenses with progress bars, fixed expenses, subscriptions), Trends (income vs spending, category breakdown, account balances), Balances (computed balances, log snapshots, snapshot history), and Settings (budget targets, custom categories, data management). All data stored in browser localStorage." class="reveal" loading="lazy" />
+          <p class="reveal">Five tabs — Review, Summary, Trends, Balances, Settings — each with a single purpose. Flat navigation, no nested menus, most important actions first.</p>
+          <img src="/images/offline-budget/ia-diagram.svg" alt="Information architecture diagram showing the five-tab structure: Review (CSV import, auto-categorize, bulk actions), Summary (variable expenses with progress bars, fixed expenses, subscriptions), Trends (income vs spending, category breakdown, account balances), Balances (computed balances, log snapshots, snapshot history), and Settings (budget targets, custom categories, data management). All data stored in browser localStorage." class="reveal" loading="lazy" style="border: none;" />
 
           <h3 class="reveal">One Task Per Screen</h3>
-          <p class="reveal">The core design choice is limiting how much a user has to process on each screen. Each tab answers one question: Review asks "what did I spend?" Summary asks "am I on budget?" Trends asks "what are the patterns?" Balances asks "are the numbers right?" Settings asks "how do I want this to work?" By isolating these tasks, the user always has a clear path to complete what they came to do without being distracted by unrelated information.</p>
+          <p class="reveal">Each tab answers one question: Review → "what did I spend?" Summary → "am I on budget?" Trends → "what are the patterns?" Balances → "are the numbers right?" Settings → "how do I want this to work?"</p>
         </div>
       </section>
 
-      <!-- Features -->
-      <section class="case-section section" id="features" aria-labelledby="features-heading">
+      <!-- The Work -->
+      <section class="case-section section" id="the-work" aria-labelledby="the-work-heading">
         <div class="container">
-          <h2 id="features-heading" class="case-section__heading reveal">Features</h2>
-          <p class="reveal" style="font-size: 0.875rem; color: var(--color-text-muted, #78716c); font-style: italic;">All screenshots below use generated demo data — no real financial information is shown.</p>
+          <h2 id="the-work-heading" class="case-section__heading reveal">The Work</h2>
 
-          <h3 class="reveal">Transaction Review</h3>
-          <p class="reveal">The Review tab is the app's home base. Users import bank CSVs and categorize transactions one by one or in bulk. Each row shows date, description, account, amount, and a category dropdown. An auto-categorize feature handles repeat merchants, and a progress bar shows how many transactions have been reviewed — turning a tedious task into a completable one.</p>
-          <img src="/images/offline-budget/review-transactions.png" alt="Bb Budget Review tab showing unreviewed transactions for March 2026. Five transactions listed with date, description, account, amount, and category dropdowns. Progress bar shows 18 of 23 reviewed (78%). Auto-categorize and Mark all categorized as reviewed actions visible above the table." class="reveal" loading="lazy" />
+          <h3 class="reveal">Phase 1: Offline Tool</h3>
+          <p class="reveal" style="font-size: 0.875rem; color: var(--color-text-muted, #78716c); font-style: italic;">All screenshots use generated demo data — no real financial information is shown.</p>
 
-          <h3 class="reveal">Monthly Summary</h3>
-          <p class="reveal">The Summary tab breaks spending into variable and fixed expenses with budget targets. Progress bars show spending against each category's limit. Fixed expenses (rent, subscriptions) are separated from variable spending so users can see what they control. The subscription breakdown itemizes recurring charges so nothing hides in a lump sum.</p>
-          <img src="/images/offline-budget/summary.png" alt="Bb Budget Summary tab for March 2026 showing income of $2,850, expenses of $2,095.84, and net of $754.16. Variable expenses at $489.86 with progress bars for Groceries ($256.38 of $450), Eating Out ($56 of $200), Gas/Transport ($114.40 of $120). Fixed expenses at $1,605.98 including rent, storage, phone, internet, and subscriptions totaling $123.75 per month." class="reveal" loading="lazy" />
+          <h4 class="reveal">Transaction Review</h4>
+          <p class="reveal">Import bank CSVs and categorize transactions individually or in bulk. Auto-categorize handles repeat merchants, and a progress bar turns a tedious task into a completable one.</p>
+          <div class="png-device-frame png-device-frame--laptop reveal">
+            <img src="/images/offline-budget/review-transactions.png" alt="Bb Budget Review tab showing unreviewed transactions for March 2026. Five transactions listed with date, description, account, amount, and category dropdowns. Progress bar shows 18 of 23 reviewed (78%). Auto-categorize and Mark all categorized as reviewed actions visible above the table." class="png-device-frame__screen" loading="lazy" />
+            <img src="/images/devices/macbook-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
+          </div>
 
-          <h3 class="reveal">Trends</h3>
-          <p class="reveal">The Trends tab offers three views: Income vs Spending (bar chart comparing monthly totals), Category Breakdown (stacked bar showing where money goes), and Account Balances (line chart tracking liquid assets over time). Time range filters let users zoom in on any period. This is where the budgeting story emerges — patterns that are invisible in transaction lists become clear in visual form.</p>
-          <img src="/images/offline-budget/trends-income-vs-spending.png" alt="Bb Budget Trends tab showing Income vs Spending bar chart from November 2025 to March 2026. Olive green bars represent income, muted rose bars represent expenses. A net income area chart below shows the cumulative difference over time." class="reveal" loading="lazy" />
-          <img src="/images/offline-budget/trends-category-breakdown.png" alt="Category Breakdown view showing stacked bar chart of variable expenses by month from November 2025 to March 2026. Categories include Groceries, Eating Out, Coffee/Drinks, Gas/Transport, Clothing/Beauty, and others, color-coded with a legend." class="reveal" loading="lazy" />
-          <img src="/images/offline-budget/trends-account-balances.png" alt="Account Balances Over Time line chart tracking six accounts and total liquid assets from December 2025 to March 2026. Total Liquid (dashed black line) trends upward from around $15,800 to $16,500. SoFi Savings (blue) shows steady growth toward $10,750." class="reveal" loading="lazy" />
+          <h4 class="reveal">Monthly Summary</h4>
+          <p class="reveal">Variable and fixed expenses with budget targets. Progress bars show spending against each category's limit. Subscriptions itemized so nothing hides in a lump sum.</p>
+          <div class="png-device-frame png-device-frame--laptop reveal">
+            <img src="/images/offline-budget/summary.png" alt="Bb Budget Summary tab for March 2026 showing income of $2,850, expenses of $2,095.84, and net of $754.16. Variable expenses at $489.86 with progress bars for Groceries ($256.38 of $450), Eating Out ($56 of $200), Gas/Transport ($114.40 of $120). Fixed expenses at $1,605.98 including rent, storage, phone, internet, and subscriptions totaling $123.75 per month." class="png-device-frame__screen" loading="lazy" />
+            <img src="/images/devices/macbook-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
+          </div>
 
-          <h3 class="reveal">Balances</h3>
-          <p class="reveal">The Balances tab is where trust in the tool gets built. Users log balance snapshots — their actual account totals on a given date — and the app computes current balances by adding or subtracting all imported transactions since that snapshot. This lets users periodically verify that the tool's numbers match reality, catching missed imports or duplicate entries before they compound.</p>
-          <img src="/images/offline-budget/balances.png" alt="Bb Budget Balances tab showing computed balances for six accounts (WF Checking $1,704, WF Credit -$347.88, Discover Credit $0, SoFi Checking $4,029.28, SoFi Savings $10,750, Venmo $5.50) with Total Liquid of $16,488.78. Below, a Log Balance Snapshot form and Snapshot History table showing 8 snapshots from December 2025 to March 2026." class="reveal" loading="lazy" />
+          <h4 class="reveal">Trends</h4>
+          <p class="reveal">Three visualizations — Income vs Spending, Category Breakdown, and Account Balances over time — with adjustable time range filters. Patterns invisible in transaction lists become clear in visual form.</p>
+          <div class="png-device-frame png-device-frame--laptop reveal">
+            <img src="/images/offline-budget/trends-income-vs-spending.png" alt="Bb Budget Trends tab showing Income vs Spending bar chart from November 2025 to March 2026. Olive green bars represent income, muted rose bars represent expenses. A net income area chart below shows the cumulative difference over time." class="png-device-frame__screen" loading="lazy" />
+            <img src="/images/devices/macbook-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
+          </div>
+          <div class="png-device-frame png-device-frame--laptop reveal">
+            <img src="/images/offline-budget/trends-category-breakdown.png" alt="Category Breakdown view showing stacked bar chart of variable expenses by month from November 2025 to March 2026. Categories include Groceries, Eating Out, Coffee/Drinks, Gas/Transport, Clothing/Beauty, and others, color-coded with a legend." class="png-device-frame__screen" loading="lazy" />
+            <img src="/images/devices/macbook-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
+          </div>
+          <div class="png-device-frame png-device-frame--laptop reveal">
+            <img src="/images/offline-budget/trends-account-balances.png" alt="Account Balances Over Time line chart tracking six accounts and total liquid assets from December 2025 to March 2026. Total Liquid (dashed black line) trends upward from around $15,800 to $16,500. SoFi Savings (blue) shows steady growth toward $10,750." class="png-device-frame__screen" loading="lazy" />
+            <img src="/images/devices/macbook-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
+          </div>
 
-          <h3 class="reveal">Settings & Data Management</h3>
-          <p class="reveal">Users own their data completely. The Settings tab lets them customize expense categories (add, rename, delete), manage subscriptions, set budget targets, and — critically — export and import full JSON backups. The "Clear All Data" action is separated and styled as a destructive action. Data never leaves the browser unless the user explicitly exports it.</p>
+          <h4 class="reveal">Balances</h4>
+          <p class="reveal">Users log balance snapshots — actual account totals on a given date — and the app computes current balances from imported transactions. This is where trust in the tool gets built.</p>
+          <div class="png-device-frame png-device-frame--laptop reveal">
+            <img src="/images/offline-budget/balances.png" alt="Bb Budget Balances tab showing computed balances for six accounts (WF Checking $1,704, WF Credit -$347.88, Discover Credit $0, SoFi Checking $4,029.28, SoFi Savings $10,750, Venmo $5.50) with Total Liquid of $16,488.78. Below, a Log Balance Snapshot form and Snapshot History table showing 8 snapshots from December 2025 to March 2026." class="png-device-frame__screen" loading="lazy" />
+            <img src="/images/devices/macbook-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
+          </div>
+
+          <h4 class="reveal">Settings &amp; Data Management</h4>
+          <p class="reveal">Custom categories, subscription tracking, budget targets, and full JSON backup/restore. Data never leaves the browser unless explicitly exported.</p>
           <img src="/images/offline-budget/settings.png" alt="Bb Budget Settings tab showing Monthly Budget Targets with per-category spending limits, Subscriptions section (Spotify, Hulu, Planet Fitness, iCloud, Audible, Comcast Internet totaling $123.75/month), Expense Categories as deletable tag chips, and Data Management section with Export Backup, Import Backup, and Clear All Data buttons." class="reveal case-img--centered" loading="lazy" />
         </div>
       </section>
@@ -164,7 +170,7 @@ const sections = [
       <section class="case-section section" id="accessibility" aria-labelledby="a11y-heading">
         <div class="container">
           <h2 id="a11y-heading" class="case-section__heading reveal">Accessibility</h2>
-          <p class="reveal">Financial tools that exclude users with disabilities exclude people who may need them most. Budgeting anxiety is already a barrier — inaccessible UI should never be another one. An honest audit of the tool revealed six concrete gaps. Rather than claim compliance I hadn't earned, I treated each gap as a design task and fixed them.</p>
+          <p class="reveal">An honest audit revealed six concrete gaps. Rather than claim compliance I hadn't earned, I treated each one as a design task and fixed it.</p>
 
           <h3 class="reveal">What the Audit Found — and What I Fixed</h3>
           <div class="decisions-grid reveal">
@@ -197,7 +203,7 @@ const sections = [
           <h3 class="reveal">Before &amp; After</h3>
 
           <div class="before-after reveal">
-            <p class="before-after__desc">The Income vs Expenses chart originally used olive green and muted rose — colors that are difficult to distinguish for users with protanopia or deuteranopia. The updated palette uses teal and wine, which maintain clear separation across all common types of color vision deficiency.</p>
+            <p class="before-after__desc">Original olive green/muted rose colors were difficult to distinguish for users with protanopia or deuteranopia. Updated to teal and wine for clear separation across all common types of color vision deficiency.</p>
             <div class="before-after__pair">
               <figure class="before-after__figure">
                 <img src="/images/offline-budget/trends-income-vs-spending-crop.png" alt="Before: Income vs Expenses bar chart using olive green and muted rose colors that are hard to distinguish with color vision deficiency" loading="lazy" />
@@ -211,7 +217,7 @@ const sections = [
           </div>
 
           <div class="before-after reveal">
-            <p class="before-after__desc">The Settings page previously relied on low-contrast placeholder text and lacked visible labels on many inputs. After the update, all form inputs have proper labels, category names use higher-contrast text, and the overall hierarchy is clearer.</p>
+            <p class="before-after__desc">Settings previously relied on low-contrast placeholder text with no visible labels. After: proper labels, higher-contrast text, clearer hierarchy.</p>
             <div class="before-after__pair">
               <figure class="before-after__figure">
                 <img src="/images/offline-budget/settings-crop-annotated.png" alt="Before: Subscriptions and Expense Categories with low-contrast text and inputs lacking proper visible labels, problem areas circled in red" loading="lazy" />
@@ -232,51 +238,44 @@ const sections = [
         </div>
       </section>
 
-      <!-- From Solo to Shared -->
-      <section class="case-section section" id="from-solo-to-shared" aria-labelledby="from-solo-to-shared-heading">
+      <!-- Phase 2: Cloud (continuation of The Work) -->
+      <section class="case-section section" aria-labelledby="cloud-heading">
         <div class="container">
-          <h2 id="from-solo-to-shared-heading" class="case-section__heading reveal">From Solo to Shared</h2>
-          <p class="reveal">The offline tool solved my own problem, but it created a new one. My partner and I share finances — rent, groceries, subscriptions — and maintaining two separate localStorage budgets on two separate machines meant we were always out of sync. One of us would import a CSV, the other wouldn't know. Budget targets diverged. We couldn't see the full picture without exporting, merging, and comparing JSON files by hand.</p>
-          <p class="reveal">The question wasn't whether to add multi-user support — it was how to do it without losing what made the tool work: speed, simplicity, and the user's sense of control. I needed cross-device sync, shared household data, and granular permissions, but I didn't want to rebuild the entire app.</p>
+          <h3 id="cloud-heading" class="case-section__heading reveal">Phase 2: Cloud Platform</h3>
+          <p class="reveal">The offline tool solved my problem, but my partner and I share finances — two separate localStorage budgets on two machines meant we were always out of sync. The challenge: add multi-user support without losing what made the tool work.</p>
 
-          <h3 class="reveal">Design Constraints for the Cloud Version</h3>
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
               <div>
                 <h3>Must Have</h3>
                 <ul class="styled-list">
-                  <li>Real-time sync — changes appear on all devices instantly</li>
-                  <li>Household model — multiple members, one shared budget view</li>
-                  <li>Granular permissions — view, edit, and re-share controls per member</li>
-                  <li>Bank integration — reduce manual CSV imports</li>
-                  <li>End-to-end encryption — financial data must stay private even at rest</li>
+                  <li>Real-time sync across devices</li>
+                  <li>Household model — multiple members, one shared budget</li>
+                  <li>Granular permissions (view, edit, re-share)</li>
+                  <li>Bank integration via Plaid</li>
+                  <li>End-to-end encryption at rest</li>
                 </ul>
               </div>
               <div>
                 <h3>Non-Negotiable</h3>
                 <ul class="styled-list">
-                  <li>Zero-refactor migration — existing UI components must work unchanged</li>
-                  <li>Optimistic updates — the UI must never wait for a server round-trip</li>
-                  <li>Offline version stays available — the cloud version is opt-in, not a replacement</li>
-                  <li>Data portability — full JSON export/import for the household</li>
+                  <li>Zero-refactor migration — existing UI components unchanged</li>
+                  <li>Optimistic updates — UI never waits for a round-trip</li>
+                  <li>Offline version stays available as opt-in alternative</li>
+                  <li>Full JSON export/import for data portability</li>
                 </ul>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Cloud Architecture -->
-      <section class="case-section section" id="cloud-architecture" aria-labelledby="cloud-architecture-heading">
-        <div class="container">
-          <h2 id="cloud-architecture-heading" class="case-section__heading reveal">Cloud Architecture</h2>
-          <p class="reveal">The biggest architectural decision was preserving the original data shape at the boundary. Every component reads and writes a single in-memory object shaped exactly like the old localStorage format. The cloud layer translates to and from this shape — so existing components required zero changes when the backend switched from localStorage to Supabase.</p>
+          <h4 class="reveal">Architecture</h4>
+          <p class="reveal">The key decision: preserve the original data shape at the boundary. A cloud adapter translates between the localStorage format and Supabase — so all 17 existing components required zero changes.</p>
 
           <div class="reveal" style="margin: 2rem 0;">
-            <img src="/images/offline-budget/architecture-diagram.svg" alt="Architecture diagram: React SPA with in-memory state and cloud adapter connects to Supabase (Auth, PostgreSQL with RLS, Realtime, Edge Functions) and Vercel (AES-GCM encryption service, Plaid proxy, SPA hosting), with Plaid API for bank aggregation" loading="lazy" style="width: 100%; max-width: 900px; border-radius: 0.75rem; padding: 1.5rem; background: var(--color-card-bg);" />
+            <img src="/images/offline-budget/architecture-diagram-neobrutalist.png" alt="Architecture diagram: React SPA with in-memory state and cloud adapter connects to Supabase (Auth, PostgreSQL with RLS, Realtime, Edge Functions) and Vercel (AES-GCM encryption service, Plaid proxy, SPA hosting), with Plaid API for bank aggregation" loading="lazy" style="width: 100%; max-width: 900px; margin-inline: auto; border: none;" />
           </div>
 
-          <h3 class="reveal">Key Technical Decisions</h3>
+          <h4 class="reveal">Key Technical Decisions</h4>
           <div class="decisions-grid reveal">
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/><path d="M9 18h6"/></svg></div>
@@ -284,98 +283,87 @@ const sections = [
             </div>
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-              <p class="decision-card__response"><strong>Optimistic updates:</strong> The UI applies changes immediately. Cloud sync fires in the background. Supabase Realtime reconciles if drift occurs — the user never waits for a round-trip.</p>
+              <p class="decision-card__response"><strong>Optimistic updates:</strong> The UI applies changes immediately. Cloud sync fires in the background. Supabase Realtime reconciles if drift occurs.</p>
             </div>
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-              <p class="decision-card__response"><strong>End-to-end encryption:</strong> Transaction amounts, descriptions, and balance snapshots are encrypted at rest (AES-GCM). Keys are managed by Vercel Edge Functions — never exposed to the browser.</p>
+              <p class="decision-card__response"><strong>End-to-end encryption:</strong> Transaction amounts, descriptions, and balance snapshots encrypted at rest (AES-GCM). Keys managed by Vercel Edge Functions — never exposed to the browser.</p>
             </div>
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-              <p class="decision-card__response"><strong>Granular diff sync:</strong> Instead of syncing all data on every change, a diffing engine compares previous and current state element-by-element — only inserted, deleted, or modified rows hit the database.</p>
+              <p class="decision-card__response"><strong>Granular diff sync:</strong> A diffing engine compares previous and current state — only inserted, deleted, or modified rows hit the database.</p>
             </div>
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-              <p class="decision-card__response"><strong>Row-Level Security:</strong> Every Supabase table enforces ownership and membership checks at the database layer via PostgreSQL RLS policies — not client-side gatekeeping.</p>
+              <p class="decision-card__response"><strong>Row-Level Security:</strong> Every Supabase table enforces ownership and membership checks via PostgreSQL RLS policies — not client-side gatekeeping.</p>
             </div>
             <div class="decision-card">
               <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-              <p class="decision-card__response"><strong>Plaid integration:</strong> Bank accounts connect via Plaid Link. Access tokens are exchanged server-side and never reach the browser. Transactions sync automatically with webhook-driven updates.</p>
+              <p class="decision-card__response"><strong>Plaid integration:</strong> Bank accounts connect via Plaid Link. Access tokens exchanged server-side. Transactions sync automatically with webhook-driven updates.</p>
             </div>
           </div>
 
-          <h3 class="reveal">Tech Stack</h3>
+          <h4 class="reveal">Tech Stack</h4>
           <div class="goal-pair reveal">
             <div class="goals-frustrations-banner">
               <h3>Frontend</h3>
-              <p>React 19, Tailwind CSS 4, Recharts, Lucide icons, PapaParse for CSV parsing. Hosted on Vercel with SPA routing.</p>
+              <p>React 19, Tailwind CSS 4, Recharts, Lucide icons, PapaParse. Hosted on Vercel.</p>
             </div>
             <div class="goals-frustrations-banner">
               <h3>Backend</h3>
-              <p>Supabase (PostgreSQL + Auth + Realtime + Edge Functions), Plaid for bank aggregation, Vercel Edge Functions for encryption and Plaid token exchange. Sentry for error tracking.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Household Features -->
-      <section class="case-section section" id="household-features" aria-labelledby="household-features-heading">
-        <div class="container">
-          <h2 id="household-features-heading" class="case-section__heading reveal">Household Features</h2>
-          <p class="reveal">The cloud version introduces a household model where multiple members share one budget. Each member has their own transactions, accounts, categories, and budget targets — but the household can view everything together.</p>
-
-          <h3 class="reveal">Three View Modes</h3>
-          <p class="reveal">Households need different perspectives at different times. A single member reviewing their own spending needs focus. A couple checking their combined grocery budget needs a merged view. A family comparing spending side-by-side needs columns. Three view modes handle all three scenarios without mode-switching friction.</p>
-
-          <div class="decisions-grid reveal">
-            <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-              <p class="decision-card__response"><strong>Single:</strong> Focus on one household member's data — their transactions, accounts, and budget targets in isolation.</p>
-            </div>
-            <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-              <p class="decision-card__response"><strong>Combined:</strong> All members' data merged into one view. Categories are summed, accounts are namespaced, and each transaction is color-coded by owner.</p>
-            </div>
-            <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/></svg></div>
-              <p class="decision-card__response"><strong>Side-by-Side:</strong> Each member gets their own column for direct comparison — spending patterns, budget progress, and balances shown in parallel.</p>
+              <p>Supabase (PostgreSQL + Auth + Realtime + Edge Functions), Plaid, Vercel Edge Functions, Sentry.</p>
             </div>
           </div>
 
+          <h4 class="reveal">Household View Modes</h4>
           <div class="view-modes-gallery reveal">
+            <div class="view-modes-gallery__text">
+              <div class="decision-card">
+                <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <p class="decision-card__response"><strong>Single:</strong> One member's data in isolation.</p>
+              </div>
+            </div>
             <figure>
               <img src="/images/offline-budget/view-single.jpg" alt="Single view showing one member's Summary tab with budget progress bars and account balances" loading="lazy" />
-              <figcaption>Single view</figcaption>
             </figure>
+
+            <div class="view-modes-gallery__text">
+              <div class="decision-card">
+                <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <p class="decision-card__response"><strong>Combined:</strong> All members merged — categories summed, transactions color-coded by owner.</p>
+              </div>
+            </div>
             <figure>
               <img src="/images/offline-budget/view-combined.jpg" alt="Combined view merging all household members' budgets, transactions color-coded by owner" loading="lazy" />
-              <figcaption>Combined view</figcaption>
             </figure>
+
+            <div class="view-modes-gallery__text">
+              <div class="decision-card">
+                <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/></svg></div>
+                <p class="decision-card__response"><strong>Side-by-Side:</strong> Each member in their own column for direct comparison.</p>
+              </div>
+            </div>
             <figure>
               <img src="/images/offline-budget/view-sidebyside.jpg" alt="Side-by-Side view with each household member in their own column for direct budget comparison" loading="lazy" />
-              <figcaption>Side-by-Side view</figcaption>
             </figure>
           </div>
 
-          <h3 class="reveal">Sharing &amp; Permissions</h3>
-          <p class="reveal">Household members are invited by email. Each invite carries toggleable permissions — view, edit, and re-share — so the household owner controls exactly who can see, modify, or extend access to their financial data. Invitations use Supabase Edge Functions to send magic-link emails, and the accept flow automatically joins the invitee to the household.</p>
-
+          <h4 class="reveal">Sharing &amp; Permissions</h4>
+          <p class="reveal">Email-based invitations with toggleable permissions (view, edit, re-share). Magic-link accept flow via Supabase Edge Functions.</p>
           <div class="reveal" style="margin: 2rem 0;">
-            <img src="/images/offline-budget/share-modal.jpg" alt="Share access modal with email invite field and permission toggles for View, Edit, and Re-share" loading="lazy" style="width: 100%; max-width: 640px; border-radius: 0.5rem; border: 1px solid var(--color-border, #d6d3d1);" />
+            <img src="/images/offline-budget/share-modal.jpg" alt="Share access modal with email invite field and permission toggles for View, Edit, and Re-share" loading="lazy" style="width: 100%; max-width: 640px;" />
           </div>
 
-          <h3 class="reveal">Bank Integration via Plaid</h3>
-          <p class="reveal">The biggest friction in the offline tool was CSV imports — downloading files from each bank, importing them one by one, and hoping nothing got duplicated. Plaid eliminates that entire workflow. Members connect their bank accounts through Plaid Link, map Plaid accounts to their household accounts, and transactions sync automatically. The connection status, last sync time, and manual sync trigger are all visible in a dedicated section.</p>
-
+          <h4 class="reveal">Bank Integration via Plaid</h4>
+          <p class="reveal">Plaid eliminates CSV imports entirely. Members connect bank accounts, map them to household accounts, and transactions sync automatically.</p>
           <div class="reveal" style="margin: 2rem 0;">
-            <img src="/images/offline-budget/plaid-connection.jpg" alt="Connected Banks section showing SoFi, Wells Fargo, Chase, and Amex with connection status and last sync timestamps" loading="lazy" style="width: 100%; max-width: 640px; border-radius: 0.5rem; border: 1px solid var(--color-border, #d6d3d1);" />
+            <img src="/images/offline-budget/plaid-connection.jpg" alt="Connected Banks section showing SoFi, Wells Fargo, Chase, and Amex with connection status and last sync timestamps" loading="lazy" style="width: 100%; max-width: 640px;" />
           </div>
 
-          <h3 class="reveal">Authentication &amp; Security</h3>
-          <p class="reveal">Financial data demands more than a login screen. The cloud version uses Supabase Auth with email/password authentication, email verification, and password reset flows. A 30-minute inactivity timer auto-locks the session to protect against unattended devices. All sensitive data — transaction amounts, descriptions, and balance snapshots — is encrypted at rest using AES-GCM, with key management handled by Vercel Edge Functions so encryption keys never reach the browser.</p>
-
+          <h4 class="reveal">Authentication &amp; Security</h4>
+          <p class="reveal">Supabase Auth with email verification and password reset. A 30-minute inactivity timer auto-locks sessions. All sensitive data encrypted at rest (AES-GCM) with keys managed server-side.</p>
           <div class="reveal" style="margin: 2rem 0;">
-            <img src="/images/offline-budget/sign-in.jpg" alt="Create account form with email field, password input, and password strength indicator bars" loading="lazy" style="width: 100%; max-width: 640px; border-radius: 0.5rem; border: 1px solid var(--color-border, #d6d3d1);" />
+            <img src="/images/offline-budget/sign-in.jpg" alt="Create account form with email field, password input, and password strength indicator bars" loading="lazy" style="width: 100%; max-width: 640px;" />
           </div>
         </div>
       </section>
@@ -384,60 +372,54 @@ const sections = [
       <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
         <div class="container">
           <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
-          <p class="reveal">This project shipped in two phases. The offline tool replaced my spreadsheet and proved the core design worked. The cloud version extended it into a multi-user platform my household uses daily across devices.</p>
           <div class="goal-pair reveal">
             <div class="goals-frustrations-banner">
-              <h3>Offline Deliverables</h3>
-              <p>A fully functional offline budgeting tool with CSV import (Wells Fargo, SoFi, Venmo, Discover), auto-categorization with 100+ merchant rules, budget targets with progress tracking, three trend visualizations, multi-account balance snapshots, subscription management, and JSON backup/restore — all in the browser with zero server dependencies.</p>
+              <h3>Offline</h3>
+              <p>CSV import (4 banks), auto-categorization with 100+ merchant rules, budget targets, three trend visualizations, balance snapshots, subscription tracking, JSON backup/restore — all in the browser, zero server dependencies.</p>
             </div>
             <div class="goals-frustrations-banner">
-              <h3>Cloud Deliverables</h3>
-              <p>Multi-user household model with three view modes, email-based invitations with granular permissions, real-time cross-device sync via Supabase Realtime, Plaid bank integration, end-to-end encryption (AES-GCM) for financial data, and Vercel deployment with SPA routing. Five planned development slices — all shipped.</p>
+              <h3>Cloud</h3>
+              <p>Household model with three view modes, email invitations with granular permissions, real-time sync, Plaid bank integration, end-to-end encryption (AES-GCM). Five development slices — all shipped.</p>
             </div>
           </div>
           <div class="goal-pair reveal">
             <div class="goals-frustrations-banner">
               <h3>What It Solved</h3>
-              <p>Eliminated hours of manual spreadsheet work each month. CSV import and auto-categorization handle the tedious parts. The cloud version eliminated the last major friction: my partner and I no longer maintain separate budgets or merge JSON exports by hand. Changes sync instantly, and Plaid removes the CSV download step entirely.</p>
+              <p>Eliminated hours of manual spreadsheet work monthly. My partner and I no longer maintain separate budgets — changes sync instantly, and Plaid removes the CSV download step entirely.</p>
             </div>
             <div class="goals-frustrations-banner">
               <h3>Technical Scope</h3>
-              <p>17 React components, 10 cloud integration modules, Supabase schema with RLS policies, Edge Functions for invites and encryption, Plaid OAuth flow, and a diffing engine for granular database sync — designed, built, and shipped solo.</p>
+              <p>17 React components, 10 cloud integration modules, Supabase schema with RLS policies, Edge Functions, Plaid OAuth, and a diffing engine — designed, built, and shipped solo.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- What I Learned -->
-      <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
+      <!-- Reflection -->
+      <section class="case-section section" id="reflection" aria-labelledby="reflection-heading">
         <div class="container">
-          <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
-          <p class="reveal">Using this tool every day changed how I think about design. Every friction point I hit while categorizing my own transactions became a feature — the auto-categorize function, the "mark all categorized as reviewed" shortcut, the progress bar that turns a chore into a completable task. Being both the designer and the daily user means nothing stays broken for long.</p>
-          <p class="reveal">The biggest design lesson was about honesty: I initially assumed my high-contrast, minimal layouts meant the tool was fully accessible. A real audit revealed six concrete gaps — secondary text contrast, colorblind-unsafe colors, missing labels, inaccessible charts, broken keyboard patterns, and no screen reader support. Treating each gap as a design task and fixing them taught me more about accessibility than any checklist ever could.</p>
-          <p class="reveal">The cloud migration taught me a different kind of lesson: the value of designing data boundaries before writing UI code. By preserving the original localStorage data shape at the cloud adapter boundary, I avoided refactoring 17 components. The diffing engine that compares previous and current state was harder to build than a "sync everything" approach, but it means the app only writes what changed — keeping sync fast and database costs minimal. And integrating Plaid taught me how much complexity hides behind "connect your bank account" — token exchange, webhook verification, account mapping, and recurring detection all needed careful security and UX thinking.</p>
-        </div>
-      </section>
+          <h2 id="reflection-heading" class="case-section__heading reveal">Reflection</h2>
 
-      <!-- Next Steps -->
-      <section class="case-section section" id="next-steps" aria-labelledby="next-steps-heading">
-        <div class="container">
-          <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
+          <h3 class="reveal">What I Learned</h3>
+          <ul class="reveal styled-list">
+            <li><strong>Being the daily user changes everything.</strong> Every friction point I hit became a feature — auto-categorize, "mark all reviewed," the progress bar. Nothing stays broken when you use the tool yourself.</li>
+            <li><strong>Accessibility assumptions need auditing.</strong> I assumed my minimal layouts were accessible. A real audit found six gaps. Fixing them taught me more than any checklist ever could.</li>
+            <li><strong>Design data boundaries before writing UI.</strong> Preserving the localStorage data shape at the cloud adapter boundary meant zero component refactoring — the hardest architectural decision saved the most time.</li>
+          </ul>
+
+          <h3 class="reveal">Next Steps</h3>
           <div class="next-steps reveal">
             <div class="next-step">
               <h3 class="next-step__title">Encryption Cutover <span class="next-step__done">Up next</span></h3>
-              <p class="next-step__text">Complete Phase 4: backfill all plaintext columns to cipher, then drop plaintext columns. The dual-write strategy is already in place — the cutover is a data migration, not a code change.</p>
+              <p class="next-step__text">Backfill plaintext columns to cipher, then drop them. Dual-write is already in place — this is a data migration, not a code change.</p>
             </div>
             <div class="next-step">
               <h3 class="next-step__title">Per-Member Authentication</h3>
-              <p class="next-step__text">Currently all household members share one auth session. The next step is giving each member their own Supabase identity so they sign in individually, with the household model linking their accounts.</p>
+              <p class="next-step__text">Give each household member their own Supabase identity instead of sharing one auth session.</p>
             </div>
             <div class="next-step">
               <h3 class="next-step__title">Screen Reader Testing</h3>
-              <p class="next-step__text">Conduct hands-on testing with NVDA, JAWS, and VoiceOver — particularly for the cloud version's new modals (share, Plaid mapping, account switching) and the multi-column side-by-side view.</p>
-            </div>
-            <div class="next-step">
-              <h3 class="next-step__title">Offline Sync &amp; Mobile App</h3>
-              <p class="next-step__text">Add service worker + IndexedDB support so the cloud version works offline, then explore React Native to bring the household budget to mobile devices.</p>
+              <p class="next-step__text">Hands-on testing with NVDA, JAWS, and VoiceOver — especially the cloud version's new modals and the side-by-side view.</p>
             </div>
           </div>
 

@@ -5,15 +5,11 @@ import PrevNextNav from '../components/PrevNextNav.astro';
 
 const sections = [
   { id: 'overview', label: 'Overview' },
-  { id: 'campaign-design', label: 'Campaign & Brand Design' },
-  { id: 'curation', label: 'Curation & Planning' },
-  { id: 'community', label: 'Community & Social Media' },
-  { id: 'the-exhibition', label: 'The Exhibition' },
-  { id: 'design-process', label: 'Design Process' },
+  { id: 'design-decisions', label: 'Design Decisions' },
   { id: 'accessibility', label: 'Accessibility' },
+  { id: 'the-work', label: 'The Work' },
   { id: 'outcomes', label: 'Outcomes' },
-  { id: 'learnings', label: 'What I Learned' },
-  { id: 'next-steps', label: 'Next Steps' },
+  { id: 'reflection', label: 'Reflection' },
 ];
 ---
 <BaseLayout title="Our Light Unbound — Brand & Campaign Design | Lidia Ochoa" description="Designing the brand identity and full promotional campaign — flyers, social graphics, and event collateral — for a month-long art exhibition, plus an accessible mobile-first digital catalogue." projectColor="#bea7be" ogImage="/images/home/our-light-thumb.png">
@@ -35,18 +31,11 @@ const sections = [
           </a>
         </div>
       </div>
-      <div class="phone-frame reveal" aria-label="iPhone displaying the Our Light Unbound mobile catalogue">
-        <div class="phone-frame__body">
-          <div class="phone-frame__notch" aria-hidden="true"></div>
-          <div class="phone-frame__screen">
-            <video autoplay loop muted playsinline aria-label="Screen recording scrolling through the Our Light Unbound mobile catalogue — showing the exhibition hero, search bar, artist accordion, and artwork details">
-              <source src="/images/our-light-unbound/mobile-recording-compressed.mp4" type="video/mp4" />
-            </video>
-            <img src="/images/our-light-unbound/homepage-mobile.png"
-                 alt="Our Light Unbound mobile catalogue showing the exhibition title, artist statement, search bar, and accordion-style artist list on a deep purple gradient background"
-                 class="phone-frame__still" />
-          </div>
-        </div>
+      <div class="png-device-frame png-device-frame--phone reveal" style="--device-screen-bg: #1a0a2e;" aria-label="iPhone displaying the Our Light Unbound mobile catalogue">
+        <video autoplay loop muted playsinline class="png-device-frame__screen" aria-label="Screen recording scrolling through the Our Light Unbound mobile catalogue — showing the exhibition hero, search bar, artist accordion, and artwork details">
+          <source src="/images/our-light-unbound/mobile-recording-compressed.mp4" type="video/mp4" />
+        </video>
+        <img src="/images/devices/iphone-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
       </div>
     </div>
   </section>
@@ -59,9 +48,8 @@ const sections = [
       <section class="case-section section" id="overview" aria-labelledby="overview-heading">
         <div class="container">
           <h2 id="overview-heading" class="case-section__heading reveal">Overview</h2>
-          <p class="reveal">"Our Light Unbound" was an art exhibition running January 9–31, 2026 that explored tapping into the part of ourselves that believes peace will return — the part that inspires us to believe, hope, and dream again. I co-curated the show alongside Yaz (they/them), and together we built a strong social media presence and community integration around the exhibition over the course of a year and a half of planning.</p>
-          <div class="problem-statement reveal">For the exhibition's digital catalogue, the question was: how do we create a compact, mobile-friendly, and accessible way for people to discover the art and artists — right from their phones while standing in the gallery? The catalogue was designed mobile-first, because that's exactly how visitors would use it: scanning a QR code at the entrance and pulling it up on their phone. It was built in collaboration with the artists themselves, who provided their bios and art descriptions, and Yaz supported design decisions throughout.</div>
-          <div class="problem-statement reveal">Traditional gallery practice is to print artist statements and descriptions to display alongside artwork, but that creates barriers to access: limited font sizes, finite wall space, and visitors crowding around small text to read. A mobile-first digital catalogue eliminates those issues entirely — visitors can browse at their own pace, on their own phone, with text they can resize and content they can search.</div>
+          <p class="reveal">"Our Light Unbound" was an art exhibition I co-curated with Yaz (they/them) over 18 months of planning, running January 9–31, 2026 at Slip Gallery in Seattle. I led the promotional campaign design, workshop scheduling, and the digital catalogue; Yaz led merch design and the core visual identity, which we shaped together.</p>
+          <div class="problem-statement reveal">How do we create a mobile-first digital catalogue that replaces printed artist statements — letting visitors discover art and artists from their phones while standing in the gallery, with text they can resize and content they can search?</div>
 
           <div class="goals-frustrations-banner reveal">
             <div class="goals-frustrations-banner__inner">
@@ -88,12 +76,45 @@ const sections = [
         </div>
       </section>
 
-      <!-- Campaign & Brand Design -->
-      <section class="case-section section" id="campaign-design" aria-labelledby="campaign-design-heading">
+      <!-- Design Decisions -->
+      <section class="case-section section" id="design-decisions" aria-labelledby="design-decisions-heading">
         <div class="container">
-          <h2 id="campaign-design-heading" class="case-section__heading reveal">Campaign &amp; Brand Design</h2>
-          <p class="reveal">Beyond the digital catalogue, the exhibition needed to be <em>seen</em> — across Instagram, printed flyers, gallery windows, and event listings. I designed most of the promotional campaign: the exhibition poster, the landscape exhibit ad, social graphics, and the event-series collateral, working from a shared visual identity developed in collaboration with my co-curator Yaz, who also led merch design.</p>
-          <p class="reveal">The challenge was consistency across very different formats and audiences. One brand system — the <strong>"Our Light UnBound" wordmark</strong>, a twilight gradient palette (deep purples, warm gold, and dawn tones), and a distinctive display typeface — had to hold together whether it appeared as a portrait flyer, a square Instagram post, or a landscape ad. Every piece carries the same lockup, a clear call to action, and a scannable QR code, with the 4Culture sponsor acknowledgment where required.</p>
+          <h2 id="design-decisions-heading" class="case-section__heading reveal">Design Decisions</h2>
+
+          <h3 class="reveal">Campaign system</h3>
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V4h16v3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
+              <p class="decision-card__response"><strong>One system, many formats:</strong> a single wordmark, palette, and type treatment carried across portrait, square, and landscape layouts so the show was instantly recognizable wherever it appeared.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+              <p class="decision-card__response"><strong>Legibility on dark, atmospheric art:</strong> high-contrast headline type and restrained body copy over rich gradient backgrounds keep details readable on a phone screen or a printed flyer alike.</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><rect x="14" y="14" width="6" height="6"/></svg></div>
+              <p class="decision-card__response"><strong>Always a next step:</strong> every asset pairs a clear call to action with a QR code, turning a glance into an RSVP, a catalogue scan, or a gallery visit.</p>
+            </div>
+          </div>
+
+          <h3 class="reveal">Dark theme strategy</h3>
+          <p class="reveal">The deep purple (#1a0a2e) background with gold (#d4a537) accents was chosen to feel luxurious and gallery-like. Dark themes require deliberate contrast work — I tested every text/background combination against WCAG AA, using lighter purples and off-whites for body text to avoid eye strain. Gradient overlays on the hero use semi-transparent layers so text stays legible regardless of the image underneath.</p>
+
+          <h3 class="reveal">Information architecture</h3>
+          <p class="reveal">The core question was compactness: how do you present a full exhibition's worth of artists, bios, and artwork descriptions without overwhelming visitors? The artist accordion collapses content by default for scannable browsing, then expands to reveal bios and exhibited pieces — functioning as both a digital catalogue and an exhibition guide.</p>
+
+          <h3 class="reveal">Search</h3>
+          <p class="reveal">A prominently placed search bar filters artists and artworks in real time, sitting between the exhibition statement and the catalogue to follow the natural reading flow: context first, then discovery.</p>
+        </div>
+      </section>
+
+      <!-- The Work -->
+      <section class="case-section section" id="the-work" aria-labelledby="the-work-heading">
+        <div class="container">
+          <h2 id="the-work-heading" class="case-section__heading reveal">The Work</h2>
+
+          <h3 class="reveal">Campaign &amp; Promotion</h3>
+          <p class="reveal">I designed the exhibition poster, landscape ad, social graphics, and event-series collateral — all built from the shared brand system Yaz and I developed together.</p>
           <p class="workshop-hint reveal">Click any piece to see it full size with design notes.</p>
 
           <div class="flush-grid cols-2 reveal">
@@ -115,78 +136,8 @@ const sections = [
             </figure>
           </div>
 
-          <h3 class="reveal">Design decisions</h3>
-          <div class="decisions-grid reveal">
-            <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V4h16v3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
-              <p class="decision-card__response"><strong>One system, many formats:</strong> a single wordmark, palette, and type treatment carried across portrait, square, and landscape layouts so the show was instantly recognizable wherever it appeared.</p>
-            </div>
-            <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-              <p class="decision-card__response"><strong>Legibility on dark, atmospheric art:</strong> high-contrast headline type and restrained body copy over rich gradient backgrounds keep details readable on a phone screen or a printed flyer alike.</p>
-            </div>
-            <div class="decision-card">
-              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><rect x="14" y="14" width="6" height="6"/></svg></div>
-              <p class="decision-card__response"><strong>Always a next step:</strong> every asset pairs a clear call to action with a QR code, turning a glance into an RSVP, a catalogue scan, or a gallery visit.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Curation & Planning -->
-      <section class="case-section section" id="curation" aria-labelledby="curation-heading">
-        <div class="container">
-          <h2 id="curation-heading" class="case-section__heading reveal">Curation &amp; Planning</h2>
-          <p class="reveal">Yaz and I began planning "Our Light Unbound" a year and a half before opening night. We used Google Drive as our shared workspace, building out a detailed month-by-month timeline with buffer room for the unexpected — travel schedules, shifting deadlines, and the realities of coordinating with a group of working artists. We divided responsibilities clearly: I led workshop scheduling, artist communication, reception logistics, the digital catalogue, and most of the promotional design — the poster, exhibit ad, social graphics, and event collateral; Yaz led merch design and the show's core visual identity, which we shaped together.</p>
-
-          <div class="reveal">
-            <figure class="photo-figure">
-              <img src="/images/our-light-unbound/curator-conversation.jpg" alt="Two people in conversation at the gallery, surrounded by artwork including paintings and a world map, with art on display throughout the space" loading="lazy" />
-              <figcaption>Curators in conversation on opening night<span class="photo-credit">Photo: <a href="https://www.instagram.com/svetim.fm/" target="_blank" rel="noopener noreferrer">@svetim.fm</a></span></figcaption>
-            </figure>
-          </div>
-
-          <h3 class="reveal">The Timeline</h3>
-          <p class="reveal">We mapped every phase from initial planning through closing night. Here is a condensed view of the major milestones:</p>
-
-          <div class="next-steps reveal">
-            <div class="next-step">
-              <h3 class="next-step__title">Sep – Nov 2024: Foundation</h3>
-              <p class="next-step__text"><strong>Yaz:</strong> Co-established plan of action, confirmed meeting cadence, visited the gallery space, created vision board.<br/><strong>Lidia:</strong> Outlined roles and responsibilities, started drafting artist contracts and documentation, began working on budget and finances.<br/><strong>Together:</strong> Finalized which space we would use.</p>
-            </div>
-            <div class="next-step">
-              <h3 class="next-step__title">Dec 2024 – Jan 2025: Theme &amp; Outreach</h3>
-              <p class="next-step__text"><strong>Yaz:</strong> Created the <a href="https://www.instagram.com/our_light_unbound/" target="_blank" rel="noopener noreferrer">@our_light_unbound</a> Instagram account and started collecting social media content.<br/><strong>Lidia:</strong> Sent artist invitations with a February deadline. Began planning the group artist project and set up Eventbrite for the show and workshops.<br/><strong>Together:</strong> Solidified the exhibition title, theme, and description.</p>
-            </div>
-            <div class="next-step">
-              <h3 class="next-step__title">Feb – May 2025: Artists &amp; Grants</h3>
-              <p class="next-step__text"><strong>Yaz:</strong> Kicked off early design work for promotional materials.<br/><strong>Lidia:</strong> Started workshop ideation and scheduling with artists. Drafted and finalized artist contracts. Began grant hunting and submitting applications.<br/><strong>Together:</strong> Confirmed artist participation — number of pieces and artists locked in.</p>
-            </div>
-            <div class="next-step">
-              <h3 class="next-step__title">Jun – Sep 2025: Design &amp; Production</h3>
-              <p class="next-step__text"><strong>Yaz:</strong> Completed the window display and merch designs, and shaped the show's core visual identity. Began artist shoutout campaign on social media.<br/><strong>Lidia:</strong> Designed the exhibition poster, exhibit ad, and promotional social graphics. Hired a musician for the reception. Built Eventbrite pages for all events and workshops. Started digitally organizing the gallery layout.<br/><strong>Together:</strong> Outreach and planning for opening night — including requirements for the wine bar.</p>
-            </div>
-            <div class="next-step">
-              <h3 class="next-step__title">Oct – Nov 2025: Final Production</h3>
-              <p class="next-step__text"><strong>Yaz:</strong> Merch finalized and ordered (magnets, totes, stickers, postcards — split between artist-fund and show-themed categories). Published artist shoutouts and submitted to Art Display magazine.<br/><strong>Lidia:</strong> Completed Eventbrite pages and created event-specific flyers with links. Finalized workshop schedules — collage, paint and sip, origami, and artist talk.<br/><strong>Together:</strong> Partnered businesses began displaying merch and flyers.</p>
-            </div>
-            <div class="next-step">
-              <h3 class="next-step__title">Dec 2025: Final Push</h3>
-              <p class="next-step__text"><strong>Yaz:</strong> Designed the gallery description window cling. Prepped interactive installations.<br/><strong>Lidia:</strong> Finalized artist list and artwork list, signed contracts. Made art labels, hired art installers, and planned gallery layout. Collected artwork descriptions and bios from artists. Produced the digital catalogue website. Created and printed QR codes for the gallery entrance.<br/><strong>Together:</strong> Ordered workshop supplies and got volunteers.</p>
-            </div>
-            <div class="next-step">
-              <h3 class="next-step__title">Jan 2026: Showtime</h3>
-              <p class="next-step__text"><strong>Yaz:</strong> Installed window display. Curated a playlist for the vibes.<br/><strong>Lidia:</strong> Ran workshops throughout the month (collage, paint and sip, origami). Secured banquet permit for closing event.<br/><strong>Together:</strong> Artwork delivered January 1–7. Physically decorated the space — placed labels, set lighting. Artist reception and opening night January 9 with DJ Tremendadiosa. Closing event January 31.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Community & Social Media -->
-      <section class="case-section section" id="community" aria-labelledby="community-heading">
-        <div class="container">
-          <h2 id="community-heading" class="case-section__heading reveal">Community &amp; Social Media</h2>
-          <p class="reveal">Community integration was central to the exhibition from the start. We created the <a href="https://www.instagram.com/our_light_unbound/" target="_blank" rel="noopener noreferrer">@our_light_unbound</a> Instagram account early in the planning process and used it to build excitement, spotlight artists, and promote events. By opening night the account had 36 posts, 148 followers, and a reel about the exhibition that reached 2.5K views with 119 likes.</p>
+          <h3 class="reveal">Community &amp; Social Media</h3>
+          <p class="reveal">The <a href="https://www.instagram.com/our_light_unbound/" target="_blank" rel="noopener noreferrer">@our_light_unbound</a> Instagram account served as the exhibition's main outreach channel — artist shoutouts, event promotion, and the digital catalogue launch. By opening night: 36 posts, 148 followers, and a reel that reached 2.5K views. We cross-promoted with the gallery, partnered businesses, and artists' own platforms.</p>
 
           <div class="four-col reveal">
             <figure class="photo-figure">
@@ -207,38 +158,27 @@ const sections = [
             </figure>
           </div>
 
-          <p class="reveal">Each artist received a dedicated shoutout post featuring their work, bio, and social media handles. We promoted the full event lineup — collage workshops, paint and sip, origami, an artist talk, and the closing event — through designed flyers linking to Eventbrite pages. The account also served as the launch point for the digital catalogue, with a post featuring the QR code that visitors would later scan in the gallery.</p>
-
-          <p class="reveal">The social media strategy extended beyond the account itself. We collaborated with the gallery (<a href="https://www.instagram.com/slip_belltown/" target="_blank" rel="noopener noreferrer">@slip_belltown</a> · <a href="https://www.slipgallery.com/" target="_blank" rel="noopener noreferrer">slipgallery.com</a>), partnered businesses, and the artists' own social platforms to cross-promote. The exhibition was listed as a community event, featured in local art walk promotions, and tagged across artist networks — creating a web of visibility that brought in visitors who might not have found the show otherwise.</p>
-        </div>
-      </section>
-
-      <!-- The Exhibition -->
-      <section class="case-section section" id="the-exhibition" aria-labelledby="exhibition-heading">
-        <div class="container">
-          <h2 id="exhibition-heading" class="case-section__heading reveal">The Exhibition</h2>
-          <p class="reveal">The show opened January 9 at <a href="https://www.instagram.com/slip_belltown/" target="_blank" rel="noopener noreferrer">Slip Gallery</a> in Belltown, Seattle. The space filled with visitors from the art community and beyond — many discovering the artists for the first time through the social media campaign we had been building for months.</p>
+          <h3 class="reveal">The Exhibition</h3>
+          <p class="reveal">The show opened January 9 at <a href="https://www.instagram.com/slip_belltown/" target="_blank" rel="noopener noreferrer">Slip Gallery</a> in Belltown, Seattle. An interactive world map invited visitors to pin where they were from and leave a note — turning the gallery into a gathering place, not just a viewing space.</p>
 
           <div class="flush-grid cols-3 reveal">
             <figure class="photo-figure">
-              <img src="/images/our-light-unbound/opening-night-crowd.jpg" alt="Opening night at Our Light Unbound — the gallery packed with visitors viewing artwork on the walls, artwork ranging from paintings to mixed media installations" loading="lazy" />
+              <img src="/images/our-light-unbound/opening-night-crowd.jpg" alt="Opening night at Our Light Unbound — the gallery packed shoulder-to-shoulder with visitors, colorful paintings and mixed media installations lining the brick walls, warm overhead lighting casting a golden glow across the crowd" loading="lazy" />
               <figcaption>Opening night crowd<span class="photo-credit">Photo: <a href="https://www.instagram.com/svetim.fm/" target="_blank" rel="noopener noreferrer">@svetim.fm</a></span></figcaption>
             </figure>
             <figure class="photo-figure">
-              <img src="/images/our-light-unbound/visitor-browsing.jpg" alt="A visitor pausing to examine a framed artwork on the gallery wall, with other visitors browsing deeper in the space" loading="lazy" />
+              <img src="/images/our-light-unbound/visitor-browsing.jpg" alt="A visitor leaning in to examine a framed artwork on the gallery wall, other visitors browsing deeper in the space among paintings and sculptures" loading="lazy" />
               <figcaption>Visitors examining artwork up close<span class="photo-credit">Photo: <a href="https://www.instagram.com/svetim.fm/" target="_blank" rel="noopener noreferrer">@svetim.fm</a></span></figcaption>
             </figure>
             <figure class="photo-figure">
-              <img src="/images/our-light-unbound/mixed-media-display.jpg" alt="Gallery wall showing a mix of photography, sculpture, and mixed media art — small printed art labels visible beside each piece" loading="lazy" />
+              <img src="/images/our-light-unbound/mixed-media-display.jpg" alt="Gallery wall displaying a dense arrangement of photography, sculpture, and mixed media art — small printed labels beside each piece, with a range of styles from abstract to figurative" loading="lazy" />
               <figcaption>Mixed media works and physical art labels<span class="photo-credit">Photo: <a href="https://www.instagram.com/svetim.fm/" target="_blank" rel="noopener noreferrer">@svetim.fm</a></span></figcaption>
             </figure>
           </div>
 
-          <p class="reveal">The exhibition featured emerging BIPOC artists working across painting, photography, sculpture, and mixed media. An interactive world map invited visitors to pin where they were from and leave a note — a small gesture that turned the gallery into a gathering place, not just a viewing space.</p>
-
           <div class="flush-grid cols-2 reveal">
             <figure class="photo-figure">
-              <img src="/images/our-light-unbound/interactive-map.png" alt="Close-up of the interactive world map covered in sticky notes with handwritten messages from visitors, including 'Came for a trip — never left!'" loading="lazy" />
+              <img src="/images/our-light-unbound/interactive-map.png" alt="Close-up of the interactive world map covered in colorful sticky notes with handwritten visitor messages — one reads 'Came for a trip — never left!' — pins marking visitors' home countries across multiple continents" loading="lazy" />
               <figcaption>Visitor notes on the interactive world map</figcaption>
             </figure>
             <figure class="photo-figure">
@@ -249,7 +189,7 @@ const sections = [
 
           <div class="flush-grid cols-3 reveal">
             <figure class="photo-figure">
-              <img src="/images/our-light-unbound/yapping-about-my-art.png" alt="A curator talking with a visitor about the artwork on display, standing in the gallery surrounded by colorful paintings" loading="lazy" />
+              <img src="/images/our-light-unbound/yapping-about-my-art.png" alt="Lidia talking animatedly with a visitor about the artwork on display, standing in front of vibrant paintings in the gallery" loading="lazy" />
               <figcaption>Talking about the art with a visitor</figcaption>
             </figure>
             <figure class="photo-figure">
@@ -268,22 +208,22 @@ const sections = [
 
           <div class="flush-grid cols-3 workshop-grid reveal">
             <figure class="photo-figure" data-lightbox data-description="Community Collage — Jan 17, 2–5 PM. A free drop-in workshop where participants created crafty collage art in community, cutting and pasting from magazines and printed materials at long tables in the gallery. No experience or supplies needed — just creativity. The brick-walled gallery provided a warm atmosphere with exhibition artwork visible on the surrounding walls.">
-              <img src="/images/our-light-unbound/collage-workshop.png" alt="Participants seated at long tables working on collages during the collage workshop, surrounded by art materials and magazine clippings" loading="lazy" />
+              <img src="/images/our-light-unbound/collage-workshop.png" alt="Participants seated at long tables in the brick-walled gallery cutting and pasting from magazines and printed materials, exhibition artwork visible on the surrounding walls" loading="lazy" />
               <figcaption>Collage workshop</figcaption>
             </figure>
             <figure class="photo-figure" data-lightbox data-description="FREE Artist Talk — Jan 16, 6–8 PM. Exhibited artists discussed their work in an intimate and personal setting, sharing the creative process and inspiration behind their pieces. Visitors gathered around vibrant paintings spanning styles from abstract to figurative as artists spoke about identity, resilience, and what it means to create.">
-              <img src="/images/our-light-unbound/artist-talk.png" alt="An artist presenting and gesturing toward their paintings on the gallery wall during the artist talk event" loading="lazy" />
+              <img src="/images/our-light-unbound/artist-talk.png" alt="An exhibited artist presenting during the artist talk, gesturing toward their paintings on the gallery wall as visitors listen in an intimate semicircle" loading="lazy" />
               <figcaption>Artist talk</figcaption>
             </figure>
             <figure class="photo-figure" data-lightbox data-description="Closing Celebration + Collective Art Action — Jan 31, 1–5 PM. The final event of Our Light UnBound. Participants shredded, created, and transformed materials into collective art. Resulting artwork will be sold to benefit immigrant defense funds — closing the exhibition with the same spirit of community and purpose that defined the entire show.">
-              <img src="/images/our-light-unbound/closing-event-art-activism.png" alt="Participants at the closing event art activism workshop gathered around a table with collage materials, creating artwork together" loading="lazy" />
+              <img src="/images/our-light-unbound/closing-event-art-activism.png" alt="Participants at the closing celebration gathered around tables shredding and transforming materials into collective artwork, the resulting pieces to be sold benefiting immigrant defense funds" loading="lazy" />
               <figcaption>Closing celebration — collective art action</figcaption>
             </figure>
           </div>
 
           <div class="flush-grid cols-3 workshop-grid reveal">
             <figure class="photo-figure" data-lightbox data-description="Hanging Origami Mobile Workshop — Jan 24, 2–5 PM. A free guided craft activity where participants folded origami cranes and assembled them into hanging mobiles. No experience or supplies necessary — just bring yourself, a friend, and your creativity. The street-facing gallery windows brought natural light into the creative session.">
-              <img src="/images/our-light-unbound/origami-mobile-workshop-1.png" alt="Participants folding origami cranes at a long table during the origami mobile workshop, with colorful paper and completed cranes visible" loading="lazy" />
+              <img src="/images/our-light-unbound/origami-mobile-workshop-1.png" alt="Participants folding origami cranes at a long table near the gallery's street-facing windows, colorful paper scattered across the surface with completed cranes and embroidery hoops for assembling hanging mobiles" loading="lazy" />
               <figcaption>Origami mobile workshop</figcaption>
             </figure>
             <figure class="photo-figure" data-lightbox data-description="Hanging Origami Mobile Workshop — Jan 24, 2–5 PM. A participant proudly holding up their completed origami crane mobile — multiple folded cranes suspended from a wooden embroidery hoop, creating a hanging sculpture to take home.">
@@ -291,15 +231,18 @@ const sections = [
               <figcaption>A finished origami mobile</figcaption>
             </figure>
             <figure class="photo-figure" data-lightbox data-description="Tetra-Flexagon Zine Workshop — Jan 10, 3–5 PM. Led by experienced artist and educator Yaz Williams, participants created interactive, multifaceted pieces of art by folding single sheets of paper into zines with multiple hidden panels — combining printmaking, illustration, and paper engineering.">
-              <img src="/images/our-light-unbound/flexagon-zine-workshop.png" alt="An artist leading the flexagon zine workshop, standing at the head of a table with participants seated around colorful paper materials" loading="lazy" />
+              <img src="/images/our-light-unbound/flexagon-zine-workshop.png" alt="Artist and educator Yaz Williams leading the tetra-flexagon zine workshop, demonstrating paper-folding techniques as participants follow along with colorful printed sheets" loading="lazy" />
               <figcaption>Flexagon zine workshop</figcaption>
             </figure>
           </div>
 
           <h3 class="reveal">The Digital Catalogue</h3>
-          <p class="reveal">The catalogue was designed mobile-first — because the primary use case was visitors scanning a QR code at the gallery entrance and browsing on their phones while standing in front of the art. The deep purple and gold palette evokes twilight and candlelight, creating warmth within darkness. The search bar is a critical component, designed for quick one-handed use on a phone screen. It lets visitors find specific artists or artworks without scrolling, and an accordion-style catalogue organizes works by artist with expandable sections for biographies and individual pieces — all optimized for touch interaction and small screens.</p>
+          <p class="reveal">Designed mobile-first for visitors scanning a QR code at the gallery entrance. The deep purple and gold palette evokes twilight and candlelight, creating warmth within darkness. An accordion-style catalogue organizes works by artist with expandable bios and artwork descriptions — optimized for one-handed phone browsing.</p>
 
-          <img src="/images/our-light-unbound/catalogue-expanded.png" alt="Digital catalogue showing an expanded artist accordion for Ranger Liu with their biography, a photograph of their sculptural work 'Side Effects May Include' made from testosterone gel boxes and tubes, artwork details including price and dimensions, and the artist's description of the piece" class="reveal img-centered" style="max-width: min(500px, 100%);" loading="lazy" />
+          <div class="png-device-frame png-device-frame--phone png-device-frame--inline reveal" style="--device-screen-bg: #1a0a2e; margin-inline: auto;">
+            <img src="/images/our-light-unbound/catalogue-expanded.png" alt="Digital catalogue showing an expanded artist accordion for Ranger Liu with their biography, a photograph of their sculptural work 'Side Effects May Include' made from testosterone gel boxes and tubes, artwork details including price and dimensions, and the artist's description of the piece" class="png-device-frame__screen" loading="lazy" />
+            <img src="/images/devices/iphone-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
+          </div>
 
           <h3 class="reveal">Key Navigation Elements</h3>
           <div class="decisions-grid reveal">
@@ -319,27 +262,11 @@ const sections = [
         </div>
       </section>
 
-      <!-- Design Process -->
-      <section class="case-section section" id="design-process" aria-labelledby="design-process-heading">
-        <div class="container">
-          <h2 id="design-process-heading" class="case-section__heading reveal">Design Process</h2>
-
-          <h3 class="reveal">Dark Theme Strategy</h3>
-          <p class="reveal">The deep purple (#1a0a2e) background with gold (#d4a537) accent text was chosen to feel luxurious and gallery-like. But dark themes require deliberate contrast work: I tested every text/background combination against WCAG AA thresholds, using lighter purples and off-whites for body text to avoid the eye strain that comes from pure white on near-black. The gradient overlays on the hero section use semi-transparent layers to ensure text remains legible regardless of the background image underneath.</p>
-
-          <h3 class="reveal">Information Architecture</h3>
-          <p class="reveal">The core design question was compactness: how do you present a full exhibition's worth of artists, bios, and artwork descriptions without overwhelming the visitor? The artist accordion collapses content by default so visitors can scan the full catalogue without endless scrolling, then expand individual artists to explore their work. Each artist section contains a biography ("About the Artist") and their exhibited pieces with descriptions — all provided by the artists themselves — functioning as both a digital catalogue and an exhibition guide that visitors can access from anywhere.</p>
-
-          <h3 class="reveal">Search</h3>
-          <p class="reveal">The search bar filters artists and artworks in real time as visitors type, making discovery instant whether someone is looking for a specific artist or just browsing. The search is prominently placed between the exhibition statement and the catalogue, following the natural reading flow: context first, then discovery.</p>
-        </div>
-      </section>
-
       <!-- Accessibility -->
       <section class="case-section section" id="accessibility" aria-labelledby="a11y-heading">
         <div class="container">
           <h2 id="a11y-heading" class="case-section__heading reveal">Accessibility</h2>
-          <p class="reveal">The digital catalogue removes physical barriers — crowded wall text, small print, limited space — but the dark-themed design introduced its own accessibility challenges. The goal was to ensure that the immersive, atmospheric aesthetic never came at the cost of usability.</p>
+          <p class="reveal">The digital catalogue removes physical barriers — crowded wall text, small print, limited viewing space — but the dark theme introduced its own challenges. The aesthetic could never come at the cost of usability.</p>
 
           <div class="decisions-grid reveal">
             <div class="decision-card">
@@ -366,7 +293,7 @@ const sections = [
       <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
         <div class="container">
           <h2 id="outcomes-heading" class="case-section__heading reveal">Outcomes</h2>
-          <p class="reveal">The exhibition ran for the full month of January 2026. Over 1,000 visitors came through on opening night alone, and 5 art pieces were sold during the run. The digital catalogue launched before opening night and served as the primary way visitors engaged with artist bios and artwork descriptions — both in the gallery via QR code and from home.</p>
+          <p class="reveal">The exhibition ran for the full month of January 2026 at Slip Gallery in Seattle.</p>
 
           <div class="goal-pair reveal">
             <div class="goals-frustrations-banner">
@@ -391,20 +318,17 @@ const sections = [
         </div>
       </section>
 
-      <!-- What I Learned -->
-      <section class="case-section section" id="learnings" aria-labelledby="learnings-heading">
+      <!-- Reflection -->
+      <section class="case-section section" id="reflection" aria-labelledby="reflection-heading">
         <div class="container">
-          <h2 id="learnings-heading" class="case-section__heading reveal">What I Learned</h2>
-          <p class="reveal">Co-curating an exhibition over 18 months taught me that the organizational work — the timelines, the shared drives, the divided responsibilities — is what makes the creative work possible. Planning with Yaz showed me how much stronger outcomes get when you build in buffer time and trust your collaborator's strengths.</p>
-          <p class="reveal">On the design side, building the digital catalogue reframed how I think about accessibility in physical spaces. Printed artist statements are so standard in galleries that their limitations are invisible: small text, crowded walls, inaccessible to visitors with low vision or mobility constraints. Replacing them with a searchable, resizable digital format was not just a convenience — it was a fundamentally more inclusive way to share the artists' words. The dark theme added its own accessibility challenges, but the constraints forced better design decisions: the gold-on-purple palette that gives the site its gallery feel is also what makes focus indicators pop and headings scannable.</p>
-          <p class="reveal">Working directly with the artists — receiving their bios and descriptions in their own words — also deepened my respect for collaborative content creation. The catalogue is better because the artists shaped it, not just me.</p>
-        </div>
-      </section>
+          <h2 id="reflection-heading" class="case-section__heading reveal">Reflection</h2>
+          <ul class="styled-list reveal">
+            <li><strong>Planning makes the creative work possible.</strong> Co-curating over 18 months taught me that timelines, shared drives, and clearly divided responsibilities are what let the design happen — building in buffer time and trusting your collaborator's strengths leads to stronger outcomes.</li>
+            <li><strong>Accessibility reframes physical spaces.</strong> Printed artist statements are so standard in galleries that their limitations are invisible — small text, crowded walls, inaccessible to visitors with low vision. Replacing them with a searchable, resizable digital format was fundamentally more inclusive, and the dark theme's constraints forced better design decisions.</li>
+            <li><strong>Collaborative content is better content.</strong> The catalogue is stronger because the artists shaped it — receiving bios and descriptions in their own words deepened my respect for letting contributors own their voice.</li>
+          </ul>
 
-      <!-- Next Steps -->
-      <section class="case-section section" id="next-steps" aria-labelledby="next-steps-heading">
-        <div class="container">
-          <h2 id="next-steps-heading" class="case-section__heading reveal">Next Steps</h2>
+          <h3 class="reveal">Next steps</h3>
           <div class="next-steps reveal">
             <div class="next-step">
               <h3 class="next-step__title">Image Descriptions</h3>
@@ -430,48 +354,6 @@ const sections = [
     </div>
   </div>
 
-  <!-- Lightbox -->
-  <div class="lightbox-overlay" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
-    <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
-    <div class="lightbox-content">
-      <img src="" alt="" />
-      <p class="lightbox-caption"></p>
-    </div>
-  </div>
 </BaseLayout>
 
 <script is:inline src="/scripts/scroll-spy.js"></script>
-<script is:inline>
-  (function () {
-    var overlay = document.getElementById('lightbox');
-    if (!overlay) return;
-    var lbImg = overlay.querySelector('.lightbox-content img');
-    var lbCaption = overlay.querySelector('.lightbox-caption');
-
-    document.querySelectorAll('[data-lightbox]').forEach(function (fig) {
-      fig.addEventListener('click', function () {
-        var img = fig.querySelector('img');
-        if (!img) return;
-        lbImg.src = img.src;
-        lbImg.alt = img.alt;
-        lbCaption.textContent = fig.getAttribute('data-description') || '';
-        overlay.classList.add('is-active');
-        overlay.setAttribute('aria-hidden', 'false');
-      });
-    });
-
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
-        overlay.classList.remove('is-active');
-        overlay.setAttribute('aria-hidden', 'true');
-      }
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && overlay.classList.contains('is-active')) {
-        overlay.classList.remove('is-active');
-        overlay.setAttribute('aria-hidden', 'true');
-      }
-    });
-  })();
-</script>

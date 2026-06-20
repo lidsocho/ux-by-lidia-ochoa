@@ -18,3 +18,12 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Personal screenshots and reference files
+*.JPG
+*.MP4
+File_001.png
+_W7A*.JPG
+2026-*-Greenshot.png
+2026-*-.png
+2026-*-*.png

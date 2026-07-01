@@ -9,11 +9,12 @@ const sections = [
   { id: 'design-decisions', label: 'Design Decisions' },
   { id: 'accessibility', label: 'Accessibility' },
   { id: 'the-work', label: 'The Work' },
+  { id: 'the-app', label: 'The App' },
   { id: 'outcomes', label: 'Outcomes' },
   { id: 'reflection', label: 'Reflection' },
 ];
 ---
-<BaseLayout title="ComBoard — AAC Case Study | Lidia Ochoa" description="Custom AAC app for a non-speaking high school student with cerebral palsy, increasing independent spelling by 980%." projectColor="#f28c28" ogImage="/images/home/comboard-thumb.png">
+<BaseLayout title="ComBoard — AAC Case Study | Lidia Ochoa" description="The AAC app that took one student from spelling twice a month to five times a week — now a shipped iOS app for any non-speaking communicator." projectColor="#f28c28" ogImage="/images/home/comboard-thumb.png">
 
   <!-- Hero -->
   <section class="case-hero">
@@ -21,14 +22,17 @@ const sections = [
       <div class="reveal">
         <h1>ComBoard</h1>
         <dl class="case-hero__meta">
-          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>May – Oct 2024</dd></div>
-          <div class="case-hero__meta-item"><dt>Role:</dt><dd>Lead UXR &amp; Design (solo)</dd></div>
-          <div class="case-hero__meta-item"><dt>Tool:</dt><dd>Figma</dd></div>
+          <div class="case-hero__meta-item"><dt>Timeline:</dt><dd>May 2024 – Jun 2026</dd></div>
+          <div class="case-hero__meta-item"><dt>Role:</dt><dd>UX Research, Design &amp; iOS Development (solo)</dd></div>
+          <div class="case-hero__meta-item"><dt>Tools:</dt><dd>Figma, React Native / Expo, Swift</dd></div>
         </dl>
         <div class="case-hero__tagline-row">
-          <p class="case-hero__tagline">AAC app for a non-speaking high school student with cerebral palsy, used in mainstream classes.</p>
+          <p class="case-hero__tagline">The AAC app that took one student from spelling twice a month to five times a week — now a shipped iOS app for any non-speaking communicator.</p>
+          <a href="https://apps.apple.com/us/app/comboard-aac/id6782740525" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="View ComBoard on the App Store (opens in new tab)">
+            App Store &rarr;
+          </a>
           <a href="https://comboard.figma.site" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="View ComBoard Figma prototype (opens in new tab)">
-            View Prototype &rarr;
+            Figma Prototype &rarr;
           </a>
         </div>
       </div>
@@ -258,6 +262,71 @@ const sections = [
         </div>
       </section>
 
+      <!-- The App -->
+      <section class="case-section section" id="the-app" aria-labelledby="the-app-heading">
+        <div class="container">
+          <h2 id="the-app-heading" class="case-section__heading reveal">The App</h2>
+          <p class="reveal">In June 2026 I took ComBoard from Figma prototype to a shipped native iOS app in a one-month sprint — handling design, development, and App Store release solo.</p>
+
+          <h3 class="reveal">Tech Stack</h3>
+          <ul class="reveal styled-list">
+            <li><strong>React Native 0.81 + Expo SDK 54</strong> (TypeScript) — fully on-device, no backend</li>
+            <li><strong>Native Swift module</strong> (StoreKit 2) for in-app purchase</li>
+            <li><strong>Apple system Eye Tracking</strong> (iOS 18+) for hands-free use</li>
+            <li>On-device text-to-speech + speech-to-text, Lucide icons, React Navigation</li>
+            <li>iPhone + iPad, iOS 16+</li>
+          </ul>
+
+          <h3 class="reveal">Key Features</h3>
+          <div class="decisions-grid reveal">
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+              <p class="decision-card__response"><strong>14 color themes</strong> including colorblind-safe (Paul Tol) palettes and monochrome sets</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg></div>
+              <p class="decision-card__response"><strong>9 keyboard layouts</strong> (2-cluster to 12-cluster) with frequency-based letter ordering and range-collapsing tiles</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <p class="decision-card__response"><strong>Apple Eye Tracking</strong> — a pivot from the planned WebGazer research to native iOS integration</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></div>
+              <p class="decision-card__response"><strong>Text-to-speech + dictation</strong> — auto-speaks the message on pause, with speech-to-text input for communication partners</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+              <p class="decision-card__response"><strong>Emoji keyboard</strong> with the same recursive cluster drilling interaction</p>
+            </div>
+            <div class="decision-card">
+              <div class="decision-card__icon-wrap"><svg class="decision-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+              <p class="decision-card__response"><strong>Adaptive sizing</strong> across phone and iPad, portrait and landscape, with range-collapsing cluster tiles ("A–R")</p>
+            </div>
+          </div>
+
+          <h3 class="reveal">Shipped Product</h3>
+          <div class="two-col reveal">
+            <div class="png-device-frame png-device-frame--ipad png-device-frame--contain" style="--device-screen-bg: #f5f0eb;" aria-label="iPad showing ComBoard 6-cluster keyboard layout with color-coded letter groups and phoneme keys">
+              <img src="/images/comboard/app-keyboard.png" alt="ComBoard shipped app showing the 6-cluster keyboard with color-coded letter groups, phoneme keys (TH, SH, CH), prediction bar, and Yes/No buttons" class="png-device-frame__screen" loading="lazy" />
+              <img src="/images/devices/ipad-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
+            </div>
+            <div class="png-device-frame png-device-frame--ipad png-device-frame--contain" style="--device-screen-bg: #f5f0eb;" aria-label="iPad showing ComBoard 2-cluster layout with word prediction">
+              <img src="/images/comboard/app-prediction.png" alt="ComBoard 2-cluster layout showing 'I WANT SOME' typed with contextual word predictions: HELP, WATER, WANT, FOOD, YOU" class="png-device-frame__screen" loading="lazy" />
+              <img src="/images/devices/ipad-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
+            </div>
+          </div>
+          <div class="png-device-frame png-device-frame--ipad png-device-frame--contain reveal" style="--device-screen-bg: #f5f0eb; max-width: 640px; margin-inline: auto;" aria-label="iPad showing ComBoard settings panel with 13 color themes and layout options">
+            <img src="/images/comboard/app-settings.png" alt="ComBoard settings panel showing 13 color themes including Classic, Pastels, Natural, Dark, two colorblind-safe palettes, seven monochrome sets, and layout selection" class="png-device-frame__screen" loading="lazy" />
+            <img src="/images/devices/ipad-frame.png" alt="" aria-hidden="true" class="png-device-frame__device" />
+          </div>
+
+          <a href="https://apps.apple.com/us/app/comboard-aac/id6782740525" class="prototype-link reveal" target="_blank" rel="noopener noreferrer" aria-label="View ComBoard on the App Store (opens in new tab)">
+            View on App Store &rarr;
+          </a>
+        </div>
+      </section>
+
       <!-- Outcomes -->
       <section class="case-section section" id="outcomes" aria-labelledby="outcomes-heading">
         <div class="container">
@@ -272,6 +341,10 @@ const sections = [
               <h3>Goal #2 Result</h3>
               <p>Method preferences: Tobii (1/5), Plexiglass board (3/5), ComBoard (5/5)</p>
             </div>
+          </div>
+          <div class="goals-frustrations-banner reveal">
+            <h3>Shipped</h3>
+            <p>ComBoard is now <a href="https://apps.apple.com/us/app/comboard-aac/id6782740525" target="_blank" rel="noopener noreferrer">on the App Store</a> — available to any non-speaking communicator. On-device, private, no subscription.</p>
           </div>
         </div>
       </section>
@@ -291,16 +364,20 @@ const sections = [
           <h3 class="reveal">Next Steps</h3>
           <div class="next-steps reveal">
             <div class="next-step">
-              <h3 class="next-step__title">Eye-Gaze Tracking</h3>
-              <p class="next-step__text">Continue researching software and hardware solutions — WebGazer integration showed promise but calibration needs significant work before it's practical.</p>
+              <h3 class="next-step__title">Refine Eye-Gaze &amp; Switch Support</h3>
+              <p class="next-step__text">Apple system Eye Tracking replaced the planned WebGazer research — next, refine dwell and gaze UX and ensure compatibility with assistive tech hardware like switches.</p>
             </div>
             <div class="next-step">
               <h3 class="next-step__title">Broader User Research</h3>
-              <p class="next-step__text">Interview 5+ additional AAC users to validate design decisions beyond Ellie's specific needs and guide the next round of iteration.</p>
+              <p class="next-step__text">Gather feedback from additional AAC users beyond Ellie to validate design decisions and guide the next round of iteration.</p>
             </div>
             <div class="next-step">
-              <h3 class="next-step__title">Ship It</h3>
-              <p class="next-step__text">Publish as a web app and downloadable app so Ellie can use it with any communication partner — and scale it toward a modular preset system for therapists and caregivers.</p>
+              <h3 class="next-step__title">Custom Word Banks</h3>
+              <p class="next-step__text">Add the ability for users and caregivers to manually add common words and phrases, making prediction more personal and useful from day one.</p>
+            </div>
+            <div class="next-step">
+              <h3 class="next-step__title">Android</h3>
+              <p class="next-step__text">Bring ComBoard to Android via React Native to reach more non-speaking communicators.</p>
             </div>
           </div>
 

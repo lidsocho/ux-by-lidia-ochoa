@@ -1294,6 +1294,7 @@ strong {
   margin-top: var(--space-lg);
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .png-device-frame__device {
@@ -1340,10 +1341,10 @@ strong {
 }
 
 .png-device-frame--ipad .png-device-frame__screen {
-  top: 4%;
-  left: 3.2%;
-  width: 93.6%;
-  height: 92%;
+  top: 4.5%;
+  left: 3.4%;
+  width: 93.2%;
+  height: 91%;
   border-radius: 2% / 3%;
 }
 

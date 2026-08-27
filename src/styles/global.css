@@ -1341,10 +1341,10 @@ strong {
 }
 
 .png-device-frame--ipad .png-device-frame__screen {
-  top: 4.5%;
-  left: 3.4%;
-  width: 93.2%;
-  height: 91%;
+  top: 4%;
+  left: 3.2%;
+  width: 93.6%;
+  height: 92%;
   border-radius: 2% / 3%;
 }
 
@@ -2345,7 +2345,7 @@ strong {
   }
 }
 
-.two-col img {
+.two-col img:not([class*="png-device-frame"]) {
   border-radius: var(--radius-md);
 }
 

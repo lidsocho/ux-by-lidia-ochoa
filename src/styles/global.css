@@ -2688,7 +2688,7 @@ strong {
     margin-top: var(--space-md);
   }
 
-  .case-section img {
+  .case-section img:not([class*="png-device-frame"]) {
     margin-block: var(--space-sm);
   }
 

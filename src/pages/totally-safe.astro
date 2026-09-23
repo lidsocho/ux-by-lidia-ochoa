@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CaseStudyHero from '../components/CaseStudyHero.astro';
+import SideNav from '../components/SideNav.astro';
+import KeepExploring from '../components/KeepExploring.astro';
+
+const sections = [
+  { id: 'inspired-by-life', label: 'Inspired by life' },
+  { id: 'co-designing-through-play', label: 'Co-designing through play' },
+  { id: 'interaction-and-animation', label: 'Getting the interaction and animation right' },
+  { id: 'building-tools', label: 'Building tools to clarify design decisions' },
+  { id: 'fixing-friction', label: 'Fixing friction as we found it' },
+  { id: 'visual-system', label: 'Giving the game a visual system' },
+  { id: 'where-its-going', label: 'Where the game is going' },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Work", "item": "https://uxbylidiaochoa.com/#featured-work" },
+    { "@type": "ListItem", "position": 2, "name": "Totally Safe Digging Co.", "item": "https://uxbylidiaochoa.com/totally-safe/" }
+  ]
+};
+---
+<BaseLayout
+  title="Totally Safe Digging Co. | Co-Designing a Game | Lidia Ochoa"
+  description="An ongoing game project co-designed with a student. Mechanics, interactions, visual direction, and what feels right are shaped through play."
+  projectColor="#e8892e"
+  canonicalPath="/totally-safe/"
+  structuredData={structuredData}
+>
+  <CaseStudyHero
+    eyebrow="Totally Safe Digging Co."
+    headline="Co-designing a game with my student"
+    deck="An ongoing game project where my student helps shape mechanics, interactions, visual direction, and what 'feels right' through play."
+    role="Product & interaction design, visual system, direction"
+    timeline="Oct 2025 – present"
+    status="Ongoing"
+    focus="Co-design · Game UX · Visual design"
+    metrics={[
+      { value: 'Co-designed', label: 'from day one with one student' },
+      { value: 'AI-assisted', label: 'implementation under design direction' },
+    ]}
+    heroImage="/images/home/totally-safe-laptop-thumb.png"
+    heroAlt="Totally Safe Digging Co. title screen showing Map Mode, Challenge, and Creative mode cards with How to Play prompt on a laptop"
+    heroNoBorder
+    accentColor="#e8892e"
+  />
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- 1. Inspired by life -->
+      <section class="case-section section" id="inspired-by-life" aria-labelledby="inspired-by-life-heading">
+        <div class="container">
+          <h2 id="inspired-by-life-heading" class="case-section__heading reveal">Inspired by life</h2>
+          <p class="reveal">Totally Safe Digging Co. started with something concrete: my student had a real excavator in the backyard, and we had already been playing with Figma Make together.</p>
+          <p class="reveal">The first version was a rough side-scrolling idea about driving an excavator, digging through the earth, collecting coins, and finding suspicious things underground. The project quickly outgrew Figma Make, so I moved it into Claude Code and turned it into a real build.</p>
+          <p class="reveal">The original orange excavator sprite stayed. It had already become the face of the game, so the rest of the system grew around it rather than replacing it.</p>
+          <div class="reveal">
+            <img src="/images/totally-safe/onboarding-welcome.jpeg" alt="Level 1 welcome screen showing keyboard controls for move, dig, place dirt, and the coin-collection goal with a Let's Dig button" width="1186" height="802" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Co-designing through play -->
+      <section class="case-section section" id="co-designing-through-play" aria-labelledby="co-designing-heading">
+        <div class="container">
+          <h2 id="co-designing-heading" class="case-section__heading reveal">Co-designing through play</h2>
+          <p class="reveal">My student has been part of the product from the beginning. They pitch mechanics, react strongly to how interactions should feel, propose obstacles, and playtest changes as they are made.</p>
+          <p class="reveal">I facilitate the design process, shape the product and interaction system, develop the visual language, and direct the AI-assisted implementation. The student has real product influence rather than appearing only at the testing stage.</p>
+          <p class="reveal">A lot of the work happens by sitting down together and playing. We run the game, call out whatever feels wrong, stop, talk about it, fix it, and play again.</p>
+          <blockquote class="reveal">"If it did not feel right in our hands, it was not done."</blockquote>
+          <div class="reveal">
+            <img src="/images/totally-safe/gameplay-level3.jpeg" alt="Level 3 gameplay — the excavator digs underground collecting coins beneath a colorful city skyline" width="1230" height="846" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Getting the interaction and animation right -->
+      <section class="case-section section" id="interaction-and-animation" aria-labelledby="interaction-heading">
+        <div class="container">
+          <h2 id="interaction-heading" class="case-section__heading reveal">Getting the interaction and animation right</h2>
+          <p class="reveal">The mole encounter became the clearest example of how specific "feel" could be.</p>
+          <p class="reveal">The first implementation froze the game, launched moles away from the nest, and brought them back in a chase through a large particle-fog effect. My student watched it and said:</p>
+          <blockquote class="reveal">"It was not what I wanted."</blockquote>
+          <p class="reveal">What they wanted was much softer and stranger: barely a mole, "the fog getting darker," a presence you sense before you clearly see it, and movement in "loopy loops."</p>
+          <p class="reveal">The visual treatment kept changing as we got closer: darkening fog, then a silhouette, then a low-opacity full-color mole that stayed mysterious until it emerged.</p>
+          <p class="reveal">The final rhythm became emerge, flee, roam in wide loops, and drift away with the auto-scroll. It is escapable. When contact happens, the mole that actually touched the excavator is the one that leaps onto it.</p>
+          <div class="reveal">
+            <img src="/images/totally-safe/mole-encounter.jpeg" alt="A mole bursts from the ground in a cloud of dust while the excavator digs nearby in Level 3" width="1170" height="822" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Building tools to clarify design decisions -->
+      <section class="case-section section" id="building-tools" aria-labelledby="building-tools-heading">
+        <div class="container">
+          <h2 id="building-tools-heading" class="case-section__heading reveal">Building tools to clarify design decisions</h2>
+          <p class="reveal">The language around the mole was expressive but difficult to translate directly into numbers. We built a standalone Mole Designer so those preferences could become adjustable rather than abstract.</p>
+          <p class="reveal">The tool exposed things such as movement, fog tail, hold, thickness, width, edge hardness, ghostliness, darkness, and speed with live feedback.</p>
+          <p class="reveal">It did not produce the final answer in one pass. It made the conversation more precise and gave my student more direct control over the decision. We continued iterating after using it.</p>
+          <p class="reveal">Once the values felt right, they were baked into the game and the tuning interface disappeared from the player-facing experience.</p>
+        </div>
+      </section>
+
+      <!-- 5. Fixing friction as we found it -->
+      <section class="case-section section" id="fixing-friction" aria-labelledby="fixing-friction-heading">
+        <div class="container">
+          <h2 id="fixing-friction-heading" class="case-section__heading reveal">Fixing friction as we found it</h2>
+          <p class="reveal">The same play-and-fix loop shaped the rest of the game.</p>
+          <p class="reveal">A level used to end while coins were still reachable. The world now stops scrolling at the end and lets the player drive to a finish fence.</p>
+          <p class="reveal">A level promising a certain number of coins could actually contain more because nest coins were added on top of the target. The generator now trims to the exact total, and every screen reports the same number.</p>
+          <p class="reveal">Map and Challenge originally shared progress. They became separate tracks so clearing one mode does not silently unlock the other.</p>
+          <p class="reveal">Challenge mode introduced a finite-dirt economy where digging banks dirt and placing spends it, including a short stockpile window before scrolling begins.</p>
+          <p class="reveal">Small pieces such as the dirt readout, stockpile prompt, onboarding, and mode structure were refined through the same process of using them together and correcting what got in the way.</p>
+
+          <details class="expandable-depth reveal">
+            <summary>Dig Log: selected fixes from the play-and-fix loop</summary>
+            <div class="expandable-depth__body">
+              <h3 class="expandable-depth__subhead">The mole encounter</h3>
+              <ul>
+                <li><strong>Take 1, freeze, flee, chase:</strong> The first version froze the screen on a nest hit, sent moles off-screen, then chased the excavator from behind. It was over-engineered and never satisfying.</li>
+                <li><strong>Take 2, a presence in the fog:</strong> My student's spec: the mole should not be a sprite or a dot. It is "the fog getting darker," a soft dark mass you sense through the mist, moving in "loopy loops."</li>
+                <li><strong>Take 3, shipped:</strong> Moles rise from the nest, dash a little over half a screen away, then roam on wide wandering loops and drift off with the auto-scroll. No relentless chase; it is escapable.</li>
+                <li><strong>The pounce:</strong> On contact, the mole you touched is the one that jumps. The game captures its position, leaves a puff of fog where it was, and arcs it onto the excavator.</li>
+              </ul>
+
+              <h3 class="expandable-depth__subhead">Performance</h3>
+              <ul>
+                <li><strong>The fog lag:</strong> Every wisp of fog was drawn from scratch every frame, then composited through a separate offscreen layer. Fix: pre-render once, draw cheap, and emit fog puffs by distance travelled (one puff every 16 px) instead of by frame.</li>
+              </ul>
+
+              <h3 class="expandable-depth__subhead">Bugs and friction</h3>
+              <ul>
+                <li><strong>Levels ended too soon:</strong> The level finished the instant the camera reached the map edge, cutting off a whole screen of still-collectible coins. Now the world stops scrolling at the end and you drive to a finish fence.</li>
+                <li><strong>Coin counts did not add up:</strong> Nest coins were counted on top of a level's target, so a level promising "60 coins" actually held 67. The generator now trims to an exact total, and every screen shows the same honest number.</li>
+                <li><strong>Progress bled between modes:</strong> Map and Challenge shared one save, so clearing a Map level unlocked the same-numbered Challenge level. They are now two separate tracks.</li>
+                <li><strong>Challenge mode, finite dirt:</strong> Challenge mode adds a dirt economy: dig to bank dirt, place to spend it. A 5-second stockpile window lets you load up before the world starts scrolling.</li>
+                <li><strong>Dirt readout missing:</strong> Players could not tell how much dirt they had available. A readout was added to the HUD.</li>
+                <li><strong>Stockpile prompt confusion:</strong> The early stockpile phase had no clear cue. An onboarding prompt was added to explain the mechanic before scrolling starts.</li>
+              </ul>
+
+              <h3 class="expandable-depth__subhead">Visual system</h3>
+              <ul>
+                <li><strong>Design system, written down:</strong> A design-system manual documented the "before" state and a 15-item cleanup punch-list, then worked the list in code one item at a time.</li>
+                <li><strong>The brand token layer:</strong> Everything routes through tokens in one stylesheet: one brand orange, warm-ink browns for text, a five-color candy action palette, and the signature chunky 3D shadow.</li>
+                <li><strong>Archivo, everywhere:</strong> Standardized on one typeface. Dropped a second label face and put every size on a type and color spec sheet. Fixed a subtle flash of fallback font by preloading every weight up front.</li>
+                <li><strong>A real contrast pass:</strong> White text on the candy colors failed WCAG AA badly (~2:1). Switched every candy surface to dark warm-ink text (~7:1) and lightened the violet so the same rule could work consistently.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 6. Giving the game a visual system -->
+      <section class="case-section section" id="visual-system" aria-labelledby="visual-system-heading">
+        <div class="container">
+          <h2 id="visual-system-heading" class="case-section__heading reveal">Giving the game a visual system</h2>
+          <p class="reveal">We wrote down the visual system before finishing the polish pass.</p>
+          <p class="reveal">The direction became Sunset Boom: warm dusk colors, a parallax cartoon skyline, shiny coins, chunky controls, and a consistent orange-led brand system.</p>
+          <p class="reveal">The project uses design tokens for the brand orange, warm ink colors, candy action colors, and the hard-offset 3D shadow used throughout the controls.</p>
+          <p class="reveal">Typography was standardized on Archivo.</p>
+          <p class="reveal">A contrast pass found white text on the candy-colored controls landing around 2:1 contrast. Those surfaces moved to dark warm-ink text at roughly 7:1, and the violet was adjusted so the same rule could work consistently.</p>
+          <p class="reveal">The design-system manual remains frozen as an artifact of an earlier point in the project while the live game continues to evolve.</p>
+        </div>
+      </section>
+
+      <!-- 7. Where the game is going -->
+      <section class="case-section section" id="where-its-going" aria-labelledby="where-its-going-heading">
+        <div class="container">
+          <h2 id="where-its-going-heading" class="case-section__heading reveal">Where the game is going</h2>
+          <p class="reveal">The game now has Map, Challenge, and Creative modes, clearer onboarding, a growing set of mechanics, and a running backlog of later-level obstacles and effects.</p>
+          <p class="reveal">Some parts are still intentionally open: sound design, a stronger goal for Creative mode, later-level obstacles, weather effects, and additional polish around game-over timing.</p>
+          <p class="reveal">AI writes the implementation under direction. The product decisions, interaction behavior, visual system, testing, and evaluation remain part of the ongoing co-design process.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <KeepExploring
+    next={{ name: 'Our Light Unbound', headline: 'Designing a month-long exhibition across gallery, campaign, programming, and digital experience.', href: '/our-light-unbound/' }}
+    alt={{ name: 'ComBoard', headline: 'Designing an AAC tool around one student\'s communication needs.', href: '/comboard/' }}
+  />
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

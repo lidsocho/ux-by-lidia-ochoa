@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CaseStudyHero from '../components/CaseStudyHero.astro';
+import SideNav from '../components/SideNav.astro';
+import KeepExploring from '../components/KeepExploring.astro';
+
+const sections = [
+  { id: 'existing-tools', label: 'Existing tools' },
+  { id: 'from-phrases-to-spelling', label: 'From phrases to spelling' },
+  { id: 'designing-through-use', label: 'Designing through use' },
+  { id: 'what-the-usage-showed', label: 'What the usage showed' },
+  { id: 'beyond-one-student', label: 'Beyond one student' },
+  { id: 'shipping-the-app', label: 'Shipping the app' },
+  { id: 'what-still-needs-research', label: 'What still needs research' },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Work", "item": "https://uxbylidiaochoa.com/#featured-work" },
+    { "@type": "ListItem", "position": 2, "name": "ComBoard", "item": "https://uxbylidiaochoa.com/comboard/" }
+  ]
+};
+---
+<BaseLayout
+  title="ComBoard | Designing an AAC Tool | Lidia Ochoa"
+  description="AAC communication tool built through long-term use with a nonspeaking student with cerebral palsy, then developed into a configurable iPhone and iPad app. 9.8× more successful communication-tool uses per day."
+  projectColor="#f28c28"
+  ogImage="/images/home/comboard-thumb.png"
+  canonicalPath="/comboard/"
+  structuredData={structuredData}
+>
+  <CaseStudyHero
+    eyebrow="ComBoard"
+    headline="Designing an AAC tool around one student's communication needs"
+    deck="Built through long-term use with a nonspeaking student with cerebral palsy, then developed into a configurable iPhone and iPad app."
+    heroImage="/images/home/comboard-ipad-thumb.png"
+    heroAlt="ComBoard shipped app showing the 6-cluster keyboard with color-coded letter groups, phoneme keys, prediction bar, and Yes/No buttons on an iPad"
+    heroNoBorder
+    role="Product design, research & iOS development"
+    timeline="Apr 2024 – Jun 2026"
+    status="Shipped iOS app"
+    focus="Accessibility · AAC · iOS"
+    metrics={[
+      { value: '9.8×', label: 'more successful communication-tool uses per day' },
+      { value: '5/5', label: 'preference rating from the primary user' },
+      { value: 'Shipped', label: 'configurable iPhone and iPad app' },
+    ]}
+    accentColor="#f28c28"
+  />
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- 1. Existing tools -->
+      <section class="case-section section" id="existing-tools" aria-labelledby="existing-tools-heading">
+        <div class="container">
+          <h2 id="existing-tools-heading" class="case-section__heading reveal">The existing tools worked, but asked a lot of her.</h2>
+          <p class="reveal">In my fourth year teaching, I worked with a nonspeaking student with cerebral palsy who communicated largely through eye movements with support from an adult communication partner.</p>
+          <p class="reveal">Her Tobii device could be tiring to use and made face-to-face interaction awkward because the screen physically sat between her and the person she was talking to. Her plexiglass E-TRAN board was easier on her eyes and kept her face visible, but it was large, heavy, and difficult to carry around.</p>
+          <p class="reveal">She already used simple left-right eye-gaze comfortably, so I started there.</p>
+        </div>
+      </section>
+
+      <!-- 2. From phrases to spelling -->
+      <section class="case-section section" id="from-phrases-to-spelling" aria-labelledby="phrases-heading">
+        <div class="container">
+          <h2 id="phrases-heading" class="case-section__heading reveal">The first version still decided what she was allowed to say.</h2>
+          <p class="reveal">I started with a category-based board. She could make selections, but every category and phrase had been chosen in advance by someone else.</p>
+          <p class="reveal">That pushed me toward spelling. Spelling gave her much more freedom, but a normal keyboard asks the eyes to make lots of small, precise movements.</p>
+          <p class="reveal">I borrowed from the E-TRAN board that already worked best for her and grouped letters into larger color-coded clusters. She indicates a cluster with her eyes, and a communication partner taps it on the screen.</p>
+          <blockquote class="reveal">How little does she need to look at, move toward, or interpret to make the next choice?</blockquote>
+
+          <div class="two-col reveal">
+            <div>
+              <img src="/images/comboard/design-ideation-1.png" alt="Early communication board design iteration showing category-based layout" width="1988" height="1122" loading="lazy" />
+              <div class="case-annotation">
+                <span class="case-annotation__step">Student indicates with gaze</span>
+                <span class="case-annotation__arrow" aria-hidden="true">&rarr;</span>
+                <span class="case-annotation__step">Partner taps selection</span>
+              </div>
+            </div>
+            <img src="/images/comboard/design-ideation-2.png" alt="Second iteration moving toward a keyboard layout with letter clusters" width="1656" height="1306" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Designing through use -->
+      <section class="case-section section" id="designing-through-use" aria-labelledby="designing-use-heading">
+        <div class="container">
+          <h2 id="designing-use-heading" class="case-section__heading reveal">Most of the useful answers came from using it with her.</h2>
+          <p class="reveal">I prioritized functional versions over polished prototypes because the important questions were difficult to answer in Figma.</p>
+          <p class="reveal">We would use ComBoard during real sessions, notice where communication slowed down or became frustrating, and adjust the design from there.</p>
+          <p class="reveal">Early versions included hand-drawn icons under each letter as memory aids. Those were later replaced with Lucide icons for visual consistency, but in the final version the icons were removed entirely. In practice, they added visual noise without meaningfully helping her find the right cluster.</p>
+
+          <div class="two-col reveal">
+            <img src="/images/comboard/design-icons.png" alt="Paper sketches of keyboard icons alongside early digital icon components in Figma" width="1406" height="1143" loading="lazy" />
+            <img src="/images/comboard/design-ui.png" alt="Early ComBoard UI in Figma showing the main keyboard layout and all six expanded cluster views with hand-drawn icons" width="1842" height="1502" loading="lazy" />
+          </div>
+          <img src="/images/comboard/makeathon-3.png" alt="Intermediate ComBoard version with Lucide icons under each letter in the color-coded keyboard clusters" width="3360" height="1938" class="reveal" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- 4. What the usage showed -->
+      <section class="case-section section" id="what-the-usage-showed" aria-labelledby="usage-heading">
+        <div class="container">
+          <h2 id="usage-heading" class="case-section__heading reveal">What the usage showed</h2>
+          <p class="reveal">I tracked how often a communication tool was both <strong>offered and actively used</strong> across five-day workweeks over a summer and school year. After ComBoard became functional, successful uses increased <strong>9.8&times; per day</strong>.</p>
+
+          <svg viewBox="0 0 800 395" class="usage-chart reveal" role="img" aria-label="Line chart: Successful communication-tool uses per month, April 2024 to June 2025. Digital ComBoard rises from 0 to a peak of 24 in January 2025. Plexiglass E-TRAN board declines from 3 to near 0. Tobii Eye Gaze stays near 0 throughout.">
+            <style>
+              .uc-text { font-family: 'Commissioner', sans-serif; fill: var(--color-text, #2d2d2d); }
+              .uc-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; }
+              .uc-axis { font-size: 11px; opacity: 0.6; }
+              .uc-axis-title { font-size: 12px; font-weight: 600; opacity: 0.6; }
+              .uc-grid { stroke: var(--color-border, #e0e0e0); stroke-width: 1; }
+              .uc-legend { font-size: 11.5px; font-weight: 500; }
+            </style>
+
+            <!-- Title -->
+            <text x="427" y="30" text-anchor="middle" class="uc-text uc-title">Successful communication-tool uses per month</text>
+
+            <!-- Y-axis title -->
+            <text x="20" y="187" text-anchor="middle" transform="rotate(-90 20 187)" class="uc-text uc-axis-title">Successful uses</text>
+
+            <!-- Grid lines -->
+            <line x1="78" y1="320" x2="775" y2="320" class="uc-grid"/>
+            <line x1="78" y1="265.6" x2="775" y2="265.6" class="uc-grid"/>
+            <line x1="78" y1="211.2" x2="775" y2="211.2" class="uc-grid"/>
+            <line x1="78" y1="156.8" x2="775" y2="156.8" class="uc-grid"/>
+            <line x1="78" y1="102.4" x2="775" y2="102.4" class="uc-grid"/>
+            <line x1="78" y1="48" x2="775" y2="48" class="uc-grid"/>
+
+            <!-- Y-axis labels -->
+            <text x="68" y="324" text-anchor="end" class="uc-text uc-axis">0</text>
+            <text x="68" y="269.6" text-anchor="end" class="uc-text uc-axis">5</text>
+            <text x="68" y="215.2" text-anchor="end" class="uc-text uc-axis">10</text>
+            <text x="68" y="160.8" text-anchor="end" class="uc-text uc-axis">15</text>
+            <text x="68" y="106.4" text-anchor="end" class="uc-text uc-axis">20</text>
+            <text x="68" y="52" text-anchor="end" class="uc-text uc-axis">25</text>
+
+            <!-- X-axis labels (every other month) -->
+            <text x="78" y="342" text-anchor="middle" class="uc-text uc-axis">Apr '24</text>
+            <text x="177.6" y="342" text-anchor="middle" class="uc-text uc-axis">Jun</text>
+            <text x="277.1" y="342" text-anchor="middle" class="uc-text uc-axis">Aug</text>
+            <text x="376.7" y="342" text-anchor="middle" class="uc-text uc-axis">Oct</text>
+            <text x="476.3" y="342" text-anchor="middle" class="uc-text uc-axis">Dec</text>
+            <text x="575.9" y="342" text-anchor="middle" class="uc-text uc-axis">Feb '25</text>
+            <text x="675.4" y="342" text-anchor="middle" class="uc-text uc-axis">Apr</text>
+            <text x="775" y="342" text-anchor="middle" class="uc-text uc-axis">Jun</text>
+
+            <!-- Tobii Eye Gaze (dotted, behind) -->
+            <polyline
+              points="78,320 127.8,320 177.6,320 227.4,320 277.1,309.1 326.9,309.1 376.7,320 426.5,320 476.3,320 526.1,320 575.9,320 625.7,320 675.4,320 725.2,320 775,320"
+              fill="none" stroke="var(--color-text-secondary, #555)" stroke-width="2" stroke-dasharray="3 4" opacity="0.45"/>
+
+            <!-- Plexiglass E-TRAN board (dashed) -->
+            <polyline
+              points="78,287.4 127.8,287.4 177.6,287.4 227.4,276.5 277.1,265.6 326.9,298.2 376.7,298.2 426.5,309.1 476.3,309.1 526.1,309.1 575.9,309.1 625.7,320 675.4,320 725.2,309.1 775,320"
+              fill="none" stroke="var(--color-teal, #4cc4cf)" stroke-width="2.5" stroke-dasharray="8 4"/>
+
+            <!-- Digital ComBoard (solid, on top) -->
+            <polyline
+              points="78,320 127.8,320 177.6,320 227.4,189.4 277.1,124.2 326.9,80.6 376.7,102.4 426.5,189.4 476.3,178.6 526.1,58.9 575.9,124.2 625.7,124.2 675.4,156.8 725.2,167.7 775,189.4"
+              fill="none" stroke="var(--color-orange, #f28c28)" stroke-width="3"/>
+
+            <!-- ComBoard data dots (non-zero values only) -->
+            <g fill="var(--color-orange, #f28c28)">
+              <circle cx="227.4" cy="189.4" r="3.5"/>
+              <circle cx="277.1" cy="124.2" r="3.5"/>
+              <circle cx="326.9" cy="80.6" r="3.5"/>
+              <circle cx="376.7" cy="102.4" r="3.5"/>
+              <circle cx="426.5" cy="189.4" r="3.5"/>
+              <circle cx="476.3" cy="178.6" r="3.5"/>
+              <circle cx="526.1" cy="58.9" r="3.5"/>
+              <circle cx="575.9" cy="124.2" r="3.5"/>
+              <circle cx="625.7" cy="124.2" r="3.5"/>
+              <circle cx="675.4" cy="156.8" r="3.5"/>
+              <circle cx="725.2" cy="167.7" r="3.5"/>
+              <circle cx="775" cy="189.4" r="3.5"/>
+            </g>
+
+            <!-- Peak annotation -->
+            <text x="526.1" y="48" text-anchor="middle" class="uc-text" style="font-size: 12px; font-weight: 700; fill: var(--color-orange, #f28c28);">24</text>
+
+            <!-- Legend (horizontal, below x-axis) -->
+            <g class="uc-text uc-legend">
+              <!-- Digital ComBoard -->
+              <line x1="135" y1="375" x2="157" y2="375" stroke="var(--color-orange, #f28c28)" stroke-width="3"/>
+              <circle cx="146" cy="375" r="3" fill="var(--color-orange, #f28c28)"/>
+              <text x="163" y="379">Digital ComBoard</text>
+
+              <!-- Plexiglass E-TRAN board -->
+              <line x1="340" y1="375" x2="362" y2="375" stroke="var(--color-teal, #4cc4cf)" stroke-width="2.5" stroke-dasharray="8 4"/>
+              <text x="368" y="379">Plexiglass E-TRAN board</text>
+
+              <!-- Tobii Eye Gaze -->
+              <line x1="575" y1="375" x2="597" y2="375" stroke="var(--color-text-secondary, #555)" stroke-width="2" stroke-dasharray="3 4" opacity="0.45"/>
+              <text x="603" y="379">Tobii Eye Gaze</text>
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <!-- 5. Beyond one student -->
+      <section class="case-section section" id="beyond-one-student" aria-labelledby="beyond-heading">
+        <div class="container">
+          <h2 id="beyond-heading" class="case-section__heading reveal">Then I started asking what could work beyond one student.</h2>
+          <p class="reveal">For more than a year, ComBoard was fundamentally one student's tool. In 2025 I started exploring whether the interaction could become flexible enough for other AAC users without losing the simplicity that had made it useful.</p>
+          <p class="reveal">The eventual app supports layouts ranging from very large two-cluster choices to denser arrangements, along with configurable colors and orientations, predictive text, speech output, dictation, and Apple Eye Tracking.</p>
+
+          <div class="two-col reveal">
+            <img src="/images/comboard/app-prediction.png" alt="ComBoard 2-cluster layout showing 'I WANT SOME' typed with contextual word predictions" width="1200" height="900" loading="lazy" />
+            <img src="/images/comboard/app-settings.png" alt="ComBoard settings panel showing 13 color themes and layout selection options" width="1200" height="900" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Shipping the app -->
+      <section class="case-section section" id="shipping-the-app" aria-labelledby="shipping-heading">
+        <div class="container">
+          <h2 id="shipping-heading" class="case-section__heading reveal">In June 2026, I decided to ship it.</h2>
+          <p class="reveal">Until then, ComBoard had existed as a succession of prototypes. I gave myself a month to turn it into a real iPhone and iPad app.</p>
+          <p class="reveal">AI-assisted coding became a significant part of that process. I used it to help translate my prototypes and design files into production code, connect systems and functionality, and work through implementation problems.</p>
+          <p class="reveal">I remained responsible for defining the interactions, evaluating what the implementation actually did, testing it across devices and use cases, and deciding what needed to change.</p>
+
+          <div class="png-device-frame png-device-frame--ipad png-device-frame--contain reveal" style="--device-screen-bg: #000000; margin-top: var(--space-lg);" aria-label="iPad showing ComBoard app demo">
+            <video src="/images/comboard/app-demo.mp4" poster="/images/comboard/app-demo-poster.jpg" autoplay loop muted playsinline class="png-device-frame__screen" loading="lazy" aria-label="Screen recording of ComBoard in use, showing letter cluster selection and word building"></video>
+            <img src="/images/devices/ipad-frame.png" alt="" aria-hidden="true" width="1200" height="855" class="png-device-frame__device" />
+          </div>
+
+          <div class="case-section__links reveal">
+            <a href="https://apps.apple.com/us/app/comboard-aac/id6782740525" class="prototype-link" target="_blank" rel="noopener noreferrer" aria-label="View ComBoard on the App Store (opens in new tab)">
+              View on App Store &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. What still needs research -->
+      <section class="case-section section" id="what-still-needs-research" aria-labelledby="research-heading">
+        <div class="container">
+          <h2 id="research-heading" class="case-section__heading reveal">What I know, and what still needs research.</h2>
+          <p class="reveal">ComBoard worked unusually well for the person it was originally designed with. She used it far more often than the communication tools available before it and rated it as the tool she most liked using.</p>
+          <p class="reveal"><strong>I owned the product design and implementation. The primary user continuously shaped the design through use and feedback.</strong></p>
+          <p class="reveal">The shipped app is broader than the research behind it. Its next stage needs more AAC users and more testing across gaze, dwell, and switch access.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <KeepExploring
+    next={{ name: 'Bb Budget', headline: 'Building a household budgeting product for two people with distinct tracking habits.', href: '/bb-budget/' }}
+    alt={{ name: 'Totally Safe Digging Co.', headline: 'Co-designing a game with my student.', href: '/totally-safe/' }}
+  />
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

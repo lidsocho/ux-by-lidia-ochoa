@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CaseStudyHero from '../components/CaseStudyHero.astro';
+import SideNav from '../components/SideNav.astro';
+import KeepExploring from '../components/KeepExploring.astro';
+
+const sections = [
+  { id: 'starting-in-working-software', label: 'Starting in working software' },
+  { id: 'designing-for-two-people', label: 'Designing for two people' },
+  { id: 'from-local-to-shared', label: 'From local prototype to shared household system' },
+  { id: 'making-data-reliable', label: 'Making the data reliable' },
+  { id: 'enforcing-privacy', label: 'Enforcing privacy and permissions' },
+  { id: 'simplifying-the-product', label: 'Simplifying the product as it grew' },
+  { id: 'what-this-made-possible', label: 'What this workflow made possible' },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Work", "item": "https://uxbylidiaochoa.com/#featured-work" },
+    { "@type": "ListItem", "position": 2, "name": "Bb Budget", "item": "https://uxbylidiaochoa.com/bb-budget/" }
+  ]
+};
+---
+<BaseLayout
+  title="Bb Budget | Household Budgeting Product | Lidia Ochoa"
+  description="Household budgeting product designed directly in working software. From local prototype to multi-user platform with bank integration, permissions, encryption, and a visual system."
+  projectColor="#4cc4cf"
+  ogImage="/images/home/offline-budget-thumb.png"
+  canonicalPath="/bb-budget/"
+  structuredData={structuredData}
+>
+  <CaseStudyHero
+    eyebrow="Bb Budget"
+    headline="Building a household budgeting product for two people with distinct tracking habits"
+    deck="Designed directly in working software, shaping everything from household views and transaction workflows to permissions, security, and the visual system."
+    heroImage="/images/home/offline-budget-thumb.png"
+    heroAlt="Bb Budget cloud version on a laptop — Trends tab showing Income vs Spending bar chart, household member sidebar, and net income area chart"
+    role="Product design, strategy & direction"
+    timeline="Oct 2025 – Aug 2026"
+    status="In active household use"
+    focus="Product design · Systems thinking · AI-directed development"
+    metrics={[
+      { value: 'Real household use', label: 'one household using shared and individual workflows' },
+      { value: 'Plaid + manual', label: 'automatic and manual account workflows coexist' },
+      { value: 'AI-directed', label: 'Claude wrote implementation under product direction' },
+    ]}
+    accentColor="#4cc4cf"
+  />
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- 1. Starting in working software -->
+      <section class="case-section section" id="starting-in-working-software" aria-labelledby="starting-heading">
+        <div class="container">
+          <h2 id="starting-heading" class="case-section__heading reveal">Starting in working software</h2>
+          <p class="reveal">Bb Budget started as a local React app for one household. I skipped a traditional wireframe phase and worked directly in functioning software, describing the problem, behavior, layout, and purpose to Claude, using what it built, noticing what felt awkward or wrong, and redirecting the next iteration.</p>
+          <p class="reveal">That loop stayed consistent as the product grew: describe the intended behavior, build it, use it, find the friction, refine it, and repeat.</p>
+          <p class="reveal">Claude wrote the implementation. I designed and directed the product through the working software.</p>
+          <p class="reveal">I owned the product strategy, interaction design, information architecture, visual design, expected system behavior, testing and evaluation, and the product decisions that shaped each iteration.</p>
+        </div>
+      </section>
+
+      <!-- 2. Designing for two people -->
+      <section class="case-section section" id="designing-for-two-people" aria-labelledby="two-people-heading">
+        <div class="container">
+          <h2 id="two-people-heading" class="case-section__heading reveal">Designing for two people</h2>
+          <p class="reveal">The household became the unit of the product. When one person invites another, both belong to the same household rather than maintaining separate silos that have to be reconciled later.</p>
+          <p class="reveal">Members live on a left rail with fixed identity colors. A view-mode control switches among Single, Combined, and Side-by-side views so the same data can support different ways of looking at the household.</p>
+          <p class="reveal">The two people using the product also wanted different levels of automation. One wanted bank syncing. The other preferred more manual control. The product needed to support both without forcing one person into the other's workflow.</p>
+
+          <div class="three-col reveal">
+            <img src="/images/offline-budget/view-single.jpg" alt="Bb Budget Single view showing one household member's transactions" width="1200" height="673" loading="lazy" />
+            <img src="/images/offline-budget/view-combined.jpg" alt="Bb Budget Combined view merging both members' transactions into one list" width="1200" height="862" loading="lazy" />
+            <img src="/images/offline-budget/view-sidebyside.jpg" alt="Bb Budget Side-by-side view comparing both members' data in parallel columns" width="1200" height="703" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. From local prototype to shared household system -->
+      <section class="case-section section" id="from-local-to-shared" aria-labelledby="local-to-shared-heading">
+        <div class="container">
+          <h2 id="local-to-shared-heading" class="case-section__heading reveal">From local prototype to shared household system</h2>
+          <p class="reveal">The first version lived entirely in localStorage. That made experimentation cheap, but the data was trapped in one browser. It could not genuinely support sharing, survive a cleared cache, or follow a household across devices.</p>
+          <p class="reveal">The product moved to Supabase for Postgres, Auth, Row-Level Security, and Realtime, with Vercel serverless functions handling protected operations. The existing local data was migrated into the shared backend.</p>
+          <p class="reveal">Plaid added automatic bank syncing, while manual CSV import remained available. Both workflows coexist, with deduplication so a transaction arriving through more than one path is merged rather than doubled.</p>
+          <p class="reveal">The interface also had to survive the multi-user layouts it introduced. In Side-by-side mode, components that had been designed around the viewport became cramped inside half-width columns. Moving those components to container queries let each piece respond to the space it actually occupied.</p>
+
+          <img src="/images/offline-budget/architecture-diagram-neobrutalist.png" alt="Bb Budget architecture diagram showing the relationship between React frontend, Supabase backend, Vercel serverless functions, and Plaid bank integration" width="1200" height="801" class="reveal" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- 4. Making the data reliable -->
+      <section class="case-section section" id="making-data-reliable" aria-labelledby="data-reliable-heading">
+        <div class="container">
+          <h2 id="data-reliable-heading" class="case-section__heading reveal">Making the data reliable</h2>
+          <p class="reveal">The first categorizer struggled with bank-statement noise and generic category names that did not match the household's real categories.</p>
+          <p class="reveal">The revised flow strips statement noise down to the merchant, checks the household's own categorization history first, and only then falls back to broader matching patterns. Canonical guesses are mapped through aliases into the categories the household actually uses.</p>
+          <p class="reveal">Reliability problems also showed up in less visible places. PostgREST's default 1,000-row cap silently truncated a household with 1,531 transactions until the fetch was paginated. Plaid connections produced duplicate-looking accounts until fuzzy matching learned that names such as "EVERYDAY CHECKING" and "Wells Fargo Checking" could refer to the same account.</p>
+          <p class="reveal">The product keeps both import-time deduplication and a later Find Duplicates tool because they solve different problems.</p>
+
+          <img src="/images/offline-budget/review-transactions.png" alt="Bb Budget Review Transactions page showing categorization workflow with merchant names, suggested categories, and batch actions" width="1178" height="725" class="reveal" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- 5. Enforcing privacy and permissions -->
+      <section class="case-section section" id="enforcing-privacy" aria-labelledby="privacy-heading">
+        <div class="container">
+          <h2 id="privacy-heading" class="case-section__heading reveal">Enforcing privacy and permissions</h2>
+          <p class="reveal">Connecting real financial data raised the stakes for the system behind the interface.</p>
+          <p class="reveal">Sensitive fields use split-trust field encryption with AES-256-GCM. The encryption key lives on Vercel while ciphertext lives in Supabase, so neither side contains everything needed on its own.</p>
+          <p class="reveal">An authorized black-box security review found that the decrypt-batch endpoint could decrypt arbitrary ciphertext for any authenticated user. The fix changed the endpoint to accept row references, re-fetch the underlying records under the caller's Row-Level Security scope, and return nothing for rows the caller was not authorized to read.</p>
+          <p class="reveal">Sharing had a second enforcement problem. The product exposed can_view, can_edit, and can_reshare, but the early database policies checked household membership before those permissions. A view-only invite could therefore receive more access than the interface promised. The RLS helpers were rewritten so the backend enforces the same permissions the UI communicates.</p>
+
+          <img src="/images/offline-budget/share-modal.jpg" alt="Bb Budget share modal showing permission controls for household members with view, edit, and reshare options" width="574" height="506" class="reveal" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- 6. Simplifying the product as it grew -->
+      <section class="case-section section" id="simplifying-the-product" aria-labelledby="simplifying-heading">
+        <div class="container">
+          <h2 id="simplifying-heading" class="case-section__heading reveal">Simplifying the product as it grew</h2>
+          <p class="reveal">As functionality accumulated, the product needed a more deliberate visual and structural pass.</p>
+          <p class="reveal">A design-system document and typeface study established the later visual language. The chosen type system uses Bricolage Grotesque for headings, Public Sans for body text, and Red Hat Mono for figures.</p>
+          <p class="reveal">The header lost a literal "household" placeholder and an orphaned transaction count. The household name became editable, the signed-in member's avatar became the account menu, and the transaction count moved to Review, where it has context.</p>
+          <p class="reveal">Settings had grown into more than eleven near-identical cards. They were regrouped into four sections: Account, Household & data, Money setup, and Danger zone, with navigation that makes the long page easier to scan.</p>
+          <p class="reveal">A large Reconcile & Cleanup panel was also pruned. Its balance reconciler duplicated the Balances page, and its auto-categorization was weaker than the workflow already in Review. Find Duplicates remained because it solved a distinct problem. The balance-gap hint moved into the Balances flow, and the redundant section disappeared.</p>
+          <p class="reveal">Trends gained an always-visible insights strip with spend versus last month, savings rate, top category, and biggest mover. A difficult stacked category chart was replaced with a clearer top-spending-categories view.</p>
+          <p class="reveal">The logo also moved from orange and teal into the product's own sage and clay palette so the mark and interface read as one system.</p>
+
+          <div class="two-col reveal">
+            <img src="/images/offline-budget/settings.png" alt="Bb Budget settings page before redesign showing more than eleven near-identical cards" width="487" height="881" loading="lazy" />
+            <img src="/images/offline-budget/settings-after.png" alt="Bb Budget settings page after redesign grouped into four clear sections with navigation" width="467" height="860" loading="lazy" />
+          </div>
+
+          <img src="/images/offline-budget/trends-after.png" alt="Bb Budget Trends page showing insights strip with spend comparison, savings rate, top category, and top-spending-categories view" width="1200" height="389" class="reveal" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- 7. What this workflow made possible -->
+      <section class="case-section section" id="what-this-made-possible" aria-labelledby="made-possible-heading">
+        <div class="container">
+          <h2 id="made-possible-heading" class="case-section__heading reveal">What this workflow made possible</h2>
+          <p class="reveal">Bb Budget is used by one real household. It has grown from a local browser prototype into a multi-member product with bank sync, manual workflows, categorization, permissions, encryption, and a visual system that had to become clearer as the feature set expanded.</p>
+          <p class="reveal">The product was designed by repeatedly making decisions concrete enough to use and inspect. AI was the medium used to turn those decisions into functioning software quickly enough to evaluate them.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <KeepExploring
+    next={{ name: 'Totally Safe Digging Co.', headline: 'Co-designing a game with my student.', href: '/totally-safe/' }}
+    alt={{ name: 'Our Light Unbound', headline: 'Designing a month-long exhibition across gallery, campaign, programming, and digital experience.', href: '/our-light-unbound/' }}
+  />
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

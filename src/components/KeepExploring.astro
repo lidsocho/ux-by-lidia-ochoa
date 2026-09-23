@@ -1,0 +1,33 @@
+---
+interface ProjectLink {
+  name: string;
+  headline: string;
+  href: string;
+}
+
+interface Props {
+  next: ProjectLink;
+  alt: ProjectLink;
+}
+
+const { next, alt } = Astro.props;
+---
+<!-- Keep Exploring — Option E -->
+<section class="keep-exploring" aria-label="Continue exploring work">
+  <div class="keep-exploring__label">Keep exploring</div>
+  <div class="keep-exploring__grid">
+    <a href={next.href} class="keep-exploring__card">
+      <span class="keep-exploring__kicker">Next project</span>
+      <h3 class="keep-exploring__title">{next.name}</h3>
+      <p class="keep-exploring__headline">{next.headline}</p>
+      <span class="keep-exploring__link">View case study &rarr;</span>
+    </a>
+
+    <a href={alt.href} class="keep-exploring__card">
+      <span class="keep-exploring__kicker">Or explore</span>
+      <h3 class="keep-exploring__title">{alt.name}</h3>
+      <p class="keep-exploring__headline">{alt.headline}</p>
+      <span class="keep-exploring__link">View case study &rarr;</span>
+    </a>
+  </div>
+</section>

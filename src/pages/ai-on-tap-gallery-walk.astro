@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CaseStudyHero from '../components/CaseStudyHero.astro';
+import SideNav from '../components/SideNav.astro';
+import KeepExploring from '../components/KeepExploring.astro';
+
+const sections = [
+  { id: 'designing-format', label: 'Designing the event format' },
+  { id: 'recruiting-presenters', label: 'Recruiting presenters' },
+  { id: 'preparing-space', label: 'Preparing the space' },
+  { id: 'letting-conversation', label: 'Letting conversation happen' },
+  { id: 'what-turnout-showed', label: 'What the turnout showed' },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Work", "item": "https://uxbylidiaochoa.com/#featured-work" },
+    { "@type": "ListItem", "position": 2, "name": "Seattle AI on Tap Gallery Walk", "item": "https://uxbylidiaochoa.com/ai-on-tap-gallery-walk/" }
+  ]
+};
+---
+<BaseLayout
+  title="Seattle AI on Tap Gallery Walk | Event Design | Lidia Ochoa"
+  description="Gallery-walk event format for Seattle AI on Tap where nine presenters demoed AI-built projects to approximately 35 attendees at Slip Gallery."
+  projectColor="#e8892e"
+  canonicalPath="/ai-on-tap-gallery-walk/"
+  structuredData={structuredData}
+>
+  <CaseStudyHero
+    eyebrow="Seattle AI on Tap Gallery Walk"
+    headline="Designing an event where people could interact with AI-built projects"
+    deck="A gallery-walk format for Seattle AI on Tap that gave nine presenters space to demo working projects while attendees explored and talked directly with them."
+    role="Event design & facilitation"
+    timeline="Aug 27, 2026"
+    status="Completed"
+    focus="Experience design · Event design · Facilitation"
+    metrics={[
+      { value: '45', label: 'registrations' },
+      { value: '~35', label: 'attendees' },
+      { value: '9', label: 'presenters' },
+    ]}
+    heroImage="/images/home/ai-on-tap-thumb.jpg"
+    heroAlt="Attendees gathered in a gallery space during the Seattle AI on Tap Gallery Walk, watching a presenter demo a project"
+    accentColor="#e8892e"
+  />
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- 1. Designing the event format -->
+      <section class="case-section section" id="designing-format" aria-labelledby="designing-format-heading">
+        <div class="container">
+          <h2 id="designing-format-heading" class="case-section__heading reveal">Designing the event format</h2>
+          <p class="reveal">Seattle AI on Tap is a biweekly happy hour I run with Shreyans Khunteta. For the August 27 event, I wanted people to be able to do more than listen to someone describe what they had built.</p>
+          <p class="reveal">The format became a gallery walk. Up to ten presenters could set up a laptop or tablet around the room, give a short introduction, and then let attendees move freely among the projects. Everyone reconvened afterward for questions and discussion.</p>
+        </div>
+      </section>
+
+      <!-- 2. Recruiting presenters -->
+      <section class="case-section section" id="recruiting-presenters" aria-labelledby="recruiting-presenters-heading">
+        <div class="container">
+          <h2 id="recruiting-presenters-heading" class="case-section__heading reveal">Recruiting presenters</h2>
+          <p class="reveal">Shreyans focused on outreach and building interest across social platforms.</p>
+          <p class="reveal">I created the Eventbrite page and submission form, handled the event structure, and worked through what presenters would need in order to show their projects successfully.</p>
+          <p class="reveal">Nine presenters ultimately participated.</p>
+        </div>
+      </section>
+
+      <!-- 3. Preparing the space -->
+      <section class="case-section section" id="preparing-space" aria-labelledby="preparing-space-heading">
+        <div class="container">
+          <h2 id="preparing-space-heading" class="case-section__heading reveal">Preparing the space</h2>
+          <p class="reveal">I secured Slip Gallery, prepared the room, helped presenters get set up, and welcomed attendees into the event.</p>
+          <p class="reveal">The physical format needed enough structure that people knew where to go while remaining loose enough for direct conversation around the projects.</p>
+        </div>
+      </section>
+
+      <!-- 4. Letting conversation happen -->
+      <section class="case-section section" id="letting-conversation" aria-labelledby="letting-conversation-heading">
+        <div class="container">
+          <h2 id="letting-conversation-heading" class="case-section__heading reveal">Letting conversation happen</h2>
+          <p class="reveal">I placed optional notepads at stations as a fallback for questions or thoughts in case a presenter was already occupied.</p>
+          <p class="reveal">They were not used.</p>
+          <p class="reveal">People simply talked to the presenters directly. The fallback became unnecessary because the behavior the format was trying to support happened on its own.</p>
+        </div>
+      </section>
+
+      <!-- 5. What the turnout showed -->
+      <section class="case-section section" id="what-turnout-showed" aria-labelledby="what-turnout-showed-heading">
+        <div class="container">
+          <h2 id="what-turnout-showed-heading" class="case-section__heading reveal">What the turnout showed</h2>
+          <p class="reveal">The event had approximately 45 Eventbrite registrations, ~35 attendees, and 9 presenters.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <KeepExploring
+    next={{ name: 'Synology', headline: 'Adapting an existing interface for another language.', href: '/synology/' }}
+    alt={{ name: 'ComBoard', headline: 'Designing an AAC tool around one student\'s communication needs.', href: '/comboard/' }}
+  />
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

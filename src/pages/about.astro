@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Lidia Ochoa",
+    "url": "https://uxbylidiaochoa.com",
+    "jobTitle": "Product Designer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Seattle",
+      "addressRegion": "WA"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/lidia-ochoa"
+    ]
+  }
+};
+---
+<BaseLayout
+  title="About | Lidia Ochoa | Product Designer"
+  description="Product designer in Seattle. Background in education and accessibility, designing through research, interaction design, visual design, systems thinking, and working software."
+  canonicalPath="/about/"
+  structuredData={structuredData}
+>
+  <section class="about-page">
+    <div class="about-page__layout">
+      <div class="about-page__left reveal">
+        <h1 class="about-page__heading">About</h1>
+        <p class="about-page__lede">I'm Lidia Ochoa, a product designer in Seattle.</p>
+        <p>My background is in education, where the same activity can work completely differently for two people. A lot of my design work still starts with understanding the person in front of me, the context, and what is actually happening.</p>
+        <p>I tend to get close to a problem, make something concrete enough to interact with, and keep working on it once real use starts exposing the parts that sounded better in theory.</p>
+        <p>That has led me into a fairly broad range of work. I've designed communication tools with disabled students, built software for managing household finances, co-designed a game with one of my students, helped organize a month-long public art exhibition, and designed an event format for people to share AI-built projects.</p>
+        <p>I'm comfortable moving between research, interaction design, visual design, systems thinking, and working software when the problem calls for it. I also use AI heavily in my design and build process, particularly when it lets me test product decisions in functioning software instead of stopping at a static prototype.</p>
+
+        <div class="about-page__section">
+          <h2>I came to product design through education and accessibility</h2>
+          <p>I spent several years teaching and supporting students with different communication, learning, and accessibility needs.</p>
+          <p>A lot of that work involved noticing the gap between what someone was <em>supposed</em> to be able to do with a tool or activity and what actually happened when they tried to use it.</p>
+          <p>Sometimes the right change was visual. Sometimes it was language, pacing, structure, physical access, or removing something entirely.</p>
+          <p>Understanding the person using something was often more useful than starting with what the tool was supposed to do. That same kind of observation still shows up throughout my product work.</p>
+        </div>
+      </div>
+
+      <div class="about-page__right reveal">
+        <div class="about-page__photo">
+          <img
+            src="/images/lidia-olu-opening.jpg"
+            alt="Lidia laughing mid-conversation at the Our Light Unbound opening night, with exhibition artwork on the gallery walls behind her."
+            loading="eager"
+            width="800"
+            height="800"
+          />
+        </div>
+        <div class="about-page__aside">
+          <h2>Outside the screen</h2>
+          <p>I co-run <a href="/ai-on-tap-gallery-walk/">Seattle AI on Tap</a>, a biweekly happy hour for people interested in AI, and I like projects that give me an excuse to make something tangible, whether that means software, an exhibition, an event, or <a href="/totally-safe/">a weird little game about an excavator company that is definitely not hiding anything underground</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

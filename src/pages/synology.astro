@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CaseStudyHero from '../components/CaseStudyHero.astro';
+import SideNav from '../components/SideNav.astro';
+import KeepExploring from '../components/KeepExploring.astro';
+
+const sections = [
+  { id: 'why-this-interface', label: 'Why this interface' },
+  { id: 'designing-for-spanish', label: 'Designing for Spanish' },
+  { id: 'adapting-layout', label: 'Adapting the layout' },
+  { id: 'responsive-decisions', label: 'Responsive decisions' },
+  { id: 'scope', label: 'Scope of the exercise' },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Work", "item": "https://uxbylidiaochoa.com/#featured-work" },
+    { "@type": "ListItem", "position": 2, "name": "Synology", "item": "https://uxbylidiaochoa.com/synology/" }
+  ]
+};
+---
+<BaseLayout
+  title="Synology | Localization Design Exercise | Lidia Ochoa"
+  description="Self-initiated Spanish localization exercise examining how language changes typography, hierarchy, spacing, and responsive layout in an existing Synology interface."
+  projectColor="#2684FF"
+  canonicalPath="/synology/"
+  structuredData={structuredData}
+>
+  <CaseStudyHero
+    eyebrow="Synology"
+    headline="Adapting an existing interface for another language"
+    deck="A self-initiated Spanish localization exercise focused on how language changes typography, hierarchy, spacing, and responsive layout."
+    heroImage="/images/home/Frame 8.png"
+    heroAlt="Synology LATAM concept campaign — dark social media square featuring the DiskStation DS124 with Spanish headline"
+    role="Visual & localization design"
+    timeline="Jun 2026"
+    status="Self-initiated exercise"
+    focus="Visual design · Localization · Responsive design"
+    metrics={[
+      { value: 'Self-initiated', label: 'visual and localization study' },
+    ]}
+    accentColor="#2684FF"
+  />
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- 1. Why this interface -->
+      <section class="case-section section" id="why-this-interface" aria-labelledby="why-this-interface-heading">
+        <div class="container">
+          <h2 id="why-this-interface-heading" class="case-section__heading reveal">Why this interface</h2>
+          <p class="reveal">I used an existing Synology interface as a constrained visual exercise rather than inventing a new product problem.</p>
+          <p class="reveal">The goal was to see what happened to an established interface when the language changed and the layout had to absorb that change without losing its hierarchy.</p>
+        </div>
+      </section>
+
+      <!-- 2. Designing for Spanish -->
+      <section class="case-section section" id="designing-for-spanish" aria-labelledby="designing-for-spanish-heading">
+        <div class="container">
+          <h2 id="designing-for-spanish-heading" class="case-section__heading reveal">Designing for Spanish</h2>
+          <p class="reveal">Spanish text changes word length, line breaks, and the amount of space labels and calls to action need.</p>
+          <p class="reveal">The exercise focused on preserving the intent and hierarchy of the original interface while allowing the Spanish copy to feel native to the layout rather than squeezed into English-sized containers.</p>
+          <div class="two-col reveal">
+            <img src="/images/synology/social-square-en.png" alt="English social square for the Synology DS124" width="1080" height="1080" loading="lazy" />
+            <img src="/images/synology/social-square-es.png" alt="Spanish social square for the Synology DS124" width="1080" height="1080" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Adapting the layout -->
+      <section class="case-section section" id="adapting-layout" aria-labelledby="adapting-layout-heading">
+        <div class="container">
+          <h2 id="adapting-layout-heading" class="case-section__heading reveal">Adapting the layout</h2>
+          <p class="reveal">The work looked at typography, spacing, line length, hierarchy, and component behavior as copy expanded or wrapped.</p>
+          <p class="reveal">The CTA reads: M&aacute;s informaci&oacute;n</p>
+          <div class="reveal">
+            <img src="/images/synology/web-banner-es.png" alt="Synology DiskStation DS124 web banner adapted for Spanish" width="1200" height="628" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Responsive decisions -->
+      <section class="case-section section" id="responsive-decisions" aria-labelledby="responsive-decisions-heading">
+        <div class="container">
+          <h2 id="responsive-decisions-heading" class="case-section__heading reveal">Responsive decisions</h2>
+          <p class="reveal">The localized layout also needed to keep working as the viewport narrowed.</p>
+        </div>
+      </section>
+
+      <!-- 5. Scope of the exercise -->
+      <section class="case-section section" id="scope" aria-labelledby="scope-heading">
+        <div class="container">
+          <h2 id="scope-heading" class="case-section__heading reveal">Scope of the exercise</h2>
+          <p class="reveal">There were no users, stakeholders, launch, or outcome metrics. The exercise was about the design decisions themselves.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <KeepExploring
+    next={{ name: 'Budget App', headline: 'Refining a budgeting interface through two rounds of usability testing.', href: '/budget-app/' }}
+    alt={{ name: 'Our Light Unbound', headline: 'Designing a month-long exhibition across gallery, campaign, programming, and digital experience.', href: '/our-light-unbound/' }}
+  />
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

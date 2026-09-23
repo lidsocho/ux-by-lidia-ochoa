@@ -5,19 +5,59 @@ interface Props {
 
 const { sections } = Astro.props;
 ---
-<!-- Side Navigation with scroll-spy (Audit #11) -->
+<!-- Side Navigation with scroll-spy — Redesign -->
 <nav class="side-nav" aria-label="Page sections" id="side-nav">
-  <ul class="side-nav__list">
-    <li class="side-nav__highlight" aria-hidden="true"></li>
-    {sections.map((section, i) => (
-      <li>
-        <a
-          href={`#${section.id}`}
-          class="side-nav__link"
-          aria-current={i === 0 ? "true" : undefined}
-          data-section={section.id}
-        >{section.label}</a>
-      </li>
-    ))}
-  </ul>
+  <!-- Mobile: compact dropdown-style navigation -->
+  <div class="side-nav__mobile">
+    <button class="side-nav__mobile-trigger" type="button" aria-expanded="false" aria-controls="side-nav-mobile-list">
+      <span class="side-nav__mobile-label">On this page</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" class="side-nav__mobile-chevron">
+        <polyline points="3,4.5 6,7.5 9,4.5"/>
+      </svg>
+    </button>
+    <ul class="side-nav__mobile-list" id="side-nav-mobile-list">
+      {sections.map((section) => (
+        <li>
+          <a href={`#${section.id}`} class="side-nav__link" data-section={section.id}>{section.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Desktop: sticky sidebar -->
+  <div class="side-nav__desktop">
+    <div class="side-nav__title">On this page</div>
+    <ul class="side-nav__list">
+      <li class="side-nav__highlight" aria-hidden="true"></li>
+      {sections.map((section, i) => (
+        <li>
+          <a
+            href={`#${section.id}`}
+            class="side-nav__link"
+            aria-current={i === 0 ? "true" : undefined}
+            data-section={section.id}
+          >{section.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
 </nav>
+
+<script>
+  // Mobile side-nav toggle
+  const mobileTrigger = document.querySelector('.side-nav__mobile-trigger');
+  const mobileList = document.querySelector('.side-nav__mobile-list');
+  if (mobileTrigger && mobileList) {
+    mobileTrigger.addEventListener('click', () => {
+      const isOpen = mobileList.classList.toggle('is-open');
+      mobileTrigger.setAttribute('aria-expanded', String(isOpen));
+    });
+    // Close when a link is clicked
+    mobileList.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).tagName === 'A') {
+        mobileList.classList.remove('is-open');
+        mobileTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>

@@ -9,10 +9,25 @@ interface Props {
   description?: string;
   projectColor?: string;
   ogImage?: string;
+  canonicalPath?: string;
+  structuredData?: object;
 }
 
-const { title, description = 'UX/Product Designer specializing in accessible learning and financial tools.', projectColor, ogImage } = Astro.props;
-const resolvedOgImage = ogImage ? `https://uxbylidiaochoa.com${ogImage}` : 'https://uxbylidiaochoa.com/images/lidia-profile.png';
+const {
+  title,
+  description = 'Product designer in Seattle specializing in accessibility, systems thinking, and designing through working software.',
+  projectColor,
+  ogImage,
+  canonicalPath,
+  structuredData,
+} = Astro.props;
+
+const siteUrl = 'https://uxbylidiaochoa.com';
+const currentPath = canonicalPath || Astro.url.pathname;
+const canonicalUrl = `${siteUrl}${currentPath}`;
+const resolvedOgImage = ogImage
+  ? `${siteUrl}${ogImage}`
+  : `${siteUrl}/images/lidia-profile.png`;
 
 // Compute a static color-mix fallback (10% project color on #fafafa) at build time
 function mixFallback(hex: string): string {
@@ -43,15 +58,24 @@ const cardBgFallbackDark = projectColorDark ? mixFallback(projectColorDark) : un
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content={`https://uxbylidiaochoa.com${Astro.url.pathname}`} />
+  <meta property="og:url" content={canonicalUrl} />
   <meta property="og:image" content={resolvedOgImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Lidia Ochoa" />
+
+  <!-- Twitter/X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={resolvedOgImage} />
+
   {projectColorDark && (
     <style set:html={`
       @media (prefers-color-scheme: dark) {
@@ -64,10 +88,15 @@ const cardBgFallbackDark = projectColorDark ? mixFallback(projectColorDark) : un
       }
     `} />
   )}
-  <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
+
+  {structuredData && (
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  )}
+
+  <link rel="icon" type="image/png" href="/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Commissioner:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Commissioner:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <SkipLink />
@@ -76,7 +105,75 @@ const cardBgFallbackDark = projectColorDark ? mixFallback(projectColorDark) : un
     <slot />
   </main>
   <Footer />
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <div class="lightbox-content">
+      <img class="lightbox-content__img" src="" alt="" />
+      <p class="lightbox-caption"></p>
+    </div>
+  </div>
+
   <script src="/scripts/reveal.js" is:inline></script>
-  <script src="/scripts/lightbox.js" is:inline></script>
+  <script is:inline>
+  (function () {
+    var overlay = document.getElementById('lightbox');
+    if (!overlay) return;
+    var lbImg = overlay.querySelector('.lightbox-content__img');
+    var lbCaption = overlay.querySelector('.lightbox-caption');
+    var closeBtn = overlay.querySelector('.lightbox-close');
+    var lastFocus = null;
+
+    function open(src, alt) {
+      lastFocus = document.activeElement;
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lbCaption.textContent = alt || '';
+      lbCaption.style.display = alt ? '' : 'none';
+      overlay.classList.add('lightbox-overlay--open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function close() {
+      overlay.classList.remove('lightbox-overlay--open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+      if (lastFocus) lastFocus.focus();
+    }
+
+    // Attach to all case-section and two-col images (not device frames, icons, or decorative)
+    document.querySelectorAll('.case-section img, .two-col img, .hp-card__visual img').forEach(function (img) {
+      if (img.closest('.png-device-frame') || img.getAttribute('aria-hidden') === 'true') return;
+      img.style.cursor = 'zoom-in';
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', 'Enlarge: ' + (img.alt || 'image'));
+      img.addEventListener('click', function () { open(img.src, img.alt); });
+      img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img.src, img.alt); }
+      });
+    });
+
+    // Close handlers
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('lightbox-overlay--open')) close();
+    });
+
+    // Trap focus inside lightbox
+    overlay.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var focusable = overlay.querySelectorAll('button, [tabindex="0"]');
+      var first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  })();
+  </script>
 </body>
 </html>

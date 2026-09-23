@@ -1,11 +1,12 @@
-// Scroll-spy for side navigation — updates aria-current and highlight pill
+// Scroll-spy for side navigation — updates aria-current and highlight bar
 (function () {
   var nav = document.getElementById('side-nav');
   if (!nav) return;
 
+  var desktopNav = nav.querySelector('.side-nav__desktop');
   var links = nav.querySelectorAll('.side-nav__link');
-  var list = nav.querySelector('.side-nav__list');
-  var highlight = nav.querySelector('.side-nav__highlight');
+  var list = desktopNav ? desktopNav.querySelector('.side-nav__list') : nav.querySelector('.side-nav__list');
+  var highlight = list ? list.querySelector('.side-nav__highlight') : null;
   if (!links.length) return;
 
   var sectionIds = [];
@@ -23,9 +24,11 @@
       if (isActive) {
         link.setAttribute('aria-current', 'true');
         if (highlight && list) {
-          // Use actual DOM position instead of hardcoded offset
-          var offset = link.parentElement.offsetTop;
+          var li = link.parentElement;
+          var offset = li.offsetTop;
+          var height = li.offsetHeight;
           highlight.style.transform = 'translateY(' + offset + 'px)';
+          highlight.style.height = height + 'px';
         }
       } else {
         link.removeAttribute('aria-current');
@@ -73,7 +76,8 @@
       var targetId = link.getAttribute('data-section');
       var target = document.getElementById(targetId);
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: motionOk ? 'smooth' : 'auto', block: 'start' });
         // Update focus for accessibility
         target.setAttribute('tabindex', '-1');
         target.focus({ preventScroll: true });

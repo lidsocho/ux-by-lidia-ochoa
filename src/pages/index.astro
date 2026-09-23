@@ -1,105 +1,285 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Lidia Ochoa",
+      "url": "https://uxbylidiaochoa.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Lidia Ochoa",
+      "url": "https://uxbylidiaochoa.com",
+      "jobTitle": "Product Designer",
+      "sameAs": [
+        "https://www.linkedin.com/in/lidia-ochoa"
+      ]
+    }
+  ]
+};
 ---
-<BaseLayout title="UX by Lidia Ochoa — UX/Product Designer">
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner reveal">
-        <div class="hero__content">
-          <h1 class="hero__title">UX/Product Designer</h1>
-          <p class="hero__subtitle">Accessibility-focused UX designer with 7 years in education. I design inclusive products that work for everyone — especially learners and users who've been overlooked.</p>
-          <p class="hero__meta" style="color: var(--color-text-secondary); font-weight: 600; margin-top: 0.5rem;">Looking for roles in UX, EdTech, A11y, and design</p>
-          <a href="#projects" class="hero__cta">
-            see my work
-            <span class="hero__cta-arrow bouncy" aria-hidden="true">&darr;</span>
+<BaseLayout
+  title="Lidia Ochoa | Product Designer in Seattle"
+  description="Product designer in Seattle specializing in accessibility, systems thinking, and designing through working software."
+  canonicalPath="/"
+  structuredData={structuredData}
+>
+  <!-- Hero -->
+  <section class="hp-hero">
+    <div class="hp-hero__copy">
+      <div class="hp-hero__eyebrow">Product Designer</div>
+      <h1 class="hp-hero__headline">I take messy problems far enough that the answer is actually usable.</h1>
+      <p class="hp-hero__body">My work starts with understanding how people already do things, what gets in their way, and what the system around them will actually allow. I move between research, interaction design, visual design, systems, and working software depending on what the problem needs.</p>
+      <div class="hp-hero__actions">
+        <a href="#featured-work" class="hp-hero__btn hp-hero__btn--primary">
+          View selected work
+          <span aria-hidden="true">&darr;</span>
+        </a>
+        <a href="/about/" class="hp-hero__btn">About me</a>
+      </div>
+    </div>
+    <div class="hp-hero__photo">
+      <img
+        src="/images/lidia-profile.png"
+        alt="Lidia smiles, wearing a mustard yellow cardigan and reclining on a bright orange park bench."
+        width="1130"
+        height="1622"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+  </section>
+
+  <!-- Featured Work -->
+  <section id="featured-work" aria-labelledby="featured-heading">
+    <h2 id="featured-heading" class="hp-section-heading reveal">Featured work</h2>
+
+    <div class="hp-featured">
+      <!-- ComBoard — full-width lead -->
+      <a href="/comboard/" class="hp-card hp-card--lead reveal">
+        <div class="hp-card__visual hp-card__visual--comboard">
+          <img src="/images/home/comboard-ipad-thumb.png" alt="ComBoard 6-cluster keyboard with color-coded letter groups, phoneme keys, prediction bar, and Yes/No buttons on an iPad" width="1200" height="855" loading="lazy" />
+        </div>
+        <div class="hp-card__copy">
+          <div class="hp-card__project">ComBoard</div>
+          <h3 class="hp-card__title">Designing an AAC tool around one student's communication needs</h3>
+          <p class="hp-card__desc">A communication tool built through long-term use with a nonspeaking student with cerebral palsy, then developed into a configurable iPhone and iPad app.</p>
+          <div class="hp-card__evidence">9.8&times; more successful communication-tool uses per day &middot; Shipped iOS app</div>
+          <div class="hp-card__badges">
+            <span class="hp-badge">Product design</span>
+            <span class="hp-badge">Accessibility</span>
+            <span class="hp-badge">AAC</span>
+            <span class="hp-badge">User research</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Paired row -->
+      <div class="hp-paired-row">
+        <!-- Left: Bb Budget -->
+        <a href="/bb-budget/" class="hp-card reveal">
+          <div class="hp-card__visual hp-card__visual--budget balance-left-visual">
+            <img src="/images/home/offline-budget-thumb.png" alt="Bb Budget cloud version on a laptop — Trends tab showing Income vs Spending bar chart, household member sidebar, and net income area chart" width="1200" height="699" loading="lazy" />
+          </div>
+          <div class="hp-card__copy">
+            <div class="hp-card__project">Bb Budget</div>
+            <h3 class="hp-card__title">Building a household budgeting product for two people with distinct tracking habits</h3>
+            <p class="hp-card__desc">I designed Bb Budget directly in working software, shaping everything from household views and transaction workflows to permissions, security, and the visual system.</p>
+            <div class="hp-card__evidence">Real household use &middot; Plaid + manual workflows &middot; AI-directed development</div>
+            <div class="hp-card__badges">
+              <span class="hp-badge">Product design</span>
+              <span class="hp-badge">Interaction design</span>
+              <span class="hp-badge">Product strategy</span>
+              <span class="hp-badge">Systems thinking</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Right stack -->
+        <div class="hp-stack">
+          <a href="/totally-safe/" class="hp-card reveal">
+            <div class="hp-card__visual hp-card__visual--game balance-right-visual">
+              <img src="/images/home/totally-safe-laptop-thumb.png" alt="Totally Safe Digging Co. title screen showing Map Mode, Challenge, and Creative mode cards with How to Play prompt on a laptop" width="2011" height="1171" loading="lazy" />
+            </div>
+            <div class="hp-card__copy">
+              <div class="hp-card__project">Totally Safe Digging Co.</div>
+              <h3 class="hp-card__title">Co-designing a game with my student</h3>
+              <p class="hp-card__desc">An ongoing game project where my student helps shape mechanics, interactions, visual direction, and what "feels right" through play.</p>
+              <div class="hp-card__evidence">Co-designed from day one &middot; AI-assisted implementation</div>
+              <div class="hp-card__badges">
+                <span class="hp-badge">Co-design</span>
+                <span class="hp-badge">Game UX</span>
+                <span class="hp-badge">Interaction design</span>
+                <span class="hp-badge">Visual design</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/our-light-unbound/" class="hp-card reveal">
+            <div class="hp-card__visual hp-card__visual--exhibit balance-right-visual">
+              <img src="/images/home/olu-phone-thumb.png" alt="Our Light Unbound digital catalogue shown on an iPhone, displaying the exhibition title, dates, and mission statement on a twilight gradient" width="453" height="912" loading="lazy" />
+            </div>
+            <div class="hp-card__copy">
+              <div class="hp-card__project">Our Light Unbound</div>
+              <h3 class="hp-card__title">Designing a month-long exhibition across gallery, campaign, programming, and digital experience</h3>
+              <p class="hp-card__desc">I co-curated the exhibition with Yaz and led the promotional campaign, workshop scheduling, digital catalogue, venue coordination, and much of the visitor experience.</p>
+              <div class="hp-card__evidence">$11,500 in grant funding &middot; 1,000+ opening-night visitors</div>
+              <div class="hp-card__badges">
+                <span class="hp-badge">Experience design</span>
+                <span class="hp-badge">Campaign design</span>
+                <span class="hp-badge">Web design</span>
+                <span class="hp-badge">Accessibility</span>
+              </div>
+            </div>
           </a>
         </div>
-        <div class="hero__photo">
-          <img
-            src="/images/lidia-profile.png"
-            alt="Lidia smiles, wearing a mustard yellow cardigan and reclining on a bright orange park bench."
-            class="hero__photo-img"
-            width="1130"
-            height="1622"
-            loading="eager"
-          />
+      </div>
+    </div>
+  </section>
+
+  <!-- Context line -->
+  <div class="hp-context-line reveal">
+    <p>My background is in education, where the same activity can work completely differently for two people. A lot of my design work still starts with understanding the person in front of me, the context, and what is actually happening.</p>
+  </div>
+
+  <!-- Other Work -->
+  <section aria-labelledby="other-heading">
+    <h2 id="other-heading" class="hp-section-heading reveal">Other work</h2>
+    <div class="hp-other-grid">
+      <a href="/ai-on-tap-gallery-walk/" class="hp-small reveal">
+        <div class="hp-small__visual hp-small__visual--gallery">
+          <img src="/images/home/ai-on-tap-thumb.jpg" alt="Attendees gathered in a gallery space during the Seattle AI on Tap Gallery Walk, watching a presenter demo a project" width="818" height="630" loading="lazy" />
         </div>
-      </div>
+        <div class="hp-small__copy">
+          <div class="hp-card__project">Seattle AI on Tap</div>
+          <h3 class="hp-small__title">Designing an event where people could interact with AI-built projects</h3>
+          <p class="hp-small__desc">A gallery-walk format for Seattle AI on Tap that gave nine presenters space to demo working projects while attendees explored and talked directly with them.</p>
+          <div class="hp-small__metric">45 registrations &middot; ~35 attendees &middot; 9 presenters</div>
+        </div>
+      </a>
+
+      <a href="/synology/" class="hp-small reveal">
+        <div class="hp-small__visual hp-small__visual--synology">
+          <img src="/images/home/Frame 8.png" alt="Synology LATAM concept campaign — dark social media square featuring the DiskStation DS124 with Spanish headline" width="1600" height="1172" loading="lazy" />
+        </div>
+        <div class="hp-small__copy">
+          <div class="hp-card__project">Synology</div>
+          <h3 class="hp-small__title">Adapting an existing interface for another language</h3>
+          <p class="hp-small__desc">A self-initiated Spanish localization exercise focused on how language changes typography, hierarchy, spacing, and responsive layout.</p>
+          <div class="hp-small__metric">Self-initiated visual study</div>
+        </div>
+      </a>
+
+      <a href="/budget-app/" class="hp-small reveal">
+        <div class="hp-small__visual hp-small__visual--budgetapp">
+          <img src="/images/home/Frame 2.png" alt="Budget App dashboard on an iPhone — donut chart showing income vs expenses, linked bank accounts, savings and retirement totals, and budget goals on a green background" width="1600" height="1172" loading="lazy" />
+        </div>
+        <div class="hp-small__copy">
+          <div class="hp-card__project">Budget App</div>
+          <h3 class="hp-small__title">Refining a budgeting interface through two rounds of usability testing</h3>
+          <p class="hp-small__desc">A UX course project exploring budgeting for beginners through usability testing and iterative redesign.</p>
+          <div class="hp-small__metric">5 participants &middot; 2 usability rounds &middot; 75% &rarr; 90% satisfaction</div>
+        </div>
+      </a>
     </div>
   </section>
 
-  <!-- Projects Section (Audit #3, #12) -->
-  <section class="section" id="projects" aria-labelledby="projects-heading">
-    <div class="container">
-      <h2 id="projects-heading" class="mb-md reveal">Recent Projects</h2>
-      <ul class="projects-grid" role="list">
-        <ProjectCard
-          image="/images/home/Frame 6.png"
-          alt="ComBoard AAC app on an iPad — colorful letter-group keyboard with Speak, Listen, and Clear buttons, smart suggestions, and Yes/No quick responses on an orange background"
-          date="4/24 - 9/25"
-          role="UXR & Design"
-          title="ComBoard"
-          description="Custom AAC app for a non-speaking student with cerebral palsy — 9.8× increase in communication usage vs. prior tools"
-          href="/comboard-app"
-          accentColor="#f28c28"
-        />
-        <ProjectCard
-          image="/images/home/Frame 2.png"
-          alt="Budget App dashboard on an iPhone — donut chart showing income vs expenses, linked bank accounts, savings and retirement totals, and budget goals on a green background"
-          date="2/25 - 6/25"
-          role="UXR & Design"
-          title="Budget App"
-          description="Accessible budgeting app for novice and visually impaired users, validated through usability testing and competitive analysis"
-          href="/budgetapp"
-          accentColor="var(--color-green)"
-        />
-        <ProjectCard
-          image="/images/home/Frame 7.png"
-          alt="Our Light Unbound exhibit ad — landscape format with the wordmark, mission statement, exhibition dates, venue, QR code, and 4Culture logo on a mauve background"
-          date="12/25 - 1/26"
-          role="Brand & Campaign Design"
-          title="Our Light Unbound"
-          description="Brand identity and promotional campaign for a month-long community art exhibition with 1,000+ opening night visitors"
-          href="/our-light-unbound"
-          accentColor="var(--color-mauve)"
-        />
-        <ProjectCard
-          image="/images/home/Frame 8.png"
-          alt="Synology LATAM concept campaign — dark social media square featuring the DiskStation DS124 with Spanish headline 'Tu trabajo, siempre seguro' on a blue background"
-          date="6/26"
-          role="Marketing Design"
-          title="Synology LATAM Campaign"
-          description="Concept bilingual mini-campaign adapting the same creative across Spanish and English for Synology's DiskStation DS124"
-          href="/synology-campaign"
-          accentColor="#2684FF"
-        />
-        <ProjectCard
-          image="/images/home/offline-budget-thumb.png"
-          alt="Bb Budget cloud version on a laptop — Trends tab showing Income vs Spending bar chart, household member sidebar, and net income area chart"
-          date="10/25 - Present"
-          role="Design & Dev"
-          title="Bb Budget"
-          description="Shipped budgeting tool I use daily — from offline prototype to multi-user cloud platform with bank integration and encryption"
-          href="/offline-budget"
-          accentColor="var(--color-teal)"
-        />
-      </ul>
-    </div>
+  <!-- About preview -->
+  <section class="hp-about-preview reveal" aria-label="About preview">
+    <p>I came to product design through education and accessibility. I care about what people actually do with the things we make, especially when the neat version of the problem stops matching real life.</p>
+    <a href="/about/" class="hp-about-preview__link">Read more <span aria-hidden="true">&rarr;</span></a>
   </section>
 
-  <!-- About Me Preview -->
-  <section class="section" id="about-preview" aria-labelledby="about-preview-heading">
-    <div class="container" style="text-align: center;">
-      <div class="reveal">
-        <h2 id="about-preview-heading">About Me</h2>
-        <p class="mt-sm" style="max-width: 480px; margin-inline: auto; color: var(--color-text-secondary);">UX/Product designer in Seattle, WA specializing in accessible learning and financial tools.</p>
-        <a href="/about-me-page" class="about-preview__cta mt-md">
-          Learn more about Lidia
-          <span aria-hidden="true">&rarr;</span>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- Column-balancing script for paired featured row -->
+  <script is:inline>
+  (function () {
+    var GAP = 22;
+    var DESKTOP_MIN = 961;
+
+    function naturalize(el) {
+      if (!el) return;
+      el.style.height = '';
+      el.style.minHeight = '';
+    }
+
+    function px(n) {
+      return Math.max(120, Math.round(n)) + 'px';
+    }
+
+    function balanceFeaturedRow() {
+      var row = document.querySelector('.hp-paired-row');
+      if (!row) return;
+
+      var leftCard = row.querySelector(':scope > .hp-card');
+      var rightStack = row.querySelector(':scope > .hp-stack');
+      if (!leftCard || !rightStack) return;
+
+      var leftVisual = leftCard.querySelector('.balance-left-visual');
+      var rightCards = Array.from(rightStack.querySelectorAll(':scope > .hp-card'));
+      var rightVisuals = rightCards.map(function (card) { return card.querySelector('.balance-right-visual'); });
+
+      if (window.innerWidth < DESKTOP_MIN) {
+        [leftVisual].concat(rightVisuals).forEach(naturalize);
+        return;
+      }
+
+      naturalize(leftVisual);
+      rightVisuals.forEach(naturalize);
+
+      var leftBase = 560;
+      var rightBase = 150;
+      leftVisual.style.height = px(leftBase);
+      rightVisuals.forEach(function (v) { if (v) v.style.height = px(rightBase); });
+
+      requestAnimationFrame(function () {
+        var leftHeight = leftCard.getBoundingClientRect().height;
+        var rightHeight = rightStack.getBoundingClientRect().height;
+        var diff = leftHeight - rightHeight;
+
+        if (Math.abs(diff) <= 1) return;
+
+        if (diff > 0) {
+          var addEach = diff / rightVisuals.length;
+          rightVisuals.forEach(function (v) {
+            if (!v) return;
+            var current = v.getBoundingClientRect().height;
+            v.style.height = px(current + addEach);
+          });
+        } else {
+          var current = leftVisual.getBoundingClientRect().height;
+          leftVisual.style.height = px(current + Math.abs(diff));
+        }
+
+        requestAnimationFrame(function () {
+          var l2 = leftCard.getBoundingClientRect().height;
+          var r2 = rightStack.getBoundingClientRect().height;
+          var d2 = l2 - r2;
+          if (Math.abs(d2) <= 1) return;
+
+          if (d2 > 0 && rightVisuals[0]) {
+            var c = rightVisuals[0].getBoundingClientRect().height;
+            rightVisuals[0].style.height = px(c + d2);
+          } else if (d2 < 0 && leftVisual) {
+            var c = leftVisual.getBoundingClientRect().height;
+            leftVisual.style.height = px(c + Math.abs(d2));
+          }
+        });
+      });
+    }
+
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(balanceFeaturedRow, 80);
+    });
+
+    window.addEventListener('load', balanceFeaturedRow);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(balanceFeaturedRow);
+    }
+  })();
+  </script>
 </BaseLayout>

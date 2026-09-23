@@ -1,50 +1,48 @@
 ---
 ---
-<!-- Site Header (Audit #2) -->
+<!-- Site Header — Redesign -->
 <header class="site-header">
   <div class="site-header__inner">
-    <a href="/" class="site-header__logo" aria-label="UX by Lidia Ochoa — Home">
-      <img src="/images/logo.png" alt="Lidia's Logo; a two tone teal L shape with an orange arc over the right side creating a capital D shape." width="48" height="48" />
+    <a href="/" class="site-header__logo" aria-label="Lidia Ochoa, Home">
+      <img src="/images/logo.png" alt="Lidia's Logo; a two tone teal L shape with an orange arc over the right side creating a capital D shape." width="36" height="36" />
+      <span class="site-header__wordmark">Lidia Ochoa</span>
     </a>
 
     <div class="site-header__nav">
       <nav aria-label="Main navigation">
         <ul class="site-header__nav-list">
-          <li class="projects-dropdown">
-            <button class="site-header__nav-link projects-dropdown__trigger" style="background: var(--color-teal);" aria-expanded="false" type="button">
-              Projects
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" class="projects-dropdown__chevron">
+          <li class="work-dropdown">
+            <button class="site-header__nav-link work-dropdown__trigger" style="background: var(--color-teal);" aria-expanded="false" aria-haspopup="true" type="button">
+              Work
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" class="work-dropdown__chevron">
                 <polyline points="3,4.5 6,7.5 9,4.5"/>
               </svg>
             </button>
-            <ul class="projects-dropdown__menu">
-              <li><a href="/comboard-app" class="projects-dropdown__item" style="--item-accent: var(--color-teal);">ComBoard</a></li>
-              <li><a href="/budgetapp" class="projects-dropdown__item" style="--item-accent: var(--color-green);">Budget App</a></li>
-              <li><a href="/our-light-unbound" class="projects-dropdown__item" style="--item-accent: var(--color-mauve);">Our Light Unbound</a></li>
-              <li><a href="/synology-campaign" class="projects-dropdown__item" style="--item-accent: #2684FF;">Synology LATAM</a></li>
-              <li><a href="/offline-budget" class="projects-dropdown__item" style="--item-accent: var(--color-teal);">Bb Budget</a></li>
-            </ul>
+            <div class="work-dropdown__menu" role="menu">
+              <div class="work-dropdown__group">
+                <span class="work-dropdown__group-label">Featured</span>
+                <a href="/comboard/" class="work-dropdown__item" role="menuitem">ComBoard</a>
+                <a href="/bb-budget/" class="work-dropdown__item" role="menuitem">Bb Budget</a>
+                <a href="/totally-safe/" class="work-dropdown__item" role="menuitem">Totally Safe Digging Co.</a>
+                <a href="/our-light-unbound/" class="work-dropdown__item" role="menuitem">Our Light Unbound</a>
+              </div>
+              <div class="work-dropdown__group">
+                <span class="work-dropdown__group-label">Other Work</span>
+                <a href="/ai-on-tap-gallery-walk/" class="work-dropdown__item" role="menuitem">Seattle AI on Tap Gallery Walk</a>
+                <a href="/synology/" class="work-dropdown__item" role="menuitem">Synology</a>
+                <a href="/budget-app/" class="work-dropdown__item" role="menuitem">Budget App</a>
+              </div>
+            </div>
           </li>
           <li>
-            <a href="/about-me-page" class="site-header__nav-link" style="background: var(--color-mauve);">
+            <a href="/about/" class="site-header__nav-link" style="background: var(--color-mauve);">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-              About Me
+              About
             </a>
           </li>
           <li>
             <a
-              href="mailto:lidia.ochoa@uxbylidiaochoa.com?subject=Contact%20regarding%20portfolio"
-              class="site-header__nav-link"
-              style="background: var(--color-orange);"
-              aria-label="Email Lidia (opens email client)"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              Email Lidia
-            </a>
-          </li>
-          <li>
-            <a
-              href="/resume/Lidia_Ochoa_UX_Resume.pdf"
+              href="/resume/Lidia_Ochoa_Product_Designer_Resume.pdf"
               class="site-header__nav-link"
               style="background: var(--color-green);"
               aria-label="Resume (downloads PDF)"
@@ -52,6 +50,12 @@
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
               Resume
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="site-header__nav-link" style="background: var(--color-orange);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Contact
             </a>
           </li>
         </ul>
@@ -65,24 +69,38 @@
         aria-expanded="false"
         aria-controls="mobile-nav"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" class="mobile-menu__icon-open">
           <line x1="3" y1="6" x2="21" y2="6"/>
           <line x1="3" y1="12" x2="21" y2="12"/>
           <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" class="mobile-menu__icon-close" style="display:none;">
+          <line x1="6" y1="6" x2="18" y2="18"/>
+          <line x1="6" y1="18" x2="18" y2="6"/>
         </svg>
       </button>
     </div>
   </div>
 
   <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
-    <a href="/comboard-app" style="background: var(--color-teal);">ComBoard</a>
-    <a href="/budgetapp" style="background: var(--color-green);">Budget App</a>
-    <a href="/our-light-unbound" style="background: var(--color-mauve);">Our Light Unbound</a>
-    <a href="/synology-campaign" style="background: #2684FF;">Synology LATAM</a>
-    <a href="/offline-budget" style="background: var(--color-teal);">Bb Budget</a>
-    <a href="/about-me-page" style="background: var(--color-mauve);">About Me</a>
-    <a href="mailto:lidia.ochoa@uxbylidiaochoa.com?subject=Contact%20regarding%20portfolio" style="background: var(--color-orange);" aria-label="Email Lidia (opens email client)">Email Lidia</a>
-    <a href="/resume/Lidia_Ochoa_UX_Resume.pdf" style="background: var(--color-green);" aria-label="Resume (downloads PDF)" download>Resume</a>
+    <div class="mobile-nav__section">
+      <span class="mobile-nav__label">Featured</span>
+      <a href="/comboard/">ComBoard</a>
+      <a href="/bb-budget/">Bb Budget</a>
+      <a href="/totally-safe/">Totally Safe Digging Co.</a>
+      <a href="/our-light-unbound/">Our Light Unbound</a>
+    </div>
+    <div class="mobile-nav__section">
+      <span class="mobile-nav__label">Other Work</span>
+      <a href="/ai-on-tap-gallery-walk/">Seattle AI on Tap Gallery Walk</a>
+      <a href="/synology/">Synology</a>
+      <a href="/budget-app/">Budget App</a>
+    </div>
+    <div class="mobile-nav__section">
+      <a href="/about/">About</a>
+      <a href="/resume/Lidia_Ochoa_Product_Designer_Resume.pdf" aria-label="Resume (downloads PDF)" download>Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
   <noscript>
     <style>.mobile-menu-toggle { display: none !important; } .mobile-nav { display: flex !important; position: static !important; opacity: 1 !important; }</style>
@@ -94,16 +112,22 @@
   const toggle = document.getElementById('mobile-menu-toggle');
   const nav = document.getElementById('mobile-nav');
   if (toggle && nav) {
+    const iconOpen = toggle.querySelector('.mobile-menu__icon-open');
+    const iconClose = toggle.querySelector('.mobile-menu__icon-close');
     toggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(isOpen));
       toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      if (iconOpen && iconClose) {
+        iconOpen.style.display = isOpen ? 'none' : '';
+        iconClose.style.display = isOpen ? '' : 'none';
+      }
     });
   }
 
-  // Projects dropdown
-  const dropdownTrigger = document.querySelector('.projects-dropdown__trigger');
-  const dropdown = document.querySelector('.projects-dropdown');
+  // Work dropdown
+  const dropdownTrigger = document.querySelector('.work-dropdown__trigger') as HTMLButtonElement | null;
+  const dropdown = document.querySelector('.work-dropdown');
   if (dropdownTrigger && dropdown) {
     dropdownTrigger.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -127,5 +151,22 @@
         dropdownTrigger.focus();
       }
     });
+
+    // Arrow key navigation within dropdown
+    const menu = dropdown.querySelector('.work-dropdown__menu');
+    if (menu) {
+      menu.addEventListener('keydown', (e: Event) => {
+        const ke = e as KeyboardEvent;
+        const items = [...menu.querySelectorAll('.work-dropdown__item')] as HTMLElement[];
+        const idx = items.indexOf(document.activeElement as HTMLElement);
+        if (ke.key === 'ArrowDown') {
+          ke.preventDefault();
+          items[(idx + 1) % items.length]?.focus();
+        } else if (ke.key === 'ArrowUp') {
+          ke.preventDefault();
+          items[(idx - 1 + items.length) % items.length]?.focus();
+        }
+      });
+    }
   }
 </script>

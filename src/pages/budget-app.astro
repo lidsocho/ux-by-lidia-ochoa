@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CaseStudyHero from '../components/CaseStudyHero.astro';
+import SideNav from '../components/SideNav.astro';
+import KeepExploring from '../components/KeepExploring.astro';
+
+const sections = [
+  { id: 'beginner-needs', label: 'Starting with beginner needs' },
+  { id: 'navigation-problems', label: 'Finding the navigation problems' },
+  { id: 'testing-first', label: 'Testing the first direction' },
+  { id: 'simplifying', label: 'Simplifying the interface' },
+  { id: 'testing-redesign', label: 'Testing the redesign' },
+  { id: 'what-improved', label: 'What improved' },
+  { id: 'scope-limitations', label: 'Scope and limitations' },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Work", "item": "https://uxbylidiaochoa.com/#featured-work" },
+    { "@type": "ListItem", "position": 2, "name": "Budget App", "item": "https://uxbylidiaochoa.com/budget-app/" }
+  ]
+};
+---
+<BaseLayout
+  title="Budget App | Usability Testing Case Study | Lidia Ochoa"
+  description="UX course project exploring budgeting for beginners. Two usability rounds with five participants improved navigation satisfaction from 70 to 90 and overall satisfaction from 75 to 90."
+  projectColor="#75d349"
+  canonicalPath="/budget-app/"
+  structuredData={structuredData}
+>
+  <CaseStudyHero
+    eyebrow="Budget App"
+    headline="Refining a budgeting interface through two rounds of usability testing"
+    deck="A UX course project exploring budgeting for beginners through usability testing and iterative redesign."
+    heroImage="/images/home/Frame 2.png"
+    heroAlt="Budget App dashboard on an iPhone — donut chart showing income vs expenses, linked bank accounts, savings and retirement totals, and budget goals on a green background"
+    role="UX research & design"
+    timeline="Feb – Jun 2025"
+    status="Course project (prototype)"
+    focus="User research · Usability testing · Accessibility"
+    metrics={[
+      { value: '75 → 90', label: 'overall satisfaction across two rounds' },
+      { value: '5', label: 'usability participants' },
+      { value: '2', label: 'testing rounds' },
+    ]}
+    accentColor="#75d349"
+  />
+
+  <div class="case-body">
+    <SideNav sections={sections} />
+    <div class="case-sections">
+
+      <!-- 1. Starting with beginner needs -->
+      <section class="case-section section" id="beginner-needs" aria-labelledby="beginner-needs-heading">
+        <div class="container">
+          <h2 id="beginner-needs-heading" class="case-section__heading reveal">Starting with beginner needs</h2>
+          <p class="reveal">This was a UX course project focused on budgeting for people who were still learning how to organize and understand their finances.</p>
+          <p class="reveal">The early work included research, competitive review, personas, journey mapping, accessibility requirements, sketches, and wireframes.</p>
+        </div>
+      </section>
+
+      <!-- 2. Finding the navigation problems -->
+      <section class="case-section section" id="navigation-problems" aria-labelledby="navigation-problems-heading">
+        <div class="container">
+          <h2 id="navigation-problems-heading" class="case-section__heading reveal">Finding the navigation problems</h2>
+          <p class="reveal">The first information architecture used Accounts / Planning / Help.</p>
+          <p class="reveal">Testing showed that those labels made it harder for people to predict where common tasks lived. The structure was revised to Transactions / Budgeting / FAQ, using language that matched the actions participants were trying to take.</p>
+        </div>
+      </section>
+
+      <!-- 3. Testing the first direction -->
+      <section class="case-section section" id="testing-first" aria-labelledby="testing-first-heading">
+        <div class="container">
+          <h2 id="testing-first-heading" class="case-section__heading reveal">Testing the first direction</h2>
+          <p class="reveal">Five participants took part across two usability rounds.</p>
+          <p class="reveal">The first round exposed problems with navigation, contrast, and visual hierarchy. The interface leaned heavily on glassmorphism, which made surfaces look polished but reduced clarity and contrast.</p>
+          <div class="two-col reveal">
+            <div class="png-device-frame png-device-frame--phone png-device-frame--inline" style="--device-screen-bg: #e8f5e0;">
+              <video src="/images/budget/before-redesign.mp4" poster="/images/budget/before-redesign-poster.jpg" autoplay loop muted playsinline class="png-device-frame__screen" loading="lazy" style="object-fit: cover; object-position: center top;" aria-label="Animated preview of the first hi-fi design with a purple glassmorphic background style"></video>
+              <img src="/images/devices/iphone-frame.png" alt="" aria-hidden="true" width="453" height="912" class="png-device-frame__device" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Simplifying the interface -->
+      <section class="case-section section" id="simplifying" aria-labelledby="simplifying-heading">
+        <div class="container">
+          <h2 id="simplifying-heading" class="case-section__heading reveal">Simplifying the interface</h2>
+          <p class="reveal">The redesign moved toward stronger contrast, clearer labels, simpler hierarchy, and more conventional interaction patterns where convention helped people understand what would happen next.</p>
+          <p class="reveal">Progressive disclosure reduced the amount of information shown at once, and a Learn section gave beginners access to explanation without forcing every screen to carry instructional copy.</p>
+          <div class="two-col reveal">
+            <div class="png-device-frame png-device-frame--phone png-device-frame--inline" style="--device-screen-bg: #e8f5e0;">
+              <video src="/images/budget/after-redesign.mp4" poster="/images/budget/after-redesign-poster.jpg" autoplay loop muted playsinline class="png-device-frame__screen" loading="lazy" aria-label="Animated preview of the redesigned UI with clean iOS-style layout"></video>
+              <img src="/images/devices/iphone-frame.png" alt="" aria-hidden="true" width="453" height="912" class="png-device-frame__device" />
+            </div>
+            <img src="/images/budget/a11y-contrast.png" alt="A11y Color contrast checker confirming all text meets AA color contrast requirements" width="768" height="1103" class="reveal" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Testing the redesign -->
+      <section class="case-section section" id="testing-redesign" aria-labelledby="testing-redesign-heading">
+        <div class="container">
+          <h2 id="testing-redesign-heading" class="case-section__heading reveal">Testing the redesign</h2>
+          <p class="reveal">The second usability round tested the revised navigation and interface.</p>
+          <p class="reveal">Participants moved through the prototype with fewer navigation problems, and all five later described the prototype as easy to use or navigate.</p>
+        </div>
+      </section>
+
+      <!-- 6. What improved -->
+      <section class="case-section section" id="what-improved" aria-labelledby="what-improved-heading">
+        <div class="container">
+          <h2 id="what-improved-heading" class="case-section__heading reveal">What improved</h2>
+          <p class="reveal">Navigation satisfaction increased from 70 to 90.</p>
+          <p class="reveal">Overall satisfaction increased from 75 to 90 across the two rounds.</p>
+        </div>
+      </section>
+
+      <!-- 7. Scope and limitations -->
+      <section class="case-section section" id="scope-limitations" aria-labelledby="scope-limitations-heading">
+        <div class="container">
+          <h2 id="scope-limitations-heading" class="case-section__heading reveal">Scope and limitations</h2>
+          <p class="reveal">This was a course project and ended as a prototype.</p>
+          <p class="reveal">It was designed against accessibility requirements, but the usability study did not include assistive-technology users or visually impaired participants using accessibility tools.</p>
+        </div>
+      </section>
+
+      <KeepExploring
+        next={{ name: 'ComBoard', headline: 'Designing an AAC tool around one student\'s communication needs.', href: '/comboard/' }}
+        alt={{ name: 'Bb Budget', headline: 'Building a household budgeting product for two people with distinct tracking habits.', href: '/bb-budget/' }}
+      />
+
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline src="/scripts/scroll-spy.js"></script>

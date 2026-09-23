@@ -1,0 +1,84 @@
+---
+interface Metric {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  eyebrow: string;
+  headline: string;
+  deck: string;
+  heroImage?: string;
+  heroAlt?: string;
+  heroNoBorder?: boolean;
+  role: string;
+  timeline: string;
+  status: string;
+  focus: string;
+  metrics?: Metric[];
+  accentColor?: string;
+}
+
+const {
+  eyebrow,
+  headline,
+  deck,
+  heroImage,
+  heroAlt = '',
+  heroNoBorder = false,
+  role,
+  timeline,
+  status,
+  focus,
+  metrics = [],
+  accentColor,
+} = Astro.props;
+---
+<!-- Case Study Hero A — Refined -->
+<section class="cs-hero" style={accentColor ? `--color-project: ${accentColor};` : undefined}>
+  <div class="cs-hero__copy">
+    <div class="cs-hero__eyebrow">{eyebrow}</div>
+    <h1 class="cs-hero__headline">{headline}</h1>
+    <p class="cs-hero__deck">{deck}</p>
+  </div>
+
+  <div class={`cs-hero__image${heroNoBorder ? ' cs-hero__image--no-border' : ''}`}>
+    {heroImage ? (
+      <img src={heroImage} alt={heroAlt} loading="eager" fetchpriority="high" />
+    ) : (
+      <div class="cs-hero__image-placeholder" aria-hidden="true">
+        <span>Hero image</span>
+      </div>
+    )}
+  </div>
+
+  <div class="cs-hero__facts">
+    <div class="cs-hero__fact">
+      <span>Role</span>
+      <strong>{role}</strong>
+    </div>
+    <div class="cs-hero__fact">
+      <span>Timeline</span>
+      <strong>{timeline}</strong>
+    </div>
+    <div class="cs-hero__fact">
+      <span>Status</span>
+      <strong>{status}</strong>
+    </div>
+    <div class="cs-hero__fact">
+      <span>Focus</span>
+      <strong>{focus}</strong>
+    </div>
+  </div>
+
+  {metrics.length > 0 && (
+    <div class="cs-hero__metrics">
+      {metrics.map((m) => (
+        <div class="cs-hero__metric">
+          <strong>{m.value}</strong>
+          <small>{m.label}</small>
+        </div>
+      ))}
+    </div>
+  )}
+</section>
